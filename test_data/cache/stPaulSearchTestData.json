@@ -1,0 +1,4920 @@
+{
+  "status": 200,
+  "msg": null,
+  "results": {
+    "data": [
+      {
+        "location_id": "444597",
+        "name": "The St. Paul Grill",
+        "latitude": "44.94487",
+        "longitude": "-93.09649",
+        "num_reviews": "877",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/0f/ed/55/41/ahi-tuna-charlie-with.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0f/ed/55/41/ahi-tuna-charlie-with.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0f/ed/55/41/ahi-tuna-charlie-with.jpg",
+              "height": "1429"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/0f/ed/55/41/ahi-tuna-charlie-with.jpg",
+              "height": "731"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0f/ed/55/41/ahi-tuna-charlie-with.jpg",
+              "height": "393"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2017-07-17T19:48:51-0400",
+          "caption": "Ahi Tuna Charlie with Caesar Salad 07-17-17",
+          "id": "267212097",
+          "helpful_votes": "0",
+          "published_date": "2017-07-17T19:48:51-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444597",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.4635233879089355",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "1",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#1 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$$$",
+        "price": "$8 - $60",
+        "neighborhood_info": [
+          {
+            "location_id": "21228881",
+            "name": "Downtown"
+          }
+        ],
+        "description": "Open since 1990 and brimming with energy and nostalgia, The St. Paul Grill is a destination unto itself. Located in the historic Saint Paul Hotel and overlooking Rice Park, the iconic restaurant is known for its refined style, attentive service, and exceptional cuisine. Our culinary team prepares American steakhouse classics with unparalleled quality and attention-to-detail. Our bar program boasts an impressive selection of rare spirits, an award-winning wine list, and a collection of classic cocktails. Our team of passionate bartenders, servers, and hospitality professionals are intuitive, enthusiastic, and always authentically themselves.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444597-Reviews-The_St_Paul_Grill-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444597-The_St_Paul_Grill-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-224-7455",
+        "website": "https://www.stpaulgrill.com",
+        "email": "info@saintpaulhotel.com",
+        "address_obj": {
+          "street1": "350 N Market Street",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102"
+        },
+        "address": "350 N Market Street, Saint Paul, MN 55102",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 960,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1350
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "10640",
+            "name": "Bar"
+          },
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "512809",
+        "name": "Casper & Runyon's Nook",
+        "latitude": "44.926674",
+        "longitude": "-93.15677",
+        "num_reviews": "468",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/06/4b/00/33/casper-runyon-s-nook.jpg",
+              "height": "141"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/06/4b/00/33/casper-runyon-s-nook.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/06/4b/00/33/casper-runyon-s-nook.jpg",
+              "height": "1125"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/06/4b/00/33/casper-runyon-s-nook.jpg",
+              "height": "576"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/4b/00/33/casper-runyon-s-nook.jpg",
+              "height": "309"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-08-01T10:45:32-0400",
+          "caption": "Juicy Nookie Burger and Triple B Burger Onion Rings and Sweet Potato Fries",
+          "id": "105578547",
+          "helpful_votes": "0",
+          "published_date": "2014-08-01T10:45:32-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/512809",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.43115758895874",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "2",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#2 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d512809-Reviews-Casper_Runyon_s_Nook-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d512809-Casper_Runyon_s_Nook-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-698-4347",
+        "website": "http://www.crnook.com/",
+        "address_obj": {
+          "street1": "492 Hamline Ave S",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55116-1613"
+        },
+        "address": "492 Hamline Ave S, Saint Paul, MN 55116-1613",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1560
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10640",
+            "name": "Bar"
+          },
+          {
+            "key": "10670",
+            "name": "Pub"
+          }
+        ],
+        "dietary_restrictions": [],
+        "booking": {
+          "provider": "ChowNow",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Z8C3JEFJZ_7AzwEqG8lCLw&cs=1a729d3ae3e956a4726a523ee62ebfb50"
+        },
+        "reserve_info": {
+          "id": "512809",
+          "provider": "ChowNow",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Z8C3JEFJZ_7AzwEqG8lCLw&cs=1a729d3ae3e956a4726a523ee62ebfb50",
+          "booking_partner_id": null,
+          "racable": false,
+          "api_bookable": false,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Order Online",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444474",
+        "name": "Cafe Latte",
+        "latitude": "44.93987",
+        "longitude": "-93.136246",
+        "num_reviews": "626",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/0f/82/7f/c0/cafe-latte.jpg",
+              "height": "141"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0f/82/7f/c0/cafe-latte.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "3840",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0f/82/7f/c0/cafe-latte.jpg",
+              "height": "2160"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/0f/82/7f/c0/cafe-latte.jpg",
+              "height": "576"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0f/82/7f/c0/cafe-latte.jpg",
+              "height": "309"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2017-06-07T17:40:21-0400",
+          "caption": "",
+          "id": "260210624",
+          "helpful_votes": "3",
+          "published_date": "2017-06-07T17:40:21-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444474",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.415106296539307",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "3",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#1 of 26 Dessert in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$20",
+        "neighborhood_info": [
+          {
+            "location_id": "21228885",
+            "name": "Summit Hill"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444474-Reviews-Cafe_Latte-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444474-Cafe_Latte-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "cafe",
+            "name": "Café"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-224-5687",
+        "website": "http://www.cafelatte.com/",
+        "email": "latte@cafelatte.com",
+        "address_obj": {
+          "street1": "850 Grand Ave",
+          "street2": "Ste 1",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55105-3397"
+        },
+        "address": "850 Grand Ave Ste 1, Saint Paul, MN 55105-3397",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1320
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10642",
+            "name": "Cafe"
+          },
+          {
+            "key": "10700",
+            "name": "Soups"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "ChowNow",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Yw_6gf36SewtayMZtRYXmY&cs=15998939beeb8140db4aa942ed033d764"
+        },
+        "reserve_info": {
+          "id": "444474",
+          "provider": "ChowNow",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Yw_6gf36SewtayMZtRYXmY&cs=15998939beeb8140db4aa942ed033d764",
+          "booking_partner_id": null,
+          "racable": false,
+          "api_bookable": false,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Order Online",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "9909",
+            "name": "Dessert"
+          }
+        ]
+      },
+      {
+        "location_id": "7028295",
+        "name": "Tongue in Cheek",
+        "latitude": "44.97106",
+        "longitude": "-93.0736",
+        "num_reviews": "259",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/07/f6/f6/9d/tongue-in-cheek.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/07/f6/f6/9d/tongue-in-cheek.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "640",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/07/f6/f6/9d/tongue-in-cheek.jpg",
+              "height": "480"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/07/f6/f6/9d/tongue-in-cheek.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/07/f6/f6/9d/tongue-in-cheek.jpg",
+              "height": "187"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2015-05-25T13:37:10-0400",
+          "caption": "Cocktail flight with beef tartare on salt block",
+          "id": "133625501",
+          "helpful_votes": "3",
+          "published_date": "2015-05-26T11:50:47-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/7028295",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.409351348876953",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "4",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#3 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "neighborhood_info": [
+          {
+            "location_id": "21228886",
+            "name": "Payne-Phalen"
+          }
+        ],
+        "description": "Casual fine-dining in a fun atmosphere, featuring cocktail flights, eclectic cuisine, and a fantastic Brunch menu 5 days a week.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d7028295-Reviews-Tongue_in_Cheek-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d7028295-Tongue_in_Cheek-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-888-6148",
+        "website": "http://www.tongueincheek.biz",
+        "address_obj": {
+          "street1": "989 Payne Ave",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55130-3901"
+        },
+        "address": "989 Payne Ave, Saint Paul, MN 55130-3901",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 600,
+                "close_time": 1260
+              }
+            ],
+            [],
+            [],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444520",
+        "name": "Cossetta's Italian Market & Pizzeria",
+        "latitude": "44.9438",
+        "longitude": "-93.10385",
+        "num_reviews": "1567",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/34/d4/bb/cannoli.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/34/d4/bb/cannoli.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "3264",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/34/d4/bb/cannoli.jpg",
+              "height": "2448"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/34/d4/bb/cannoli.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/05/34/d4/bb/cannoli.jpg",
+              "height": "187"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-01-03T22:46:21-0500",
+          "caption": "Cannoli",
+          "id": "87348411",
+          "helpful_votes": "1",
+          "published_date": "2014-01-03T22:46:21-0500",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444520",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.369900703430176",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "5",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#1 of 3 Specialty Food Market in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$1 - $20",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444520-Reviews-Cossetta_s_Italian_Market_Pizzeria-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444520-Cossetta_s_Italian_Market_Pizzeria-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "fast_food",
+            "name": "Fast food"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-222-3476",
+        "website": "http://cossettas.com",
+        "email": "info@cossettas.com",
+        "address_obj": {
+          "street1": "211 7th St W",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-2520"
+        },
+        "address": "211 7th St W, Saint Paul, MN 55102-2520",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "4617",
+            "name": "Italian"
+          },
+          {
+            "key": "10641",
+            "name": "Pizza"
+          },
+          {
+            "key": "20066",
+            "name": "Tuscan"
+          },
+          {
+            "key": "20069",
+            "name": "Sicilian"
+          },
+          {
+            "key": "20075",
+            "name": "Central-Italian"
+          },
+          {
+            "key": "20076",
+            "name": "Southern-Italian"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "ChowNow",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2dfWFvtAfFrlyOoU0lBaI3s&cs=162b9c7b12defaeda3de2a66b42e4bd2e"
+        },
+        "reserve_info": {
+          "id": "444520",
+          "provider": "ChowNow",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2dfWFvtAfFrlyOoU0lBaI3s&cs=162b9c7b12defaeda3de2a66b42e4bd2e",
+          "booking_partner_id": null,
+          "racable": false,
+          "api_bookable": false,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Order Online",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "9909",
+            "name": "Dessert"
+          },
+          {
+            "key": "16548",
+            "name": "Specialty Food Market"
+          }
+        ]
+      },
+      {
+        "location_id": "446157",
+        "name": "Moscow on the Hill",
+        "latitude": "44.94667",
+        "longitude": "-93.11562",
+        "num_reviews": "511",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/07/c0/4c/b7/moscow-on-the-hill.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/07/c0/4c/b7/moscow-on-the-hill.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "720",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/07/c0/4c/b7/moscow-on-the-hill.jpg",
+              "height": "479"
+            },
+            "large": {
+              "width": "720",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/07/c0/4c/b7/moscow-on-the-hill.jpg",
+              "height": "479"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/07/c0/4c/b7/moscow-on-the-hill.jpg",
+              "height": "365"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2015-04-23T21:14:23-0400",
+          "caption": "Salmon and Vareniki",
+          "id": "130043063",
+          "helpful_votes": "3",
+          "published_date": "2015-04-23T21:14:23-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/446157",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.363412857055664",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "6",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#4 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$40",
+        "neighborhood_info": [
+          {
+            "location_id": "21228883",
+            "name": "Summit-University"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d446157-Reviews-Moscow_on_the_Hill-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d446157-Moscow_on_the_Hill-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-291-1236",
+        "website": "https://www.facebook.com/Moscowonthehill/",
+        "address_obj": {
+          "street1": "371 Selby Ave",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-1822"
+        },
+        "address": "371 Selby Ave, Saint Paul, MN 55102-1822",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "10654",
+            "name": "European"
+          },
+          {
+            "key": "10693",
+            "name": "Russian"
+          },
+          {
+            "key": "10742",
+            "name": "Eastern European"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "678362",
+        "name": "Meritage",
+        "latitude": "44.94648",
+        "longitude": "-93.09672",
+        "num_reviews": "588",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/0f/8f/67/c3/meritage.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0f/8f/67/c3/meritage.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0f/8f/67/c3/meritage.jpg",
+              "height": "1500"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0f/8f/67/c3/meritage.jpg",
+              "height": "413"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/0f/8f/67/c3/meritage.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2017-06-13T08:35:01-0400",
+          "caption": "Meritage",
+          "id": "261056451",
+          "helpful_votes": "0",
+          "published_date": "2017-06-13T08:35:01-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/678362",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.350842475891113",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "7",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#5 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Closed Now",
+        "is_long_closed": false,
+        "price_level": "$$$$",
+        "price": "$20 - $100",
+        "neighborhood_info": [
+          {
+            "location_id": "21228881",
+            "name": "Downtown"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d678362-Reviews-Meritage-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d678362-Meritage-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-222-5670",
+        "website": "https://www.facebook.com/meritage.stpaul/",
+        "email": "contact@meritage-stpaul.com",
+        "address_obj": {
+          "street1": "410 Saint Peter St",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-1105"
+        },
+        "address": "410 Saint Peter St, Saint Paul, MN 55102-1105",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 960,
+                "close_time": 1320
+              }
+            ],
+            [],
+            [],
+            [],
+            [
+              {
+                "open_time": 960,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 960,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 960,
+                "close_time": 1380
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "5086",
+            "name": "French"
+          },
+          {
+            "key": "10654",
+            "name": "European"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "6856703",
+        "name": "Red Cow St. Paul",
+        "latitude": "44.94666",
+        "longitude": "-93.1168",
+        "num_reviews": "554",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/06/74/c6/27/red-cow.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/06/74/c6/27/red-cow.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/06/74/c6/27/red-cow.jpg",
+              "height": "1333"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/06/74/c6/27/red-cow.jpg",
+              "height": "682"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/74/c6/27/red-cow.jpg",
+              "height": "367"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-08-27T23:34:23-0400",
+          "caption": "Breakfast burger.",
+          "id": "108316199",
+          "helpful_votes": "3",
+          "published_date": "2014-08-27T23:34:23-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/6856703",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.338908672332764",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "8",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#6 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "neighborhood_info": [
+          {
+            "location_id": "21228883",
+            "name": "Summit-University"
+          }
+        ],
+        "description": "Casual & rustic American eatery offering craft beer, gourmet burgers & a menu of updated pub eats.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d6856703-Reviews-Red_Cow_St_Paul-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d6856703-Red_Cow_St_Paul-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-789-0545",
+        "website": "https://redcowmn.com/st-paul-selby-avenue/",
+        "address_obj": {
+          "street1": "393 Selby Ave",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102"
+        },
+        "address": "393 Selby Ave, Saint Paul, MN 55102",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 600,
+                "close_time": 1320
+              }
+            ],
+            [],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 600,
+                "close_time": 1380
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10640",
+            "name": "Bar"
+          },
+          {
+            "key": "10670",
+            "name": "Pub"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "2459111",
+        "name": "Joan's in the Park",
+        "latitude": "44.922585",
+        "longitude": "-93.16726",
+        "num_reviews": "323",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/4f/41/ab/joan-s-in-the-park.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/4f/41/ab/joan-s-in-the-park.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/4f/41/ab/joan-s-in-the-park.jpg",
+              "height": "1500"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/4f/41/ab/joan-s-in-the-park.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/05/4f/41/ab/joan-s-in-the-park.jpg",
+              "height": "187"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-01-27T17:14:39-0500",
+          "caption": "Scallops",
+          "id": "89080235",
+          "helpful_votes": "1",
+          "published_date": "2014-01-27T17:14:39-0500",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/2459111",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.321479797363281",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "9",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#7 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Closed Now",
+        "is_long_closed": false,
+        "price_level": "$$$$",
+        "price": "$30 - $62",
+        "description": "Upscale Restaurant Offering A 4 Course Menu (ala Carte Available) Business Casual Attire. Full Bar. Award Winning Food, Cocktails And Service",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d2459111-Reviews-Joan_s_in_the_Park-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d2459111-Joan_s_in_the_Park-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-690-3297",
+        "website": "http://www.joansinthepark.com/",
+        "email": "info@joansinthepark.com",
+        "address_obj": {
+          "street1": "631 Snelling Ave S",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55116-1529"
+        },
+        "address": "631 Snelling Ave S, Saint Paul, MN 55116-1529",
+        "hours": {
+          "week_ranges": [
+            [],
+            [],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1245
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1245
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1245
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1245
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1245
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "474791",
+        "name": "Cecil's Delicatessen & Bakery",
+        "latitude": "44.921886",
+        "longitude": "-93.18759",
+        "num_reviews": "398",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/01/2d/7a/00/a-cobb-salad-at-cecil.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/01/2d/7a/00/a-cobb-salad-at-cecil.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/01/2d/7a/00/a-cobb-salad-at-cecil.jpg",
+              "height": "407"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/01/2d/7a/00/a-cobb-salad-at-cecil.jpg",
+              "height": "407"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/01/2d/7a/00/a-cobb-salad-at-cecil.jpg",
+              "height": "185"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2009-06-14T00:30:15-0400",
+          "caption": "A cobb salad at Cecil's",
+          "id": "19757568",
+          "helpful_votes": "5",
+          "published_date": "2009-06-14T13:39:29-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/474791",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.313179969787598",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "10",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#8 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$10 - $15",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d474791-Reviews-Cecil_s_Delicatessen_Bakery-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d474791-Cecil_s_Delicatessen_Bakery-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "fast_food",
+            "name": "Fast food"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-698-6276",
+        "website": "https://www.facebook.com/p/Cecils-Deli-Restaurant-100063749312183/",
+        "address_obj": {
+          "street1": "651 Cleveland Ave S",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55116-1293"
+        },
+        "address": "651 Cleveland Ave S, Saint Paul, MN 55116-1293",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 540,
+                "close_time": 1260
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10666",
+            "name": "Deli"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10768",
+            "name": "Kosher"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10768",
+            "name": "Kosher"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444473",
+        "name": "Mancini's Char House",
+        "latitude": "44.936874",
+        "longitude": "-93.11373",
+        "num_reviews": "404",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/0a/81/22/fc/view-of-side-of-the-restaurant.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0a/81/22/fc/view-of-side-of-the-restaurant.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "1632",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0a/81/22/fc/view-of-side-of-the-restaurant.jpg",
+              "height": "1224"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0a/81/22/fc/view-of-side-of-the-restaurant.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/0a/81/22/fc/view-of-side-of-the-restaurant.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2016-03-04T11:04:47-0500",
+          "caption": "view of side of the restaurant",
+          "id": "176235260",
+          "helpful_votes": "2",
+          "published_date": "2016-03-04T11:04:47-0500",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444473",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.102499961853027",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "11",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#9 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Closed Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$30",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444473-Reviews-Mancini_s_Char_House-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444473-Mancini_s_Char_House-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-224-7345",
+        "website": "http://www.mancinis.com",
+        "address_obj": {
+          "street1": "531 7th St W",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-3091"
+        },
+        "address": "531 7th St W, Saint Paul, MN 55102-3091",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10345",
+            "name": "Steakhouse"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444565",
+        "name": "Downtowner Woodfire Grill",
+        "latitude": "44.94288",
+        "longitude": "-93.105064",
+        "num_reviews": "344",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/03/a1/d9/1d/downtowner-woodfire-grill.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/03/a1/d9/1d/downtowner-woodfire-grill.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "1280",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/03/a1/d9/1d/downtowner-woodfire-grill.jpg",
+              "height": "639"
+            },
+            "large": {
+              "width": "1280",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/03/a1/d9/1d/downtowner-woodfire-grill.jpg",
+              "height": "639"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/03/a1/d9/1d/downtowner-woodfire-grill.jpg",
+              "height": "274"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2013-03-16T21:38:59-0400",
+          "caption": "Pork with Basmati Rice",
+          "id": "60938525",
+          "helpful_votes": "1",
+          "published_date": "2013-03-16T21:38:59-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444565",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.067368984222412",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "12",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#10 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$30",
+        "description": "\"simply beyond the ordinary\"\"****\" - Kathie Jenkins - Saint Paul Pioneer PressDowntowner Woodfire Grill specializes in Persian fire roasted meats, grilled steaks and chops, and gourmet wood-fired pizzas.  The atmosphere is warm & lively offering 2 fireplaces, a full bar with 3 fountains and live jazz.  The restaurant offers free parking with convenience to both the Xcel Energy Center & Ordway Theater.  Downtowner Woodfire Grill also provides a full menu for breakfast & lunch, and a children's menu.  This cozy restaurant serves a great plate as well as provides an experience to savor.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444565-Reviews-Downtowner_Woodfire_Grill-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444565-Downtowner_Woodfire_Grill-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-228-9500",
+        "website": "http://www.downtownerwoodfire.com/",
+        "email": "Moe@downtownerwoodfire.com",
+        "address_obj": {
+          "street1": "253 7th Street West",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-2522"
+        },
+        "address": "253 7th Street West, Saint Paul, MN 55102-2522",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 480,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1350
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "10648",
+            "name": "International"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "OpenTable",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8QyXjfWbT5MnsklUves_NvN_q5LMrdsB40-Cd40_SbZo&cs=1627f65efef9f2ef7ab8a03670b3d6109"
+        },
+        "reserve_info": {
+          "id": "444565",
+          "provider": "OpenTable",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8QyXjfWbT5MnsklUves_NvN_q5LMrdsB40-Cd40_SbZo&cs=1627f65efef9f2ef7ab8a03670b3d6109",
+          "booking_partner_id": "1",
+          "racable": false,
+          "api_bookable": true,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Reserve",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "2011868",
+        "name": "Brasa Rotisserie",
+        "latitude": "44.940277",
+        "longitude": "-93.13286",
+        "num_reviews": "252",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/0d/54/c9/7c/good-eating.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0d/54/c9/7c/good-eating.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "1200",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0d/54/c9/7c/good-eating.jpg",
+              "height": "900"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0d/54/c9/7c/good-eating.jpg",
+              "height": "413"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/0d/54/c9/7c/good-eating.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2016-10-17T11:59:10-0400",
+          "caption": "Good Eating",
+          "id": "223660412",
+          "helpful_votes": "3",
+          "published_date": "2016-10-17T11:59:10-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/2011868",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.009906768798828",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "13",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#11 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "neighborhood_info": [
+          {
+            "location_id": "21228885",
+            "name": "Summit Hill"
+          }
+        ],
+        "description": "Brasa serves comfort food inspired by the traditions of Creole cooking. Our menu is a celebration of new and old world ingredients, representing native influences and many many styles of cooking. We supply our kitchen with locally sourced products, free range and pasture raised meats, eggs, and dairy. We also feature organic ingredients, fair trade coffee & tea.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d2011868-Reviews-Brasa_Rotisserie-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d2011868-Brasa_Rotisserie-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-224-1302",
+        "website": "http://www.brasa.us",
+        "email": "contact@brasa.us",
+        "address_obj": {
+          "street1": "777 Grand Ave",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55105-3307"
+        },
+        "address": "777 Grand Ave, Saint Paul, MN 55105-3307",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 660,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1200
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10635",
+            "name": "Cajun & Creole"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "Grubhub",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyZv-np3sOrJ41DUHOxyDiCtwgkBlXrtsltClFheB2tac&cs=150c580eacb2aa70a5df5cc246ceaa452"
+        },
+        "reserve_info": {
+          "id": "2011868",
+          "provider": "Grubhub",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyZv-np3sOrJ41DUHOxyDiCtwgkBlXrtsltClFheB2tac&cs=150c580eacb2aa70a5df5cc246ceaa452",
+          "booking_partner_id": null,
+          "racable": false,
+          "api_bookable": false,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Order Online",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "446267",
+        "name": "DeGidio's Restaurant & Bar",
+        "latitude": "44.939156",
+        "longitude": "-93.11028",
+        "num_reviews": "253",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/13/e6/b6/4c/spaghetti-meatballs.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/13/e6/b6/4c/spaghetti-meatballs.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "1280",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-m/1280/13/e6/b6/4c/spaghetti-meatballs.jpg",
+              "height": "853"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/13/e6/b6/4c/spaghetti-meatballs.jpg",
+              "height": "683"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/13/e6/b6/4c/spaghetti-meatballs.jpg",
+              "height": "367"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2018-07-29T09:26:54-0400",
+          "caption": "Spaghetti & Meatballs",
+          "id": "333887052",
+          "helpful_votes": "2",
+          "published_date": "2018-07-29T09:26:54-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/446267",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.986072063446045",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "14",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#12 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Closed Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$10 - $24",
+        "description": "Family owned Italian restaurant",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d446267-Reviews-DeGidio_s_Restaurant_Bar-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d446267-DeGidio_s_Restaurant_Bar-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-291-7105",
+        "website": "https://www.degidios.com",
+        "email": "info@degidios.com",
+        "address_obj": {
+          "street1": "425 7th St W",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-2730"
+        },
+        "address": "425 7th St W, Saint Paul, MN 55102-2730",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 960,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 960,
+                "close_time": 1260
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "4617",
+            "name": "Italian"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "Grubhub",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby4OZoFuklmXyulU-8UvyZVks9EDhEz_uuqux8HTqZLLg&cs=13b47df91d4ffe90f6bba731ed15492ab"
+        },
+        "reserve_info": {
+          "id": "446267",
+          "provider": "Grubhub",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby4OZoFuklmXyulU-8UvyZVks9EDhEz_uuqux8HTqZLLg&cs=13b47df91d4ffe90f6bba731ed15492ab",
+          "booking_partner_id": null,
+          "racable": false,
+          "api_bookable": false,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Order Online",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "4437151",
+        "name": "The Buttered Tin",
+        "latitude": "44.95083",
+        "longitude": "-93.088745",
+        "num_reviews": "298",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/be/4e/36/the-buttered-tin.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/be/4e/36/the-buttered-tin.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/be/4e/36/the-buttered-tin.jpg",
+              "height": "1500"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/be/4e/36/the-buttered-tin.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/05/be/4e/36/the-buttered-tin.jpg",
+              "height": "187"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-04-18T22:47:57-0400",
+          "caption": "Stuffed hashbrown with egg on top",
+          "id": "96357942",
+          "helpful_votes": "3",
+          "published_date": "2014-04-18T22:47:57-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/4437151",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.950688600540161",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "15",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#13 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "neighborhood_info": [
+          {
+            "location_id": "21228881",
+            "name": "Downtown"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d4437151-Reviews-The_Buttered_Tin-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d4437151-The_Buttered_Tin-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-224-2300",
+        "website": "http://thebutteredtin.com/",
+        "address_obj": {
+          "street1": "237 7th St E",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55101-2379"
+        },
+        "address": "237 7th St E, Saint Paul, MN 55101-2379",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10642",
+            "name": "Cafe"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444513",
+        "name": "Kincaid's Fish, Chop & Steakhouse",
+        "latitude": "44.945797",
+        "longitude": "-93.09622",
+        "num_reviews": "431",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/0d/50/09/69/bacon-wrapped-meatloaf.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/0d/50/09/69/bacon-wrapped-meatloaf.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/0d/50/09/69/bacon-wrapped-meatloaf.jpg",
+              "height": "1500"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/0d/50/09/69/bacon-wrapped-meatloaf.jpg",
+              "height": "413"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/0d/50/09/69/bacon-wrapped-meatloaf.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2016-10-15T14:07:44-0400",
+          "caption": "bacon wrapped meatloaf",
+          "id": "223349097",
+          "helpful_votes": "1",
+          "published_date": "2016-10-15T14:07:44-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444513",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.9078242778778076",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "16",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#14 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.0",
+        "is_closed": false,
+        "open_now_text": "Closed Now",
+        "is_long_closed": false,
+        "price_level": "$$$$",
+        "price": "$40 - $60",
+        "neighborhood_info": [
+          {
+            "location_id": "21228881",
+            "name": "Downtown"
+          }
+        ],
+        "description": "Artfully serving quality steaks, and fresh and innovative seafood since 1986. Enjoy daily lunch, dinner or perhaps a special business or romantic occasion in our warm and inviting dining room.",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444513-Reviews-Kincaid_s_Fish_Chop_Steakhouse-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444513-Kincaid_s_Fish_Chop_Steakhouse-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-602-9000",
+        "website": "https://www.kincaids.com/location/kincaids-st-paul-mn/",
+        "address_obj": {
+          "street1": "380 Saint Peter St",
+          "street2": "Suite 125",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55102-7700"
+        },
+        "address": "380 Saint Peter St Suite 125, Saint Paul, MN 55102-7700",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 900,
+                "close_time": 1230
+              }
+            ],
+            [
+              {
+                "open_time": 690,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 690,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 690,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 690,
+                "close_time": 1260
+              }
+            ],
+            [
+              {
+                "open_time": 690,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 900,
+                "close_time": 1320
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10643",
+            "name": "Seafood"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "booking": {
+          "provider": "OpenTable",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8QxGvouFYqjjutqNZ0V4BqsPl6ITpWCQs6SqXnVwx6vE&cs=19bba972b450235dacda8cc87a3d4074b"
+        },
+        "reserve_info": {
+          "id": "444513",
+          "provider": "OpenTable",
+          "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295961947&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8QxGvouFYqjjutqNZ0V4BqsPl6ITpWCQs6SqXnVwx6vE&cs=19bba972b450235dacda8cc87a3d4074b",
+          "booking_partner_id": "1",
+          "racable": false,
+          "api_bookable": true,
+          "timeslots": null,
+          "bestoffer": null,
+          "timeslot_offers": null,
+          "button_text": "Reserve",
+          "disclaimer_text": null,
+          "banner_text": null
+        },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "623633",
+        "name": "Shish Mediterranean Grill & Cafe",
+        "latitude": "44.940006",
+        "longitude": "-93.170654",
+        "num_reviews": "205",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/06/79/d5/57/shish-mediterranean-grill.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/06/79/d5/57/shish-mediterranean-grill.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/06/79/d5/57/shish-mediterranean-grill.jpg",
+              "height": "1500"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/79/d5/57/shish-mediterranean-grill.jpg",
+              "height": "413"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/06/79/d5/57/shish-mediterranean-grill.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-08-30T16:56:34-0400",
+          "caption": "Maza platter",
+          "id": "108647767",
+          "helpful_votes": "0",
+          "published_date": "2014-08-30T16:56:34-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/623633",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.8774044513702393",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "17",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#15 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$5 - $11",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d623633-Reviews-Shish_Mediterranean_Grill_Cafe-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d623633-Shish_Mediterranean_Grill_Cafe-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-690-2212",
+        "website": "http://www.shishongrand.com",
+        "address_obj": {
+          "street1": "1668 Grand Ave",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55105-1804"
+        },
+        "address": "1668 Grand Ave, Saint Paul, MN 55105-1804",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 1380
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "10649",
+            "name": "Mediterranean"
+          },
+          {
+            "key": "10687",
+            "name": "Middle Eastern"
+          },
+          {
+            "key": "10664",
+            "name": "Greek"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "1568561",
+        "name": "Neighborhood Cafe",
+        "latitude": "44.94662",
+        "longitude": "-93.16641",
+        "num_reviews": "138",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/bf/f9/38/couldn-t-decide-between.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/bf/f9/38/couldn-t-decide-between.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "720",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/bf/f9/38/couldn-t-decide-between.jpg",
+              "height": "960"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-p/05/bf/f9/38/couldn-t-decide-between.jpg",
+              "height": "733"
+            },
+            "medium": {
+              "width": "337",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/bf/f9/38/couldn-t-decide-between.jpg",
+              "height": "450"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-04-20T09:35:25-0400",
+          "caption": "Couldn't decide between breakfast and lunch, so why not order both!",
+          "id": "96467256",
+          "helpful_votes": "3",
+          "published_date": "2014-04-21T10:19:58-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/1568561",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.8242931365966797",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "18",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#16 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$1",
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d1568561-Reviews-Neighborhood_Cafe-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d1568561-Neighborhood_Cafe-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-644-8887",
+        "website": "http://www.neighborhoodcafemn.com/",
+        "email": "contact@theneighborhoodcafemn.com",
+        "address_obj": {
+          "street1": "1570 Selby Ave",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55104-6303"
+        },
+        "address": "1570 Selby Ave, Saint Paul, MN 55104-6303",
+        "hours": {
+          "week_ranges": [
+            [],
+            [],
+            [],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 900
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10642",
+            "name": "Cafe"
+          },
+          {
+            "key": "10676",
+            "name": "Diner"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "444718",
+        "name": "Tavern on Grand",
+        "latitude": "44.939827",
+        "longitude": "-93.12784",
+        "num_reviews": "239",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/06/37/5e/98/my-serving-of-walleye.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/06/37/5e/98/my-serving-of-walleye.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "1600",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/06/37/5e/98/my-serving-of-walleye.jpg",
+              "height": "1200"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/37/5e/98/my-serving-of-walleye.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/06/37/5e/98/my-serving-of-walleye.jpg",
+              "height": "188"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2014-07-19T16:30:49-0400",
+          "caption": "My serving of walleye. Tasty !",
+          "id": "104291992",
+          "helpful_votes": "1",
+          "published_date": "2014-07-19T16:30:49-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/444718",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.8018500804901123",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "19",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#17 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.0",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$12 - $30",
+        "neighborhood_info": [
+          {
+            "location_id": "21228885",
+            "name": "Summit Hill"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d444718-Reviews-Tavern_on_Grand-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d444718-Tavern_on_Grand-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-228-9030",
+        "website": "http://www.thetavernongrand.com",
+        "address_obj": {
+          "street1": "656 Grand Ave",
+          "street2": "",
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55105-3402"
+        },
+        "address": "656 Grand Ave, Saint Paul, MN 55105-3402",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 660,
+                "close_time": 1440
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1440
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1440
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1440
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1440
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1500
+              }
+            ],
+            [
+              {
+                "open_time": 660,
+                "close_time": 1500
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10640",
+            "name": "Bar"
+          }
+        ],
+        "dietary_restrictions": [],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "3737017",
+        "name": "Colossal Cafe",
+        "latitude": "44.98262",
+        "longitude": "-93.19581",
+        "num_reviews": "163",
+        "timezone": "America/Chicago",
+        "location_string": "Saint Paul, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/03/ce/72/7d/colossal-cafe.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/03/ce/72/7d/colossal-cafe.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "2000",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/03/ce/72/7d/colossal-cafe.jpg",
+              "height": "1403"
+            },
+            "large": {
+              "width": "1024",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-w/03/ce/72/7d/colossal-cafe.jpg",
+              "height": "718"
+            },
+            "medium": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/03/ce/72/7d/colossal-cafe.jpg",
+              "height": "385"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2013-04-24T13:33:30-0400",
+          "caption": "Pancake, syrup, milk and coffee",
+          "id": "63861373",
+          "helpful_votes": "0",
+          "published_date": "2013-04-24T13:33:30-0400",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/3737017",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.saint_paul",
+        "preferred_map_engine": "default",
+        "raw_ranking": "3.7635045051574707",
+        "ranking_geo": "Saint Paul",
+        "ranking_geo_id": "43501",
+        "ranking_position": "20",
+        "ranking_denominator": "583",
+        "ranking_category": "restaurant",
+        "ranking": "#18 of 733 Restaurants in Saint Paul",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Open Now",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "neighborhood_info": [
+          {
+            "location_id": "21228888",
+            "name": "St. Anthony"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d3737017-Reviews-Colossal_Cafe-Saint_Paul_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43501-d3737017-Colossal_Cafe-Saint_Paul_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Saint Paul",
+            "abbrv": null,
+            "location_id": "43501"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Saint Paul",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 651-797-4027",
+        "website": "http://www.colossalcafe.com",
+        "email": "colossalcafe@gmail.com",
+        "address_obj": {
+          "street1": "2315 Como Ave",
+          "street2": null,
+          "city": "Saint Paul",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55108-1723"
+        },
+        "address": "2315 Como Ave, Saint Paul, MN 55108-1723",
+        "hours": {
+          "week_ranges": [
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ],
+            [],
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ],
+            [
+              {
+                "open_time": 420,
+                "close_time": 840
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "9908",
+            "name": "American"
+          },
+          {
+            "key": "10642",
+            "name": "Cafe"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      }
+    ],
+    "paging": {
+      "previous": null,
+      "next": "https://api.tripadvisor.com/api/internal/1.14/location/43501/restaurants?base_geocodes_on=citymaps&currency=USD&is_restaurant_filters_v2=true&lang=en_US&limit=20&offset=20&restaurant_tagcategory_standalone=43501&supports_relevance=true",
+      "skipped": "0",
+      "results": "20",
+      "total_results": "861"
+    },
+    "restaurant_availability_options": {
+      "day": "18",
+      "month": "5",
+      "year": "2024",
+      "hour": "19",
+      "minute": "0",
+      "people": "2",
+      "datestring": "05/18/2024",
+      "is_default": true,
+      "is_set": false,
+      "racable": false,
+      "time_options": {
+        "selected_option": {
+          "value": "19:00:00",
+          "display": "7:00 PM",
+          "selected": true
+        },
+        "options": [
+          {
+            "value": "00:00:00",
+            "display": "12:00 AM",
+            "selected": null
+          },
+          {
+            "value": "00:30:00",
+            "display": "12:30 AM",
+            "selected": null
+          },
+          {
+            "value": "01:00:00",
+            "display": "1:00 AM",
+            "selected": null
+          },
+          {
+            "value": "01:30:00",
+            "display": "1:30 AM",
+            "selected": null
+          },
+          {
+            "value": "02:00:00",
+            "display": "2:00 AM",
+            "selected": null
+          },
+          {
+            "value": "02:30:00",
+            "display": "2:30 AM",
+            "selected": null
+          },
+          {
+            "value": "03:00:00",
+            "display": "3:00 AM",
+            "selected": null
+          },
+          {
+            "value": "03:30:00",
+            "display": "3:30 AM",
+            "selected": null
+          },
+          {
+            "value": "04:00:00",
+            "display": "4:00 AM",
+            "selected": null
+          },
+          {
+            "value": "04:30:00",
+            "display": "4:30 AM",
+            "selected": null
+          },
+          {
+            "value": "05:00:00",
+            "display": "5:00 AM",
+            "selected": null
+          },
+          {
+            "value": "05:30:00",
+            "display": "5:30 AM",
+            "selected": null
+          },
+          {
+            "value": "06:00:00",
+            "display": "6:00 AM",
+            "selected": null
+          },
+          {
+            "value": "06:30:00",
+            "display": "6:30 AM",
+            "selected": null
+          },
+          {
+            "value": "07:00:00",
+            "display": "7:00 AM",
+            "selected": null
+          },
+          {
+            "value": "07:30:00",
+            "display": "7:30 AM",
+            "selected": null
+          },
+          {
+            "value": "08:00:00",
+            "display": "8:00 AM",
+            "selected": null
+          },
+          {
+            "value": "08:30:00",
+            "display": "8:30 AM",
+            "selected": null
+          },
+          {
+            "value": "09:00:00",
+            "display": "9:00 AM",
+            "selected": null
+          },
+          {
+            "value": "09:30:00",
+            "display": "9:30 AM",
+            "selected": null
+          },
+          {
+            "value": "10:00:00",
+            "display": "10:00 AM",
+            "selected": null
+          },
+          {
+            "value": "10:30:00",
+            "display": "10:30 AM",
+            "selected": null
+          },
+          {
+            "value": "11:00:00",
+            "display": "11:00 AM",
+            "selected": null
+          },
+          {
+            "value": "11:30:00",
+            "display": "11:30 AM",
+            "selected": null
+          },
+          {
+            "value": "12:00:00",
+            "display": "12:00 PM",
+            "selected": null
+          },
+          {
+            "value": "12:30:00",
+            "display": "12:30 PM",
+            "selected": null
+          },
+          {
+            "value": "13:00:00",
+            "display": "1:00 PM",
+            "selected": null
+          },
+          {
+            "value": "13:30:00",
+            "display": "1:30 PM",
+            "selected": null
+          },
+          {
+            "value": "14:00:00",
+            "display": "2:00 PM",
+            "selected": null
+          },
+          {
+            "value": "14:30:00",
+            "display": "2:30 PM",
+            "selected": null
+          },
+          {
+            "value": "15:00:00",
+            "display": "3:00 PM",
+            "selected": null
+          },
+          {
+            "value": "15:30:00",
+            "display": "3:30 PM",
+            "selected": null
+          },
+          {
+            "value": "16:00:00",
+            "display": "4:00 PM",
+            "selected": null
+          },
+          {
+            "value": "16:30:00",
+            "display": "4:30 PM",
+            "selected": null
+          },
+          {
+            "value": "17:00:00",
+            "display": "5:00 PM",
+            "selected": null
+          },
+          {
+            "value": "17:30:00",
+            "display": "5:30 PM",
+            "selected": null
+          },
+          {
+            "value": "18:00:00",
+            "display": "6:00 PM",
+            "selected": null
+          },
+          {
+            "value": "18:30:00",
+            "display": "6:30 PM",
+            "selected": null
+          },
+          {
+            "value": "19:00:00",
+            "display": "7:00 PM",
+            "selected": true
+          },
+          {
+            "value": "19:30:00",
+            "display": "7:30 PM",
+            "selected": null
+          },
+          {
+            "value": "20:00:00",
+            "display": "8:00 PM",
+            "selected": null
+          },
+          {
+            "value": "20:30:00",
+            "display": "8:30 PM",
+            "selected": null
+          },
+          {
+            "value": "21:00:00",
+            "display": "9:00 PM",
+            "selected": null
+          },
+          {
+            "value": "21:30:00",
+            "display": "9:30 PM",
+            "selected": null
+          },
+          {
+            "value": "22:00:00",
+            "display": "10:00 PM",
+            "selected": null
+          },
+          {
+            "value": "22:30:00",
+            "display": "10:30 PM",
+            "selected": null
+          },
+          {
+            "value": "23:00:00",
+            "display": "11:00 PM",
+            "selected": null
+          },
+          {
+            "value": "23:30:00",
+            "display": "11:30 PM",
+            "selected": null
+          }
+        ]
+      },
+      "people_options": {
+        "selected_option": {
+          "value": "2",
+          "display": "2",
+          "selected": true
+        },
+        "options": [
+          {
+            "value": "1",
+            "display": "1",
+            "selected": null
+          },
+          {
+            "value": "2",
+            "display": "2",
+            "selected": true
+          },
+          {
+            "value": "3",
+            "display": "3",
+            "selected": null
+          },
+          {
+            "value": "4",
+            "display": "4",
+            "selected": null
+          },
+          {
+            "value": "5",
+            "display": "5",
+            "selected": null
+          },
+          {
+            "value": "6",
+            "display": "6",
+            "selected": null
+          },
+          {
+            "value": "7",
+            "display": "7",
+            "selected": null
+          },
+          {
+            "value": "8",
+            "display": "8",
+            "selected": null
+          },
+          {
+            "value": "9",
+            "display": "9",
+            "selected": null
+          },
+          {
+            "value": "10",
+            "display": "10",
+            "selected": null
+          },
+          {
+            "value": "11",
+            "display": "11",
+            "selected": null
+          },
+          {
+            "value": "12",
+            "display": "12",
+            "selected": null
+          },
+          {
+            "value": "13",
+            "display": "13",
+            "selected": null
+          },
+          {
+            "value": "14",
+            "display": "14",
+            "selected": null
+          },
+          {
+            "value": "15",
+            "display": "15",
+            "selected": null
+          },
+          {
+            "value": "16",
+            "display": "16",
+            "selected": null
+          },
+          {
+            "value": "17",
+            "display": "17",
+            "selected": null
+          },
+          {
+            "value": "18",
+            "display": "18",
+            "selected": null
+          },
+          {
+            "value": "19",
+            "display": "19",
+            "selected": null
+          },
+          {
+            "value": "20",
+            "display": "20",
+            "selected": null
+          }
+        ]
+      }
+    },
+    "open_hours_options": {
+      "closed_count": "103",
+      "is_set": false,
+      "low_coverage_primary_message": "Open hours aren't available for all places.",
+      "timezone": "America/Chicago",
+      "unsure_count": "223",
+      "open_count": "535",
+      "low_coverage_secondary_message": "Show all restaurants",
+      "current_value": "now"
+    }
+  }
+}

@@ -2,6 +2,8 @@
 -- You must use double quotes in every query that user is in:
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
+DROP TABLE IF EXISTS "user", "restaurants";
+
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
@@ -17,9 +19,9 @@ CREATE TABLE restaurants (
   num_reviews VARCHAR(255),
   timezone VARCHAR(255),
   location_string VARCHAR(255),
-  photo JSON,
+  photo JSONB,
   api_detail_url VARCHAR(255),
-  awards JSON,
+  awards JSONB,
   doubleclick_zone VARCHAR(255),
   preferred_map_engine VARCHAR(255),
   raw_ranking DECIMAL(16, 14),
@@ -41,22 +43,22 @@ CREATE TABLE restaurants (
   description TEXT,
   web_url VARCHAR(255),
   write_review VARCHAR(255),
-  ancestors JSON,
-  category JSON,
-  subcategory JSON,
+  ancestors JSONB,
+  category JSONB,
+  subcategory JSONB,
   parent_display_name VARCHAR(255),
   is_jfy_enabled BOOLEAN,
-  nearest_metro_station JSON,
+  nearest_metro_station JSONB,
   phone VARCHAR(255),
   website VARCHAR(255),
   email VARCHAR(255),
-  address_obj JSON,
+  address_obj JSONB,
   address VARCHAR(255),
-  hours JSON,
+  hours JSONB,
   is_candidate_for_contact_info_suppression BOOLEAN,
-  cuisine JSON,
-  dietary_restrictions JSON,
-  booking JSON,
-  reserve_info JSON,
-  establishment_types JSON
+  cuisine JSONB,
+  dietary_restrictions JSONB,
+  booking JSONB,
+  reserve_info JSONB,
+  establishment_types JSONB
 );

@@ -55,7 +55,6 @@ CREATE TABLE restaurants (
   address_obj JSONB,
   address VARCHAR(255),
   hours JSONB,
-  timezone, JSONB
   is_candidate_for_contact_info_suppression BOOLEAN,
   cuisine JSONB,
   dietary_restrictions JSONB,

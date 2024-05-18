@@ -57,7 +57,7 @@ const insertRestaurantData = async () => {
           restaurant.address_obj,
           restaurant.address,
           restaurant.hours, 
-          restaurant.hours.timezone,
+          restaurant.hours.time,
           restaurant.is_candidate_for_contact_info_suppression,
           restaurant.cuisine,
           restaurant.dietary_restrictions,
@@ -75,7 +75,7 @@ const insertRestaurantData = async () => {
               distance_string, bearing, rating, is_closed, open_now_text, is_long_closed, price_level,
               price, description, web_url, write_review, ancestors, category, subcategory,
               parent_display_name, is_jfy_enabled, nearest_metro_station, phone, website, email, address_obj,
-              address, hours, timezone, is_candidate_for_contact_info_suppression, cuisine, dietary_restrictions,
+              address, hours, is_candidate_for_contact_info_suppression, cuisine, dietary_restrictions,
               booking, reserve_info, establishment_types
             ) VALUES (
               $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,

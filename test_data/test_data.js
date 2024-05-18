@@ -95,6 +95,7 @@ async function processSearchResults(restaurants, outputFile) {
       const detail = await fetchRestaurantDetails(locationId);
       if (detail) {
         details.push(detail);
+        console.log('retrieved details for ', detail.results.name)
       }
       await delay(1000); // Delay of 1 second between requests
     }

@@ -1,0 +1,230 @@
+{
+  "status": 200,
+  "msg": null,
+  "results": {
+    "data": [
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "43323",
+          "name": "Minneapolis",
+          "latitude": "44.977795",
+          "longitude": "-93.26244",
+          "timezone": "America/Chicago",
+          "location_string": "Minneapolis, Minnesota",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/06/d7/dc/c8/bigphotoforminneapolis.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/06/d7/dc/c8/bigphotoforminneapolis.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "1080",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/06/d7/dc/c8/bigphotoforminneapolis.jpg",
+                "height": "650"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/06/d7/dc/c8/bigphotoforminneapolis.jpg",
+                "height": "331"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/06/d7/dc/c8/bigphotoforminneapolis.jpg",
+                "height": "150"
+              }
+            },
+            "is_blessed": true,
+            "uploaded_date": "2014-11-03T18:28:43-0500",
+            "caption": "BigPhotoForminneapolis",
+            "id": "114810056",
+            "helpful_votes": "66",
+            "published_date": "2014-11-03T18:28:43-0500",
+            "user": null
+          },
+          "default_options": [
+            {
+              "key": "overview",
+              "name": "Minneapolis Overview"
+            },
+            {
+              "key": "restaurants",
+              "name": "Restaurants"
+            },
+            {
+              "key": "things_to_do",
+              "name": "Things to Do"
+            },
+            {
+              "key": "lodging",
+              "name": "Hotels"
+            },
+            {
+              "key": "vacation_rentals",
+              "name": "Vacation Rentals"
+            },
+            {
+              "key": "flights_to",
+              "name": "Flights"
+            }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": true,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "With its gleaming skyscrapers set amid glittering lakes, Minneapolis makes for an attractive and fun getaway. A truly year-round destination, the city offers activities for every season. In winter, one can explore the downtown  area through more than seven miles of glass-enclosed skyways. In addition to keeping you warm, they create a lively thoroughfare filled with specialty shops, restaurants and services.  Whether you want to escape the winter cold or the summer warmth, the Mall of America offers shopping, dining and entertainment options for any time of the year and every member of the family.  Art lovers have plenty to see at the Minneapolis Art Institute, Walker Art Center and the Frederick R. Weisman Art Museum, which all house world-renowned collections. The theater scene is thriving.  With more than thirty theaters, Minneapolis has more seats per capita than any U.S. city except New York. See a Broadway show and enjoy dinner and live jazz at a fabulous restaurant. With kids in tow, check out the Science Museum of Minnesota, where visitors can produce their own video, or come face to face with a shark at the UnderWater Adventures Aquarium. In summer, the action moves outside. Known as \"The City of Lakes,\" Minneapolis has 22 lakes located within city limits and many more in the surrounding area. In town, hordes of locals and tourists in-line skate or stroll around Lake Calhoun, stopping for ice cream along the way. Just outside of town, Fort Snelling State Park offers outdoor recreational activities from hiking to biking and golf to boating. No matter when you visit, Minneapolis offers lots for everyone to enjoy.",
+          "is_localized_description": false,
+          "ancestors": [
+            {
+              "subcategory": [
+                {
+                  "key": "state",
+                  "name": "State"
+                }
+              ],
+              "name": "Minnesota",
+              "abbrv": "MN",
+              "location_id": "28944"
+            },
+            {
+              "subcategory": [
+                {
+                  "key": "country",
+                  "name": "Country"
+                }
+              ],
+              "name": "United States",
+              "abbrv": null,
+              "location_id": "191"
+            }
+          ],
+          "parent_display_name": "Minnesota",
+          "guide_count": "0"
+        },
+        "scope": "global"
+      },
+      {
+        "result_type": "geos",
+        "result_object": {
+          "location_id": "3982387",
+          "name": "Metro Minneapolis-Saint Paul",
+          "latitude": "44.98617",
+          "longitude": "-93.25413",
+          "timezone": "America/Chicago",
+          "location_string": "Metro Minneapolis-Saint Paul, Minnesota",
+          "photo": {
+            "images": {
+              "small": {
+                "width": "150",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-l/10/ec/5b/d6/st-paul-scenic-overlook.jpg",
+                "height": "150"
+              },
+              "thumbnail": {
+                "width": "50",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-t/10/ec/5b/d6/st-paul-scenic-overlook.jpg",
+                "height": "50"
+              },
+              "original": {
+                "width": "2000",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-o/10/ec/5b/d6/st-paul-scenic-overlook.jpg",
+                "height": "1500"
+              },
+              "large": {
+                "width": "550",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-s/10/ec/5b/d6/st-paul-scenic-overlook.jpg",
+                "height": "413"
+              },
+              "medium": {
+                "width": "250",
+                "url": "https://media-cdn.tripadvisor.com/media/photo-f/10/ec/5b/d6/st-paul-scenic-overlook.jpg",
+                "height": "188"
+              }
+            },
+            "is_blessed": false,
+            "uploaded_date": "2017-10-09T21:48:09-0400",
+            "caption": "St Paul Scenic Overlook on River Parkway",
+            "id": "283925462",
+            "helpful_votes": "0",
+            "published_date": "2017-10-09T21:48:09-0400",
+            "user": {
+              "user_id": null,
+              "member_id": "0",
+              "type": "user"
+            }
+          },
+          "default_options": [
+            {
+              "key": "overview",
+              "name": "Metro Minneapolis-Saint Paul Overview"
+            },
+            {
+              "key": "restaurants",
+              "name": "Restaurants"
+            },
+            {
+              "key": "things_to_do",
+              "name": "Things to Do"
+            },
+            {
+              "key": "lodging",
+              "name": "Hotels"
+            },
+            {
+              "key": "vacation_rentals",
+              "name": "Vacation Rentals"
+            },
+            {
+              "key": "flights_to",
+              "name": "Flights"
+            }
+          ],
+          "geo_type": "narrow",
+          "location_subtype": "none",
+          "has_restaurant_coverpage": true,
+          "has_attraction_coverpage": false,
+          "has_curated_shopping_list": false,
+          "show_address": false,
+          "preferred_map_engine": "default",
+          "description": "",
+          "ancestors": [
+            {
+              "subcategory": [
+                {
+                  "key": "state",
+                  "name": "State"
+                }
+              ],
+              "name": "Minnesota",
+              "abbrv": "MN",
+              "location_id": "28944"
+            },
+            {
+              "subcategory": [
+                {
+                  "key": "country",
+                  "name": "Country"
+                }
+              ],
+              "name": "United States",
+              "abbrv": null,
+              "location_id": "191"
+            }
+          ],
+          "parent_display_name": "Minnesota",
+          "guide_count": "0"
+        },
+        "scope": "global"
+      }
+    ],
+    "partial_content": false
+  }
+}

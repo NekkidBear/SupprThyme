@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Ensure the test_data-cache directory exists
+// Ensure the cache directory exists
 const cacheDir = path.join(__dirname, 'cache');
 if (!fs.existsSync(cacheDir)) {
   fs.mkdirSync(cacheDir);

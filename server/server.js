@@ -8,7 +8,8 @@ const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 
 // Route Includes
-const userRouter = require('./routes/user.router');
+const userRouter = require('./routes/user.router'); // import the user router
+const testingRouter = require('./routes/testing.router'); // import the testing router
 
 // Express Middleware
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/user', userRouter);
+app.use('/api/test', testingRouter); //add the /test endpoint
 
 // Listen Server & Port
 app.listen(PORT, () => {

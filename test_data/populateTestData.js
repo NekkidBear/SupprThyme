@@ -202,7 +202,9 @@ const insertRestaurantData = async () => {
           address, hours, is_candidate_for_contact_info_suppression, cuisine, dietary_restrictions,
           booking, reserve_info, establishment_types
         ) VALUES (
-          $1, $2, $3, $4, $5, $6, $7, COALESCE($8, '{}'), $9, COALESCE($10, '{}'), $11, $12, $13, $14, $15, $16, $17, $18, $19, COALESCE($20, 0), COALESCE($21, ''), COALESCE($22, 0), $23, $24, $25, $26, $27, $28, COALESCE($29, '{}'), $30, $31, $32, COALESCE($33, '{}'), COALESCE($34, '{}'), COALESCE($35, '{}'), $36, $37, COALESCE($38, '{}'), $39, $40, $41, COALESCE($42, '{}'), $43, COALESCE($44, '{}'), $45, COALESCE($46, '{}'), COALESCE($47, '{}'), COALESCE($48, '{}'), COALESCE($49, '{}')
+          $1, $2, $3, $4, $5, $6, $7, COALESCE($8, '{}'), $9, COALESCE($10, '{}'), $11, $12, $13, $14, $15, $16, $17, $18, $19, COALESCE($20, 0), 
+          COALESCE($21, ''), COALESCE($22, 0), $23, $24, $25, $26, $27, $28, COALESCE($29, '{}'), $30, $31, $32, COALESCE($33, '{}'), COALESCE($34, '{}'), COALESCE($35, '{}'), $36, $37, COALESCE($38, '{}'), 
+          $39, $40, $41, COALESCE($42, '{}'), $43, COALESCE($44, '{}'), $45, COALESCE($46, '{}'), COALESCE($47, '{}'), COALESCE($48, '{}'), COALESCE($49, '{}'),$50
         )
         `,
         values: restaurantValues,

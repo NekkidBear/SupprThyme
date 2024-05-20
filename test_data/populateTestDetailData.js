@@ -99,7 +99,7 @@ const insertDetailsData = async () => {
           `,
           values: detailsValues,
         };
-
+        console.log('inserting detail info for ', restaurant.name);
         await client.query(detailsQuery);
       }
     };

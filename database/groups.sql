@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "groups";
+DROP TABLE IF EXISTS "groups" CASCADE;
 
 CREATE TABLE "groups" (
     "id" SERIAL PRIMARY KEY,

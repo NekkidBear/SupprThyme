@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "details";
+DROP TABLE IF EXISTS "details" CASCADE;
 
 CREATE TABLE "details" (
   id SERIAL PRIMARY KEY,

@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "user_preferences";
+DROP TABLE IF EXISTS "user_preferences" CASCADE;
 
 CREATE TABLE "user_preferences" (
     "id" SERIAL PRIMARY KEY,

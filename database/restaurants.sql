@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "restaurants";
+DROP TABLE IF EXISTS "restaurants" CASCADE;
 
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY,

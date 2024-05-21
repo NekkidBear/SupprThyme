@@ -13,3 +13,20 @@ CREATE TABLE "user" (
     "home_metro" VARCHAR
 );
 
+INSERT INTO user (username, password, email, home_metro)
+VALUES 
+('Kermit',	
+        '$2a$10$Xxxac/whdxsEk3u9RcAfT.MCAqff6lwrbCbv.8sSE7hoQEl3r7Lzy',
+        'kermit@fakedomain.com',
+        'Minneapolis, MN'),
+2('MissPiggy',
+    '$2a$10$11RbL2CMEabZPrIgtC.ZlO0lVgL93JmVtvWfytbYWWrRrjoT7snZi',	
+    'piggy@fakedomain.com',
+    'St. Paul, MN'),
+3('Fozzie',
+	'$2a$10$ufJeQj.QPYjPYegZLq3ie.mmc4FI8jPk4gmhNxFMusjImdYPD5m8y',
+    'fozzie@fakedomain.com',
+    'Minneapolis, MN'),
+4('Gonzo',
+    '$2a$10$TphYN4//Rym5P1N76NCv/eNrkZGvBXCb8q61qlb16W.Bf2jxUE1Pa',
+   'gonzo@fakedomain.com', 'St. Paul, MN');

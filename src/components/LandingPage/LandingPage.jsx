@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import './LandingPage.css';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./LandingPage.css";
 
 // CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
+import RegisterForm from "../RegisterForm/RegisterForm";
 
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
+  const [heading, setHeading] = useState("It's SupprThyme!!!");
   const history = useHistory();
 
   const onLogin = (event) => {
-    history.push('/login');
+    history.push("/login");
   };
 
   return (
@@ -19,36 +19,42 @@ function LandingPage() {
 
       <div className="grid">
         <div className="grid-col grid-col_8">
+          <h3>Welcome to SupprThyme - Your Culinary Adventure Awaits!</h3>
+          <br />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
-            ut ex molestie blandit. Etiam et turpis sit amet risus mollis
-            interdum. Suspendisse et justo vitae metus bibendum fringilla sed
-            sed justo. Aliquam sollicitudin dapibus lectus, vitae consequat odio
-            elementum eget. Praesent efficitur eros vitae nunc interdum, eu
-            interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
-            Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
-            luctus. Duis a sapien metus.
+            Are you tired of the endless debates and indecision when it comes to
+            choosing a place to eat with your friends, family, or colleagues?
+            Say goodbye to the hassle and hello to SupprThyme - the mobile web
+            application that revolutionizes the way you dine out!
           </p>
-
+          <br />
           <p>
-            Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-            id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-            consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
-            finibus metus facilisis. Nullam eget lectus non urna rhoncus
-            accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-            euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
-            lobortis augue mi vel felis. Duis ultrices sapien at est convallis
-            congue.
+            SupprThyme is your go-to solution for simplifying the process of
+            deciding where to eat. Our app transforms the often-frustrating
+            experience of reaching a consensus on a dining destination into an
+            enjoyable and gamified culinary adventure.
           </p>
-
+          <br />
           <p>
-            Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-            Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
-            vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
-            sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
-            non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
-            amet nisi.
+            <span>How does it work?</span> It's simple! Each user creates a
+            personalized profile with their dining preferences, including price
+            range, cuisine choices, dietary restrictions, and more. Our
+            innovative app then aggregates these preferences and leverages our
+            extensive restaurant database and API to suggest local dining
+            options that meet your criteria.
+          </p>
+          <br />
+          <p>
+            But that's not all! With SupprThyme, decision-making becomes a fun
+            and interactive experience. Users can vote on the restaurant
+            suggestions, engaging in a collaborative process that eventually
+            leads to a unanimous choice.
+          </p>
+          <br />
+          <p>
+            Join us on this gastronomic journey and let SupprThyme take the
+            stress out of choosing where to eat. Say goodbye to indecision and
+            hello to delightful dining experiences with SupprThyme!
           </p>
         </div>
         <div className="grid-col grid-col_4">

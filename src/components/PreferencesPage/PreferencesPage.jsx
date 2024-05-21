@@ -1,5 +1,10 @@
 import React from "react";
+import UserPreferencesForm from "../PreferencesForm/PreferencesForm";
 
 export default function PreferencesPage(){
-    //todo
+    return (
+        <>
+            <UserPreferencesForm />
+        </>
+    )
 }

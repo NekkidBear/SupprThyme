@@ -58,9 +58,28 @@ function UserPreferencesForm() {
     fetchData();
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your form submission logic here
+    
+    //store the selections
+    const selectedPreferences = {
+      maxPriceRangeId: priceRanges.findIndex((range) => range === maxPriceRange) + 1,
+      meatPreferenceId: meatPreferences.findIndex((preference) => preference === meatPreference) + 1,
+      religiousRestrictionsId: religiousOptions.findIndex((option) => option === religiousRestrictions) + 1,
+      allergenIds: allergenOptions.filter((option) => allergens.includes(option)).map((allergen, index) => index + 1),
+      cuisineTypeIds: cuisineOptions.filter((option) => cuisineTypes.includes(option)).map((cuisine, index) => index + 1),
+      maxDistance,
+      openNow,
+      acceptsLargeParties,
+      isMiles,
+    };
+  
+    try {
+      await axios.post('/api/form_data', selectedPreferences);
+      console.log('Form data submitted successfully');
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+    }
   };
 
   return (

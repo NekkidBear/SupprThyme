@@ -91,8 +91,56 @@ router.get("/cuisine-options", (req, res) => {
 /**
  * POST route template
  */
-router.post("/", (req, res) => {
-  // POST route code here
+router.post('/', async (req, res) => {
+  try {
+    const {
+      maxPriceRangeId,
+      meatPreferenceId,
+      religiousRestrictionsId,
+      allergenIds,
+      cuisineTypeIds,
+      maxDistance,
+      openNow,
+      acceptsLargeParties,
+      isMiles,
+    } = req.body;
+
+    const userId = req.user.id; 
+
+    const query = `
+      INSERT INTO "user_preferences" (
+        "user_id",
+        "max_price_range",
+        "meat_preference",
+        "religious_restrictions",
+        "allergens",
+        "cuisine_types",
+        "max_distance",
+        "open_now",
+        "accepts_large_parties"
+      )
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+    `;
+
+    const values = [
+      userId,
+      maxPriceRangeId,
+      meatPreferenceId,
+      religiousRestrictionsId,
+      allergenIds,
+      cuisineTypeIds,
+      maxDistance,
+      openNow,
+      acceptsLargeParties,
+    ];
+
+    await pool.query(query, values);
+
+    res.sendStatus(201); // Created
+  } catch (error) {
+    console.error('Error inserting user preferences:', error);
+    res.sendStatus(500); // Internal Server Error
+  }
 });
 
 module.exports = router;

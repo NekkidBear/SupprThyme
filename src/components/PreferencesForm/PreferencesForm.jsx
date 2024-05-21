@@ -38,11 +38,11 @@ function UserPreferencesForm() {
           allergenOptionsResponse,
           cuisineOptionsResponse,
         ] = await Promise.all([
-          axios.get("/api/price-ranges"),
-          axios.get("/api/meat-preferences"),
-          axios.get("/api/religious-options"),
-          axios.get("/api/allergen-options"),
-          axios.get("/api/cuisine-options"),
+          axios.get("/api/form_data/price-ranges"),
+          axios.get("/api/form_data/meat-preferences"),
+          axios.get("/api/form_data/religious-options"),
+          axios.get("/api/form_data/allergen-options"),
+          axios.get("/api/form_data/cuisine-options"),
         ]);
 
         setPriceRanges(priceRangesResponse.data);

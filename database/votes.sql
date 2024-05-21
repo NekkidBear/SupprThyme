@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS "votes" CASCADE;
+
 CREATE TABLE votes (
     id SERIAL PRIMARY KEY,
     group_id INTEGER NOT NULL,

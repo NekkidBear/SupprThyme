@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "details";
+DROP TABLE IF EXISTS "details" CASCADE;
 
 CREATE TABLE "details" (
   id SERIAL PRIMARY KEY,
@@ -29,6 +29,7 @@ CREATE TABLE "details" (
   is_long_closed BOOLEAN,
   price_level VARCHAR(255),
   price VARCHAR(255),
+  neighborhood_info JSONB,
   "description" TEXT,
   web_url VARCHAR(255),
   write_review VARCHAR(255),

@@ -28,7 +28,7 @@ async function fetchAndWriteTypeaheadData(city, outputFile) {
     data: typeaheadEncodedParams,
   };
 
-  await delay(1000); // Add delay before making the request
+  await delay(3000); // Add delay before making the request
   try {
     const typeaheadResponse = await axios.request(typeaheadOptions);
     const jsonData = JSON.stringify(typeaheadResponse.data, null, 2);
@@ -72,7 +72,7 @@ async function fetchAndWriteSearchData(locationId, outputFile) {
     data: searchEncodedParams,
   };
 
-  await delay(1000); // Add delay before making the request
+  await delay(3000); // Add delay before making the request
   try {
     const searchResponse = await axios.request(searchOptions);
     const jsonData = JSON.stringify(searchResponse.data, null, 2);
@@ -97,7 +97,7 @@ async function processSearchResults(restaurants, outputFile) {
         details.push(detail);
         console.log('retrieved details for ', detail.results.name)
       }
-      await delay(1000); // Delay of 1 second between requests
+      await delay(3000); // Delay of 1 second between requests
     }
   } else {
     console.error('Search results data is not an array');
@@ -126,7 +126,7 @@ async function fetchRestaurantDetails(locationId) {
     data: detailEncodedParams,
   };
 
-  await delay(1000); // Add delay before making the request
+  await delay(3000); // Add delay before making the request
   try {
     const detailResponse = await axios.request(detailOptions);
     return detailResponse.data;

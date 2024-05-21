@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "religious_restrictions";
+DROP TABLE IF EXISTS "religious_restrictions" CASCADE;
 
 CREATE TABLE "religious_restrictions" (
     "id" SERIAL PRIMARY KEY,

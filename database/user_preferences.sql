@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS "user_preferences";
+DROP TABLE IF EXISTS "user_preferences" CASCADE;
 
 CREATE TABLE "user_preferences" (
     "id" SERIAL PRIMARY KEY,
-    "user_id" INTEGER REFERENCES "users"("id"),
+    "user_id" INTEGER REFERENCES "user"("id"),
     "max_price_range" INTEGER REFERENCES "price_ranges"("id"),
     "meat_preference" INTEGER REFERENCES "meat_preferences"("id"),
     "religious_restrictions" INTEGER REFERENCES "religious_restrictions"("id"),

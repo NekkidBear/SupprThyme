@@ -55,7 +55,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.4635233879089355",
+        "raw_ranking": "4.463553428649902",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "1",
@@ -67,7 +67,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$8 - $60",
@@ -283,7 +283,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.43115758895874",
+        "raw_ranking": "4.431178569793701",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "2",
@@ -425,13 +425,13 @@
         "dietary_restrictions": [],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2ZEmqgEKKo2siDI6DY_Oh70&cs=1533e8b1c80edbbd5f83a5de2d4f2dd47"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Q2pxQBJyhI5nu8i36Etgro&cs=1c77ebfce5c5e603c63e7fa5a3416c312"
         },
         "reserve_info": {
           "id": "512809",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2ZEmqgEKKo2siDI6DY_Oh70&cs=1533e8b1c80edbbd5f83a5de2d4f2dd47",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Q2pxQBJyhI5nu8i36Etgro&cs=1c77ebfce5c5e603c63e7fa5a3416c312",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -501,7 +501,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.415106296539307",
+        "raw_ranking": "4.415122985839844",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "3",
@@ -513,7 +513,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$20",
@@ -676,13 +676,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2fe76Swgo7a2G5urs8IbcKY&cs=1e47296d4fb8886876ddec5ac6cce5525"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2T_KOpyAj8gxkWrhwOa60ds&cs=1f5b046ecab6cb8e3a45165362ab1147a"
         },
         "reserve_info": {
           "id": "444474",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2fe76Swgo7a2G5urs8IbcKY&cs=1e47296d4fb8886876ddec5ac6cce5525",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2T_KOpyAj8gxkWrhwOa60ds&cs=1f5b046ecab6cb8e3a45165362ab1147a",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -752,7 +752,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.409351348876953",
+        "raw_ranking": "4.408345699310303",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "4",
@@ -764,7 +764,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -964,7 +964,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.369900703430176",
+        "raw_ranking": "4.369945526123047",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "5",
@@ -976,7 +976,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$1 - $20",
@@ -1145,13 +1145,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2crJekGxl37pW4OGdFmc8u0&cs=17b81caf881383922274a41a10c148f63"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WTBJrhbaVFaXNGUnc7DUN8&cs=1f88222cfb1e9d6a54f39996aa2ac9168"
         },
         "reserve_info": {
           "id": "444520",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2crJekGxl37pW4OGdFmc8u0&cs=17b81caf881383922274a41a10c148f63",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WTBJrhbaVFaXNGUnc7DUN8&cs=1f88222cfb1e9d6a54f39996aa2ac9168",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -1225,7 +1225,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.363412857055664",
+        "raw_ranking": "4.3633904457092285",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "6",
@@ -1237,7 +1237,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$40",
@@ -1456,7 +1456,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.350842475891113",
+        "raw_ranking": "4.350859642028809",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "7",
@@ -1468,7 +1468,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$20 - $100",
@@ -1669,7 +1669,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.338908672332764",
+        "raw_ranking": "4.338902950286865",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "8",
@@ -1681,7 +1681,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -1894,7 +1894,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.321479797363281",
+        "raw_ranking": "4.320577144622803",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "9",
@@ -1906,7 +1906,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$30 - $62",
@@ -2102,7 +2102,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.313179969787598",
+        "raw_ranking": "4.312351226806641",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "10",
@@ -2114,7 +2114,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$10 - $15",
@@ -2331,7 +2331,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.102499961853027",
+        "raw_ranking": "4.101807594299316",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "11",
@@ -2489,7 +2489,7 @@
         "name": "Downtowner Woodfire Grill",
         "latitude": "44.94288",
         "longitude": "-93.105064",
-        "num_reviews": "344",
+        "num_reviews": "345",
         "timezone": "America/Chicago",
         "location_string": "Saint Paul, Minnesota",
         "photo": {
@@ -2536,7 +2536,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.067368984222412",
+        "raw_ranking": "4.066681861877441",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "12",
@@ -2548,7 +2548,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closes in 26 min",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$30",
@@ -2697,13 +2697,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8478nMY3Vya4eIYTnV-Agz4TKgrA0kiipJbQAMfswAp8&cs=1eb0df7c7bd39173298bec935a30ca02a"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ84DyyQdykgkA3uFor1VoIOyJ02dbglRGG_5XfAhQJ1fU&cs=1ceda5de2a02076f27b6a4ddf09265252"
         },
         "reserve_info": {
           "id": "444565",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8478nMY3Vya4eIYTnV-Agz4TKgrA0kiipJbQAMfswAp8&cs=1eb0df7c7bd39173298bec935a30ca02a",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ84DyyQdykgkA3uFor1VoIOyJ02dbglRGG_5XfAhQJ1fU&cs=1ceda5de2a02076f27b6a4ddf09265252",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -2773,7 +2773,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.009906768798828",
+        "raw_ranking": "4.009195804595947",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "13",
@@ -2785,7 +2785,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -2943,13 +2943,13 @@
         ],
         "booking": {
           "provider": "Grubhub",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyLRE0VuYgXzCsM_roIgBupQNSAQfHv21txYQ2oZ3S3EE&cs=15b4f74b5bd124970664e5f68ef6adb6c"
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyUeyEFe0BdPLkm4io7RDsJCGwBX9iToUkc1utHZX4u7g&cs=154a3dce1bb63c309081c057549e4751e"
         },
         "reserve_info": {
           "id": "2011868",
           "provider": "Grubhub",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyLRE0VuYgXzCsM_roIgBupQNSAQfHv21txYQ2oZ3S3EE&cs=15b4f74b5bd124970664e5f68ef6adb6c",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyUeyEFe0BdPLkm4io7RDsJCGwBX9iToUkc1utHZX4u7g&cs=154a3dce1bb63c309081c057549e4751e",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -3019,7 +3019,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.986072063446045",
+        "raw_ranking": "3.985419511795044",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "14",
@@ -3172,13 +3172,13 @@
         ],
         "booking": {
           "provider": "Grubhub",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby6u-voNKbphO1jclvPm4hMLwB6Zq6bGH0NeSr27-QjAs&cs=137be3c0bea6a90209c8a62456ffe1721"
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbypIumt_lI0JxdLapwHZtNua_Jh9zzD48A4i3sW_9_Ttw&cs=16a9196391a601667e015399b5180eb06"
         },
         "reserve_info": {
           "id": "446267",
           "provider": "Grubhub",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby6u-voNKbphO1jclvPm4hMLwB6Zq6bGH0NeSr27-QjAs&cs=137be3c0bea6a90209c8a62456ffe1721",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbypIumt_lI0JxdLapwHZtNua_Jh9zzD48A4i3sW_9_Ttw&cs=16a9196391a601667e015399b5180eb06",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -3248,7 +3248,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.950688600540161",
+        "raw_ranking": "3.950078010559082",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "15",
@@ -3260,7 +3260,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -3474,7 +3474,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.9078242778778076",
+        "raw_ranking": "3.9072654247283936",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "16",
@@ -3644,13 +3644,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ891afT3_vUIXYH86iKFfV3DezIwWCLNmFNnD6uDXRsv0&cs=12c256678594ea652a55e7efb80667cc2"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8y8e1epUYvABF82Sve1gTsEBnL7eEVk1lXJZPoQyHYwI&cs=16b8c0dd1f2edf11b30a771f73b832681"
         },
         "reserve_info": {
           "id": "444513",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=295965976&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ891afT3_vUIXYH86iKFfV3DezIwWCLNmFNnD6uDXRsv0&cs=12c256678594ea652a55e7efb80667cc2",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174069&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8y8e1epUYvABF82Sve1gTsEBnL7eEVk1lXJZPoQyHYwI&cs=16b8c0dd1f2edf11b30a771f73b832681",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -3720,7 +3720,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.8774044513702393",
+        "raw_ranking": "3.8765504360198975",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "17",
@@ -3732,7 +3732,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closes in 26 min",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$5 - $11",
@@ -3945,7 +3945,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.8242931365966797",
+        "raw_ranking": "3.823624610900879",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "18",
@@ -3957,7 +3957,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$1",
@@ -4156,7 +4156,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.8018500804901123",
+        "raw_ranking": "3.801318645477295",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "19",
@@ -4358,7 +4358,7 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.saint_paul",
         "preferred_map_engine": "default",
-        "raw_ranking": "3.7635045051574707",
+        "raw_ranking": "3.7629594802856445",
         "ranking_geo": "Saint Paul",
         "ranking_geo_id": "43501",
         "ranking_position": "20",
@@ -4370,7 +4370,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed today",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -4537,20 +4537,20 @@
       "total_results": "861"
     },
     "restaurant_availability_options": {
-      "day": "18",
+      "day": "20",
       "month": "5",
       "year": "2024",
-      "hour": "19",
+      "hour": "23",
       "minute": "0",
       "people": "2",
-      "datestring": "05/18/2024",
+      "datestring": "05/20/2024",
       "is_default": true,
       "is_set": false,
       "racable": false,
       "time_options": {
         "selected_option": {
-          "value": "19:00:00",
-          "display": "7:00 PM",
+          "value": "23:00:00",
+          "display": "11:00 PM",
           "selected": true
         },
         "options": [
@@ -4747,7 +4747,7 @@
           {
             "value": "19:00:00",
             "display": "7:00 PM",
-            "selected": true
+            "selected": null
           },
           {
             "value": "19:30:00",
@@ -4787,7 +4787,7 @@
           {
             "value": "23:00:00",
             "display": "11:00 PM",
-            "selected": null
+            "selected": true
           },
           {
             "value": "23:30:00",
@@ -4907,12 +4907,12 @@
       }
     },
     "open_hours_options": {
-      "closed_count": "87",
+      "closed_count": "497",
       "is_set": false,
       "low_coverage_primary_message": "Open hours aren't available for all places.",
       "timezone": "America/Chicago",
       "unsure_count": "223",
-      "open_count": "551",
+      "open_count": "141",
       "low_coverage_secondary_message": "Show all restaurants",
       "current_value": "now"
     }

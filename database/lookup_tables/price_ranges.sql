@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "price_ranges";
+DROP TABLE IF EXISTS "price_ranges" CASCADE;
 
 CREATE TABLE "price_ranges" (
     "id" SERIAL PRIMARY KEY,

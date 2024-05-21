@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "cuisine_types";
+DROP TABLE IF EXISTS "cuisine_types" CASCADE;
 
 CREATE TABLE "cuisine_types" (
     "id" SERIAL PRIMARY KEY,

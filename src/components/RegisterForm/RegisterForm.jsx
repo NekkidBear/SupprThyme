@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function RegisterForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [home_metro, setHomeMetro] = useState("");
+
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
@@ -11,10 +14,12 @@ function RegisterForm() {
     event.preventDefault();
 
     dispatch({
-      type: 'REGISTER',
+      type: "REGISTER",
       payload: {
         username: username,
         password: password,
+        email: email,
+        home_metro: home_metro,
       },
     });
   }; // end registerUser
@@ -48,6 +53,30 @@ function RegisterForm() {
             value={password}
             required
             onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="email">
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={email}
+            required
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="home_metro">
+          Home Metro:
+          <input
+            type="text"
+            name="home_metro"
+            value={home_metro}
+            required
+            onChange={(event) => setHomeMetro(event.target.value)}
           />
         </label>
       </div>

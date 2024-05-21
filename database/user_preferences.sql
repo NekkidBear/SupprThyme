@@ -6,7 +6,7 @@ CREATE TABLE "user_preferences" (
     "max_price_range" INTEGER REFERENCES "price_ranges"("id"),
     "meat_preference" INTEGER REFERENCES "meat_preferences"("id"),
     "religious_restrictions" INTEGER REFERENCES "religious_restrictions"("id"),
-    "allergens" TEXT[],
+    "allergens" TEXT[] REFERENCES "allergens"("id"),
     "cuisine_types" TEXT[],
     "max_distance" NUMERIC,
     "open_now" BOOLEAN DEFAULT 'true',

@@ -3,8 +3,9 @@
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
 DROP TABLE IF EXISTS "users" CASCADE;
+DROP TABLE IF EXISTS "user" CASCADE;
 
-CREATE TABLE "users" (
+CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL,

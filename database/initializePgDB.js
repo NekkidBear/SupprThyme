@@ -13,7 +13,7 @@ const checkIfDatabaseExists = async (dbName) => {
 };
 const tablesArray = [
   // base tables
-  path.join(__dirname, "users.sql"),
+  path.join(__dirname, "user.sql"),
   path.join(__dirname, "groups.sql"),
   path.join(__dirname, "restaurants.sql"),
   path.join(__dirname, "details.sql"),

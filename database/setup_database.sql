@@ -17,14 +17,14 @@ SET search_path TO supperthyme;
 \ir lookup_tables/cuisine_types.sql
 
 -- Create main tables
-\ir users.sql
+\ir user.sql
 \ir groups.sql
 \ir user_preferences.sql
 \ir group_members.sql
 \ir votes.sql
 
 -- Insert initial data (if needed)
-INSERT INTO users ("username", "email", "password", "home_metro")
+INSERT INTO user ("username", "email", "password", "home_metro")
 VALUES
     ('Kermit', 'Kermit@example.com', 'hashedpassword1', 'Minneapolis, MN'),
     ('Miss Piggy', 'MissPiggy@example.com', 'hashedpassword2', 'Minneapolis, MN'),

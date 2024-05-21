@@ -30,14 +30,9 @@ const insertDetailsData = async () => {
         return;
       }
 
-      for (const [index, restaurant] of detailsData.entries()) {
-        if (!restaurant) {
-          console.error(`Restaurant data is undefined at index ${index} for ${city}`);
-          continue;
-        }
-
         console.log(`Inserting detail info for ${restaurant.name || 'undefined'}`);
         console.log(`Restaurant data:`, restaurant); // Log the entire restaurant object
+        console.log('address_obj type:', typeof restaurant.address_obj);
 
         const detailsValues = [
           restaurant.location_id || null,

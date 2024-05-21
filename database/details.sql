@@ -42,7 +42,7 @@ CREATE TABLE "details" (
   phone VARCHAR(255),
   website VARCHAR(255),
   email VARCHAR(255),
-  address_obj JSONB,
+  address_obj TEXT,
   "address" VARCHAR(255),
   "hours" JSONB,
   "local_name" VARCHAR(255),

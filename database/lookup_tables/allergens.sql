@@ -17,13 +17,13 @@ CREATE TABLE "allergens"(
 -- Sesame
 
 INSERT INTO "allergens" ("allergen")
-VALUES 
-('Milk'), 
-('Eggs'), 
-('Fish, like bass, flounder, and cod'), 
-('Crustacean shellfish, like crab, lobster, and shrimp'), 
-('Tree nuts, like almonds, walnuts, and pecans'), 
-('Peanuts'), 
-('Wheat'), 
-('Soybeans'), 
+VALUES
+('Milk'),
+('Eggs'),
+('Fish, like bass, flounder, and cod'),
+('Crustacean shellfish, like crab, lobster, and shrimp'),
+('Tree nuts, like almonds, walnuts, and pecans'),
+('Peanuts'),
+('Wheat'),
+('Soybeans'),
 ('Sesame');

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux';
 import { Button } from '@mui/material';
 
@@ -10,14 +10,22 @@ function UserHomePage(props) {
   // a default value of 'Functional Component'
   const store = useSelector((store) => store);
   const [heading, setHeading] = useState('Functional Component');
+  const user = useSelector((store)=>store.user)
 
-  setHeading('Find a restaurant')
+  useEffect(() => {
+    setHeading(`Find a restaurant near ${user.home_metro}`)
+  }, [])
+  
 
   return (
     <div>
       <h2>{heading}</h2>
-      <p>It's time to play the Music!</p>
+      <div className='map-placeholder'>
+        <h3>Google Maps integration coming soon!</h3>
+        <p>We are working on integrating a Google Maps component to enhance your experience.</p>
+      </div>
     </div>
+    
   );
 }
 

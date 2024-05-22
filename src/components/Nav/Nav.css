@@ -19,22 +19,7 @@
   color: #f2f2f2;
   padding-left: 10px;
   margin: 0;
-  animation: toggleTitle 1000ms infinite; /* Adjust the duration and iteration count as needed */
-
 }
-
-@keyframes toggleTitle {
-  0% {
-    content: "Are you hungry?";
-  }
-  50% {
-    content: "It's SupprThyme!";
-  }
-  100% {
-    content: "Are you hungry?";
-  }
-}
-
 .navLink {
   display: inline-block;
   color: #f2f2f2;

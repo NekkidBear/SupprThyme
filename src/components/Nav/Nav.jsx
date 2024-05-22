@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import { useSpring, animated } from 'react-spring';
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
+  //define custom titles
+  const titles = ['Are you hungry?', "It's SupprThyme!"];
+  const[spring, api] = useSpring(() =>({ title: titles[0]}));
+
+  useEffect(() =>{
+    const interval = setInterval(()=>{
+      api.start({title: spring.title === titles[0] ? titles[1]: titles[0]});
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Are you hungry?</h2>
+        <animated.h2 className="nav-title">{spring.title}</animated.h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}

@@ -1,0 +1,12 @@
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

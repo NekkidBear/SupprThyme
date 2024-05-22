@@ -29,7 +29,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/test', testingRouter); //add the /test endpoint
 app.use('/api/form_data', formRouter);
-app.use('/api/user_preferences')
+app.use('/api/user_preferences', userPrefsRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {

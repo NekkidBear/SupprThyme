@@ -13,4 +13,4 @@ VALUES
     ('Indian'),
     ('Chinese'),
     ('American'),
-    ('Japanese');d
+    ('Japanese');

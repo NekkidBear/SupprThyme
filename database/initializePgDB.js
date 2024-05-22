@@ -19,12 +19,13 @@ const tablesArray = [
   path.join(__dirname, "details.sql"),
   path.join(__dirname, "group_members.sql"),
   path.join(__dirname, "votes.sql"),
+  path.join(__dirname, 'user_allergens.sql'),
   // lookup tables
   path.join(__dirname, "lookup_tables", "cuisine_types.sql"),
   path.join(__dirname, "lookup_tables", "meat_preferences.sql"),
   path.join(__dirname, "lookup_tables", "price_ranges.sql"),
   path.join(__dirname, "lookup_tables", "religious_restrictions.sql"),
-  path.join(__dirname, "lookup_tables", "allergens.sql"),
+  path.join(__dirname, "lookup_tables", "allergens_list.sql"),
   //create user preferences after lookups are complete
   path.join(__dirname, "user_preferences.sql"),
 ];

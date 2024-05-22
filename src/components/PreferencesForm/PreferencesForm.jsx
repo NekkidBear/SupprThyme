@@ -8,9 +8,9 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  FormGroup
 } from "@mui/material";
 import axios from "axios";
+import AllergenSelect from "./AllergenSelect";
 
 function UserPreferencesForm() {
   const [maxPriceRange, setMaxPriceRange] = useState("");
@@ -19,14 +19,13 @@ function UserPreferencesForm() {
   const [meatPreferences, setMeatPreferences] = useState([]);
   const [religiousRestrictions, setReligiousRestrictions] = useState("");
   const [religiousOptions, setReligiousOptions] = useState([]);
-  const [allergens, setAllergens] = useState([]);
-  const [allergenOptions, setAllergenOptions] = useState([]);
   const [cuisineTypes, setCuisineTypes] = useState([]);
   const [cuisineOptions, setCuisineOptions] = useState([]);
   const [maxDistance, setMaxDistance] = useState("");
   const [isMiles, setIsMiles] = useState(true);
   const [openNow, setOpenNow] = useState(false);
   const [acceptsLargeParties, setAcceptsLargeParties] = useState(false);
+  const [selectedAllergens, setSelectedAllergens] = useState([]);
 
   useEffect(() => {
     // Fetch data for dropdowns and multi-select options from the API
@@ -42,8 +41,8 @@ function UserPreferencesForm() {
           axios.get("/api/form_data/price-ranges"),
           axios.get("/api/form_data/meat-preferences"),
           axios.get("/api/form_data/religious-options"),
-          axios.get("/api/form_data/allergen-options"),
           axios.get("/api/form_data/cuisine-options"),
+          axios.get("/api/form_data/allergen-options"),
         ]);
 
         setPriceRanges(priceRangesResponse.data);
@@ -62,24 +61,32 @@ function UserPreferencesForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //store the selections
     const selectedPreferences = {
-      maxPriceRangeId: priceRanges.findIndex((range) => range === maxPriceRange) + 1,
-      meatPreferenceId: meatPreferences.findIndex((preference) => preference === meatPreference) + 1,
-      religiousRestrictionsId: religiousOptions.findIndex((option) => option === religiousRestrictions) + 1,
-      allergenIds: allergenOptions.filter((option) => allergens.includes(option)).map((allergen, index) => index + 1),
-      cuisineTypeIds: cuisineOptions.filter((option) => cuisineTypes.includes(option)).map((cuisine, index) => index + 1),
+      maxPriceRangeId:
+        priceRanges.findIndex((range) => range === maxPriceRange) + 1,
+      meatPreferenceId:
+        meatPreferences.findIndex(
+          (preference) => preference === meatPreference
+        ) + 1,
+      religiousRestrictionsId:
+        religiousOptions.findIndex(
+          (option) => option === religiousRestrictions
+        ) + 1,
+      selectedAllergens,
+      cuisineTypeIds: cuisineOptions
+        .filter((option) => cuisineTypes.includes(option))
+        .map((cuisine, index) => index + 1),
       maxDistance,
       openNow,
       acceptsLargeParties,
       isMiles,
     };
-  
+
     try {
-      await axios.post('/api/form_data', selectedPreferences);
-      console.log('Form data submitted successfully');
+      await axios.post("/api/form_data", selectedPreferences);
+      console.log("Form data submitted successfully");
     } catch (error) {
-      console.error('Error submitting form data:', error);
+      console.error("Error submitting form data:", error);
     }
   };
 
@@ -129,16 +136,10 @@ function UserPreferencesForm() {
           ))}
         </Select>
       </FormControl>
-      <FormGroup>
-        <InputLabel id="allergens-label">Allergens</InputLabel>
-        {allergenOptions.map((allergen) => (
-          <FormControlLabel
-            key={allergen}
-            control={<Checkbox />}
-            label={allergen}
-          />
-        ))}
-      </FormGroup>
+      <AllergenSelect
+        selectedAllergens={selectedAllergens}
+        setSelectedAllergens={setSelectedAllergens}
+      />
       <FormGroup>
         <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
         {cuisineOptions.map((cuisine) => (

@@ -31,6 +31,18 @@ const UserPreferencesForm = () => {
   const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([]);
   const [religiousRestrictionOptions, setReligiousRestrictionsOptions] =
     useState([]);
+  
+  //get User ID
+  const getUserID= async() =>{
+    try {
+      const response = await axios.get("/api/user");
+      const user_id = response.data.id;
+      return user_id;
+    }
+    catch (error){
+      console.error("error fetching logged in user's ID", error)
+    };
+  };
 
   useEffect(() => {
     const fetchOptions = async () => {
@@ -61,10 +73,12 @@ const UserPreferencesForm = () => {
 
     fetchOptions();
   }, []);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const user_id = await getUserID();
+
     const preferencesData = {
+      user_id,
       maxPriceRange,
       meatPreference,
       religiousRestrictions,

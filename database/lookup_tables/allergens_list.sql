@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "allergens";
+DROP TABLE IF EXISTS "allergens" Cascade;
 
 CREATE TABLE "allergens"(
     "id" SERIAL PRIMARY KEY,

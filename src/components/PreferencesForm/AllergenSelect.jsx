@@ -10,15 +10,15 @@ import {
 } from "@mui/material";
 import axios from "axios";
 
-const AllergenSelect = ({ selectedAllergens, setSelectedAllergens }) => {
-  const [allergenOptions, setAllergenOptions] = useState([]);
+const AllergenSelect = ({ selectedAllergens, setSelectedAllergens, allergenOptions }) => {
+  const [fetchedAllergenOptions, setFetchedAllergenOptions] = useState([]);
 
   useEffect(() => {
     const fetchAllergenOptions = async () => {
       try {
         const response = await axios.get("/api/form_data/allergen-options");
-        setAllergenOptions(response.data);
-        console.allergenOptions
+        setFetchedAllergenOptions(response.data);
+        console.log(allergenOptions)
       } catch (error) {
         console.error("Error fetching allergen options:", error);
       }
@@ -45,14 +45,14 @@ const AllergenSelect = ({ selectedAllergens, setSelectedAllergens }) => {
         input={<OutlinedInput label="Allergens" />}
         renderValue={(selected) => 
           selected
-            .map((allergenId) => allergenOptions.find((a) => a.id === allergenId)?.name)
+            .map((allergenId) => fetchedAllergenOptions.find((a) => a.id === allergenId)?.allergen)
             .join(", ")
         }
       >
-        {allergenOptions.map((allergen) => (
+        {fetchedAllergenOptions.map((allergen) => (
           <MenuItem key={allergen.id} value={allergen.id}>
             <Checkbox checked={selectedAllergens.includes(allergen.id)} />
-            <ListItemText primary={allergen.name} />
+            <ListItemText primary={allergen.allergen} />
           </MenuItem>
         ))}
       </Select>

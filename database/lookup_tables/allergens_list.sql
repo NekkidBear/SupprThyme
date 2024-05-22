@@ -26,4 +26,5 @@ VALUES
 ('Peanuts'),
 ('Wheat'),
 ('Soybeans'),
-('Sesame');
+('Sesame'),
+('None');

@@ -46,20 +46,20 @@ function UserPage() {
         Update Account Information
       </Button>
       <h3>Preferences Summary</h3>
-      {userPrefSummary &&(
+      {userPrefSummary && Object.keys(userPrefSummary).length >0 &&(
         <div>
         {console.log(userPrefSummary)}
-          <p>Max Price Range: {userPrefSummary.max_price_range}</p>
-          <p>Meat Preference: {userPrefSummary.meat_preference}</p>
-          <p>Religious Restrictions: {userPrefSummary.religious_restrictions}</p>
-          <p>Cuisine Types: {userPrefSummary.cuisine_types.join(', ')}</p>
-          <p>Max Distance: {userPrefSummary.max_distance}</p>
-          <p>Open Now: {userPrefSummary.open_now ? 'Yes' : 'No'}</p>
-          <p>Accepts Large Parties: {userPrefSummary.accepts_large_parties ? 'Yes' : 'No'}</p>
+          <p>Max Price Range: {userPrefSummary?.max_price_range}</p>
+          <p>Meat Preference: {userPrefSummary?.meat_preference}</p>
+          <p>Religious Restrictions: {userPrefSummary?.religious_restrictions}</p>
+          <p>Cuisine Types: {userPrefSummary?.cuisine_types?.join(', ')}</p>
+          <p>Max Distance: {userPrefSummary?.max_distance}</p>
+          <p>Open Now: {userPrefSummary?.open_now ? 'Yes' : 'No'}</p>
+          <p>Accepts Large Parties: {userPrefSummary?.accepts_large_parties ? 'Yes' : 'No'}</p>
           <p>Allergens:</p>
           <ul>
-            {userPrefSummary.allergens.map((allergen) => (
-              <li key={allergen.id}>{allergen.allergen}</li>
+            {userPrefSummary?.allergens.map((allergen) => (
+              <li key={allergen?.id}>{allergen?.allergen}</li>
             ))}
           </ul>
         </div>

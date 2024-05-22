@@ -4,14 +4,14 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Checkbox,
-  ListItemText,
-  OutlinedInput,
   Button,
   FormGroup,
   FormControlLabel,
   Switch,
   TextField,
+  OutlinedInput,
+  Checkbox,
+  ListItemText,
 } from "@mui/material";
 import axios from "axios";
 import AllergenSelect from "./AllergenSelect"; // Import the AllergenSelect component
@@ -33,57 +33,33 @@ const UserPreferencesForm = () => {
     useState([]);
 
   useEffect(() => {
-    const fetchPriceRangeOptions = async () => {
+    const fetchOptions = async () => {
       try {
-        const response = await axios.get("/api/form_data/price-ranges");
-        setPriceRangeOptions(response.data);
+        const [
+          priceRanges,
+          meatPreferences,
+          religiousOptions,
+          allergenOpts,
+          cuisineOpts,
+        ] = await Promise.all([
+          axios.get("/api/form_data/price-ranges"),
+          axios.get("/api/form_data/meat-preferences"),
+          axios.get("/api/form_data/religious-options"),
+          axios.get("/api/form_data/allergen-options"),
+          axios.get("/api/form_data/cuisine-options"),
+        ]);
+
+        setPriceRangeOptions(priceRanges.data);
+        setMeatPreferenceOptions(meatPreferences.data);
+        setReligiousRestrictionsOptions(religiousOptions.data);
+        setAllergenOptions(allergenOpts.data);
+        setCuisineOptions(cuisineOpts.data);
       } catch (error) {
-        console.error("Error fetching price range options:", error);
+        console.error("Error fetching form options:", error);
       }
     };
 
-    const fetchMeatPreferenceOptions = async () => {
-      try {
-        const response = await axios.get("/api/form_data/meat-preferences");
-        setMeatPreferenceOptions(response.data);
-      } catch (error) {
-        console.error("Error fetching meat preference options:", error);
-      }
-    };
-
-    const fetchReligiousRestrictionsOptions = async () => {
-      try {
-        const response = await axios.get("/api/form_data/religious-options");
-        setReligiousRestrictionsOptions(response.data);
-      } catch (error) {
-        console.error("Error fetching religious restrictions options:", error);
-      }
-    };
-
-    const fetchAllergenOptions = async () => {
-      try {
-        const response = await axios.get("/api/form_data/allergen-options");
-        setAllergenOptions(response.data);
-      } catch (error) {
-        console.error("Error fetching allergen options:", error);
-      }
-    };
-
-    const fetchCuisineOptions = async () => {
-      try {
-        const response = await axios.get("/api/form_data/cuisine-options");
-        setCuisineOptions(response.data);
-      } catch (error) {
-        console.error("Error fetching allergen options:", error);
-      }
-    };
-
-    fetchPriceRangeOptions();
-    fetchMeatPreferenceOptions();
-    fetchReligiousRestrictionsOptions();
-    fetchAllergenOptions();
-    fetchCuisineOptions();
-    fetchCuisineOptions();
+    fetchOptions();
   }, []);
 
   const handleSubmit = async (event) => {
@@ -117,8 +93,8 @@ const UserPreferencesForm = () => {
           onChange={(e) => setMaxPriceRange(e.target.value)}
         >
           {priceRangeOptions.map((option) => (
-            <MenuItem key={option.id} value={option.range}>
-              {option.label}
+            <MenuItem key={option.id} value={option.id}>
+              {option.range}
             </MenuItem>
           ))}
         </Select>
@@ -133,7 +109,7 @@ const UserPreferencesForm = () => {
         >
           {meatPreferenceOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
-              {option.label}
+              {option.preference}
             </MenuItem>
           ))}
         </Select>
@@ -150,7 +126,7 @@ const UserPreferencesForm = () => {
         >
           {religiousRestrictionOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
-              {option.label}
+              {option.restriction}
             </MenuItem>
           ))}
         </Select>
@@ -159,15 +135,36 @@ const UserPreferencesForm = () => {
       <AllergenSelect
         selectedAllergens={selectedAllergens}
         setSelectedAllergens={setSelectedAllergens}
+        allergenOptions={allergenOptions} // Pass options to AllergenSelect
       />
 
-      <TextField
-        fullWidth
-        margin="normal"
-        label="Cuisine Types"
-        value={cuisineTypes}
-        onChange={(e) => setCuisineTypes(e.target.value.split(","))}
-      />
+      <FormControl fullWidth margin="normal">
+        <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
+        <Select
+          labelId="cuisine-types-label"
+          multiple
+          value={cuisineTypes}
+          onChange={(e) => setCuisineTypes(e.target.value)}
+          input={<OutlinedInput label="Cuisine Types" />}
+          renderValue={(selected) =>
+            selected
+              .map((id) => {
+                const selectedCuisine = cuisineOptions.find(
+                  (option) => option.id === id
+                );
+                return selectedCuisine ? selectedCuisine.type : "";
+              })
+              .join(", ")
+          }
+        >
+          {cuisineOptions.map((option) => (
+            <MenuItem key={option.id} value={option.id}>
+              <Checkbox checked={cuisineTypes.includes(option.type)} />
+              <ListItemText primary={option.type} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
       <TextField
         fullWidth

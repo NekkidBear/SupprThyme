@@ -18,6 +18,7 @@ const AllergenSelect = ({ selectedAllergens, setSelectedAllergens }) => {
       try {
         const response = await axios.get("/api/form_data/allergen-options");
         setAllergenOptions(response.data);
+        console.allergenOptions
       } catch (error) {
         console.error("Error fetching allergen options:", error);
       }

@@ -34,7 +34,7 @@ const AllergenSelect = ({ selectedAllergens, setSelectedAllergens }) => {
   };
 
   return (
-    <FormControl>
+    <FormControl fullWidth margin="normal">
       <InputLabel id="allergen-select-label">Allergens</InputLabel>
       <Select
         labelId="allergen-select-label"
@@ -42,7 +42,11 @@ const AllergenSelect = ({ selectedAllergens, setSelectedAllergens }) => {
         value={selectedAllergens}
         onChange={handleAllergenChange}
         input={<OutlinedInput label="Allergens" />}
-        renderValue={(selected) => selected.join(", ")}
+        renderValue={(selected) => 
+          selected
+            .map((allergenId) => allergenOptions.find((a) => a.id === allergenId)?.name)
+            .join(", ")
+        }
       >
         {allergenOptions.map((allergen) => (
           <MenuItem key={allergen.id} value={allergen.id}>

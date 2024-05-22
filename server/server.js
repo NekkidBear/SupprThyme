@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router'); // import the user router
 const testingRouter = require('./routes/testing.router'); // import the testing router
 const formRouter = require('./routes/preferences_form.router'); // import the form router
+const userPrefsRouter = require('./routes/userPreferences.router'); //import the user preferences router
 
 // Express Middleware
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/test', testingRouter); //add the /test endpoint
 app.use('/api/form_data', formRouter);
+app.use('/api/user_preferences')
 
 // Listen Server & Port
 app.listen(PORT, () => {

@@ -25,6 +25,65 @@ const UserPreferencesForm = () => {
   const [maxDistance, setMaxDistance] = useState("");
   const [openNow, setOpenNow] = useState(true);
   const [acceptsLargeParties, setAcceptsLargeParties] = useState(true);
+  const [allergenOptions, setAllergenOptions] = useState([]);
+  const [cuisineOptions, setCuisineOptions] = useState([]);
+  const [priceRangeOptions, setPriceRangeOptions]= useState([]);
+  const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([])
+  const [religiousRestrictionOptions, setReligiousRestrictionsOptions] = useState([])
+
+  useEffect(() => {
+    const fetchPriceRangeOptions = async () => {
+      try {
+        const response = await axios.get("/api/form_data/price-ranges");
+        setPriceRangeOptions(response.data);
+      } catch (error) {
+        console.error("Error fetching price range options:", error);
+      }
+    };
+
+    const fetchMeatPreferenceOptions = async () => {
+      try {
+        const response = await axios.get("/api/form_data/meat-preferences");
+        setMeatPreferenceOptions(response.data);
+      } catch (error) {
+        console.error("Error fetching meat preference options:", error);
+      }
+    };
+
+    const fetchReligiousRestrictionsOptions = async () => {
+      try {
+        const response = await axios.get("/api/form_data/religious-options");
+        setReligiousRestrictionsOptions(response.data);
+      } catch (error) {
+        console.error("Error fetching religious restrictions options:", error);
+      }
+    };
+
+    const fetchAllergenOptions = async () => {
+      try {
+        const response = await axios.get("/api/form_data/allergen-options");
+        setAllergenOptions(response.data);
+      } catch (error) {
+        console.error("Error fetching allergen options:", error);
+      }
+    };
+
+    const fetchCuisineOptions= async () =>{
+      try {
+        const response = await axios.get("/api/form_data/cuisine-options");
+        setCuisineOptions(response.data);
+      } catch (error) {
+        console.error("Error fetching allergen options:", error);
+      }
+    }
+
+    fetchPriceRangeOptions();
+    fetchMeatPreferenceOptions();
+    fetchReligiousRestrictionsOptions();
+    fetchAllergenOptions();
+    fetchCuisineOptions();
+    fetchCuisineOptions();
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -56,7 +115,11 @@ const UserPreferencesForm = () => {
           value={maxPriceRange}
           onChange={(e) => setMaxPriceRange(e.target.value)}
         >
-          {/* Add your menu items here */}
+          {priceRangeOptions.map((option) => (
+            <MenuItem key = {option.id} value={option.range}>
+              {option.label}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
 

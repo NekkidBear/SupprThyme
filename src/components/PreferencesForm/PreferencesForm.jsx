@@ -8,6 +8,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  FormGroup
 } from "@mui/material";
 import axios from "axios";
 
@@ -60,7 +61,7 @@ function UserPreferencesForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     //store the selections
     const selectedPreferences = {
       maxPriceRangeId: priceRanges.findIndex((range) => range === maxPriceRange) + 1,

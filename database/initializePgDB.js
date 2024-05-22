@@ -24,7 +24,7 @@ const tablesArray = [
   path.join(__dirname, "lookup_tables", "meat_preferences.sql"),
   path.join(__dirname, "lookup_tables", "price_ranges.sql"),
   path.join(__dirname, "lookup_tables", "religious_restrictions.sql"),
-  path.join(__dirname, "lookup_tables", "allergens.sql")
+  path.join(__dirname, "lookup_tables", "allergens.sql"),
   //create user preferences after lookups are complete
   path.join(__dirname, "user_preferences.sql"),
 ];

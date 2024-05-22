@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS "allergens";
 
 CREATE TABLE "allergens"(
     "id" SERIAL PRIMARY KEY,
-    "allergen" VARCHAR(200),
+    "allergen" VARCHAR(200)
 )
 
 -- per the USA's FDA, these are the 9 major food allergens:
@@ -16,7 +16,7 @@ CREATE TABLE "allergens"(
 -- Soybeans
 -- Sesame
 
-INSERT INTO "allergens" (allergen)
+INSERT INTO "allergens" ("allergen")
 VALUES
 ('Milk'),
 ('Eggs'),

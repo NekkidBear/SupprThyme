@@ -2,13 +2,33 @@ const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
 
+router.get("/", async(req, res)=>{
+  const sqlText = `
+  SELECT * 
+  FROM "user_preferences", "user_allergens"
+  JOIN user_allergens on user_ID
+  `
+})
+
 router.post("/", async (req, res) => {
   const client = await pool.connect();
-
+  console.log(req.body);
   try {
     await client.query("BEGIN");
 
     const {
+      user_id = null,
+      max_price_range = null,
+      meat_preference = null,
+      religious_restrictions = null,
+      allergens = [],
+      cuisine_types = [],
+      max_distance = 0,
+      open_now = true,
+      accepts_large_parties =true,
+    } = req.body;
+
+    console.log(
       user_id,
       max_price_range,
       meat_preference,
@@ -17,8 +37,8 @@ router.post("/", async (req, res) => {
       cuisine_types,
       max_distance,
       open_now,
-      acceptsLargeParties,
-    } = req.body;
+      accepts_large_parties
+    );
 
     const userPreferencesSqlText = `
       INSERT INTO "user_preferences" (
@@ -42,7 +62,7 @@ router.post("/", async (req, res) => {
       cuisine_types,
       max_distance,
       open_now,
-      acceptsLargeParties,
+      accepts_large_parties,
     ];
 
     await client.query(userPreferencesSqlText, userPreferencesValues);

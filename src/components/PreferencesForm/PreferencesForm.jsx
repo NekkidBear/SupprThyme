@@ -18,13 +18,13 @@ import AllergenSelect from "./AllergenSelect"; // Import the AllergenSelect comp
 
 const UserPreferencesForm = () => {
   const [selectedAllergens, setSelectedAllergens] = useState([]);
-  const [maxPriceRange, setMaxPriceRange] = useState("");
-  const [meatPreference, setMeatPreference] = useState("");
-  const [religiousRestrictions, setReligiousRestrictions] = useState("");
-  const [cuisineTypes, setCuisineTypes] = useState([]);
-  const [maxDistance, setMaxDistance] = useState("");
-  const [openNow, setOpenNow] = useState(true);
-  const [acceptsLargeParties, setAcceptsLargeParties] = useState(true);
+  const [max_price_range, setMaxPriceRange] = useState("");
+  const [meat_preference, setMeatPreference] = useState("");
+  const [religious_restrictions, setReligiousRestrictions] = useState("");
+  const [cuisine_types, setCuisineTypes] = useState([]);
+  const [max_distance, setMaxDistance] = useState("");
+  const [open_now, setOpenNow] = useState(true);
+  const [accepts_large_parties, setAcceptsLargeParties] = useState(true);
   const [allergenOptions, setAllergenOptions] = useState([]);
   const [cuisineOptions, setCuisineOptions] = useState([]);
   const [priceRangeOptions, setPriceRangeOptions] = useState([]);
@@ -79,16 +79,16 @@ const UserPreferencesForm = () => {
 
     const preferencesData = {
       user_id,
-      maxPriceRange,
-      meatPreference,
-      religiousRestrictions,
+      max_price_range,
+      meat_preference,
+      religious_restrictions,
       allergens: selectedAllergens,
-      cuisineTypes,
-      maxDistance,
-      openNow,
-      acceptsLargeParties,
+      cuisine_types,
+      max_distance,
+      open_now,
+      accepts_large_parties,
     };
-
+    console.log(preferencesData)
     try {
       await axios.post("/api/user_preferences", preferencesData);
       alert("Preferences saved successfully");
@@ -103,7 +103,7 @@ const UserPreferencesForm = () => {
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
         <Select
           labelId="max-price-range-label"
-          value={maxPriceRange}
+          value={max_price_range}
           onChange={(e) => setMaxPriceRange(e.target.value)}
         >
           {priceRangeOptions.map((option) => (
@@ -118,7 +118,7 @@ const UserPreferencesForm = () => {
         <InputLabel id="meat-preference-label">Meat Preference</InputLabel>
         <Select
           labelId="meat-preference-label"
-          value={meatPreference}
+          value={meat_preference}
           onChange={(e) => setMeatPreference(e.target.value)}
         >
           {meatPreferenceOptions.map((option) => (
@@ -135,7 +135,7 @@ const UserPreferencesForm = () => {
         </InputLabel>
         <Select
           labelId="religious-restrictions-label"
-          value={religiousRestrictions}
+          value={religious_restrictions}
           onChange={(e) => setReligiousRestrictions(e.target.value)}
         >
           {religiousRestrictionOptions.map((option) => (
@@ -157,7 +157,7 @@ const UserPreferencesForm = () => {
         <Select
           labelId="cuisine-types-label"
           multiple
-          value={cuisineTypes}
+          value={cuisine_types}
           onChange={(e) => setCuisineTypes(e.target.value)}
           input={<OutlinedInput label="Cuisine Types" />}
           renderValue={(selected) =>
@@ -173,7 +173,7 @@ const UserPreferencesForm = () => {
         >
           {cuisineOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
-              <Checkbox checked={cuisineTypes.includes(option.type)} />
+              <Checkbox checked={cuisine_types.includes(option.type)} />
               <ListItemText primary={option.type} />
             </MenuItem>
           ))}
@@ -185,7 +185,7 @@ const UserPreferencesForm = () => {
         margin="normal"
         label="Max Distance"
         type="number"
-        value={maxDistance}
+        value={max_distance}
         onChange={(e) => setMaxDistance(e.target.value)}
       />
 
@@ -193,7 +193,7 @@ const UserPreferencesForm = () => {
         <FormControlLabel
           control={
             <Switch
-              checked={openNow}
+              checked={open_now}
               onChange={(e) => setOpenNow(e.target.checked)}
             />
           }
@@ -202,7 +202,7 @@ const UserPreferencesForm = () => {
         <FormControlLabel
           control={
             <Switch
-              checked={acceptsLargeParties}
+              checked={accepts_large_parties}
               onChange={(e) => setAcceptsLargeParties(e.target.checked)}
             />
           }

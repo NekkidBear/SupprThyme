@@ -14,7 +14,7 @@ import {
   TextField,
 } from "@mui/material";
 import axios from "axios";
-import AllergenSelect from './AllergenSelect';  // Import the AllergenSelect component
+import AllergenSelect from "./AllergenSelect"; // Import the AllergenSelect component
 
 const UserPreferencesForm = () => {
   const [selectedAllergens, setSelectedAllergens] = useState([]);
@@ -27,9 +27,10 @@ const UserPreferencesForm = () => {
   const [acceptsLargeParties, setAcceptsLargeParties] = useState(true);
   const [allergenOptions, setAllergenOptions] = useState([]);
   const [cuisineOptions, setCuisineOptions] = useState([]);
-  const [priceRangeOptions, setPriceRangeOptions]= useState([]);
-  const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([])
-  const [religiousRestrictionOptions, setReligiousRestrictionsOptions] = useState([])
+  const [priceRangeOptions, setPriceRangeOptions] = useState([]);
+  const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([]);
+  const [religiousRestrictionOptions, setReligiousRestrictionsOptions] =
+    useState([]);
 
   useEffect(() => {
     const fetchPriceRangeOptions = async () => {
@@ -68,14 +69,14 @@ const UserPreferencesForm = () => {
       }
     };
 
-    const fetchCuisineOptions= async () =>{
+    const fetchCuisineOptions = async () => {
       try {
         const response = await axios.get("/api/form_data/cuisine-options");
         setCuisineOptions(response.data);
       } catch (error) {
         console.error("Error fetching allergen options:", error);
       }
-    }
+    };
 
     fetchPriceRangeOptions();
     fetchMeatPreferenceOptions();
@@ -116,7 +117,7 @@ const UserPreferencesForm = () => {
           onChange={(e) => setMaxPriceRange(e.target.value)}
         >
           {priceRangeOptions.map((option) => (
-            <MenuItem key = {option.id} value={option.range}>
+            <MenuItem key={option.id} value={option.range}>
               {option.label}
             </MenuItem>
           ))}
@@ -130,18 +131,28 @@ const UserPreferencesForm = () => {
           value={meatPreference}
           onChange={(e) => setMeatPreference(e.target.value)}
         >
-          {/* Add your menu items here */}
+          {meatPreferenceOptions.map((option) => (
+            <MenuItem key={option.id} value={option.id}>
+              {option.label}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
 
       <FormControl fullWidth margin="normal">
-        <InputLabel id="religious-restrictions-label">Religious Restrictions</InputLabel>
+        <InputLabel id="religious-restrictions-label">
+          Religious Restrictions
+        </InputLabel>
         <Select
           labelId="religious-restrictions-label"
           value={religiousRestrictions}
           onChange={(e) => setReligiousRestrictions(e.target.value)}
         >
-          {/* Add your menu items here */}
+          {religiousRestrictionOptions.map((option) => (
+            <MenuItem key={option.id} value={option.id}>
+              {option.label}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
 
@@ -169,11 +180,21 @@ const UserPreferencesForm = () => {
 
       <FormGroup>
         <FormControlLabel
-          control={<Switch checked={openNow} onChange={(e) => setOpenNow(e.target.checked)} />}
+          control={
+            <Switch
+              checked={openNow}
+              onChange={(e) => setOpenNow(e.target.checked)}
+            />
+          }
           label="Open Now"
         />
         <FormControlLabel
-          control={<Switch checked={acceptsLargeParties} onChange={(e) => setAcceptsLargeParties(e.target.checked)} />}
+          control={
+            <Switch
+              checked={acceptsLargeParties}
+              onChange={(e) => setAcceptsLargeParties(e.target.checked)}
+            />
+          }
           label="Accepts Large Parties"
         />
       </FormGroup>

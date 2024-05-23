@@ -7,15 +7,16 @@ const router = express.Router();
  */
 router.get("/", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
-
+  const userHomeMetro = req.query.userHomeMetro
   try {
     const query = `
         SELECT id, name, ranking_position, price_level, location_string
         FROM restaurants
+        WHERE location_string LIKE $1
         ORDER BY ranking_position ASC
-        LIMIT $1;
+        LIMIT $2;
       `;
-    const result = await pool.query(query, [limit]);
+    const result = await pool.query(query, [`%${userHomeMetro}%`,limit]);
     res.json(result.rows);
   } catch (error) {
     console.error("Error fetching top restaurants:", error);
@@ -25,18 +26,14 @@ router.get("/", async (req, res) => {
 
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-
-  const buildWhereClause=(preferences) => {
+  const buildWhereClause = (preferences) => {
     const conditions = [];
-  
     if (preferences.cuisine) {
-      conditions.push(`cuisine @> '{"${preferences.cuisine.join('", "')}"}''`);
+      conditions.push(`cuisine @> '{"${preferences.cuisine.join('", "')}"}'`);
     }
-  
     if (preferences.dietaryRestrictions) {
-      conditions.push(`dietary_restrictions @> '{"${preferences.dietaryRestrictions.join('", "')}"}''`);
+      conditions.push(`dietary_restrictions @> '{"${preferences.dietaryRestrictions.join('", "')}"}'`);
     }
-  
     if (preferences.priceRange) {
       const [minPrice, maxPrice] = preferences.priceRange;
       conditions.push(`price_level >= ${minPrice} AND price_level <= ${maxPrice}`);

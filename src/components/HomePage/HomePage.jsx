@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux';
 import { Button } from '@mui/material';
+import MapPlaceholder from '../MapPlaceholder/MapPlaceholder';
 
 // Basic functional component structure for React with default state
 // value setup. When making a new component be sure to replace the
@@ -20,10 +21,10 @@ function UserHomePage(props) {
   return (
     <div>
       <h2>{heading}</h2>
-      <div className='map-placeholder'>
-        <h3>Google Maps integration coming soon!</h3>
-        <p>We are working on integrating a Google Maps component to enhance your experience.</p>
-      </div>
+     <MapPlaceholder />
+     <div>
+        <Button />
+     </div>
     </div>
     
   );

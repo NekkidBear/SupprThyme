@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { response } from "express";
 
 function UserPage() {
   const user = useSelector((store) => store.user);

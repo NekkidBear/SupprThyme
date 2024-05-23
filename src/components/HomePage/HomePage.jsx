@@ -10,7 +10,7 @@ function UserHomePage(props) {
   // a default value of 'Functional Component'
   const [heading, setHeading] = useState("Functional Component");
   const user = useSelector((store) => store.user);
-  const [groupPreferences, setGroupPreferences] = useState(null); // Add state for group preferences
+  const [groupPreferences, setGroupPreferences] = useState([]); // Add state for group preferences
 
   const handleClick = () => {
     const history = useHistory();
@@ -18,7 +18,9 @@ function UserHomePage(props) {
   };
 
   useEffect(() => {
-    setHeading(`Find a restaurant near ${user.home_metro}`);
+    setHeading(`Find a restaurant near ${user.home_metro}`)
+    setGroupPreferences(user.home_metro);
+    console.log(groupPreferences)
   }, []);
 
   return (
@@ -26,7 +28,7 @@ function UserHomePage(props) {
       <h2>{heading}</h2>
       <MapPlaceholder />
       <RestaurantSearch
-        groupPreferences={user.home_metro}
+        groupPreferences={groupPreferences}
       />
       <div>
         <Button variant="contained" color="primary" onClick={handleClick}>

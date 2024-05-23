@@ -7,7 +7,6 @@ const RestaurantSearch = ({ userHomeMetro, groupPreferences }) => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    // In your RestaurantSearch.jsx component
 const fetchRestaurants = async () => {
   try {
     let response;
@@ -32,14 +31,14 @@ const fetchRestaurants = async () => {
 
   return (
     <div>
-      <h2>Restaurant Search Results</h2>
+      <h2>Restaurant Results</h2>
       <ul>
         {restaurants.map((restaurant) => (
           <li key={restaurant.id}>
             <h3>{restaurant.name}</h3>
-            <p>Rating: {restaurant.ranking_postion}</p>
+            <p>Rating: {restaurant.rating}</p>
             <p>Price Level: {restaurant.price_level}</p>
-            <p>Address: {restaurant.address}</p>
+            <p>Location: {restaurant.location_string}</p>
           </li>
         ))}
       </ul>

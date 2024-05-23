@@ -15,14 +15,23 @@ router.get("/", rejectUnauthenticated, (req, res) => {
 });
 
 // GET route to retrieve user information with address details
-router.get('/api/user/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
 
     // Fetch user information with address details using a database query
-    const user = await User.findByPk(userId, {
-      include: { model: UserAddress, as: 'address' }
-    });
+    const { rows } = await pool.query(`
+      SELECT "user".id, "user".email, user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
+      FROM "user"
+      LEFT JOIN user_addresses ON "user".id = user_addresses.user_id
+      WHERE "user".id = $1
+    `, [userId]);
+
+    const user = rows[0];
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
     res.status(200).json(user);
   } catch (error) {
@@ -32,48 +41,30 @@ router.get('/api/user/:id', async (req, res) => {
 });
 
 // POST route to handle user registration and address storage
-router.post("/api/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { username, password, email, address } = req.body;
 
-    // Insert user details into the 'users' table
-    const user = await User.create({ username, password, email });
+    // Insert user details into the 'user' table
+    const userResult = await pool.query(`
+      INSERT INTO "user" (username, password, email)
+      VALUES ($1, $2, $3)
+      RETURNING id
+    `, [username, encryptLib.encryptPassword(password), email]);
+
+    const userId = userResult.rows[0].id;
 
     // Insert address details into the 'user_addresses' table
-    const userAddress = await UserAddress.create({
-      user_id: user.id,
-      street1: address.street1,
-      street2: address.street2,
-      city: address.city,
-      state: address.state,
-      zip: address.zip,
-      country: address.country,
-    });
+    await pool.query(`
+      INSERT INTO user_addresses (user_id, street1, street2, city, state, zip, country)
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
+    `, [userId, address.street1, address.street2, address.city, address.state, address.zip, address.country]);
 
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    console.error("Error registering user:", error);
-    res.status(500).json({ message: "Error registering user" });
+    console.error('Error registering user:', error);
+    res.status(500).json({ message: 'Error registering user' });
   }
-});
-
-// Handles login form authenticate/login POST
-// userStrategy.authenticate('local') is middleware that we run on this route
-// this middleware will run our POST if successful
-// this middleware will send a 404 if not successful
-router.post("/login", userStrategy.authenticate("local"), (req, res) => {
-  res.sendStatus(200);
-});
-
-// clear all server session information about this user
-router.post("/logout", (req, res) => {
-  // Use passport's built-in method to log out the user
-  req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
-    return res.redirect("/");
-  });
 });
 
 module.exports = router;

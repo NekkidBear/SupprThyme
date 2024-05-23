@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 
 function UserHomePage(props) {
-  const [heading, setHeading] = useState("Functional Component");
+  const [heading, setHeading] = useState(`Find a Restaurant Near ${user.city}, ${user.state}`);
   const user = useSelector((store) => store.user);
   const [groupPreferences, setGroupPreferences] = useState([]);
   

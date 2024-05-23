@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const RestaurantSearch = ({ searchParams }) => {
+const RestaurantSearch = ({ user, searchParams }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,12 +10,19 @@ const RestaurantSearch = ({ searchParams }) => {
     const fetchRestaurants = async () => {
       try {
         let response;
-        if (searchParams) {
+        console.log(user)
+        if (user) {
+          const updatedSearchParams = {
+            ...searchParams,
+            city: user.city,
+            state: user.state,
+          };
+          console.log(updatedSearchParams);
           const params = new URLSearchParams({
-            ...Object.entries(searchParams),
-            aggregatePreferences: JSON.stringify(searchParams),
+            aggregatePreferences: JSON.stringify(updatedSearchParams),
           }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
+          console.log(response.data)
           setRestaurants(response.data);
         }
       } catch (error) {
@@ -26,7 +33,7 @@ const RestaurantSearch = ({ searchParams }) => {
       }
     };
     fetchRestaurants();
-  }, [searchParams]);
+  }, [user, searchParams]);
 
   if (loading) {
     return <p>Loading...</p>;

@@ -25,7 +25,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
   const buildWhereClause = (preferences) => {
@@ -81,15 +80,34 @@ router.get("/search", async (req, res) => {
         `price_level >= ${minPrice} AND price_level <= ${maxPrice}`
       );
     }
-
+    if (preferences.city) {
+      conditions.push(`city = '${preferences.city}'`);
+    }
+  
+    if (preferences.state) {
+      conditions.push(`state = '${preferences.state}'`);
+    }
+  
     return conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
   };
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
 
   try {
     const { aggregatePreferences } = req.query;
-    console.log(aggregatePreferences)
-    const parsedPreferences = JSON.parse(aggregatePreferences);
+    console.log(aggregatePreferences);
+
+    let parsedPreferences = {};
+    if (aggregatePreferences) {
+      try {
+        parsedPreferences = JSON.parse(aggregatePreferences);
+      } catch (error) {
+        console.error("Error parsing aggregatePreferences:", error);
+        return res
+          .status(400)
+          .json({ error: "Invalid aggregatePreferences parameter" });
+      }
+    }
+
     const whereClause = buildWhereClause(parsedPreferences);
 
     // Construct the SQL query based on the provided preferences

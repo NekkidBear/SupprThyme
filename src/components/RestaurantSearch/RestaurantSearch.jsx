@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useStore } from "react-redux";
 
-const RestaurantSearch = ({ groupPreferences }) => {
-  const user = useStore((store) => store.user);
+const RestaurantSearch = ({ searchParams }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,21 +10,9 @@ const RestaurantSearch = ({ groupPreferences }) => {
     const fetchRestaurants = async () => {
       try {
         let response;
-        if (user && user.address && user.address.city && user.address.state) {
-          const userCity = user?.address?.city;
-          const userState = user?.address?.state;
-          if (user.groupPreferences) {
-            const aggregatePreferences = JSON.stringify(groupPreferences);
-            response = await axios.get(
-              `/api/restaurants/search?aggregatePreferences=${encodeURIComponent(
-                aggregatePreferences
-              )}`
-            );
-          } else {
-            response = await axios.get(
-              `/api/restaurants/search?city=${encodeURIComponent(userCity)}&state=${encodeURIComponent(userState)}`
-            );
-          }
+        if (searchParams) {
+          const params = new URLSearchParams(searchParams).toString();
+          response = await axios.get(`/api/restaurants/search?${params}`);
           setRestaurants(response.data);
         }
       } catch (error) {
@@ -37,7 +23,7 @@ const RestaurantSearch = ({ groupPreferences }) => {
       }
     };
     fetchRestaurants();
-  }, [groupPreferences, user?.address?.city, user?.address?.state]);
+  }, [searchParams]);
 
   if (loading) {
     return <p>Loading...</p>;

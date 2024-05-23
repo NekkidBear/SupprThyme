@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   const userHomeMetro = req.query.userHomeMetro;
   try {
     const query = `
-        SELECT id, name, rating, price_level, location_string, address
+        SELECT id, name, rating, price_level, location_string, address, (address_obj->>'city') AS city, (address_obj->>'state') AS state
         FROM restaurants
         WHERE location_string ILIKE $1 --case-insensitive pattern matching
         ORDER BY rating ASC
@@ -87,6 +87,7 @@ router.get("/search", async (req, res) => {
 
   try {
     const { aggregatePreferences } = req.query;
+    console.log(aggregatePreferences)
     const parsedPreferences = JSON.parse(aggregatePreferences);
     const whereClause = buildWhereClause(parsedPreferences);
 

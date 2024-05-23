@@ -12,6 +12,7 @@ function UserHomePage(props) {
   const user = useSelector((store) => store.user);
   const [groupPreferences, setGroupPreferences] = useState([]); // Add state for group preferences
 
+
   const handleClick = () => {
     const history = useHistory();
     history.push("/create-group");
@@ -30,6 +31,7 @@ function UserHomePage(props) {
       <RestaurantSearch
         groupPreferences={groupPreferences}
       />
+      {console.log(user.home_metro, groupPreferences)}
       <div>
         <Button variant="contained" color="primary" onClick={handleClick}>
           Create a group

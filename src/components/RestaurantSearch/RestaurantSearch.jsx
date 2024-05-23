@@ -1,33 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useStore } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useStore } from "react-redux";
 
-const RestaurantSearch = ({ userHomeMetro, groupPreferences }) => {
-  const user = useStore((store)=>store.user);
+const RestaurantSearch = ({  groupPreferences }) => {
+  const user = useStore((store) => store.user);
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-const fetchRestaurants = async () => {
-  try {
-    let response;
-    if (groupPreferences) {
-      // Search based on group preferences
-      const aggregatePreferences = JSON.stringify(groupPreferences);
-      console.log (aggregatePreferences)
-      response = await axios.get(`/api/restaurants/search?aggregatePreferences=${encodeURIComponent(aggregatePreferences)}`);
-    } else {
-      // Search based on user's home metro
-      const userHomeMetro = user.home_metro; // Assuming you have access to the user object
-      response = await axios.get(`/api/restaurants?limit=5&userHomeMetro=${encodeURIComponent(userHomeMetro)}`);
-    }
-    setRestaurants(response.data);
-  } catch (error) {
-    console.error('Error fetching restaurants:', error);
-  }
-};
+    const fetchRestaurants = async () => {
+      try {
+        let response;
+        const userCity = user.address.city;
+        const userState = user.address.state;
+
+        if (user.groupPreferences) {
+          // Search based on group preferences
+          const aggregatePreferences = JSON.stringify(groupPreferences);
+          response = await axios.get(
+            `/api/restaurants/search?aggregatePreferences=${encodeURIComponent(
+              aggregatePreferences
+            )}`
+          );
+        } else {
+          // Search based on user's home city and state
+          response = await axios.get(
+            `/api/restaurants/search?city=${encodeURIComponent(
+              userCity
+            )}&state=${encodeURIComponent(userState)}`
+          );
+        }
+
+        setRestaurants(response.data);
+      } catch (error) {
+        console.error("Error fetching restaurants:", error);
+      }
+    };
 
     fetchRestaurants();
-  }, [userHomeMetro, groupPreferences]);
+  }, [groupPreferences, user.address.city, user.address.state]);
 
   return (
     <div>

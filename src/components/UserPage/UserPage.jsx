@@ -34,8 +34,9 @@ function UserPage() {
 
   const getAddressInfo = async () => {
     axios
-      .get(`/api/user/address/${user.id}`)
+      .get(`/api/user/${user.id}`)
       .then((response) => {
+        console.log('Address response:', response.data);
         setUserAddress(response.data);
       })
       .catch((error) => {

@@ -8,22 +8,23 @@ const router = express.Router();
  */
 router.get("/", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
-  const userHomeMetro = req.query.userHomeMetro;
+  const address = req.query.address;
   try {
     const query = `
-        SELECT id, name, rating, price_level, location_string, address, (address_obj->>'city') AS city, (address_obj->>'state') AS state
-        FROM restaurants
-        WHERE location_string ILIKE $1 --case-insensitive pattern matching
-        ORDER BY rating ASC
-        LIMIT $2;
-      `;
-    const result = await pool.query(query, [`%${userHomeMetro}%`, limit]);
+      SELECT id, name, rating, price_level, location_string, address
+      FROM restaurants
+      WHERE address ILIKE $1 -- case-insensitive pattern matching for address
+      ORDER BY rating ASC
+      LIMIT $2;
+    `;
+    const result = await pool.query(query, [`%${address}%`, limit]);
     res.json(result.rows);
   } catch (error) {
     console.error("Error fetching top restaurants:", error);
     res.status(500).json({ error: "Failed to fetch top restaurants" });
   }
 });
+
 
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {

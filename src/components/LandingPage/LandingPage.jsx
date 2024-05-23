@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Button } from "@mui/material";
 import "./LandingPage.css";
 
 // CUSTOM COMPONENTS
@@ -38,9 +39,9 @@ function LandingPage() {
           <h4>How does it work?</h4>
           <p>
             It's simple! Someone creates a group and invites the others. Our
-            innovative app then combines everyone in the group's preferences and searches our
-            extensive restaurant database to suggest local dining options that
-            meet your criteria.
+            innovative app then combines everyone in the group's preferences and
+            searches our extensive restaurant database to suggest local dining
+            options that meet your criteria.
           </p>
           <p>
             With SupprThyme, decision-making becomes a fun and interactive
@@ -59,9 +60,9 @@ function LandingPage() {
 
           <center>
             <h4>Already a Member?</h4>
-            <button className="btn btn_sizeSm" onClick={onLogin}>
+            <Button variant="contained" color="primary" onClick={onLogin}>
               Login
-            </button>
+            </Button>
           </center>
         </div>
       </div>

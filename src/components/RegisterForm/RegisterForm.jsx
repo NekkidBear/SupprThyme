@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Button, TextField } from "@mui/material";
 
 function RegisterForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [home_metro, setHomeMetro] = useState("");
-
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
   const registerUser = (event) => {
     event.preventDefault();
-
     dispatch({
       type: "REGISTER",
       payload: {
@@ -22,7 +21,7 @@ function RegisterForm() {
         home_metro: home_metro,
       },
     });
-  }; // end registerUser
+  };
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
@@ -32,57 +31,35 @@ function RegisterForm() {
           {errors.registrationMessage}
         </h3>
       )}
-      <div>
-        <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={username}
-            required
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={password}
-            required
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={email}
-            required
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="home_metro">
-          Home Metro:
-          <input
-            type="text"
-            name="home_metro"
-            value={home_metro}
-            required
-            onChange={(event) => setHomeMetro(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
-      </div>
+      <TextField
+        label="Username"
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+        required
+      />
+      <TextField
+        label="Password"
+        type="password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+        required
+      />
+      <TextField
+        label="Email"
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        required
+      />
+      <TextField
+        label="Home Metro"
+        value={home_metro}
+        onChange={(event) => setHomeMetro(event.target.value)}
+        required
+      />
+      <Button variant="contained" type="submit">
+        Register
+      </Button>
     </form>
   );
 }

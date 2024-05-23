@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import { Button, TextField } from '@mui/material';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -10,7 +11,6 @@ function LoginForm() {
 
   const login = (event) => {
     event.preventDefault();
-
     if (username && password) {
       dispatch({
         type: 'LOGIN',
@@ -22,7 +22,7 @@ function LoginForm() {
     } else {
       dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-  }; // end login
+  };
 
   return (
     <form className="formPanel" onSubmit={login}>
@@ -32,33 +32,22 @@ function LoginForm() {
           {errors.loginMessage}
         </h3>
       )}
-      <div>
-        <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            name="username"
-            required
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
-      </div>
+      <TextField
+        label="Username"
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+        required
+      />
+      <TextField
+        label="Password"
+        type="password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+        required
+      />
+      <Button variant="contained" type="submit">
+        Log In
+      </Button>
     </form>
   );
 }

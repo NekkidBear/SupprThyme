@@ -11,7 +11,10 @@ const RestaurantSearch = ({ searchParams }) => {
       try {
         let response;
         if (searchParams) {
-          const params = new URLSearchParams(searchParams).toString();
+          const params = new URLSearchParams({
+            ...Object.entries(searchParams),
+            aggregatePreferences: JSON.stringify(searchParams),
+          }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
           setRestaurants(response.data);
         }

@@ -39,11 +39,11 @@ router.get("/", async (req, res) => {
   const address = req.query.address;
   try {
     const query = `
-      SELECT id, name, rating, price_level, location_string, address
-      FROM restaurants
-      WHERE address ILIKE $1 -- case-insensitive pattern matching for address
-      ORDER BY rating ASC
-      LIMIT $2;
+    SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
+    FROM restaurants
+    WHERE address ILIKE $1 -- case-insensitive pattern matching for address
+    ORDER BY rating ASC
+    LIMIT $2;
     `;
     const result = await pool.query(query, [`%${address}%`, limit]);
     res.json(result.rows);
@@ -145,11 +145,11 @@ router.get("/search", async (req, res) => {
     console.log(whereClause);
 
     const query = `
-      SELECT id, name, rating, price_level, location_string, address
-      FROM restaurants
-      ${whereClause}
-      ORDER BY rating DESC
-      LIMIT $${values.length + 1};
+    SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
+    FROM restaurants
+    ${whereClause}
+    ORDER BY rating DESC
+    LIMIT $${values.length + 1};
     `;
 
     values.push(limit);

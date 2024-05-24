@@ -10,16 +10,18 @@ const RestaurantSearch = ({ user, searchParams }) => {
     const fetchRestaurants = async () => {
       try {
         let response;
-        console.log(user)
-        if (user) {
+        console.log(searchParams)
+        if (searchParams) {
           const updatedSearchParams = {
             ...searchParams,
-            city: user.city,
-            state: user.state,
+            city: searchParams.city,
+            state: searchParams.state,
           };
           console.log(updatedSearchParams);
+          const userLocationString = `${updatedSearchParams.city}, ${updatedSearchParams.state}`;
           const params = new URLSearchParams({
             aggregatePreferences: JSON.stringify(updatedSearchParams),
+            userLocationString: userLocationString
           }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
           console.log(response.data)
@@ -33,7 +35,7 @@ const RestaurantSearch = ({ user, searchParams }) => {
       }
     };
     fetchRestaurants();
-  }, [user, searchParams]);
+  }, [searchParams]);
 
   if (loading) {
     return <p>Loading...</p>;

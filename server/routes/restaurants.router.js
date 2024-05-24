@@ -2,7 +2,35 @@ const express = require("express");
 const pool = require("../modules/pool");
 const { build } = require("vite");
 const router = express.Router();
+const googleMapsClient = require("@google/maps").createClient({
+  key: process.env.GOOGLE_MAPS_API_KEY,
+  Promise: Promise,
+});
 
+async function normalizeLocation(city, state) {
+  const response = await googleMapsClient
+    .geocode({
+      address: `${city}, ${state}`,
+    })
+    .asPromise();
+
+  if (response.json.results.length > 0) {
+    const result = response.json.results[0];
+    const cityComponent = result.address_components.find((component) =>
+      component.types.includes("locality")
+    );
+    const stateComponent = result.address_components.find((component) =>
+      component.types.includes("administrative_area_level_1")
+    );
+
+    return {
+      city: cityComponent ? cityComponent.long_name : city,
+      state: stateComponent ? stateComponent.long_name : state,
+    };
+  } else {
+    return { city, state };
+  }
+}
 /**
  * GET route template
  */
@@ -27,12 +55,13 @@ router.get("/", async (req, res) => {
 
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-  const buildWhereClause = (preferences) => {
+  const buildWhereClause = async (preferences, userLocationString) => {
     const conditions = [];
+    const values = [];
 
     if (preferences.allergens) {
       const allergenCondition = preferences.allergens
-        .map((allergen) => `'${allergen}'`)
+        .map((_, index) => `$${index + 1}`)
         .join(", ");
       conditions.push(`NOT EXISTS (
         SELECT 1
@@ -41,60 +70,55 @@ router.get("/search", async (req, res) => {
         WHERE ua.user_id = ANY(r.user_ids)
         AND ua.allergen_id IN (${allergenCondition})
       )`);
+      values.push(...preferences.allergens);
     }
 
     if (preferences.meatPreference) {
-      conditions.push(`meat_preference = ${preferences.meatPreference}`);
+      conditions.push(`meat_preference = $${values.length + 1}`);
+      values.push(preferences.meatPreference);
     }
 
     if (preferences.religiousRestrictions) {
-      conditions.push(
-        `religious_restrictions = ${preferences.religiousRestrictions}`
-      );
+      conditions.push(`religious_restrictions = $${values.length + 1}`);
+      values.push(preferences.religiousRestrictions);
     }
 
     if (preferences.cuisineTypes) {
       const cuisineCondition = preferences.cuisineTypes
-        .map((cuisine) => `'${cuisine}'`)
+        .map((_, index) => `$${values.length + index + 1}`)
         .join(", ");
       conditions.push(`cuisine && ARRAY[${cuisineCondition}]`);
+      values.push(...preferences.cuisineTypes);
     }
 
     if (preferences.maxDistance) {
-      conditions.push(`distance <= ${preferences.maxDistance}`);
+      conditions.push(`distance <= $${values.length + 1}`);
+      values.push(preferences.maxDistance);
     }
 
     if (preferences.openNow) {
-      conditions.push(`is_open_now = ${preferences.openNow}`);
+      conditions.push(`open_now = $${values.length + 1}`);
+      values.push(preferences.openNow);
     }
 
-    if (preferences.acceptsLargeParties) {
-      conditions.push(
-        `accepts_large_parties = ${preferences.acceptsLargeParties}`
-      );
+    if (userLocationString) {
+      conditions.push(`location_string = $${values.length + 1}`);
+      values.push(userLocationString);
     }
 
-    if (preferences.priceRange) {
-      const [minPrice, maxPrice] = preferences.priceRange;
-      conditions.push(
-        `price_level >= ${minPrice} AND price_level <= ${maxPrice}`
-      );
-    }
-    if (preferences.city) {
-      conditions.push(`city = '${preferences.city}'`);
-    }
-  
-    if (preferences.state) {
-      conditions.push(`state = '${preferences.state}'`);
-    }
-  
-    return conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
+    return {
+      whereClause:
+        conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "",
+      values,
+    };
   };
+
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
 
   try {
-    const { aggregatePreferences } = req.query;
-    console.log(aggregatePreferences);
+    let { aggregatePreferences } = req.query;
+
+    console.log("Query parameters:", req.query);
 
     let parsedPreferences = {};
     if (aggregatePreferences) {
@@ -108,18 +132,36 @@ router.get("/search", async (req, res) => {
       }
     }
 
-    const whereClause = buildWhereClause(parsedPreferences);
+    const { city, state } = parsedPreferences;
 
-    // Construct the SQL query based on the provided preferences
+    const location = await normalizeLocation(city, state);
+    const userLocationString = `${location.city}, ${location.state}`;
+
+    const { whereClause, values } = await buildWhereClause(
+      parsedPreferences,
+      userLocationString
+    );
+
+    console.log(whereClause);
+
     const query = `
       SELECT id, name, rating, price_level, location_string, address
       FROM restaurants
       ${whereClause}
       ORDER BY rating DESC
-      LIMIT $1;
-      `;
+      LIMIT $${values.length + 1};
+    `;
 
-    const result = await pool.query(query, [limit]);
+    values.push(limit);
+
+    // Log the complete SQL query
+    const completeQuery = query.replace(
+      /\$(\d+)/g,
+      (_, index) => `'${values[index - 1]}'`
+    );
+    console.log(completeQuery);
+
+    const result = await pool.query(query, values);
     res.json(result.rows);
   } catch (error) {
     console.error("Error searching restaurants:", error);

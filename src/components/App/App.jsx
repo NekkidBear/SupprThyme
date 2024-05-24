@@ -21,6 +21,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
+import CreateGroupPage from "../CreateGroupPage/CreateGroupPage";
 
 import "./App.css";
 
@@ -73,6 +74,10 @@ function App() {
           <ProtectedRoute exact path="/preferences">
             <PreferencesPage />
           </ProtectedRoute>
+
+          <Route exact path='/create-Group'>
+            <CreateGroupPage />
+          </Route>
 
           <Route exact path="/login">
             {user.id ? (

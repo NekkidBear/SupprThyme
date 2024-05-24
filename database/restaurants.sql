@@ -43,7 +43,7 @@ CREATE TABLE restaurants (
   phone VARCHAR(255),
   website VARCHAR(255),
   email VARCHAR(255),
-  address_obj text,
+  address_obj JSONB,
   address VARCHAR(255),
   hours text,
   is_candidate_for_contact_info_suppression BOOLEAN,

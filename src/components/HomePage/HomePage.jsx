@@ -9,7 +9,7 @@ import { geocodeLocation } from "../MapPlaceholder/mapUtils";
 
 function UserHomePage() {
   const user = useSelector((store) => store.user);
-  const [heading, setHeading] = useState("Find a Restaurant");
+  const [heading, setHeading] = useState("Find a Restaurant Near You");
   const [loading, setLoading] = useState(true);
   const history = useHistory();
   const [aggregatePreferences, setAggregatePreferences] = useState({});

@@ -8,17 +8,22 @@ const RestaurantMap = ({ restaurants, center, zoom }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_API_KEY}>
+    <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_API_KEY}
+      loadingElement={<div>Loading...</div>}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
-        {restaurants.map((restaurant) => (
-          <Marker
-            key={restaurant.id}
-            position={{
-              lat: restaurant.latitude,
-              lng: restaurant.longitude,
-            }}
-          />
-        ))}
+        {Array.isArray(restaurants) && restaurants.length > 0 ? (
+          restaurants.map((restaurant) => (
+            <Marker
+              key={restaurant.id}
+              position={{
+                lat: restaurant.latitude,
+                lng: restaurant.longitude,
+              }}
+            />
+          ))
+        ) : (
+          <></>
+        )}
       </GoogleMap>
     </LoadScript>
   );

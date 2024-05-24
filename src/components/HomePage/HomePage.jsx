@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
+import { geocodeLocation } from "../MapPlaceholder/mapUtils";
 
 function UserHomePage() {
   const user = useSelector((store) => store.user);
@@ -17,25 +18,38 @@ function UserHomePage() {
   const [zoom, setZoom] = useState(10);
 
   useEffect(() => {
-    axios
-      .get(`/api/user/${user.id}`)
-      .then((response) => {
-        setHeading(
-          `Find a Restaurant Near ${response.data.city}, ${response.data.state}`
-        );
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(`/api/users/${user.id}`);
         setAggregatePreferences({
           city: response.data.city,
           state: response.data.state,
           id: user.id,
         });
-        setCenter({ lat: response.data.latitude, lng: response.data.longitude });
+        setCenter({
+          lat: response.data.latitude,
+          lng: response.data.longitude,
+        });
+        setRestaurants(response.data.restaurants);
+
+        // Geocode the location string
+        const locationString = `${response.data.city}, ${response.data.state}`;
+        const geocodedLocation = await geocodeLocation(locationString);
+
+        if (geocodedLocation) {
+          setCenter(geocodedLocation);
+        }
+
         setRestaurants(response.data.restaurants);
         setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching user data:", error);
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, [user.id]);
 
   const handleClick = () => {
@@ -49,11 +63,7 @@ function UserHomePage() {
   return (
     <div>
       <h2>{heading}</h2>
-      <RestaurantMap
-        restaurants={restaurants}
-        center={center}
-        zoom={zoom}
-      />
+      <RestaurantMap restaurants={restaurants} center={center} zoom={zoom} />
       {!loading && (
         <RestaurantSearch searchParams={aggregatePreferences} />
       )}{" "}

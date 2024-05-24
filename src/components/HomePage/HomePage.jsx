@@ -16,41 +16,59 @@ function UserHomePage() {
   const [restaurants, setRestaurants] = useState([]);
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(`/api/users/${user.id}`);
-        setAggregatePreferences({
-          city: response.data.city,
-          state: response.data.state,
-          id: user.id,
-        });
-        setCenter({
-          lat: response.data.latitude,
-          lng: response.data.longitude,
-        });
-        setRestaurants(response.data.restaurants);
+    if (!window.google) {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${
+        import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+      }`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => setScriptLoaded(true);
+      document.body.appendChild(script);
+    } else {
+      setScriptLoaded(true);
+    }
+  }, []);
 
-        // Geocode the location string
-        const locationString = `${response.data.city}, ${response.data.state}`;
-        const geocodedLocation = await geocodeLocation(locationString);
+  useEffect(() => {
+    if (scriptLoaded) {
+      const fetchData = async () => {
+        setLoading(true);
+        try {
+          const response = await axios.get(`/api/users/${user.id}`);
+          setAggregatePreferences({
+            city: response.data.city,
+            state: response.data.state,
+            id: user.id,
+          });
+          setCenter({
+            lat: response.data.latitude,
+            lng: response.data.longitude,
+          });
+          setRestaurants(response.data.restaurants);
 
-        if (geocodedLocation) {
-          setCenter(geocodedLocation);
+          // Geocode the location string
+          const locationString = `${response.data.city}, ${response.data.state}`;
+          const geocodedLocation = await geocodeLocation(locationString);
+
+          if (geocodedLocation) {
+            setCenter(geocodedLocation);
+          }
+
+          setRestaurants(response.data.restaurants);
+          setLoading(false);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          setLoading(false);
         }
+      };
 
-        setRestaurants(response.data.restaurants);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [user.id]);
+      fetchData();
+    }
+  }, [user.id, scriptLoaded]);
 
   const handleClick = () => {
     history.push("/create-group");

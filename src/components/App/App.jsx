@@ -22,6 +22,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import CreateGroupPage from "../CreateGroupPage/CreateGroupPage";
+import SearchResults from '../SearchResults/SearchResults.jsx';
 
 import "./App.css";
 
@@ -75,7 +76,7 @@ function App() {
             <PreferencesPage />
           </ProtectedRoute>
 
-          <Route exact path='/create-Group'>
+          <Route exact path='/create-group'>
             <CreateGroupPage />
           </Route>
 
@@ -121,6 +122,9 @@ function App() {
               <LandingPage />
             )}
           </Route>
+          <ProtectedRoute exact path="/search-results">
+            <SearchResults />
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

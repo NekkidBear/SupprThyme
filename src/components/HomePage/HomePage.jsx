@@ -13,7 +13,6 @@ function UserHomePage() {
   const [loading, setLoading] = useState(true);
   const history = useHistory();
   const [aggregatePreferences, setAggregatePreferences] = useState({});
-  const [restaurants, setRestaurants] = useState([]);
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
@@ -48,7 +47,6 @@ function UserHomePage() {
             lat: response.data.latitude,
             lng: response.data.longitude,
           });
-          setRestaurants(response.data.restaurants);
 
           // Geocode the location string
           const locationString = `${response.data.city}, ${response.data.state}`;
@@ -77,11 +75,10 @@ function UserHomePage() {
   if (loading) {
     return <p>Loading...</p>;
   }
-  console.log('restaurants:', restaurants)
   return (
     <div>
       <h2>{heading}</h2>
-      <RestaurantMap restaurants={restaurants} center={center} zoom={zoom} />
+      <RestaurantMap center={center} zoom={zoom} />
       {!loading && (
         <RestaurantSearch searchParams={aggregatePreferences} />
       )}{" "}

@@ -1,7 +1,11 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useSelector } from 'react-redux';
 
-const RestaurantMap = ({ restaurants, center, zoom }) => {
+
+const RestaurantMap = ({center, zoom }) => {
+  const restaurants = useSelector(state => state.restaurants);
+
   const containerStyle = {
     width: '100%',
     height: '400px',
@@ -19,8 +23,8 @@ const RestaurantMap = ({ restaurants, center, zoom }) => {
             <Marker
               key={restaurant.id}
               position={{
-                lat: restaurant.latitude,
-                lng: restaurant.longitude,
+                lat: Number(restaurant.latitude),
+                lng: Number(restaurant.longitude),
               }}
             />
           ))

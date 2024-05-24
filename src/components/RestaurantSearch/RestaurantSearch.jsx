@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const RestaurantSearch = ({ user, searchParams }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -27,6 +29,9 @@ const RestaurantSearch = ({ user, searchParams }) => {
           console.log(response.data)
           setRestaurants(response.data);
         }
+        // Dispatch the SET_RESTAURANTS action
+        dispatch({ type: 'SET_RESTAURANTS', payload: response.data });
+
       } catch (error) {
         console.error("Error fetching restaurants:", error);
         setError("Error fetching restaurants. Please try again later.");
@@ -35,7 +40,7 @@ const RestaurantSearch = ({ user, searchParams }) => {
       }
     };
     fetchRestaurants();
-  }, [searchParams]);
+  }, [searchParams, dispatch]);
 
   if (loading) {
     return <p>Loading...</p>;

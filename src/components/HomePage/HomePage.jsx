@@ -38,7 +38,7 @@ function UserHomePage() {
       const fetchData = async () => {
         setLoading(true);
         try {
-          const response = await axios.get(`/api/users/${user.id}`);
+          const response = await axios.get(`/api/user/${user.id}`);
           setAggregatePreferences({
             city: response.data.city,
             state: response.data.state,

@@ -77,7 +77,7 @@ function UserHomePage() {
   if (loading) {
     return <p>Loading...</p>;
   }
-
+  console.log('restaurants:', restaurants)
   return (
     <div>
       <h2>{heading}</h2>

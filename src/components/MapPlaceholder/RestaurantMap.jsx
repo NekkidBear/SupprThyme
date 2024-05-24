@@ -6,6 +6,9 @@ const RestaurantMap = ({ restaurants, center, zoom }) => {
     width: '100%',
     height: '400px',
   };
+  console.log('restaurants:', restaurants)
+  console.log('center:', center)
+  console.log('zoom', zoom);
 
   return (
     // <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_API_KEY}

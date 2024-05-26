@@ -22,7 +22,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import CreateGroupPage from "../CreateGroupPage/CreateGroupPage";
-import SearchResults from '../SearchResults/SearchResults.jsx';
+import SearchResults from '../GroupSearchResults/GroupSearchResults.jsx';
 
 import "./App.css";
 

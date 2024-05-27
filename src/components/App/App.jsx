@@ -25,6 +25,7 @@ import CreateGroupPage from "../CreateGroupPage/CreateGroupPage";
 import SearchResults from '../GroupSearchResults/GroupSearchResults.jsx';
 
 import "./App.css";
+import GroupsPage from "../GroupPage/GroupsPage.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -124,6 +125,10 @@ function App() {
           </Route>
           <ProtectedRoute exact path="/search-results">
             <SearchResults />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/groups">
+            <GroupsPage />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

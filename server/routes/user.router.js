@@ -43,6 +43,21 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// Handles GET request with query parameter for searching users
+router.get('/search', (req, res) => {
+  const searchTerm = req.query.search;
+
+  pool.query('SELECT * FROM user WHERE name ILIKE $1', [`%${searchTerm}%`])
+      .then((result) => {
+          res.send(result.rows);
+      })
+      .catch((error) => {
+          console.error('Error completing SELECT user query', error);
+          res.sendStatus(500);
+      });
+});
+
+
 // POST route to handle user registration and address storage
 router.post("/register", async (req, res) => {
   try {

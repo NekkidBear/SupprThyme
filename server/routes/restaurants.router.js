@@ -8,6 +8,7 @@ const googleMapsClient = require("@google/maps").createClient({
 });
 
 async function normalizeLocation(city, state) {
+  console.log("normalizeLocation input:", { city, state });
   const response = await googleMapsClient
     .geocode({
       address: `${city}, ${state}`,
@@ -22,7 +23,10 @@ async function normalizeLocation(city, state) {
     const stateComponent = result.address_components.find((component) =>
       component.types.includes("administrative_area_level_1")
     );
-
+    console.log("normalizeLocation output:", {
+      city: cityComponent ? cityComponent.long_name : city,
+      state: stateComponent ? stateComponent.long_name : state,
+    });
     return {
       city: cityComponent ? cityComponent.long_name : city,
       state: stateComponent ? stateComponent.long_name : state,
@@ -56,6 +60,10 @@ router.get("/", async (req, res) => {
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
   const buildWhereClause = async (preferences, userLocationString) => {
+    console.log("buildWhereClause input: ", {
+      preferences,
+      userLocationString,
+    });
     const conditions = [];
     const values = [];
 
@@ -106,9 +114,11 @@ router.get("/search", async (req, res) => {
       values.push(userLocationString);
     }
 
+    const whereClause =
+      conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
+    console.log("buildWhere output: ", { whereClause, values });
     return {
-      whereClause:
-        conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "",
+      whereClause,
       values,
     };
   };
@@ -116,7 +126,62 @@ router.get("/search", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
 
   try {
-    let { aggregatePreferences } = req.query;
+    let { aggregatePreferences, group_id } = req.query;
+
+    if (group_id) {
+      const groupResponse = await pool.query(
+        `SELECT * FROM groups WHERE id = $1`,
+        [group_id]
+      );
+      const users = groupResponse.rows[0].users;
+      const preferences = await Promise.all(
+        users.map((user) =>
+          pool.query(`SELECT * FROM preferences WHERE user_id = $1`, [user.id])
+        )
+      );
+      // Aggregate the preferences
+      aggregatePreferences = preferences.reduce((aggregate, current) => {
+        if (!current.data) {
+          // Skip this user if they have not defined preferences
+          return aggregate;
+        }
+
+        // For price range and max distance, find the maximum value that is less than or equal to the lowest maximum value
+        aggregate.max_price_range = Math.min(
+          aggregate.max_price_range || Infinity,
+          current.data.max_price_range
+        );
+        aggregate.max_distance = Math.min(
+          aggregate.max_distance || Infinity,
+          current.data.max_distance
+        );
+
+        // For meat preference, check if a restaurant offers vegetarian/vegan options if a user prefers it
+        if (
+          current.data.meat_preference === "Vegetarian" ||
+          current.data.meat_preference === "Vegan"
+        ) {
+          aggregate.meat_preference = "Vegetarian/Vegan";
+        }
+
+        // For cuisine types, use distinct items
+        aggregate.cuisine_types = [
+          ...new Set([
+            ...(aggregate.cuisine_types || []),
+            ...current.data.cuisine_types,
+          ]),
+        ];
+
+        // For open now, calculate based on their local time vs the days/hours listed in the database
+        aggregate.open_now = aggregate.open_now && current.data.open_now;
+
+        // For accepts large parties, default to true
+        aggregate.accepts_large_parties =
+          aggregate.accepts_large_parties && current.data.accepts_large_parties;
+
+        return aggregate;
+      }, {});
+    }
 
     console.log("Query parameters:", req.query);
 

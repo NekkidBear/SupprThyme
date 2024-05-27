@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import GroupForm from './GroupForm';
+// import GroupForm from '../CreateGroupForm/GroupForm';
 
 export default function GroupsPage() {
   const [groups, setGroups] = useState([]);

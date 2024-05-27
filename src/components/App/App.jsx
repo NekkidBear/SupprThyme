@@ -21,11 +21,10 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
-import CreateGroupPage from "../CreateGroupPage/CreateGroupPage";
+import GroupsPage from "../GroupPage/GroupsPage";
 import SearchResults from '../GroupSearchResults/GroupSearchResults.jsx';
 
 import "./App.css";
-import GroupsPage from "../GroupPage/GroupsPage.jsx";
 
 function App() {
   const dispatch = useDispatch();
@@ -78,7 +77,7 @@ function App() {
           </ProtectedRoute>
 
           <Route exact path='/create-group'>
-            <CreateGroupPage />
+            <GroupsPage />
           </Route>
 
           <Route exact path="/login">

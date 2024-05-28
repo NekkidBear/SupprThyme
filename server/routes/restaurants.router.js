@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   try {
     //normalize the address
 
-    const normalizedAddress = await normalizeLocation(address);
+    const normalizedAddress = await normalizeLocation();
     const query = `
     SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
     FROM restaurants
@@ -39,6 +39,7 @@ router.get("/search", async (req, res) => {
 
   const normalizedAddress = await normalizeLocation(req.query.city, req.query.state);
 
+  const buildWhereClause = async (preferences, normalizedAddress) => {
     console.log("buildWhereClause input: ", {
       preferences,
       normalizedAddress,

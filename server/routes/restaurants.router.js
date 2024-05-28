@@ -6,35 +6,9 @@ const googleMapsClient = require("@google/maps").createClient({
   key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   Promise: Promise,
 });
+const GeocodingError = require('../constants/GeocodingError.js')
+const normalizeLocation = require('../modules/Geolocation.js')
 
-async function normalizeLocation(city, state) {
-  console.log("normalizeLocation input:", { city, state });
-  const response = await googleMapsClient
-    .geocode({
-      address: `${city}, ${state}`,
-    })
-    .asPromise();
-
-  if (response.json.results.length > 0) {
-    const result = response.json.results[0];
-    const cityComponent = result.address_components.find((component) =>
-      component.types.includes("locality")
-    );
-    const stateComponent = result.address_components.find((component) =>
-      component.types.includes("administrative_area_level_1")
-    );
-    console.log("normalizeLocation output:", {
-      city: cityComponent ? cityComponent.long_name : city,
-      state: stateComponent ? stateComponent.long_name : state,
-    });
-    return {
-      city: cityComponent ? cityComponent.long_name : city,
-      state: stateComponent ? stateComponent.long_name : state,
-    };
-  } else {
-    return { city, state };
-  }
-}
 /**
  * GET route template
  */
@@ -42,6 +16,10 @@ router.get("/", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
   const address = req.query.address;
   try {
+
+    //normalize the address
+
+    const normalizedAddress = await normalizeLocation(address)
     const query = `
     SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
     FROM restaurants
@@ -49,7 +27,7 @@ router.get("/", async (req, res) => {
     ORDER BY rating ASC
     LIMIT $2;
     `;
-    const result = await pool.query(query, [`%${address}%`, limit]);
+    const result = await pool.query(query, [`%${normalizedAddress}%`, limit]);
     res.json(result.rows);
   } catch (error) {
     console.error("Error fetching top restaurants:", error);

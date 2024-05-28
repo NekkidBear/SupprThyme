@@ -5,6 +5,9 @@ const {
 const encryptLib = require("../modules/encryption");
 const pool = require("../modules/pool");
 const userStrategy = require("../strategies/user.strategy");
+const GeocodingError = require('../constants/GeocodingError');
+const normalizeLocation = require('../modules/Geolocation.js')
+
 
 const router = express.Router();
 
@@ -57,6 +60,26 @@ router.get('/search', (req, res) => {
       });
 });
 
+// endpoint to normalize user's location
+router.get('/normalizeLocation', async (req, res) => {
+  const { city, state } = req.query;
+
+  if (!city || !state) {
+    return res.status(400).json({ error: 'City and state are required' });
+  }
+  
+  try {
+    const normalizedLocation = await normalizeLocation(city, state);
+    res.json(normalizedLocation);
+  } catch (error) {
+    console.error('Error normalizing location:', error);
+    if (error instanceof GeocodingError) {
+      res.status(400).json({ error: 'Failed to geocode location' });
+    } else {
+      res.status(500).json({ error: 'Failed to normalize location' });
+    }
+  }
+});
 
 // POST route to handle user registration and address storage
 router.post("/register", async (req, res) => {
@@ -102,8 +125,21 @@ router.post("/register", async (req, res) => {
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
-router.post('/login', userStrategy.authenticate('local'), (req, res) => {
-  res.sendStatus(200);
+router.post('/login', userStrategy.authenticate('local'), async (req, res) => {
+  try {
+    const { latitude, longitude } = req.body;
+
+    // Update the user's latitude and longitude
+    await pool.query(
+      'UPDATE "user" SET latitude = $1, longitude = $2 WHERE id = $3',
+      [latitude, longitude, req.user.id]
+    );
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.error('Error updating user geolocation:', error);
+    res.status(500).json({ message: 'Error updating user geolocation' });
+  }
 });
 
 // clear all server session information about this user

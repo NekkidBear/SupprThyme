@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 
-const RestaurantSearch = ({ user, searchParams, group_id }) => {
-  const [restaurants, setRestaurants] = useState([]);
+const RestaurantSearch = ({ user, searchParams, group_id, setRestaurants }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
@@ -20,8 +19,14 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
             users.map((user) => axios.get(`/api/users/${user.id}/preferences`))
           );
 
+          // Initialize aggregatePreferences with the city and state of the currently logged in user
+          let aggregatePreferences = {
+            city: user.city,
+            state: user.state,
+          };
+
           // Aggregate the preferences
-          const aggregatePreferences = preferences.reduce(
+          aggregatePreferences = preferences.reduce(
             (aggregate, current) => {
               if (!current.data) {
                 // Skip this user if they have not defined preferences
@@ -62,23 +67,14 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
                 aggregate.accepts_large_parties &&
                 current.data.accepts_large_parties;
 
-              // For city and state, use the city and state of the first user
-              // This assumes that all users in the group are in the same location
-              if (!aggregate.city) {
-                aggregate.city = users[0].city;
-              }
-              if (!aggregate.state) {
-                aggregate.state = users[0].state;
-              }
-
               return aggregate;
             },
-            {}
+            aggregatePreferences // Pass the initialized object as the initial value
           );
 
           // Fetch restaurants based on the aggregate preferences
           const params = new URLSearchParams({
-            aggregatePreferences: JSON.stringify(aggregatePreferences),
+            ...aggregatePreferences,
           }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
         } else if (searchParams) {
@@ -88,11 +84,12 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
           }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
         } else {
-          const userLocationString = `${user.city}, ${user.state}`;
+          // Send the city and state as separate properties
           const params = new URLSearchParams({
-            userLocationString: userLocationString,
+            city: user.city,
+            state: user.state,
           }).toString();
-          response = await axios.get(`/api/restaurants/popular?${params}`);
+          response = await axios.get(`/api/restaurants/search?${params}`);
         }
 
         setRestaurants(response.data);

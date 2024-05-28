@@ -17,6 +17,30 @@ router.get("/", rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+// Handles Ajax request for user profile if user is authenticated
+router.get("/profile", rejectUnauthenticated, async (req, res) => {
+  const userId = req.user.id;
+
+  // Fetch user information with address details using a database query
+  const { rows } = await pool.query(
+    `
+    SELECT "user".id, "user".email, user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
+    FROM "user"
+    LEFT JOIN user_addresses ON "user".id = user_addresses.user_id
+    WHERE "user".id = $1
+  `,
+    [userId]
+  );
+
+  const user = rows[0];
+
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  res.status(200).json(user);
+});
+
 // GET route to retrieve user information with address details
 router.get("/:id", async (req, res) => {
   try {

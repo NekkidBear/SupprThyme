@@ -16,71 +16,25 @@ function LoginForm() {
 
   useEffect(() => {
     // Fetch user profile from server
-    fetch("/api/user/profile")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Failed to fetch user profile");
-        }
-      })
-      .then((profile) => {
-        setUserCity(profile.city);
-        setUserStateLocation(profile.state);
-
-        const fetchLocation = async () => {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-              (position) => {
-                setLatitude(position.coords.latitude);
-                setLongitude(position.coords.longitude);
-              },
-              async (error) => {
-                // Geolocation permission denied or other error occurred
-                fetch(
-                  `/api/user/normalizeLocation?city=${userCity}&state=${userStateLocation}`
-                )
-                  .then((response) => {
-                    if (response.ok) {
-                      return response.json();
-                    } else {
-                      throw new Error("Failed to normalize location");
-                    }
-                  })
-                  .then((normalizedLocation) => {
-                    setLatitude(normalizedLocation.latitude);
-                    setLongitude(normalizedLocation.longitude);
-                  })
-                  .catch((error) => {
-                    console.error("Error:", error);
-                  });
-              }
-            );
+    if (errors.loginMessage === "Login successful") {
+      fetch("/api/user/profile")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
           } else {
-            // Geolocation API not available
-            fetch(
-              `/api/user/normalizeLocation?city=${userCity}&state=${userStateLocation}`
-            )
-              .then((response) => {
-                if (response.ok) {
-                  return response.json();
-                } else {
-                  throw new Error("Failed to normalize location");
-                }
-              })
-              .then((normalizedLocation) => {
-                setLatitude(normalizedLocation.latitude);
-                setLongitude(normalizedLocation.longitude);
-              })
-              .catch((error) => {
-                console.error("Error:", error);
-              });
+            throw new Error("Failed to fetch user profile");
           }
-        };
-        fetchLocation(); // Call the function
-      }) // This was missing
-  }, [userCity, userStateLocation]);
-
+        })
+        .then((profile) => {
+          setUserCity(profile.city);
+          setUserStateLocation(profile.state);
+          // Rest of your code...
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  }, [errors.loginMessage]);
   const login = (event) => {
     event.preventDefault();
     if (username && password) {
@@ -93,11 +47,79 @@ function LoginForm() {
           longitude: longitude,
         },
       });
+  
+      // Fetch user profile from server after logging in
+      fetch("/api/user/profile")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Failed to fetch user profile");
+          }
+        })
+        .then((profile) => {
+          setUserCity(profile.city);
+          setUserStateLocation(profile.state);
+  
+          // Fetch location
+          const fetchLocation = async () => {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(
+                (position) => {
+                  setLatitude(position.coords.latitude);
+                  setLongitude(position.coords.longitude);
+                },
+                async (error) => {
+                  // Geolocation permission denied or other error occurred
+                  fetch(
+                    `/api/user/normalizeLocation?city=${userCity}&state=${userStateLocation}`
+                  )
+                    .then((response) => {
+                      if (response.ok) {
+                        return response.json();
+                      } else {
+                        throw new Error("Failed to normalize location");
+                      }
+                    })
+                    .then((normalizedLocation) => {
+                      setLatitude(normalizedLocation.latitude);
+                      setLongitude(normalizedLocation.longitude);
+                    })
+                    .catch((error) => {
+                      console.error("Error:", error);
+                    });
+                }
+              );
+            } else {
+              // Geolocation API not available
+              fetch(
+                `/api/user/normalizeLocation?city=${userCity}&state=${userStateLocation}`
+              )
+                .then((response) => {
+                  if (response.ok) {
+                    return response.json();
+                  } else {
+                    throw new Error("Failed to normalize location");
+                  }
+                })
+                .then((normalizedLocation) => {
+                  setLatitude(normalizedLocation.latitude);
+                  setLongitude(normalizedLocation.longitude);
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                });
+            }
+          };
+          fetchLocation(); // Call the function
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     } else {
       dispatch({ type: "LOGIN_INPUT_ERROR" });
     }
   };
-
   return (
     <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>

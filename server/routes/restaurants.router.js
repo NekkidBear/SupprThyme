@@ -6,8 +6,8 @@ const googleMapsClient = require("@google/maps").createClient({
   key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   Promise: Promise,
 });
-const GeocodingError = require('../constants/GeocodingError.js')
-const normalizeLocation = require('../modules/Geolocation.js')
+const GeocodingError = require("../constants/GeocodingError.js");
+const normalizeLocation = require("../modules/Geolocation.js");
 
 /**
  * GET route template
@@ -16,10 +16,9 @@ router.get("/", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
   const address = req.query.address;
   try {
-
     //normalize the address
 
-    const normalizedAddress = await normalizeLocation(address)
+    const normalizedAddress = await normalizeLocation(address);
     const query = `
     SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
     FROM restaurants
@@ -105,7 +104,12 @@ router.get("/search", async (req, res) => {
 
   try {
     let { aggregatePreferences, group_id } = req.query;
-    console.log('aggregatePreferences: ',aggregatePreferences)
+    console.log("aggregate preferences: ", aggregatePreferences);
+    if (!aggregatePreferences) {
+      return res
+        .status(400)
+        .json({ error: "aggregatePreferences is required" });
+    }
     if (group_id) {
       const groupResponse = await pool.query(
         `SELECT * FROM groups WHERE id = $1`,
@@ -122,47 +126,49 @@ router.get("/search", async (req, res) => {
         if (!current.data) {
           // Skip this user if they have not defined preferences
           return aggregate;
+        } else {
+          // Add the current user's preferences to the aggregate
+          return { ...aggregate, ...current.data };
         }
+      }, aggregatePreferences); // Start with the existing aggregatePreferences
 
-        // For price range and max distance, find the maximum value that is less than or equal to the lowest maximum value
-        aggregate.max_price_range = Math.min(
-          aggregate.max_price_range || Infinity,
-          current.data.max_price_range
-        );
-        aggregate.max_distance = Math.min(
-          aggregate.max_distance || Infinity,
-          current.data.max_distance
-        );
+      // For price range and max distance, find the maximum value that is less than or equal to the lowest maximum value
+      aggregatePreferences.max_price_range = Math.min(
+        aggregatePreferences.max_price_range || Infinity,
+        current.data.max_price_range
+      );
+      aggregatePreferences.max_distance = Math.min(
+        aggregatePreferences.max_distance || Infinity,
+        current.data.max_distance
+      );
 
-        // For meat preference, check if a restaurant offers vegetarian/vegan options if a user prefers it
-        if (
-          current.data.meat_preference === "Vegetarian" ||
-          current.data.meat_preference === "Vegan"
-        ) {
-          aggregate.meat_preference = "Vegetarian/Vegan";
-        }
+      // For meat preference, check if a restaurant offers vegetarian/vegan options if a user prefers it
+      if (
+        current.data.meat_preference === "Vegetarian" ||
+        current.data.meat_preference === "Vegan"
+      ) {
+        aggregatePreferences.meat_preference = "Vegetarian/Vegan";
+      }
 
-        // For cuisine types, use distinct items
-        aggregate.cuisine_types = [
-          ...new Set([
-            ...(aggregate.cuisine_types || []),
-            ...current.data.cuisine_types,
-          ]),
-        ];
+      // For cuisine types, use distinct items
+      aggregatePreferences.cuisine_types = [
+        ...new Set([
+          ...(aggregatePreferences.cuisine_types || []),
+          ...current.data.cuisine_types,
+        ]),
+      ];
 
-        // For open now, calculate based on their local time vs the days/hours listed in the database
-        aggregate.open_now = aggregate.open_now && current.data.open_now;
+      // For open now, calculate based on their local time vs the days/hours listed in the database
+      aggregatePreferences.open_now =
+        aggregatePreferences.open_now && current.data.open_now;
 
-        // For accepts large parties, default to true
-        aggregate.accepts_large_parties =
-          aggregate.accepts_large_parties && current.data.accepts_large_parties;
+      // For accepts large parties, default to true
+      aggregatePreferences.accepts_large_parties =
+        aggregatePreferences.accepts_large_parties &&
+        current.data.accepts_large_parties;
 
-        return aggregate;
-      }, {});
+      console.log("Query parameters:", req.query);
     }
-
-    console.log("Query parameters:", req.query);
-
     let parsedPreferences = {};
     if (aggregatePreferences) {
       try {
@@ -175,7 +181,18 @@ router.get("/search", async (req, res) => {
       }
     }
     console.log("parsed preferences:", parsedPreferences);
+    if (!city) {
+      return res
+        .status(400)
+        .json({ error: "City is required in aggregatePreferences" });
+    }
+
     const city = parsedPreferences.city || "";
+    if (!state) {
+      return res
+        .status(400)
+        .json({ error: "State is required in aggregatePreferences" });
+    }
     const state = parsedPreferences.state || "";
     console.log(`city: ${city}, state: ${state}`);
     const location = await normalizeLocation(city, state);

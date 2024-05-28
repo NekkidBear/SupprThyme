@@ -3,9 +3,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { useSelector } from 'react-redux';
 
 
-const RestaurantMap = ({center, zoom }) => {
-  const restaurants = useSelector(state => state.restaurants);
-
+const RestaurantMap = ({center, zoom, restaurants}) => {
   const containerStyle = {
     width: '100%',
     height: '400px',

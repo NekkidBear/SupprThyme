@@ -16,6 +16,7 @@ function UserHomePage() {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     if (!window.google) {
@@ -38,34 +39,40 @@ function UserHomePage() {
         setLoading(true);
         try {
           const response = await axios.get(`/api/user/${user.id}`);
-          setAggregatePreferences({
+          const newAggregatePreferences = {
             city: response.data.city,
             state: response.data.state,
             id: user.id,
-          });
-          setCenter({
-            lat: response.data.latitude,
-            lng: response.data.longitude,
-          });
-
+          };
+          setAggregatePreferences(newAggregatePreferences);
+          //update the heading
+          setHeading(`Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`);
+          console.log('aggregatePreferences from HomePage:', aggregatePreferences)
+  
           // Geocode the location string
           const locationString = `${response.data.city}, ${response.data.state}`;
           const geocodedLocation = await geocodeLocation(locationString);
-
+  
           if (geocodedLocation) {
+            // Set the center state with the geocoded location
             setCenter(geocodedLocation);
+          } else {
+            // If geocoding failed, set the center state with the latitude and longitude from the user data
+            setCenter({
+              lat: response.data.latitude,
+              lng: response.data.longitude,
+            });
           }
-
-          setRestaurants(response.data.restaurants);
           setLoading(false);
         } catch (error) {
           console.error("Error fetching user data:", error);
           setLoading(false);
         }
       };
-
+  
       fetchData();
     }
+    console.log('aggregatePreferences after fetch:', aggregatePreferences)
   }, [user.id, scriptLoaded]);
 
   const handleClick = () => {
@@ -78,9 +85,12 @@ function UserHomePage() {
   return (
     <div>
       <h2>{heading}</h2>
-      <RestaurantMap center={center} zoom={zoom} />
+      <RestaurantMap center={center} zoom={zoom} restaurants={restaurants} />
       {!loading && (
-        <RestaurantSearch searchParams={aggregatePreferences} />
+        <RestaurantSearch
+          searchParams={aggregatePreferences}
+          setRestaurants={setRestaurants}
+        />
       )}{" "}
       <div>
         <Button variant="contained" color="primary" onClick={handleClick}>

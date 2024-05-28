@@ -127,7 +127,7 @@ router.get("/search", async (req, res) => {
 
   try {
     let { aggregatePreferences, group_id } = req.query;
-
+    console.log('aggregatePreferences: ',aggregatePreferences)
     if (group_id) {
       const groupResponse = await pool.query(
         `SELECT * FROM groups WHERE id = $1`,
@@ -196,9 +196,10 @@ router.get("/search", async (req, res) => {
           .json({ error: "Invalid aggregatePreferences parameter" });
       }
     }
-
-    const { city, state } = parsedPreferences;
-
+    console.log("parsed preferences:", parsedPreferences);
+    const city = parsedPreferences.city || "";
+    const state = parsedPreferences.state || "";
+    console.log(`city: ${city}, state: ${state}`);
     const location = await normalizeLocation(city, state);
     const userLocationString = `${location.city}, ${location.state}`;
 

@@ -1,10 +1,5 @@
--- USER is a reserved keyword with Postgres
--- You must use double quotes in every query that user is in:
--- ex. SELECT * FROM "user";
--- Otherwise you will have errors!
 -- Drop the tables if they already exist
 DROP TABLE IF EXISTS "user" CASCADE;
-DROP TABLE IF EXISTS "users" CASCADE;
 DROP TABLE IF EXISTS "user_addresses" CASCADE;
 
 -- Create the "user" table
@@ -12,7 +7,9 @@ CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR(80) UNIQUE NOT NULL,
     "password" VARCHAR(1000) NOT NULL,
-    "email" VARCHAR
+    "email" VARCHAR,
+    "latitude" DECIMAL(9,6), -- Add latitude column
+    "longitude" DECIMAL(9,6) -- Add longitude column
 );
 
 -- Create the "user_addresses" table
@@ -28,12 +25,12 @@ CREATE TABLE "user_addresses" (
 );
 
 -- Insert user data
-INSERT INTO "user" (username, password, email)
+INSERT INTO "user" (username, password, email, latitude, longitude)
 VALUES
-    ('Kermit', '$2a$10$Xxxac/whdxsEk3u9RcAfT.MCAqff6lwrbCbv.8sSE7hoQEl3r7Lzy', 'kermit@fakedomain.com'),
-    ('MissPiggy', '$2a$10$11RbL2CMEabZPrIgtC.ZlO0lVgL93JmVtvWfytbYWWrRrjoT7snZi', 'piggy@fakedomain.com'),
-    ('Fozzie', '$2a$10$ufJeQj.QPYjPYegZLq3ie.mmc4FI8jPk4gmhNxFMusjImdYPD5m8y', 'fozzie@fakedomain.com'),
-    ('Gonzo', '$2a$10$TphYN4//Rym5P1N76NCv/eNrkZGvBXCb8q61qlb16W.Bf2jxUE1Pa', 'gonzo@fakedomain.com');
+    ('Kermit', '$2a$10$Xxxac/whdxsEk3u9RcAfT.MCAqff6lwrbCbv.8sSE7hoQEl3r7Lzy', 'kermit@fakedomain.com', 44.9778, -93.2650),
+    ('MissPiggy', '$2a$10$11RbL2CMEabZPrIgtC.ZlO0lVgL93JmVtvWfytbYWWrRrjoT7snZi', 'piggy@fakedomain.com', 44.9778, -93.2650),
+    ('Fozzie', '$2a$10$ufJeQj.QPYjPYegZLq3ie.mmc4FI8jPk4gmhNxFMusjImdYPD5m8y', 'fozzie@fakedomain.com', 44.9778, -93.2650),
+    ('Gonzo', '$2a$10$TphYN4//Rym5P1N76NCv/eNrkZGvBXCb8q61qlb16W.Bf2jxUE1Pa', 'gonzo@fakedomain.com', 44.9778, -93.2650);
 
 -- Insert address data
 INSERT INTO "user_addresses" ("user_id", "street1", "city", "state", "zip", "country")

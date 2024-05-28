@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 
-const RestaurantSearch = ({ user, searchParams, group_id, setRestaurants }) => {
+const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
@@ -19,11 +19,7 @@ const RestaurantSearch = ({ user, searchParams, group_id, setRestaurants }) => {
             users.map((user) => axios.get(`/api/users/${user.id}/preferences`))
           );
 
-          // Initialize aggregatePreferences with the city and state of the currently logged in user
-          let aggregatePreferences = {
-            city: user.city,
-            state: user.state,
-          };
+          console.log(searchParams)
 
           // Aggregate the preferences
           aggregatePreferences = preferences.reduce(
@@ -77,22 +73,15 @@ const RestaurantSearch = ({ user, searchParams, group_id, setRestaurants }) => {
             ...aggregatePreferences,
           }).toString();
           response = await axios.get(`/api/restaurants/search?${params}`);
-        } else if (searchParams) {
-          // Fetch restaurants based on the user's preferences
+        } else {
+          // Fetch restaurants based on the user's location
           const params = new URLSearchParams({
             ...searchParams,
           }).toString();
+          console.log(params);
           response = await axios.get(`/api/restaurants/search?${params}`);
-        } else {
-          // Send the city and state as separate properties
-          const params = new URLSearchParams({
-            city: user.city,
-            state: user.state,
-          }).toString();
-          response = await axios.get(`/api/restaurants/search?${params}`);
-        }
-
-        setRestaurants(response.data);
+        } 
+        
         // Dispatch the SET_RESTAURANTS action
         dispatch({ type: "SET_RESTAURANTS", payload: response.data });
       } catch (error) {

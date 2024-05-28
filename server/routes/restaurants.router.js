@@ -36,10 +36,12 @@ router.get("/", async (req, res) => {
 
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-  const buildWhereClause = async (preferences, userLocationString) => {
+
+  const normalizedAddress = await normalizeLocation(req.query.city, req.query.state);
+
     console.log("buildWhereClause input: ", {
       preferences,
-      userLocationString,
+      normalizedAddress,
     });
     const conditions = [];
     const values = [];

@@ -16,7 +16,6 @@ function UserHomePage() {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
     if (!window.google) {
@@ -42,13 +41,12 @@ function UserHomePage() {
           const newAggregatePreferences = {
             city: response.data.city,
             state: response.data.state,
-            id: user.id,
           };
           console.log('newAggregatePreferences:', newAggregatePreferences)
           setAggregatePreferences(newAggregatePreferences);
           //update the heading
           setHeading(`Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`);
-          console.log('aggregatePreferences from HomePage:', aggregatePreferences)
+          console.log('(async) aggregatePreferences from HomePage:', aggregatePreferences)
   
           // Geocode the location string
           const locationString = `${response.data.city}, ${response.data.state}`;
@@ -76,26 +74,34 @@ function UserHomePage() {
     console.log('aggregatePreferences after fetch:', aggregatePreferences)
   }, [user.id, scriptLoaded]);
 
-  const handleClick = () => {
-    history.push("/create-group");
+  const handleClickCreateGroup = () => {
+    history.push("/groupForm");
+  };
+
+  const handleClickViewGroups = () => {
+    history.push("/groups");
   };
 
   if (loading) {
     return <p>Loading...</p>;
   }
+  console.log(aggregatePreferences.city);
+  console.log(aggregatePreferences.state)
   return (
     <div>
       <h2>{heading}</h2>
-      <RestaurantMap center={center} zoom={zoom} restaurants={restaurants} />
-      {!loading && (
+      <RestaurantMap center={center} zoom={zoom} />
+      {!loading && aggregatePreferences.city &&(
         <RestaurantSearch
           searchParams={aggregatePreferences}
-          setRestaurants={setRestaurants}
         />
-      )}{" "}
+      )}
       <div>
-        <Button variant="contained" color="primary" onClick={handleClick}>
+        <Button variant="contained" color="primary" onClick={handleClickCreateGroup}>
           Create a group
+        </Button>
+        <Button variant="contained" color="secondary" onClick={handleClickViewGroups}>
+          View groups
         </Button>
       </div>
     </div>

@@ -23,6 +23,7 @@ import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import GroupsPage from "../GroupPage/GroupsPage";
 import SearchResults from '../GroupSearchResults/GroupSearchResults.jsx';
+import GroupForm from "../CreateGroupForm/GroupForm.jsx";
 
 import "./App.css";
 
@@ -76,10 +77,6 @@ function App() {
             <PreferencesPage />
           </ProtectedRoute>
 
-          <Route exact path='/create-group'>
-            <GroupsPage />
-          </Route>
-
           <Route exact path="/login">
             {user.id ? (
               // If the user is already logged in,
@@ -128,6 +125,10 @@ function App() {
 
           <ProtectedRoute exact path="/groups">
             <GroupsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/groupForm">
+            <GroupForm />
           </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}

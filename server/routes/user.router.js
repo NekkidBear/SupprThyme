@@ -43,6 +43,12 @@ router.get("/profile", rejectUnauthenticated, async (req, res) => {
 
 // GET route to retrieve user information with address details
 router.get("/:id", async (req, res) => {
+  const userId = parseInt(req.params.id);
+
+  if (isNaN(userId)) {
+    return res.status(400).json({ error: 'User id must be an integer' });
+  }
+
   try {
     const userId = req.params.id;
 

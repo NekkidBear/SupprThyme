@@ -44,6 +44,7 @@ function UserHomePage() {
             state: response.data.state,
             id: user.id,
           };
+          console.log('newAggregatePreferences:', newAggregatePreferences)
           setAggregatePreferences(newAggregatePreferences);
           //update the heading
           setHeading(`Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`);

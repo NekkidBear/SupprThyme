@@ -89,7 +89,11 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         const params = new URLSearchParams({
           aggregatePreferences: JSON.stringify(aggregatePreferences),
         }).toString();
+        console.log('aggregate preferences:',aggregatePreferences)
+        console.log("params:", params)
+        console.log(`/api/restaurants/search?${params}`)
         response = await axios.get(`/api/restaurants/search?${params}`);
+
 
         // Dispatch the SET_RESTAURANTS action
         dispatch({ type: "SET_RESTAURANTS", payload: response.data });

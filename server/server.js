@@ -13,6 +13,7 @@ const testingRouter = require('./routes/testing.router'); // import the testing 
 const formRouter = require('./routes/preferences_form.router'); // import the form router
 const userPrefsRouter = require('./routes/userPreferences.router'); //import the user preferences router
 const restaurantsRouter = require('./routes/restaurants.router'); //import the restaurants router
+const groupsRouter = require('./routes/groups.router.js'); //import the groups router
 
 // Express Middleware
 app.use(express.json());
@@ -31,7 +32,8 @@ app.use('/api/user', userRouter);
 app.use('/api/test', testingRouter); //add the /test endpoint
 app.use('/api/form_data', formRouter);
 app.use('/api/user_preferences', userPrefsRouter);
-app.use('/api/restaurants', restaurantsRouter)
+app.use('/api/restaurants', restaurantsRouter);
+app.use('/api/groups/', groupsRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {

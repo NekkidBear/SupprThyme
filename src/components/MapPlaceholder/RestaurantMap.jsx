@@ -3,9 +3,10 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { useSelector } from 'react-redux';
 
 
-const RestaurantMap = ({center, zoom }) => {
+const RestaurantMap = ({center, zoom}) => {
   const restaurants = useSelector(state => state.restaurants);
-
+  console.log('restaurants',restaurants);
+  
   const containerStyle = {
     width: '100%',
     height: '400px',
@@ -15,8 +16,6 @@ const RestaurantMap = ({center, zoom }) => {
   console.log('zoom', zoom);
 
   return (
-    // <LoadScript googleMapsApiKey={import.meta.env.GOOGLE_MAPS_API_KEY}
-    //   loadingElement={<div>Loading...</div>}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom}>
         {Array.isArray(restaurants) && restaurants.length > 0 ? (
           restaurants.map((restaurant) => (
@@ -32,7 +31,6 @@ const RestaurantMap = ({center, zoom }) => {
           <></>
         )}
       </GoogleMap>
-    // </LoadScript>
   );
 };
 

@@ -40,8 +40,8 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
+            <Link className="navLink" to="/groups">
+              Groups
             </Link>
 
             <LogOutButton className="navLink" />

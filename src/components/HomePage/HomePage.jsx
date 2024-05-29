@@ -44,9 +44,10 @@ function UserHomePage() {
           };
           console.log('newAggregatePreferences:', newAggregatePreferences)
           setAggregatePreferences(newAggregatePreferences);
+          console.log('aggregatePreferences from HomePage:', aggregatePreferences)
+
           //update the heading
           setHeading(`Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`);
-          console.log('(async) aggregatePreferences from HomePage:', aggregatePreferences)
   
           // Geocode the location string
           const locationString = `${response.data.city}, ${response.data.state}`;
@@ -73,6 +74,10 @@ function UserHomePage() {
     }
     console.log('aggregatePreferences after fetch:', aggregatePreferences)
   }, [user.id, scriptLoaded]);
+
+  useEffect(() => {
+    console.log('aggregatePreferences after update:', aggregatePreferences);
+  }, [aggregatePreferences]);
 
   const handleClickCreateGroup = () => {
     history.push("/groupForm");

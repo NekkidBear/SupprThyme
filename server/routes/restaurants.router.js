@@ -106,7 +106,7 @@ router.get("/search", async (req, res) => {
   const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
 
   try {
-    let { aggregatePreferences, group_id } = req.query;
+    let { aggregatePreferences, group_id, city, state} = req.query;
     console.log("aggregate preferences: ", aggregatePreferences);
     if (!aggregatePreferences) {
       return res
@@ -190,13 +190,11 @@ router.get("/search", async (req, res) => {
         .json({ error: "City is required in aggregatePreferences" });
     }
 
-    const city = parsedPreferences.city || "";
     if (!state) {
       return res
         .status(400)
         .json({ error: "State is required in aggregatePreferences" });
     }
-    const state = parsedPreferences.state || "";
     console.log(`city: ${city}, state: ${state}`);
     const location = await normalizeLocation(city, state);
     const userLocationString = `${location.city}, ${location.state}`;

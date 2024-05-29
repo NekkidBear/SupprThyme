@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
+  const restaurants = useSelector((state) => state.restaurants);
 
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
+        setLoading(true);
         let response;
+        let aggregatePreferences = {};
+
         if (group_id) {
           // Fetch the preferences of each user in the group
           const groupResponse = await axios.get(`/api/groups/${group_id}`);
@@ -19,7 +23,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
             users.map((user) => axios.get(`/api/users/${user.id}/preferences`))
           );
 
-          console.log(searchParams)
+          console.log(searchParams);
 
           // Aggregate the preferences
           aggregatePreferences = preferences.reduce(
@@ -65,23 +69,28 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
 
               return aggregate;
             },
-            aggregatePreferences // Pass the initialized object as the initial value
+            {} // Pass an empty object as the initial value
           );
-
-          // Fetch restaurants based on the aggregate preferences
-          const params = new URLSearchParams({
-            ...aggregatePreferences,
-          }).toString();
-          response = await axios.get(`/api/restaurants/search?${params}`);
         } else {
-          // Fetch restaurants based on the user's location
-          const params = new URLSearchParams({
-            ...searchParams,
-          }).toString();
-          console.log(params);
-          response = await axios.get(`/api/restaurants/search?${params}`);
-        } 
-        
+          // Use the currently logged in user's location data
+          if (searchParams.city && searchParams.state) {
+            aggregatePreferences = searchParams;
+          } else {
+            // Handle the case where city and state are not provided
+            console.error("City and state must be provided in searchParams");
+            setError(
+              "City and state must be provided. Please update your location settings."
+            );
+            return; // Exit the function early to prevent further execution
+          }
+        }
+
+        // Fetch restaurants based on the aggregate preferences
+        const params = new URLSearchParams({
+          aggregatePreferences: JSON.stringify(aggregatePreferences),
+        }).toString();
+        response = await axios.get(`/api/restaurants/search?${params}`);
+
         // Dispatch the SET_RESTAURANTS action
         dispatch({ type: "SET_RESTAURANTS", payload: response.data });
       } catch (error) {

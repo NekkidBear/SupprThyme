@@ -41,20 +41,26 @@ export default function GroupForm() {
     };
 
     const handleSubmit = async () => {
+        try{
         await createGroup(groupName, selectedMembers);
         setGroupName("");
         setSelectedMembers([]);
-        history.push('/groups');
+        history.push('/groups');}
+        catch(error){
+            console.error('Error creating group:', error)
+        }
     };
 
     async function searchUsers(searchTerm) {
         const response = await fetch(`/api/user/search?search=${searchTerm}`);
         const data = await response.json();
         console.log('data:', data);
-        return data.users.map(user =>({id: user.id, username: user.username}));
+        return data.map(user =>({id: user.id, username: user.username}));
     }
     
     async function createGroup(groupName, members) {
+        console.log('Creating group with members:', members); // Log the members array
+
         const response = await fetch('/api/groups', {
             method: 'POST',
             headers: {
@@ -72,16 +78,20 @@ export default function GroupForm() {
     return (
         <div>
             <h1>New Group</h1>
+            <h2>Group Name</h2>
             <GroupNameInput groupName={groupName} setGroupName={setGroupName} />
+            <h2>Search</h2>
             <TextField
                 label="Search Users"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
+
             <Button variant="contained" color="primary" onClick={handleSearch}>
                 Search
             </Button>
-            <h2>Search Results</h2>
+            
+            <h3>Search Results</h3>
             {Array.isArray(searchResults) && searchResults.map((user, index) => (
                 <div key={index}>
                     <p>{user.username}</p>

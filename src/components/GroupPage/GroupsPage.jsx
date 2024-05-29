@@ -40,19 +40,24 @@ export default function GroupsPage() {
 
   const editGroup = (groupId) => {
     console.log(`Editing group with id ${groupId}`);
-      // Find the group with the given ID
-      const groupToEdit = groups.find(group => group.id === groupId);
-    
-      // Navigate to the GroupForm component and pass the group data
-      history.push({
-        pathname: '/groupForm',
-        state: { group: groupToEdit }
-      });
-    };
+    // Find the group with the given ID
+    const groupToEdit = groups.find((group) => group.id === groupId);
 
-  const deleteGroup = (groupId, group_name) => {
-    //todo
+    // Navigate to the GroupForm component and pass the group data
+    history.push({
+      pathname: "/groupForm",
+      state: { group: groupToEdit },
+    });
+  };
+
+  const deleteGroup = async (groupId, group_name) => {
     console.log(`Deleting group ${group_name} with id ${groupId}`);
+    try {
+      await axios.delete(`/api/groups/${groupId}`);
+      setGroups(groups.filter((group) => group.id != groupId));
+    } catch (error) {
+      console.error(`Error deleting group: ${error}`);
+    }
   };
   return (
     <div>
@@ -75,7 +80,9 @@ export default function GroupsPage() {
             {groups.map((group) => (
               <TableRow key={group.id}>
                 <TableCell>{group.group_name}</TableCell>
-                <TableCell>{group.members.join(", ")}</TableCell>
+                <TableCell>
+                  {group.members.map((member) => member.username).join(", ")}
+                </TableCell>
                 <TableCell>
                   <Button
                     variant="contained"

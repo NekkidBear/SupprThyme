@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import SelectedUsers from "./SelectedUsers";
+import axios from "axios";
 
 function GroupNameInput({ groupName, setGroupName }) {
   return (
@@ -18,12 +19,22 @@ export default function GroupForm() {
   const location = useLocation();
   const group = location.state?.group;
 
+  {group && console.log('group is ', group)}
   const [groupName, setGroupName] = useState(group?.group_name || "");
-  const [groupMembers, setGroupMembers] = useState(group?.members || []);
+  const [groupMembers, setGroupMembers] = useState(
+    group?.members.map((member) => ({
+      id: member.id,
+      username: member.username,
+    })) || []
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedMembers, setSelectedMembers] = useState(group?.members || []);
-
+  const [selectedMembers, setSelectedMembers] = useState(
+    group?.members.map((member) => ({
+      id: member.id,
+      username: member.username,
+    })) || []
+  );
   const handleRemoveUser = (userToRemove) => {
     setSelectedMembers(
       selectedMembers.filter((user) => user.id !== userToRemove.id)
@@ -36,7 +47,10 @@ export default function GroupForm() {
   };
 
   const handleSelectUser = (user) => {
-    setSelectedMembers((prevMembers) => [...prevMembers, user]);
+    setSelectedMembers((prevMembers) => [
+      ...prevMembers,
+      { id: user.id, username: user.username },
+    ]);
     setSearchResults((prevResults) =>
       prevResults.filter((u) => u.id !== user.id)
     );
@@ -49,7 +63,7 @@ export default function GroupForm() {
       try {
         await axios.put(`/api/groups/${group.id}`, {
           group_name: groupName,
-          members: groupMembers,
+          members: selectedMembers.map((member) => member.id),
         });
         //redirect to groups page
         history.push("/groups");
@@ -92,8 +106,8 @@ export default function GroupForm() {
     return data.group;
   }
 
-  useEffect(()=>{
-    console.log('Selected members:', selectedMembers)
+  useEffect(() => {
+    console.log("Selected members:", selectedMembers);
   }, [selectedMembers]);
 
   return (
@@ -128,13 +142,16 @@ export default function GroupForm() {
             </div>
           ))}
         <h2>Group Members</h2>
-        <SelectedUsers selectedMembers={selectedMembers} handleRemoveUser={handleRemoveUser}/>
+        <SelectedUsers
+          selectedMembers={selectedMembers}
+          handleRemoveUser={handleRemoveUser}
+        />
         <Button
           variant="contained"
           color="primary"
           onClick={(e) => handleSubmit(e)}
         >
-          Create Group
+          {group ? "Save Changes" : "Create Group"}
         </Button>
       </form>
     </div>

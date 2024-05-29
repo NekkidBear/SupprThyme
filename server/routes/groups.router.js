@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
     try {
       const result = await pool.query(
-        `SELECT groups.id, groups.group_name, array_agg("user".username) AS members
+        `SELECT groups.id, groups.group_name, json_agg(json_build_object('id', "user".id, 'username', "user".username)) AS members
          FROM groups
          JOIN group_members ON groups.id = group_members.group_id
          JOIN "user" ON group_members.user_id = "user".id
@@ -72,4 +72,88 @@ router.post("/", async (req, res) => {
     client.release();
   }
 });
+
+/**
+ * PUT routes
+ */
+router.put('/:id', async (req, res) => {
+    const groupId = req.params.id;
+    const { groupName, members } = req.body;
+  
+    const client = await pool.connect();
+  
+    try {
+      await client.query('BEGIN');
+  
+      // Update the group name
+      await client.query(
+        'UPDATE groups SET group_name = $1 WHERE id = $2',
+        [groupName, groupId]
+      );
+  
+      // Delete all existing members of the group
+      await client.query(
+        'DELETE FROM group_members WHERE group_id = $1',
+        [groupId]
+      );
+  
+      // Add the new members to the group
+      for (let memberId of members) {
+        if (memberId === null || memberId === undefined) {
+          console.log(`skipping ${memberId} because ID is null`);
+          continue;
+        }
+        await client.query(
+          'INSERT INTO group_members (group_id, user_id) VALUES ($1, $2)',
+          [groupId, memberId]
+        );
+      }
+  
+      await client.query('COMMIT');
+  
+      res.status(200).json({message:'Group updated'});
+    } catch (error) {
+      await client.query('ROLLBACK');
+      console.error(`Rollback, Error updating group: ${error}`);
+      res.sendStatus(500);
+    } finally {
+      client.release();
+    }
+  });
+
+  /**
+   * DELETE Routes
+   */
+  router.delete('/:id', async (req, res) => {
+  const groupId = req.params.id;
+
+  const client = await pool.connect();
+
+  try {
+    await client.query('BEGIN');
+
+    // Delete all members of the group
+    await client.query(
+      'DELETE FROM group_members WHERE group_id = $1',
+      [groupId]
+    );
+
+    // Delete the group
+    await client.query(
+      'DELETE FROM groups WHERE id = $1',
+      [groupId]
+    );
+
+    await client.query('COMMIT');
+
+    res.status(200).json({message:'Group deleted'});
+  } catch (error) {
+    await client.query('ROLLBACK');
+    console.error(`Rollback, Error deleting group: ${error}`);
+    res.sendStatus(500);
+  } finally {
+    client.release();
+  }
+});
+
 module.exports = router;

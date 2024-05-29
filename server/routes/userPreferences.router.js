@@ -2,7 +2,9 @@ const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
 
-
+/**
+ * GET routes
+ */
 
 //GET single user's preferences
 router.get("/:userId", async (req, res) => {
@@ -50,6 +52,9 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
+/**
+ * POST routes
+ */
 router.post("/", async (req, res) => {
   const client = await pool.connect();
   console.log(req.body);
@@ -135,5 +140,10 @@ router.post("/", async (req, res) => {
     client.release();
   }
 });
+
+/**
+ * PUT routes
+ */
+
 
 module.exports = router;

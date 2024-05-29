@@ -41,6 +41,20 @@ router.get("/profile", rejectUnauthenticated, async (req, res) => {
   res.status(200).json(user);
 });
 
+// Handles GET request with query parameter for searching users
+router.get('/search', (req, res) => {
+  const searchTerm = req.query.search;
+
+  pool.query('SELECT * FROM "user" WHERE username ILIKE $1', [`%${searchTerm}%`])
+      .then((result) => {
+          res.send(result.rows);
+      })
+      .catch((error) => {
+          console.error('Error completing SELECT user query', error);
+          res.sendStatus(500);
+      });
+});
+
 // GET route to retrieve user information with address details
 router.get("/:id", async (req, res) => {
   const userId = parseInt(req.params.id);
@@ -74,20 +88,6 @@ router.get("/:id", async (req, res) => {
     console.error("Error fetching user information:", error);
     res.status(500).json({ message: "Error fetching user information" });
   }
-});
-
-// Handles GET request with query parameter for searching users
-router.get('/search', (req, res) => {
-  const searchTerm = req.query.search;
-
-  pool.query('SELECT * FROM user WHERE name ILIKE $1', [`%${searchTerm}%`])
-      .then((result) => {
-          res.send(result.rows);
-      })
-      .catch((error) => {
-          console.error('Error completing SELECT user query', error);
-          res.sendStatus(500);
-      });
 });
 
 // endpoint to normalize user's location

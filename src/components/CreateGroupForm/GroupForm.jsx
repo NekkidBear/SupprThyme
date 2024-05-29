@@ -1,24 +1,55 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
+import {Button, TextField} from '@mui/material';
+
+function GroupNameInput({ groupName, setGroupName }) {
+    return (
+        <TextField
+            label="Group Name"
+            value={groupName}
+            onChange={(e) => setGroupName(e.target.value)}
+        />
+    );
+}
+
+function SelectedUsers({ selectedMembers }) {
+    return (
+        <div>
+            {selectedMembers.map((member, index) => (
+                <p key={index}>{member.username}</p>
+            ))}
+        </div>
+    );
+}
 
 export default function GroupForm() {
     const [groupName, setGroupName] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
-    const [members, setMembers] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
+    const [selectedMembers, setSelectedMembers] = useState([]);
+    const history = useHistory();
 
     const handleSearch = async () => {
         const users = await searchUsers(searchTerm);
-        setMembers(users);
+        setSearchResults(users);
+    };
+
+    const handleSelectUser = (user) => {
+        setSelectedMembers((prevMembers) => [...prevMembers, user]);
+        setSearchResults((prevResults) => prevResults.filter((u) => u.id !== user.id));
     };
 
     const handleSubmit = async () => {
-        await createGroup(groupName, members);
+        await createGroup(groupName, selectedMembers);
         setGroupName("");
-        setMembers([]);
+        setSelectedMembers([]);
+        history.push('/groups');
     };
 
     async function searchUsers(searchTerm) {
-        const response = await fetch(`/api/users/search?search=${searchTerm}`);
+        const response = await fetch(`/api/user/search?search=${searchTerm}`);
         const data = await response.json();
+        console.log('data:', data);
         return data.users;
     }
     
@@ -30,7 +61,7 @@ export default function GroupForm() {
             },
             body: JSON.stringify({
                 name: groupName,
-                members: members,
+                members: members.map((member) => member.id),
             }),
         });
         const data = await response.json();
@@ -40,24 +71,29 @@ export default function GroupForm() {
     return (
         <div>
             <h1>New Group</h1>
-            <input
-                type="text"
-                placeholder="Group Name"
-                value={groupName}
-                onChange={(e) => setGroupName(e.target.value)}
-            />
-            <input
-                type="text"
-                placeholder="Search Users"
+            <GroupNameInput groupName={groupName} setGroupName={setGroupName} />
+            <TextField
+                label="Search Users"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button onClick={handleSearch}>Search</button>
-            <h2>Group Members</h2>
-            {members.map((member, index) => (
-                <p key={index}>{member.name}</p>
+            <Button variant="contained" color="primary" onClick={handleSearch}>
+                Search
+            </Button>
+            <h2>Search Results</h2>
+            {Array.isArray(searchResults) && searchResults.map((user, index) => (
+                <div key={index}>
+                    <p>{user.name}</p>
+                    <Button variant="contained" color="primary" onClick={() => handleSelectUser(user)}>
+                        Add to group
+                    </Button>
+                </div>
             ))}
-            <button onClick={handleSubmit}>Create Group</button>
+            <h2>Group Members</h2>
+            <SelectedUsers selectedMembers={selectedMembers} />
+            <Button variant="contained" color="primary" onClick={handleSubmit}>
+                Create Group
+            </Button>
         </div>
     );
 }

@@ -31,6 +31,7 @@ export default function GroupForm() {
 
     const handleSearch = async () => {
         const users = await searchUsers(searchTerm);
+        console.log('Server response:', users);
         setSearchResults(users);
     };
 
@@ -50,7 +51,7 @@ export default function GroupForm() {
         const response = await fetch(`/api/user/search?search=${searchTerm}`);
         const data = await response.json();
         console.log('data:', data);
-        return data.users;
+        return data.users.map(user =>({id: user.id, username: user.username}));
     }
     
     async function createGroup(groupName, members) {
@@ -83,7 +84,7 @@ export default function GroupForm() {
             <h2>Search Results</h2>
             {Array.isArray(searchResults) && searchResults.map((user, index) => (
                 <div key={index}>
-                    <p>{user.name}</p>
+                    <p>{user.username}</p>
                     <Button variant="contained" color="primary" onClick={() => handleSelectUser(user)}>
                         Add to group
                     </Button>

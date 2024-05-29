@@ -16,32 +16,49 @@ import {
 import axios from "axios";
 import AllergenSelect from "./AllergenSelect"; // Import the AllergenSelect component
 
-const UserPreferencesForm = () => {
-  const [selectedAllergens, setSelectedAllergens] = useState([]);
-  const [max_price_range, setMaxPriceRange] = useState("");
-  const [meat_preference, setMeatPreference] = useState("");
-  const [religious_restrictions, setReligiousRestrictions] = useState("");
-  const [cuisine_types, setCuisineTypes] = useState([]);
-  const [max_distance, setMaxDistance] = useState("");
-  const [open_now, setOpenNow] = useState(true);
-  const [accepts_large_parties, setAcceptsLargeParties] = useState(true);
+const UserPreferencesForm = ({
+  initialValues = {},
+  onSubmit = () => {},
+  onCancel = () => {},
+}) => {
+  const [selectedAllergens, setSelectedAllergens] = useState(
+    initialValues.selectedAllergens || []
+  );
+  const [max_price_range, setMaxPriceRange] = useState(
+    initialValues.max_price_range || ""
+  );
+  const [meat_preference, setMeatPreference] = useState(
+    initialValues.meat_preference || ""
+  );
+  const [religious_restrictions, setReligiousRestrictions] = useState(
+    initialValues.religious_restrictions || ""
+  );
+  const [cuisine_types, setCuisineTypes] = useState(
+    initialValues.cuisine_types || []
+  );
+  const [max_distance, setMaxDistance] = useState(
+    initialValues.max_distance || ""
+  );
+  const [open_now, setOpenNow] = useState(initialValues.open_now || true);
+  const [accepts_large_parties, setAcceptsLargeParties] = useState(
+    initialValues.accepts_large_parties || true
+  );
   const [allergenOptions, setAllergenOptions] = useState([]);
   const [cuisineOptions, setCuisineOptions] = useState([]);
   const [priceRangeOptions, setPriceRangeOptions] = useState([]);
   const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([]);
   const [religiousRestrictionOptions, setReligiousRestrictionsOptions] =
     useState([]);
-  
+
   //get User ID
-  const getUserID= async() =>{
+  const getUserID = async () => {
     try {
       const response = await axios.get("/api/user");
       const user_id = response.data.id;
       return user_id;
+    } catch (error) {
+      console.error("error fetching logged in user's ID", error);
     }
-    catch (error){
-      console.error("error fetching logged in user's ID", error)
-    };
   };
 
   useEffect(() => {
@@ -88,9 +105,15 @@ const UserPreferencesForm = () => {
       open_now,
       accepts_large_parties,
     };
-    console.log(preferencesData)
+
     try {
-      await axios.post("/api/user_preferences", preferencesData);
+      const response = await axios.get(`/api/user_preferences/${user_id}`);
+      if (response.data) {
+        await axios.put(`/api/user_preferences/${user_id}`, preferencesData);
+      } else {
+        await axios.post("/api/user_preferences", preferencesData);
+      }
+      onSubmit(preferencesData);
       alert("Preferences saved successfully");
     } catch (error) {
       console.error("Error saving preferences:", error);
@@ -212,6 +235,9 @@ const UserPreferencesForm = () => {
 
       <Button type="submit" variant="contained" color="primary">
         Save Preferences
+      </Button>
+      <Button variant="contained" color="primary" onClick={onCancel}>
+        Cancel
       </Button>
     </form>
   );

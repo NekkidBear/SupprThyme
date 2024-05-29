@@ -145,5 +145,83 @@ router.post("/", async (req, res) => {
  * PUT routes
  */
 
+router.put("/:userId", async (req, res) => {
+  const userId = req.params.userId;
+  const client = await pool.connect();
 
+  try {
+    await client.query("BEGIN");
+
+    const {
+      max_price_range = null,
+      meat_preference = null,
+      religious_restrictions = null,
+      allergens = [],
+      cuisine_types = [],
+      max_distance = 0,
+      open_now = true,
+      accepts_large_parties = true,
+    } = req.body;
+
+    const userPreferencesSqlText = `
+      UPDATE "user_preferences"
+      SET
+        max_price_range = $1,
+        meat_preference = $2,
+        religious_restrictions = $3,
+        cuisine_types = $4,
+        max_distance = $5,
+        open_now = $6,
+        accepts_large_parties = $7
+      WHERE user_id = $8
+    `;
+
+    const userPreferencesValues = [
+      max_price_range,
+      meat_preference,
+      religious_restrictions,
+      cuisine_types,
+      max_distance,
+      open_now,
+      accepts_large_parties,
+      userId,
+    ];
+
+    await client.query(userPreferencesSqlText, userPreferencesValues);
+
+    if (allergens && allergens.length > 0) {
+      const deleteAllergensSqlText = `
+        DELETE FROM "user_allergens"
+        WHERE user_id = $1
+      `;
+
+      await client.query(deleteAllergensSqlText, [userId]);
+
+      const allergensSqlText = `
+        INSERT INTO "user_allergens" (user_id, allergen_id)
+        VALUES ($1, $2)
+      `;
+
+      const allergensValues = allergens.map((allergen_id) => [
+        userId,
+        allergen_id,
+      ]);
+
+      const allergenQueries = allergensValues.map((values) =>
+        client.query(allergensSqlText, values)
+      );
+
+      await Promise.all(allergenQueries);
+    }
+
+    await client.query("COMMIT");
+    res.sendStatus(200);
+  } catch (error) {
+    await client.query("ROLLBACK");
+    console.error("Error updating user preferences:", error);
+    res.status(500).send("Error updating user preferences");
+  } finally {
+    client.release();
+  }
+});
 module.exports = router;

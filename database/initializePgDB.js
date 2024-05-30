@@ -27,8 +27,9 @@ const tablesArray = [
   path.join(__dirname, "lookup_tables", "price_ranges.sql"),
   path.join(__dirname, "lookup_tables", "religious_restrictions.sql"),
   path.join(__dirname, "lookup_tables", "allergens_list.sql"),
-  //create user preferences after lookups are complete
+  //create user preferences and user_cuisine_types after lookups are complete
   path.join(__dirname, "user_preferences.sql"),
+  path.join(__dirname, "user_cuisine_types.sql"),
 ];
 
 const addTables = async () => {

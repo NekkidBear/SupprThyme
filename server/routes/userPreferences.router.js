@@ -20,7 +20,6 @@ router.get("/:userId", async (req, res) => {
         pr.range AS max_price_range,
         mp.preference AS meat_preference,
         rr.restriction AS religious_restrictions,
-        up.cuisine_types,
         up.max_distance,
         up.open_now,
         up.accepts_large_parties
@@ -45,7 +44,17 @@ router.get("/:userId", async (req, res) => {
     const allergenResult = await client.query(allergenQuery, [userId]);
     const allergens = allergenResult.rows;
 
-    res.json({ ...userPreferences, allergens });
+    // Fetch user cuisine types
+    const cuisineQuery = `
+      SELECT ct.id, ct.type
+      FROM user_cuisine_types uct
+      JOIN cuisine_types ct ON uct.cuisine_type_id = ct.id
+      WHERE uct.user_id = $1;
+    `;
+    const cuisineResult = await client.query(cuisineQuery, [userId]);
+    const cuisineTypes = cuisineResult.rows;
+
+    res.json({ ...userPreferences, allergens, cuisineTypes });
   } catch (error) {
     console.error("Error fetching user preferences:", error);
     res.status(500).send("Error fetching user preferences");
@@ -57,101 +66,12 @@ router.get("/:userId", async (req, res) => {
 /**
  * POST routes
  */
-router.post("/:id", async (req, res) => {
-  const client = await pool.connect();
-  console.log(req.body);
-  try {
-    await client.query("BEGIN");
-
-    const {
-      user_id = null,
-      max_price_range = null,
-      meat_preference = null,
-      religious_restrictions = null,
-      allergens = [],
-      cuisine_types = [],
-      max_distance = 0,
-      open_now = true,
-      accepts_large_parties = true,
-    } = req.body;
-
-    console.log(
-      user_id,
-      max_price_range,
-      meat_preference,
-      religious_restrictions,
-      allergens,
-      cuisine_types,
-      max_distance,
-      open_now,
-      accepts_large_parties
-    );
-
-    const userPreferencesSqlText = `
-      INSERT INTO "user_preferences" (
-        user_id,
-        max_price_range,
-        meat_preference,
-        religious_restrictions,
-        cuisine_types,
-        max_distance,
-        open_now,
-        accepts_large_parties
-      )
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-    `;
-
-    const userPreferencesValues = [
-      user_id,
-      max_price_range,
-      meat_preference,
-      religious_restrictions,
-      cuisine_types,
-      max_distance,
-      open_now,
-      accepts_large_parties,
-    ];
-
-    await client.query(userPreferencesSqlText, userPreferencesValues);
-
-    if (allergens && allergens.length > 0) {
-      const allergensSqlText = `
-        INSERT INTO "user_allergens" (user_id, allergen_id)
-        VALUES ($1, $2)
-      `;
-
-      const allergensValues = allergens.map((allergen_id) => [
-        user_id,
-        allergen_id,
-      ]);
-
-      const allergenQueries = allergensValues.map((values) =>
-        client.query(allergensSqlText, values)
-      );
-
-      await Promise.all(allergenQueries);
-    }
-
-    await client.query("COMMIT");
-    res.sendStatus(201);
-  } catch (error) {
-    await client.query("ROLLBACK");
-    console.error("Error updating user preferences:", error);
-    res.status(500).send("Error updating user preferences");
-  } finally {
-    client.release();
-  }
-});
-
-/**
- * PUT routes
- */
-
 router.put("/:userId", async (req, res) => {
   const userId = parseInt(req.params.userId, 10);
   if (isNaN(userId)) {
     return res.status(400).send("Invalid user ID");
-  }  const client = await pool.connect();
+  }
+  const client = await pool.connect();
 
   try {
     await client.query("BEGIN");
@@ -170,61 +90,79 @@ router.put("/:userId", async (req, res) => {
     if (isNaN(max_distance_int)) {
       return res.status(400).send("Invalid max distance");
     }
-    
+
     const userPreferencesSqlText = `
       UPDATE "user_preferences"
       SET
         max_price_range = $1,
         meat_preference = $2,
         religious_restrictions = $3,
-        cuisine_types = $4,
-        max_distance = $5,
-        open_now = $6,
-        accepts_large_parties = $7
-      WHERE user_id = $8
+        max_distance = $4,
+        open_now = $5,
+        accepts_large_parties = $6
+      WHERE user_id = $7
     `;
 
     const userPreferencesValues = [
       max_price_range,
       meat_preference,
       religious_restrictions,
-      cuisine_types,
       max_distance_int,
       open_now,
       accepts_large_parties,
       userId,
     ];
-    console.log(userPreferencesValues);
+
     await client.query(userPreferencesSqlText, userPreferencesValues);
 
     if (allergens && allergens.length > 0) {
       const deleteAllergensSqlText = `
-    DELETE FROM "user_allergens"
-    WHERE user_id = $1
-  `;
+        DELETE FROM "user_allergens"
+        WHERE user_id = $1
+      `;
 
       await client.query(deleteAllergensSqlText, [userId]);
 
       const allergensSqlText = `
-    INSERT INTO "user_allergens" (user_id, allergen_id)
-    VALUES ($1, $2)
-  `;
+        INSERT INTO "user_allergens" (user_id, allergen_id)
+        VALUES ($1, $2)
+      `;
 
-      const allergensValues = allergens
-        .filter((allergen) => allergen && allergen.id !== null)
-        .map((allergen) => [userId, allergen.id]);
-
-      if (allergensValues.length !== allergens.length) {
-        console.error(
-          `Skipping null or invalid allergenId for userId ${userId}`
-        );
-      }
+      const allergensValues = allergens.map((allergen_id) => [
+        userId,
+        allergen_id,
+      ]);
 
       const allergenQueries = allergensValues.map((values) =>
         client.query(allergensSqlText, values)
       );
 
       await Promise.all(allergenQueries);
+    }
+
+    if (cuisine_types && cuisine_types.length > 0) {
+      const deleteCuisineSqlText = `
+        DELETE FROM "user_cuisine_types"
+        WHERE user_id = $1
+      `;
+
+      await client.query(deleteCuisineSqlText, [userId]);
+
+      const cuisineSqlText = `
+        INSERT INTO "user_cuisine_types" (user_id, cuisine_type_id)
+        VALUES ($1, $2)
+      `;
+
+      const cuisineValues = cuisine_types.map((cuisine_type_id) => [
+        userId,
+        cuisine_type_id,
+      ]);
+
+      const cuisineQueries = cuisineValues.map((values) =>
+        client.query(cuisineSqlText, values)
+      );
+
+      await Promise.all(cuisineQueries);
     }
 
     await client.query("COMMIT");
@@ -237,4 +175,5 @@ router.put("/:userId", async (req, res) => {
     client.release();
   }
 });
+
 module.exports = router;

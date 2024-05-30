@@ -2,60 +2,61 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, TextField } from "@mui/material";
 
-function RegisterForm() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [street1, setStreet1] = useState("");
-  const [street2, setStreet2] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
-  const [country, setCountry] = useState("");
+function RegisterForm({
+  initialValues = {},
+  onSubmit = () => {},
+  onCancel = () => {},
+  isRegistration = true,
+}) {
+  const [username, setUsername] = useState(initialValues.username || "");
+  const [password, setPassword] = useState(initialValues.password || "");
+  const [email, setEmail] = useState(initialValues.email || "");
+  const [street1, setStreet1] = useState(initialValues.street1 || "");
+  const [street2, setStreet2] = useState(initialValues.street2 || "");
+  const [city, setCity] = useState(initialValues.city || "");
+  const [state, setState] = useState(initialValues.state || "");
+  const [zip, setZip] = useState(initialValues.zip || "");
+  const [country, setCountry] = useState(initialValues.country || "");
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
   const registerUser = (event) => {
     event.preventDefault();
-    dispatch({
-      type: "REGISTER",
-      payload: {
-        username: username,
-        password: password,
-        email: email,
-        address: {
-          street1: street1,
-          street2: street2,
-          city: city,
-          state: state,
-          zip: zip,
-          country: country,
-        },
+    onSubmit({
+      username: username,
+      password: password,
+      email: email,
+      address: {
+        street1: street1,
+        street2: street2,
+        city: city,
+        state: state,
+        zip: zip,
+        country: country,
       },
     });
   };
-
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
+      <h2>{isRegistration? "Register User" : "User Information"}</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
-      <TextField
+      {isRegistration && <TextField
         label="Username"
         value={username}
         onChange={(event) => setUsername(event.target.value)}
         required
-      />
-      <TextField
+      />}
+      {isRegistration && <TextField
         label="Password"
         type="password"
         value={password}
         onChange={(event) => setPassword(event.target.value)}
         required
-      />
+      />}
       <TextField
         label="Email"
         type="email"
@@ -99,7 +100,10 @@ function RegisterForm() {
         required
       />
       <Button variant="contained" type="submit">
-        Register
+        {isRegistration ? "Register": "Save Changes"}
+      </Button>
+      <Button variant="contained" onClick={onCancel} color="secondary">
+        Cancel
       </Button>
     </form>
   );

@@ -7,7 +7,7 @@
       "name": "Holy Land Bakery, Grocery and Deli",
       "latitude": "45.013634",
       "longitude": "-93.24711",
-      "num_reviews": "1492",
+      "num_reviews": "1507",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -53,19 +53,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.894311428070068",
+      "raw_ranking": "4.899738311767578",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "1",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#1 of 1,795 places to eat in Minneapolis",
+      "ranking": "#1 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "5.0",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Opens in 23 min",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$1 - $20",
@@ -122,36 +122,36 @@
       "nearest_metro_station": [],
       "reviews": [
         {
-          "title": "Delicious food, excellent service, and dessert on the house!",
-          "rating": "5",
-          "published_date": "2024-05-18T13:44:39-04:00",
+          "title": "good hummus and warm humanity",
+          "rating": "4",
+          "published_date": "2024-05-28T18:23:35-04:00",
           "published_platform": null,
-          "summary": "Amazing service and fantastic food! One of the servers was kind enough to give us two fresh honey cakes on the house, and when we went back to thank her she gave us another two! I cannot say enough...",
-          "author": "erinmP8781DP",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r951387553-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review951387553",
-          "review_id": "951387553",
+          "summary": "Very friendly and generous staff, yummy food and coffee, and a simple atmosphere.  Very short wait.  Manager/owner came up and pleasantly welcomed us, a wait-staff member brought out complimentary...",
+          "author": "885jonahl",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r952806730-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review952806730",
+          "review_id": "952806730",
           "machine_translated": false
         },
         {
-          "title": "Top rated for these reasons.",
+          "title": "I love it",
           "rating": "5",
-          "published_date": "2024-05-13T12:09:07-04:00",
+          "published_date": "2024-05-28T10:58:45-04:00",
           "published_platform": null,
-          "summary": "All of the prior reviews which rate this restaurant as a 5 are right. Excellent food.  Friendly service. Lots of choices.",
-          "author": "TomLuchetti",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r950742773-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review950742773",
-          "review_id": "950742773",
+          "summary": "I was visiting a friend from Arizona and the first place she recommended was Holy land restaurant. I loved the food and the service. 10/10",
+          "author": "samiramO4558UG",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r952772581-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review952772581",
+          "review_id": "952772581",
           "machine_translated": false
         },
         {
-          "title": "Great Restaurant",
+          "title": "Fun lunch",
           "rating": "5",
-          "published_date": "2024-05-07T14:40:31-04:00",
+          "published_date": "2024-05-25T16:44:52-04:00",
           "published_platform": null,
-          "summary": "Great food, welcoming service. Never waited too long on my order and they have enough space to accommodate a large group.",
-          "author": "Passenger64460186185",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r949947563-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review949947563",
-          "review_id": "949947563",
+          "summary": "Very friendly.  Generous portions.  Very tasty food.  Amina is the best employee. Had chicken Swarma with yellow rice, salad, pita bread, tahini sauce, honey cake, tea.",
+          "author": "Nomad51747125840",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d828111-r952352879-Holy_Land_Bakery_Grocery_and_Deli-Minneapolis_Minnesota.html#review952352879",
+          "review_id": "952352879",
           "machine_translated": false
         }
       ],
@@ -272,13 +272,13 @@
       ],
       "booking": {
         "provider": "Grubhub",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173925&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby3ihd0fK9yXnEzNIz5B8I8NipXT_WgdUQrCPJR-Y03lg&cs=1d3c8380efc4a872bd6b0918f9c117602"
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987879&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbycjOkppgvbEfFIb82ErRqrV7bP8A79mrMwseHJII4Lps&cs=1e8cc003baf454a2e5962b9f94b3f9357"
       },
       "reserve_info": {
         "id": "828111",
         "provider": "Grubhub",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173925&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby3ihd0fK9yXnEzNIz5B8I8NipXT_WgdUQrCPJR-Y03lg&cs=1d3c8380efc4a872bd6b0918f9c117602",
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987879&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbycjOkppgvbEfFIb82ErRqrV7bP8A79mrMwseHJII4Lps&cs=1e8cc003baf454a2e5962b9f94b3f9357",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -290,7 +290,7 @@
         "banner_text": null
       },
       "menu_web_url": "https://holylandbrand.com/wp-content/uploads/2021/12/Holyland-Regular-Menu-DEC-2021-Print.pdf",
-      "establishment_category_ranking": "#1 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#1 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10597",
@@ -415,15 +415,15 @@
           }
         ]
       },
-      "photo_count": "299",
+      "photo_count": "303",
       "has_review_draft": false,
       "has_panoramic_photos": false,
       "rating_histogram": {
         "count_1": "13",
         "count_2": "9",
         "count_3": "29",
-        "count_4": "108",
-        "count_5": "1333"
+        "count_4": "109",
+        "count_5": "1347"
       }
     }
   },
@@ -435,7 +435,7 @@
       "name": "Wood + Paddle Eatery",
       "latitude": "44.97719",
       "longitude": "-93.27331",
-      "num_reviews": "531",
+      "num_reviews": "532",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -481,19 +481,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.835162162780762",
+      "raw_ranking": "4.835240364074707",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "2",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#2 of 1,795 places to eat in Minneapolis",
+      "ranking": "#2 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$10 - $45",
@@ -550,6 +550,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Good choice",
+          "rating": "5",
+          "published_date": "2024-05-26T05:39:01-04:00",
+          "published_platform": null,
+          "summary": "We were staying at a hotel down the street that did not have an acceptable breakfast choice.  After looking at online reviews we headed down to Wood & Paddle. So happy we did.  The ambience was...",
+          "author": "520marybetht",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444559-r952419637-Wood_Paddle_Eatery-Minneapolis_Minnesota.html#review952419637",
+          "review_id": "952419637",
+          "machine_translated": false
+        },
+        {
           "title": "Great Service",
           "rating": "5",
           "published_date": "2024-05-15T13:00:42-04:00",
@@ -569,17 +580,6 @@
           "author": "Tourist15993881638",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444559-r950280373-Wood_Paddle_Eatery-Minneapolis_Minnesota.html#review950280373",
           "review_id": "950280373",
-          "machine_translated": false
-        },
-        {
-          "title": "Excellent",
-          "rating": "5",
-          "published_date": "2024-05-10T06:47:12-04:00",
-          "published_platform": null,
-          "summary": "Breakfast was excellent and service was incredibly friendly! Lolo was our server and she was fabulous. The bacon egg and cheese croissant was delicious.",
-          "author": "abbysE6023HL",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444559-r950280213-Wood_Paddle_Eatery-Minneapolis_Minnesota.html#review950280213",
-          "review_id": "950280213",
           "machine_translated": false
         }
       ],
@@ -708,13 +708,13 @@
       ],
       "booking": {
         "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173932&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WdTjEYP7dXMCsWQKU8fbgg&cs=1a6397a90388665b0133b10e436dd4c8c"
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987887&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Tmh2A87jOzQfZFin9KXiH8&cs=1b8108c9f79dcc0eeda8808950498037d"
       },
       "reserve_info": {
         "id": "444559",
         "provider": "ChowNow",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173932&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WdTjEYP7dXMCsWQKU8fbgg&cs=1a6397a90388665b0133b10e436dd4c8c",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987887&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Tmh2A87jOzQfZFin9KXiH8&cs=1b8108c9f79dcc0eeda8808950498037d",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -726,7 +726,7 @@
         "banner_text": null
       },
       "menu_web_url": "https://woodandpaddlemn.com/menus/",
-      "establishment_category_ranking": "#2 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#2 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10597",
@@ -854,7 +854,7 @@
         "count_2": "15",
         "count_3": "49",
         "count_4": "125",
-        "count_5": "334"
+        "count_5": "335"
       }
     }
   },
@@ -912,19 +912,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.668263912200928",
+      "raw_ranking": "4.668309211730957",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "3",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#3 of 1,795 places to eat in Minneapolis",
+      "ranking": "#3 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "5.0",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$",
       "price": "$1 - $20",
@@ -1196,13 +1196,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.589504241943359",
+      "raw_ranking": "4.589466571807861",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "4",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#4 of 1,795 places to eat in Minneapolis",
+      "ranking": "#4 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -1412,7 +1412,7 @@
           "name": "Gluten Free Options"
         }
       ],
-      "establishment_category_ranking": "#3 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#3 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10597",
@@ -1562,13 +1562,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.5186543464660645",
+      "raw_ranking": "4.518846035003662",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "5",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#5 of 1,795 places to eat in Minneapolis",
+      "ranking": "#5 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -1774,13 +1774,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173952&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8s2XltLeBw_E8kd71uZsEjdrREeLZowwC7ljQ2aXPPlc&cs=141762feb61ef41a70d50618392c829f5"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987908&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ80eByeTf7TTMlgRd0WyQ9pK5aa22Hhl4g0MmbpyaYFYs&cs=13d31ed5cbadfd6246af50ae98b62b7e5"
       },
       "reserve_info": {
         "id": "444478",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173952&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8s2XltLeBw_E8kd71uZsEjdrREeLZowwC7ljQ2aXPPlc&cs=141762feb61ef41a70d50618392c829f5",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987908&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ80eByeTf7TTMlgRd0WyQ9pK5aa22Hhl4g0MmbpyaYFYs&cs=13d31ed5cbadfd6246af50ae98b62b7e5",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -1792,7 +1792,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d444478-The_Capital_Grille-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#4 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#4 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -1970,19 +1970,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.494874000549316",
+      "raw_ranking": "4.494797706604004",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "6",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#6 of 1,795 places to eat in Minneapolis",
+      "ranking": "#6 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed today",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "neighborhood_info": [
@@ -2172,7 +2172,7 @@
         }
       ],
       "menu_web_url": "https://redcowmn.com/menus/brunch/",
-      "establishment_category_ranking": "#5 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#5 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -2276,7 +2276,7 @@
       "name": "George & The Dragon",
       "latitude": "44.912212",
       "longitude": "-93.29034",
-      "num_reviews": "328",
+      "num_reviews": "329",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -2322,13 +2322,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.486635684967041",
+      "raw_ranking": "4.490582466125488",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "7",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#7 of 1,795 places to eat in Minneapolis",
+      "ranking": "#7 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -2390,6 +2390,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Great to go food order",
+          "rating": "5",
+          "published_date": "2024-05-22T07:17:10-04:00",
+          "published_platform": null,
+          "summary": "Fast and reliable to go food. Quality Quality Quality. This place is consistently good and the staff are fast when it came to my to go order",
+          "author": "M4436EVjimm",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d3194663-r951906915-George_The_Dragon-Minneapolis_Minnesota.html#review951906915",
+          "review_id": "951906915",
+          "machine_translated": false
+        },
+        {
           "title": "Beautiful",
           "rating": "5",
           "published_date": "2024-04-19T07:48:23-04:00",
@@ -2409,17 +2420,6 @@
           "author": "Corsair128",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d3194663-r945648278-George_The_Dragon-Minneapolis_Minnesota.html#review945648278",
           "review_id": "945648278",
-          "machine_translated": false
-        },
-        {
-          "title": "Amazing! Terrific Food - Great Service ",
-          "rating": "5",
-          "published_date": "2024-02-13T07:43:06-05:00",
-          "published_platform": null,
-          "summary": "Amazing food! Staff was terrific. Great place. We enjoyed the fried snap peas,  bacon n onion dip and shared the fish chips. Batter was soooo light n fluffy. Enjoyed raspberry chocolate ice cream n...",
-          "author": "AlwaysTraveling65",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d3194663-r938000005-George_The_Dragon-Minneapolis_Minnesota.html#review938000005",
-          "review_id": "938000005",
           "machine_translated": false
         }
       ],
@@ -2526,13 +2526,13 @@
       ],
       "booking": {
         "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173966&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2eHC2_7JYSaksc1mYag6qzo&cs=149c911cee905de70bb0e8a5f203af61a"
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987923&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2S68zdtLvu4nNDi3SNkW9dw&cs=16aced6c6fdda37b05f4dffa28b2e6625"
       },
       "reserve_info": {
         "id": "3194663",
         "provider": "ChowNow",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173966&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2eHC2_7JYSaksc1mYag6qzo&cs=149c911cee905de70bb0e8a5f203af61a",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987923&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2S68zdtLvu4nNDi3SNkW9dw&cs=16aced6c6fdda37b05f4dffa28b2e6625",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -2543,7 +2543,7 @@
         "disclaimer_text": null,
         "banner_text": null
       },
-      "establishment_category_ranking": "#6 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#6 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -2659,7 +2659,7 @@
         "count_2": "1",
         "count_3": "25",
         "count_4": "91",
-        "count_5": "208"
+        "count_5": "209"
       }
     }
   },
@@ -2671,7 +2671,7 @@
       "name": "Zelo",
       "latitude": "44.97505",
       "longitude": "-93.27362",
-      "num_reviews": "1338",
+      "num_reviews": "1339",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -2717,13 +2717,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.483835697174072",
+      "raw_ranking": "4.479406833648682",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "8",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#8 of 1,795 places to eat in Minneapolis",
+      "ranking": "#8 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -2792,6 +2792,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Zelo - first time.",
+          "rating": "4",
+          "published_date": "2024-05-23T10:45:40-04:00",
+          "published_platform": null,
+          "summary": "We went to Zelo before an Orpheum event.  The Wolves were also playing this night and the place was packed even at 5pm.  We arrived, were seated immediately and had a phenomenal waitress. She was...",
+          "author": "291jeril",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444497-r952059561-Zelo-Minneapolis_Minnesota.html#review952059561",
+          "review_id": "952059561",
+          "machine_translated": false
+        },
+        {
           "title": "Excellent dinner in Minneapolis",
           "rating": "5",
           "published_date": "2024-04-10T03:46:17-04:00",
@@ -2811,17 +2822,6 @@
           "author": "Petertom25",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444497-r942460390-Zelo-Minneapolis_Minnesota.html#review942460390",
           "review_id": "942460390",
-          "machine_translated": false
-        },
-        {
-          "title": "Downtown Italian with traditional buzz",
-          "rating": "4",
-          "published_date": "2024-03-15T11:18:12-04:00",
-          "published_platform": null,
-          "summary": "Busy restaurant with a good downtown buzz. The starters of caramelised Brussels sprouts and avocado bruschetta were delicious. I had the linguine with confit duck which was tasty but too salty for...",
-          "author": "Quantumlondon1",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d444497-r942427858-Zelo-Minneapolis_Minnesota.html#review942427858",
-          "review_id": "942427858",
           "machine_translated": false
         }
       ],
@@ -2933,13 +2933,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173974&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8CUUyNQ908gzybndQ5RSoojHXwzt2oevU86gzaINTtuw&cs=13d6b4541bb74af975a5f823b63127fcf"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987930&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8I_iGvjz2ybOh_PYIoXQQXRhAS2qFtqW7WQKf8N9XR-I&cs=193b3e66fc9f1adcbc8e0ce96507b74b0"
       },
       "reserve_info": {
         "id": "444497",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173974&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8CUUyNQ908gzybndQ5RSoojHXwzt2oevU86gzaINTtuw&cs=13d6b4541bb74af975a5f823b63127fcf",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987930&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8I_iGvjz2ybOh_PYIoXQQXRhAS2qFtqW7WQKf8N9XR-I&cs=193b3e66fc9f1adcbc8e0ce96507b74b0",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -2951,7 +2951,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://zelompls.com/menu/#dinner",
-      "establishment_category_ranking": "#7 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#7 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10599",
@@ -3086,7 +3086,7 @@
         "count_1": "19",
         "count_2": "29",
         "count_3": "70",
-        "count_4": "410",
+        "count_4": "411",
         "count_5": "810"
       }
     }
@@ -3099,7 +3099,7 @@
       "name": "Tullibee",
       "latitude": "44.98474",
       "longitude": "-93.27244",
-      "num_reviews": "157",
+      "num_reviews": "158",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -3145,19 +3145,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.466553688049316",
+      "raw_ranking": "4.478982925415039",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "9",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#9 of 1,795 places to eat in Minneapolis",
+      "ranking": "#9 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$15 - $60",
@@ -3220,6 +3220,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Stopped in for a quick drink and light dinner",
+          "rating": "5",
+          "published_date": "2024-05-24T18:46:09-04:00",
+          "published_platform": null,
+          "summary": "Stopped in for a quick drink and light bite. Had a beet martini and lamb ragu. both fantastic tasting. Our server Bart was very professional and accommodating to my needs. Luis the waist assist was...",
+          "author": "jackeV1734IW",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d11962926-r952226428-Tullibee-Minneapolis_Minnesota.html#review952226428",
+          "review_id": "952226428",
+          "machine_translated": false
+        },
+        {
           "title": "Lovely meal all-around",
           "rating": "5",
           "published_date": "2024-05-17T13:01:13-04:00",
@@ -3239,17 +3250,6 @@
           "author": "I8016NJclarak",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d11962926-r950470887-Tullibee-Minneapolis_Minnesota.html#review950470887",
           "review_id": "950470887",
-          "machine_translated": false
-        },
-        {
-          "title": "Anniversary",
-          "rating": "5",
-          "published_date": "2024-05-10T18:08:30-04:00",
-          "published_platform": null,
-          "summary": "Bart was extremely knowledgeable about the food and menu! We were celebrating our one year anniversary and he was able to make us feel special but also giving my boyfriend and me room to be with...",
-          "author": "Y2772NTpaolaa",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d11962926-r950343466-Tullibee-Minneapolis_Minnesota.html#review950343466",
-          "review_id": "950343466",
           "machine_translated": false
         }
       ],
@@ -3378,13 +3378,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173982&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8xm2aeKN_hJYYsqs7DxTPoQEJttX54AtWwKisPtx_E_8&cs=15c834fe1948e8ab5afd1048318edd789"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989649&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8cS5crAqEcRvUnpvBAcTUC2E1j7YLfNMHkYQCKtDEooU&cs=1c3e43ffcbb605f7c6792d9d658a6dc4b"
       },
       "reserve_info": {
         "id": "11962926",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173982&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8xm2aeKN_hJYYsqs7DxTPoQEJttX54AtWwKisPtx_E_8&cs=15c834fe1948e8ab5afd1048318edd789",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989649&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8cS5crAqEcRvUnpvBAcTUC2E1j7YLfNMHkYQCKtDEooU&cs=1c3e43ffcbb605f7c6792d9d658a6dc4b",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -3396,7 +3396,7 @@
         "banner_text": null
       },
       "menu_web_url": "https://hewinghotel.com/tullibee-restaurant/",
-      "establishment_category_ranking": "#8 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#8 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10597",
@@ -3407,12 +3407,12 @@
           "name": "Brunch"
         },
         {
-          "key": "10599",
-          "name": "Dinner"
-        },
-        {
           "key": "10598",
           "name": "Lunch"
+        },
+        {
+          "key": "10599",
+          "name": "Dinner"
         },
         {
           "key": "10949",
@@ -3459,6 +3459,10 @@
           "name": "Lamb"
         },
         {
+          "key": "21201",
+          "name": "Ragu"
+        },
+        {
           "key": "21324",
           "name": "Fish"
         },
@@ -3476,7 +3480,7 @@
         "count_2": "8",
         "count_3": "13",
         "count_4": "17",
-        "count_5": "118"
+        "count_5": "119"
       }
     }
   },
@@ -3488,7 +3492,7 @@
       "name": "Spoon and Stable",
       "latitude": "44.98553",
       "longitude": "-93.26954",
-      "num_reviews": "703",
+      "num_reviews": "704",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -3534,19 +3538,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.461820125579834",
+      "raw_ranking": "4.464504718780518",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "10",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#10 of 1,795 places to eat in Minneapolis",
+      "ranking": "#10 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Open Now",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "neighborhood_info": [
@@ -3608,6 +3612,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Best taste of the whole weekend in MSP!",
+          "rating": "5",
+          "published_date": "2024-05-27T06:09:08-04:00",
+          "published_platform": null,
+          "summary": "Absolutely the best meal we had all weekend. THe staff is exceptionally attentive to details.  THey pay close attention to the pace of your meal and make sure that you are not crowded with multiple...",
+          "author": "budp2015",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d7285625-r952582239-Spoon_and_Stable-Minneapolis_Minnesota.html#review952582239",
+          "review_id": "952582239",
+          "machine_translated": false
+        },
+        {
           "title": "Great food but not worth the price - especially with the 21% (not a tip) \"hospitality\" charge",
           "rating": "3",
           "published_date": "2024-02-23T09:12:13-05:00",
@@ -3627,17 +3642,6 @@
           "author": "jbaker9950",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d7285625-r939500113-Spoon_and_Stable-Minneapolis_Minnesota.html#review939500113",
           "review_id": "939500113",
-          "machine_translated": false
-        },
-        {
-          "title": "Excellent BUT...",
-          "rating": "2",
-          "published_date": "2024-01-14T08:32:33-05:00",
-          "published_platform": null,
-          "summary": "The food was very delicious, with a great atmosphere and excellent service. Well worth the money. However, the 21 % hospitality charge will prevent me from coming back. Tip and service charge at a...",
-          "author": "258martyng",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d7285625-r934030968-Spoon_and_Stable-Minneapolis_Minnesota.html#review934030968",
-          "review_id": "934030968",
           "machine_translated": false
         }
       ],
@@ -3740,7 +3744,7 @@
         }
       ],
       "menu_web_url": "https://www.spoonandstable.com/menu/",
-      "establishment_category_ranking": "#9 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#9 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10599",
@@ -3872,7 +3876,7 @@
         }
       ],
       "sub_cuisine": [],
-      "photo_count": "411",
+      "photo_count": "413",
       "has_review_draft": false,
       "has_panoramic_photos": false,
       "rating_histogram": {
@@ -3880,7 +3884,377 @@
         "count_2": "16",
         "count_3": "55",
         "count_4": "114",
-        "count_5": "508"
+        "count_5": "509"
+      }
+    }
+  },
+  {
+    "status": 200,
+    "msg": null,
+    "results": {
+      "location_id": "6482530",
+      "name": "Hen House Eatery",
+      "latitude": "44.97506",
+      "longitude": "-93.270645",
+      "num_reviews": "829",
+      "timezone": "America/Chicago",
+      "location_string": "Minneapolis, Minnesota",
+      "photo": {
+        "images": {
+          "small": {
+            "width": "150",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
+            "height": "150"
+          },
+          "thumbnail": {
+            "width": "50",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
+            "height": "50"
+          },
+          "original": {
+            "width": "2048",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
+            "height": "1536"
+          },
+          "large": {
+            "width": "550",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
+            "height": "412"
+          },
+          "medium": {
+            "width": "250",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-f/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
+            "height": "187"
+          }
+        },
+        "is_blessed": true,
+        "uploaded_date": "2014-05-31T14:24:02-0400",
+        "caption": "Hen house egg white omelet",
+        "id": "99793834",
+        "helpful_votes": "1",
+        "published_date": "2014-06-05T01:42:48-0400",
+        "user": {
+          "user_id": null,
+          "member_id": "0",
+          "type": "user"
+        }
+      },
+      "awards": [],
+      "doubleclick_zone": "na.us.mn.minneapolis",
+      "preferred_map_engine": "default",
+      "raw_ranking": "4.456201553344727",
+      "ranking_geo": "Minneapolis",
+      "ranking_geo_id": "43323",
+      "ranking_position": "11",
+      "ranking_denominator": "1098",
+      "ranking_category": "restaurant",
+      "ranking": "#11 of 1,817 places to eat in Minneapolis",
+      "distance": null,
+      "distance_string": null,
+      "bearing": null,
+      "rating": "4.5",
+      "is_closed": false,
+      "open_now_text": "Open Now",
+      "is_long_closed": false,
+      "price_level": "$$ - $$$",
+      "description": "",
+      "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43323-d6482530-Reviews-Hen_House_Eatery-Minneapolis_Minnesota.html",
+      "write_review": "https://www.tripadvisor.com/UserReview-g43323-d6482530-Hen_House_Eatery-Minneapolis_Minnesota.html",
+      "ancestors": [
+        {
+          "subcategory": [
+            {
+              "key": "city",
+              "name": "City"
+            }
+          ],
+          "name": "Minneapolis",
+          "abbrv": null,
+          "location_id": "43323"
+        },
+        {
+          "subcategory": [
+            {
+              "key": "state",
+              "name": "State"
+            }
+          ],
+          "name": "Minnesota",
+          "abbrv": "MN",
+          "location_id": "28944"
+        },
+        {
+          "subcategory": [
+            {
+              "key": "country",
+              "name": "Country"
+            }
+          ],
+          "name": "United States",
+          "abbrv": null,
+          "location_id": "191"
+        }
+      ],
+      "category": {
+        "key": "restaurant",
+        "name": "Restaurant"
+      },
+      "subcategory": [
+        {
+          "key": "sit_down",
+          "name": "Sit down"
+        }
+      ],
+      "parent_display_name": "Minneapolis",
+      "is_jfy_enabled": false,
+      "nearest_metro_station": [],
+      "reviews": [
+        {
+          "title": "Excellent breakfast/brunch",
+          "rating": "5",
+          "published_date": "2024-05-20T11:38:27-04:00",
+          "published_platform": null,
+          "summary": "First stop after arriving in city and our last breakfast there, had the Chilaquiles Verde, carnitas hash, cinnamon whip French toast and corned beef hash. Food is exceptional - very fresh and...",
+          "author": "susangP4390QX",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r951667063-Hen_House_Eatery-Minneapolis_Minnesota.html#review951667063",
+          "review_id": "951667063",
+          "machine_translated": false
+        },
+        {
+          "title": "Tasty",
+          "rating": "5",
+          "published_date": "2024-05-19T08:21:55-04:00",
+          "published_platform": null,
+          "summary": "Just had a great meal and experience at the hen house.  The sweet rolls are fluffy and flavorful.  The chorizo omelet was excellent.  The staff was attentive without being overbearing. And the...",
+          "author": "N2863TGgregs",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r951487242-Hen_House_Eatery-Minneapolis_Minnesota.html#review951487242",
+          "review_id": "951487242",
+          "machine_translated": false
+        },
+        {
+          "title": "A gem in the Nicollet mall restaurant desert.",
+          "rating": "5",
+          "published_date": "2024-05-04T05:34:44-04:00",
+          "published_platform": null,
+          "summary": "A great find. Excellent omelet. Very good coffee. AND open on weekends. AND findable on the street front! Will definitely return and check out the cinnamon rolls.",
+          "author": "Tourist51377",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r949446599-Hen_House_Eatery-Minneapolis_Minnesota.html#review949446599",
+          "review_id": "949446599",
+          "machine_translated": false
+        }
+      ],
+      "phone": "+1 612-345-4664",
+      "website": "http://henhouseeatery.com/",
+      "email": "info@henhouseeatery.com",
+      "address_obj": {
+        "street1": "114 S 8th St",
+        "street2": null,
+        "city": "Minneapolis",
+        "state": "MN",
+        "country": "United States",
+        "postalcode": "55402-2811"
+      },
+      "address": "114 S 8th St, Minneapolis, MN 55402-2811",
+      "hours": {
+        "week_ranges": [
+          [
+            {
+              "open_time": 450,
+              "close_time": 840
+            }
+          ],
+          [
+            {
+              "open_time": 420,
+              "close_time": 900
+            }
+          ],
+          [
+            {
+              "open_time": 420,
+              "close_time": 900
+            }
+          ],
+          [
+            {
+              "open_time": 420,
+              "close_time": 900
+            }
+          ],
+          [
+            {
+              "open_time": 420,
+              "close_time": 900
+            }
+          ],
+          [
+            {
+              "open_time": 420,
+              "close_time": 900
+            }
+          ],
+          [
+            {
+              "open_time": 450,
+              "close_time": 840
+            }
+          ]
+        ],
+        "timezone": "America/Chicago"
+      },
+      "local_name": "Hen House Eatery",
+      "local_address": "114 S 8th St, 55402-2811",
+      "local_lang_code": "en-US",
+      "is_candidate_for_contact_info_suppression": false,
+      "cuisine": [
+        {
+          "key": "9908",
+          "name": "American"
+        },
+        {
+          "key": "10642",
+          "name": "Cafe"
+        },
+        {
+          "key": "10665",
+          "name": "Vegetarian Friendly"
+        },
+        {
+          "key": "10697",
+          "name": "Vegan Options"
+        },
+        {
+          "key": "10992",
+          "name": "Gluten Free Options"
+        }
+      ],
+      "dietary_restrictions": [
+        {
+          "key": "10665",
+          "name": "Vegetarian Friendly"
+        },
+        {
+          "key": "10697",
+          "name": "Vegan Options"
+        },
+        {
+          "key": "10992",
+          "name": "Gluten Free Options"
+        }
+      ],
+      "booking": {
+        "provider": "ChowNow",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987952&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2QhQeJFhRfLsjMr-DWfS0zM&cs=17aa35ba95257683508412434474ae18b"
+      },
+      "reserve_info": {
+        "id": "6482530",
+        "provider": "ChowNow",
+        "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987952&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2QhQeJFhRfLsjMr-DWfS0zM&cs=17aa35ba95257683508412434474ae18b",
+        "booking_partner_id": null,
+        "racable": false,
+        "api_bookable": false,
+        "timeslots": null,
+        "bestoffer": null,
+        "timeslot_offers": null,
+        "button_text": "Order Online",
+        "disclaimer_text": null,
+        "banner_text": null
+      },
+      "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d6482530-Hen_House_Eatery-Minneapolis_Minnesota.html",
+      "establishment_category_ranking": "#10 of 1,421 Restaurants in Minneapolis",
+      "meal_types": [
+        {
+          "key": "10597",
+          "name": "Breakfast"
+        },
+        {
+          "key": "10598",
+          "name": "Lunch"
+        },
+        {
+          "key": "10606",
+          "name": "Brunch"
+        }
+      ],
+      "establishment_types": [
+        {
+          "key": "10591",
+          "name": "Restaurants"
+        }
+      ],
+      "dishes": [
+        {
+          "key": "10892",
+          "name": "Corned Beef"
+        },
+        {
+          "key": "10902",
+          "name": "French Toast"
+        },
+        {
+          "key": "10907",
+          "name": "Burger"
+        },
+        {
+          "key": "10921",
+          "name": "Omelette"
+        },
+        {
+          "key": "16554",
+          "name": "Salad"
+        },
+        {
+          "key": "16555",
+          "name": "Pancakes"
+        },
+        {
+          "key": "19959",
+          "name": "Eggs Benedict"
+        },
+        {
+          "key": "20026",
+          "name": "Biscuits and gravy"
+        },
+        {
+          "key": "20045",
+          "name": "Waffles"
+        },
+        {
+          "key": "20165",
+          "name": "Breakfast Sandwich"
+        },
+        {
+          "key": "20547",
+          "name": "Salmon"
+        },
+        {
+          "key": "20730",
+          "name": "Toasts"
+        },
+        {
+          "key": "20752",
+          "name": "Beef"
+        },
+        {
+          "key": "21275",
+          "name": "Cakes"
+        },
+        {
+          "key": "21326",
+          "name": "Pork"
+        }
+      ],
+      "sub_cuisine": [],
+      "photo_count": "305",
+      "has_review_draft": false,
+      "has_panoramic_photos": false,
+      "rating_histogram": {
+        "count_1": "10",
+        "count_2": "20",
+        "count_3": "57",
+        "count_4": "248",
+        "count_5": "494"
       }
     }
   },
@@ -3938,13 +4312,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.4523024559021",
+      "raw_ranking": "4.455511569976807",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
-      "ranking_position": "11",
-      "ranking_denominator": "1097",
+      "ranking_position": "12",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#11 of 1,795 places to eat in Minneapolis",
+      "ranking": "#12 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -4136,7 +4510,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d1603596-Bar_La_Grassa-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#10 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#11 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10599",
@@ -4324,376 +4698,6 @@
     "status": 200,
     "msg": null,
     "results": {
-      "location_id": "6482530",
-      "name": "Hen House Eatery",
-      "latitude": "44.97506",
-      "longitude": "-93.270645",
-      "num_reviews": "828",
-      "timezone": "America/Chicago",
-      "location_string": "Minneapolis, Minnesota",
-      "photo": {
-        "images": {
-          "small": {
-            "width": "150",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-l/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
-            "height": "150"
-          },
-          "thumbnail": {
-            "width": "50",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-t/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
-            "height": "50"
-          },
-          "original": {
-            "width": "2048",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-o/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
-            "height": "1536"
-          },
-          "large": {
-            "width": "550",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-s/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
-            "height": "412"
-          },
-          "medium": {
-            "width": "250",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-f/05/f2/bb/aa/hen-house-egg-white-omelet.jpg",
-            "height": "187"
-          }
-        },
-        "is_blessed": true,
-        "uploaded_date": "2014-05-31T14:24:02-0400",
-        "caption": "Hen house egg white omelet",
-        "id": "99793834",
-        "helpful_votes": "1",
-        "published_date": "2014-06-05T01:42:48-0400",
-        "user": {
-          "user_id": null,
-          "member_id": "0",
-          "type": "user"
-        }
-      },
-      "awards": [],
-      "doubleclick_zone": "na.us.mn.minneapolis",
-      "preferred_map_engine": "default",
-      "raw_ranking": "4.448095321655273",
-      "ranking_geo": "Minneapolis",
-      "ranking_geo_id": "43323",
-      "ranking_position": "12",
-      "ranking_denominator": "1097",
-      "ranking_category": "restaurant",
-      "ranking": "#12 of 1,795 places to eat in Minneapolis",
-      "distance": null,
-      "distance_string": null,
-      "bearing": null,
-      "rating": "4.5",
-      "is_closed": false,
-      "open_now_text": "Closed Now",
-      "is_long_closed": false,
-      "price_level": "$$ - $$$",
-      "description": "",
-      "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43323-d6482530-Reviews-Hen_House_Eatery-Minneapolis_Minnesota.html",
-      "write_review": "https://www.tripadvisor.com/UserReview-g43323-d6482530-Hen_House_Eatery-Minneapolis_Minnesota.html",
-      "ancestors": [
-        {
-          "subcategory": [
-            {
-              "key": "city",
-              "name": "City"
-            }
-          ],
-          "name": "Minneapolis",
-          "abbrv": null,
-          "location_id": "43323"
-        },
-        {
-          "subcategory": [
-            {
-              "key": "state",
-              "name": "State"
-            }
-          ],
-          "name": "Minnesota",
-          "abbrv": "MN",
-          "location_id": "28944"
-        },
-        {
-          "subcategory": [
-            {
-              "key": "country",
-              "name": "Country"
-            }
-          ],
-          "name": "United States",
-          "abbrv": null,
-          "location_id": "191"
-        }
-      ],
-      "category": {
-        "key": "restaurant",
-        "name": "Restaurant"
-      },
-      "subcategory": [
-        {
-          "key": "sit_down",
-          "name": "Sit down"
-        }
-      ],
-      "parent_display_name": "Minneapolis",
-      "is_jfy_enabled": false,
-      "nearest_metro_station": [],
-      "reviews": [
-        {
-          "title": "Excellent breakfast/brunch",
-          "rating": "5",
-          "published_date": "2024-05-20T11:38:27-04:00",
-          "published_platform": null,
-          "summary": "First stop after arriving in city and our last breakfast there, had the Chilaquiles Verde, carnitas hash, cinnamon whip French toast and corned beef hash. Food is exceptional - very fresh and...",
-          "author": "susangP4390QX",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r951667063-Hen_House_Eatery-Minneapolis_Minnesota.html#review951667063",
-          "review_id": "951667063",
-          "machine_translated": false
-        },
-        {
-          "title": "Tasty",
-          "rating": "5",
-          "published_date": "2024-05-19T08:21:55-04:00",
-          "published_platform": null,
-          "summary": "Just had a great meal and experience at the hen house.  The sweet rolls are fluffy and flavorful.  The chorizo omelet was excellent.  The staff was attentive without being overbearing. And the...",
-          "author": "N2863TGgregs",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r951487242-Hen_House_Eatery-Minneapolis_Minnesota.html#review951487242",
-          "review_id": "951487242",
-          "machine_translated": false
-        },
-        {
-          "title": "A gem in the Nicollet mall restaurant desert.",
-          "rating": "5",
-          "published_date": "2024-05-04T05:34:44-04:00",
-          "published_platform": null,
-          "summary": "A great find. Excellent omelet. Very good coffee. AND open on weekends. AND findable on the street front! Will definitely return and check out the cinnamon rolls.",
-          "author": "Tourist51377",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d6482530-r949446599-Hen_House_Eatery-Minneapolis_Minnesota.html#review949446599",
-          "review_id": "949446599",
-          "machine_translated": false
-        }
-      ],
-      "phone": "+1 612-345-4664",
-      "website": "http://henhouseeatery.com/",
-      "email": "info@henhouseeatery.com",
-      "address_obj": {
-        "street1": "114 S 8th St",
-        "street2": null,
-        "city": "Minneapolis",
-        "state": "MN",
-        "country": "United States",
-        "postalcode": "55402-2811"
-      },
-      "address": "114 S 8th St, Minneapolis, MN 55402-2811",
-      "hours": {
-        "week_ranges": [
-          [
-            {
-              "open_time": 450,
-              "close_time": 840
-            }
-          ],
-          [
-            {
-              "open_time": 420,
-              "close_time": 900
-            }
-          ],
-          [
-            {
-              "open_time": 420,
-              "close_time": 900
-            }
-          ],
-          [
-            {
-              "open_time": 420,
-              "close_time": 900
-            }
-          ],
-          [
-            {
-              "open_time": 420,
-              "close_time": 900
-            }
-          ],
-          [
-            {
-              "open_time": 420,
-              "close_time": 900
-            }
-          ],
-          [
-            {
-              "open_time": 450,
-              "close_time": 840
-            }
-          ]
-        ],
-        "timezone": "America/Chicago"
-      },
-      "local_name": "Hen House Eatery",
-      "local_address": "114 S 8th St, 55402-2811",
-      "local_lang_code": "en-US",
-      "is_candidate_for_contact_info_suppression": false,
-      "cuisine": [
-        {
-          "key": "9908",
-          "name": "American"
-        },
-        {
-          "key": "10642",
-          "name": "Cafe"
-        },
-        {
-          "key": "10665",
-          "name": "Vegetarian Friendly"
-        },
-        {
-          "key": "10697",
-          "name": "Vegan Options"
-        },
-        {
-          "key": "10992",
-          "name": "Gluten Free Options"
-        }
-      ],
-      "dietary_restrictions": [
-        {
-          "key": "10665",
-          "name": "Vegetarian Friendly"
-        },
-        {
-          "key": "10697",
-          "name": "Vegan Options"
-        },
-        {
-          "key": "10992",
-          "name": "Gluten Free Options"
-        }
-      ],
-      "booking": {
-        "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174003&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2blxPeT-qVhnaeTpQW8dw4I&cs=11c32c7e8cb7adab79b1016074d725701"
-      },
-      "reserve_info": {
-        "id": "6482530",
-        "provider": "ChowNow",
-        "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174003&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2blxPeT-qVhnaeTpQW8dw4I&cs=11c32c7e8cb7adab79b1016074d725701",
-        "booking_partner_id": null,
-        "racable": false,
-        "api_bookable": false,
-        "timeslots": null,
-        "bestoffer": null,
-        "timeslot_offers": null,
-        "button_text": "Order Online",
-        "disclaimer_text": null,
-        "banner_text": null
-      },
-      "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d6482530-Hen_House_Eatery-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#11 of 1,402 Restaurants in Minneapolis",
-      "meal_types": [
-        {
-          "key": "10597",
-          "name": "Breakfast"
-        },
-        {
-          "key": "10598",
-          "name": "Lunch"
-        },
-        {
-          "key": "10606",
-          "name": "Brunch"
-        }
-      ],
-      "establishment_types": [
-        {
-          "key": "10591",
-          "name": "Restaurants"
-        }
-      ],
-      "dishes": [
-        {
-          "key": "10892",
-          "name": "Corned Beef"
-        },
-        {
-          "key": "10902",
-          "name": "French Toast"
-        },
-        {
-          "key": "10907",
-          "name": "Burger"
-        },
-        {
-          "key": "10921",
-          "name": "Omelette"
-        },
-        {
-          "key": "16554",
-          "name": "Salad"
-        },
-        {
-          "key": "16555",
-          "name": "Pancakes"
-        },
-        {
-          "key": "19959",
-          "name": "Eggs Benedict"
-        },
-        {
-          "key": "20026",
-          "name": "Biscuits and gravy"
-        },
-        {
-          "key": "20045",
-          "name": "Waffles"
-        },
-        {
-          "key": "20165",
-          "name": "Breakfast Sandwich"
-        },
-        {
-          "key": "20547",
-          "name": "Salmon"
-        },
-        {
-          "key": "20730",
-          "name": "Toasts"
-        },
-        {
-          "key": "20752",
-          "name": "Beef"
-        },
-        {
-          "key": "21275",
-          "name": "Cakes"
-        },
-        {
-          "key": "21326",
-          "name": "Pork"
-        }
-      ],
-      "sub_cuisine": [],
-      "photo_count": "305",
-      "has_review_draft": false,
-      "has_panoramic_photos": false,
-      "rating_histogram": {
-        "count_1": "10",
-        "count_2": "20",
-        "count_3": "57",
-        "count_4": "248",
-        "count_5": "494"
-      }
-    }
-  },
-  {
-    "status": 200,
-    "msg": null,
-    "results": {
       "location_id": "444541",
       "name": "Murray's",
       "latitude": "44.97847",
@@ -4744,13 +4748,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.444570064544678",
+      "raw_ranking": "4.444436073303223",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "13",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#13 of 1,795 places to eat in Minneapolis",
+      "ranking": "#13 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -4952,13 +4956,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174011&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8oiNJmnfTyec5MyJ0_TCK9R0mnKX-2Hc7ljP5xsBs0Ow&cs=18c7346061a74d0ea7d83671b775cd36d"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987967&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8Ri0obcSxDiMrf8MiTIWjPFndFnbCjV7evh53R1x_NaY&cs=18b36a9551d06544d24601eb8e2c2c022"
       },
       "reserve_info": {
         "id": "444541",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174011&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8oiNJmnfTyec5MyJ0_TCK9R0mnKX-2Hc7ljP5xsBs0Ow&cs=18c7346061a74d0ea7d83671b775cd36d",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296987967&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8Ri0obcSxDiMrf8MiTIWjPFndFnbCjV7evh53R1x_NaY&cs=18b36a9551d06544d24601eb8e2c2c022",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -4970,7 +4974,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d444541-Murray_s-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#12 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#12 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -5132,19 +5136,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.418765068054199",
+      "raw_ranking": "4.418819427490234",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "14",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#14 of 1,795 places to eat in Minneapolis",
+      "ranking": "#14 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed today",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$50 - $100",
@@ -5325,7 +5329,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d444592-Cafe_Lurcat-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#13 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#13 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10599",
@@ -5461,7 +5465,7 @@
       "name": "Pizzeria Lola",
       "latitude": "44.90175",
       "longitude": "-93.31859",
-      "num_reviews": "996",
+      "num_reviews": "997",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -5507,13 +5511,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.404664993286133",
+      "raw_ranking": "4.407516002655029",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "15",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#15 of 1,795 places to eat in Minneapolis",
+      "ranking": "#15 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -5575,6 +5579,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "May 2024 family trip to Minnesota",
+          "rating": "5",
+          "published_date": "2024-05-26T16:58:53-04:00",
+          "published_platform": null,
+          "summary": "We moved away from Minneapolis several years ago but recently returned on a family trip. We stopped in to our favorite pizza spot and had Korean Barbecue pizza and the cauliflower app. Both...",
+          "author": "JAnders444",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d2104112-r952498813-Pizzeria_Lola-Minneapolis_Minnesota.html#review952498813",
+          "review_id": "952498813",
+          "machine_translated": false
+        },
+        {
           "title": "Had really high hopes",
           "rating": "3",
           "published_date": "2024-05-07T19:20:22-04:00",
@@ -5594,17 +5609,6 @@
           "author": "Flyingboy58",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d2104112-r947888499-Pizzeria_Lola-Minneapolis_Minnesota.html#review947888499",
           "review_id": "947888499",
-          "machine_translated": false
-        },
-        {
-          "title": "There's more to a great restaurant than just food.",
-          "rating": "1",
-          "published_date": "2023-12-08T19:00:45-05:00",
-          "published_platform": null,
-          "summary": "Was there once before and had a wonderful time. Our server made our evening fantastic. We purchased 6 different pizzas and dessert.  We wanted to go back but when we called to make a reservation...",
-          "author": "stevenhI5343KI",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d2104112-r928889124-Pizzeria_Lola-Minneapolis_Minnesota.html#review928889124",
-          "review_id": "928889124",
           "machine_translated": false
         }
       ],
@@ -5673,14 +5677,6 @@
       "is_candidate_for_contact_info_suppression": false,
       "cuisine": [
         {
-          "key": "4617",
-          "name": "Italian"
-        },
-        {
-          "key": "9908",
-          "name": "American"
-        },
-        {
           "key": "10641",
           "name": "Pizza"
         },
@@ -5712,7 +5708,7 @@
         }
       ],
       "menu_web_url": "https://www.pizzerialola.com/menu/",
-      "establishment_category_ranking": "#14 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#14 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -5772,7 +5768,7 @@
         "count_2": "17",
         "count_3": "54",
         "count_4": "227",
-        "count_5": "687"
+        "count_5": "688"
       }
     }
   },
@@ -5830,19 +5826,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.402273178100586",
+      "raw_ranking": "4.40217924118042",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "16",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#16 of 1,795 places to eat in Minneapolis",
+      "ranking": "#16 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed today",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "description": "Surly’s Beer Hall and Beer Garden is officially re-opening. Here’s what’s what: We're starting with beer service and the Surly food truck. Guests will find 20 tap lines that include core brands like Furious and Grapefruit Supreme, beer hall-only styles such as Rose and specialty kegs of port barrel-aged stout and Crucial Cream Ale. The Surly food truck will make its triumphant return with classic can’t-miss sandwiches, including brisket and pulled pork. This is the first phase of reopening. Our full kitchen, Surly Pizza, and events center will follow in the coming months. The most up-to-date details will be shared on Instagram at SurlyBeerHall.",
@@ -6030,7 +6026,7 @@
         }
       ],
       "menu_web_url": "https://www.toasttab.com/surlybrewing/v3",
-      "establishment_category_ranking": "#15 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#15 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -6188,13 +6184,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.398459434509277",
+      "raw_ranking": "4.395605564117432",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "17",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#17 of 1,795 places to eat in Minneapolis",
+      "ranking": "#17 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -6386,7 +6382,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d444482-Broders_Pasta_Bar-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#16 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#16 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -6572,19 +6568,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.389349937438965",
+      "raw_ranking": "4.374581336975098",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "18",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#18 of 1,795 places to eat in Minneapolis",
+      "ranking": "#18 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$60 - $80",
@@ -6764,13 +6760,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174046&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8wVCQMOghvNvr1hdak3IQnh_yDOmIk0x0ByTglJXW5w4&cs=1ccdc26a10a22094b82f70b8620274663"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988004&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8nMpQ_qsGBpS2qpsRhZddnlNwkQ-AQ3Pc3bFw11LEJ-U&cs=190288ce5c96f0233a2997ea0b1b50097"
       },
       "reserve_info": {
         "id": "444498",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296174046&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8wVCQMOghvNvr1hdak3IQnh_yDOmIk0x0ByTglJXW5w4&cs=1ccdc26a10a22094b82f70b8620274663",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988004&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8nMpQ_qsGBpS2qpsRhZddnlNwkQ-AQ3Pc3bFw11LEJ-U&cs=190288ce5c96f0233a2997ea0b1b50097",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -6781,7 +6777,7 @@
         "disclaimer_text": null,
         "banner_text": null
       },
-      "establishment_category_ranking": "#17 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#17 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -6935,19 +6931,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.365747928619385",
+      "raw_ranking": "4.3634114265441895",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "19",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#19 of 1,795 places to eat in Minneapolis",
+      "ranking": "#19 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed today",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$18 - $75",
@@ -7124,7 +7120,7 @@
         }
       ],
       "menu_web_url": "https://www.almampls.com/restaurant/",
-      "establishment_category_ranking": "#18 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#18 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10597",
@@ -7264,7 +7260,7 @@
       "name": "Fogo de Chao Brazilian Steakhouse",
       "latitude": "44.97811",
       "longitude": "-93.27449",
-      "num_reviews": "1642",
+      "num_reviews": "1644",
       "timezone": "America/Chicago",
       "location_string": "Minneapolis, Minnesota",
       "photo": {
@@ -7310,13 +7306,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.minneapolis",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.344553470611572",
+      "raw_ranking": "4.347551345825195",
       "ranking_geo": "Minneapolis",
       "ranking_geo_id": "43323",
       "ranking_position": "20",
-      "ranking_denominator": "1097",
+      "ranking_denominator": "1098",
       "ranking_category": "restaurant",
-      "ranking": "#20 of 1,795 places to eat in Minneapolis",
+      "ranking": "#20 of 1,817 places to eat in Minneapolis",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -7385,6 +7381,17 @@
       "nearest_metro_station": [],
       "reviews": [
         {
+          "title": "Fogo never disappoints!",
+          "rating": "5",
+          "published_date": "2024-05-20T21:10:24-04:00",
+          "published_platform": null,
+          "summary": "Fogo de Chao never disappoints!  Amazing service!  Great selection of meat with generous serving!  Their market table had a great selection to start your meal.  This Minneapolis location is a great...",
+          "author": "edo767",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d652843-r951704954-Fogo_de_Chao_Brazilian_Steakhouse-Minneapolis_Minnesota.html#review951704954",
+          "review_id": "951704954",
+          "machine_translated": false
+        },
+        {
           "title": "Upsell but no service",
           "rating": "3",
           "published_date": "2024-04-06T18:36:25-04:00",
@@ -7404,17 +7411,6 @@
           "author": "samMN",
           "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d652843-r939628927-Fogo_de_Chao_Brazilian_Steakhouse-Minneapolis_Minnesota.html#review939628927",
           "review_id": "939628927",
-          "machine_translated": false
-        },
-        {
-          "title": "Very disappointed!",
-          "rating": "2",
-          "published_date": "2024-01-21T03:19:22-05:00",
-          "published_platform": null,
-          "summary": "Very disappointed ☹️!  We had plans here for weeks to celebrate our daughter’s 21st birthday. Everyone was excited to experience the meats and salad bar.  \n\nWhen we arrived the valet parking was...",
-          "author": "Abbyspot1",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43323-d652843-r934875867-Fogo_de_Chao_Brazilian_Steakhouse-Minneapolis_Minnesota.html#review934875867",
-          "review_id": "934875867",
           "machine_translated": false
         }
       ],
@@ -7499,13 +7495,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296174060&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8-xd4VYtQozmNxmI6FoAtMtEgDjYZlBkiuvzVt-2EKk4&cs=13c97780cf0e9e9cd61aad293776003b4"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296988017&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8fORsGGiZxCDQfVF6VlAoa64kwAOgRwNvflgt85QRbJg&cs=115f89e08f4e090de2fd4ca1545108902"
       },
       "reserve_info": {
         "id": "652843",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296174060&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8-xd4VYtQozmNxmI6FoAtMtEgDjYZlBkiuvzVt-2EKk4&cs=13c97780cf0e9e9cd61aad293776003b4",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296988017&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8fORsGGiZxCDQfVF6VlAoa64kwAOgRwNvflgt85QRbJg&cs=115f89e08f4e090de2fd4ca1545108902",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -7517,7 +7513,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43323-d652843-Fogo_de_Chao_Brazilian_Steakhouse-Minneapolis_Minnesota.html",
-      "establishment_category_ranking": "#19 of 1,402 Restaurants in Minneapolis",
+      "establishment_category_ranking": "#19 of 1,421 Restaurants in Minneapolis",
       "meal_types": [
         {
           "key": "10598",
@@ -7585,15 +7581,15 @@
         }
       ],
       "sub_cuisine": [],
-      "photo_count": "202",
+      "photo_count": "208",
       "has_review_draft": false,
       "has_panoramic_photos": false,
       "rating_histogram": {
         "count_1": "32",
         "count_2": "54",
         "count_3": "155",
-        "count_4": "375",
-        "count_5": "1026"
+        "count_4": "376",
+        "count_5": "1027"
       }
     }
   }

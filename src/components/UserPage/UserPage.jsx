@@ -14,7 +14,10 @@ function UserPage() {
   const [userAddress, setUserAddress] = useState([]);
   const [isAcctInfoFormVisible, setIsAcctInfoFormVisible] = useState(false);
   const [isPrefsFormVisible, setIsPrefsFormVisible] = useState(false);
-  const [acctInfoForm, setAcctInfoForm] = useState({ ...userAddress });
+  const [acctInfoForm, setAcctInfoForm] = useState({
+    username: user.username || "",
+    email: user.email || "",
+  });
   const [prefsForm, setPrefsForm] = useState({ ...userPrefSummary });
 
   const updatePrefs = () => {
@@ -42,6 +45,10 @@ function UserPage() {
       .then((response) => {
         console.log("Address response:", response.data);
         setUserAddress(response.data);
+        setAcctInfoForm((prevState) => ({
+          ...prevState,
+          ...response.data,
+        }));
       })
       .catch((error) => {
         console.error("Error fetching Address Information:", error);
@@ -68,6 +75,7 @@ function UserPage() {
       .put(`/api/user/${user.id}`, acctInfoForm)
       .then((response) => {
         console.log(response.data);
+        setUserAddress(response.data);
         setIsAcctInfoFormVisible(false);
       })
       .catch((error) =>
@@ -75,12 +83,12 @@ function UserPage() {
       );
   };
 
-  const submitPrefsUpdate = (event) => {
-    event.preventDefault();
+  const submitPrefsUpdate = () => {
     axios
       .put(`/api/user_preferences/${user.id}`, prefsForm)
       .then((response) => {
         console.log(response.data);
+        setUserPrefSummary(response.data);
         setIsPrefsFormVisible(false);
       })
       .catch((error) => console.error(`Error updating preferences: ${error}`));
@@ -104,64 +112,81 @@ function UserPage() {
     setPrefsForm({ ...userPrefSummary });
   }, [userPrefSummary]);
 
-return (
-  <div className="container">
-    <h2>Welcome, {user.username}!</h2>
-    <h3>Account Information</h3>
-    {!isAcctInfoFormVisible && (
-      <>
-        <p>Your ID is: {user.id}</p>
-        <p>Email: {user.email}</p>
-        <p>Street Address:{userAddress.street1}</p>
-        <p>Apt, Suite, Building Number, etc: {userAddress.street2}</p>
-        <p>City: {userAddress.city}</p>
-        <p>State: {userAddress.state}</p>
-        <p>Postal Code:{userAddress.zip}</p>
-        <p>Country: {userAddress.country}</p>
-        <Button variant="contained" color="primary" onClick={updateAcctInfo}>
-          Update Account Information
-        </Button>
-      </>
-    )}
-    {isAcctInfoFormVisible && (
-      <RegisterForm
-        initialValues={acctInfoForm}
-        onSubmit={submitAcctInfoUpdate}
-        onCancel={() => setIsAcctInfoFormVisible(false)}
-      />
-    )}
+  return (
+    <div className="container">
+      <h2>Welcome, {user.username}!</h2>
+      <h3>Account Information</h3>
+      {!isAcctInfoFormVisible && Object.keys(userAddress).length > 0 && (
+        <>
+          <p>Your ID is: {user.id}</p>
+          <p>Email: {user.email}</p>
+          <p>Street Address:{userAddress.street1}</p>
+          <p>Apt, Suite, Building Number, etc: {userAddress.street2}</p>
+          <p>City: {userAddress.city}</p>
+          <p>State: {userAddress.state}</p>
+          <p>Postal Code:{userAddress.zip}</p>
+          <p>Country: {userAddress.country}</p>
+          <Button variant="contained" color="primary" onClick={updateAcctInfo}>
+            Update Account Information
+          </Button>
+        </>
+      )}
+      {isAcctInfoFormVisible && (
+        <>
+          {console.log(acctInfoForm)}
+          <RegisterForm
+            initialValues={acctInfoForm}
+            onSubmit={submitAcctInfoUpdate}
+            onCancel={() => setIsAcctInfoFormVisible(false)}
+            isRegistration={false}
+          />
+        </>
+      )}
 
-    <h3>Preferences Summary</h3>
-    {!isPrefsFormVisible && userPrefSummary && Object.keys(userPrefSummary).length > 0 && (
-      <div>
-        {console.log(userPrefSummary)}
-        <p>Max Price Range: {userPrefSummary?.max_price_range}</p>
-        <p>Meat Preference: {userPrefSummary?.meat_preference}</p>
-        <p>
-          Religious Restrictions: {userPrefSummary?.religious_restrictions}
-        </p>
-        <p>Cuisine Types: {userPrefSummary?.cuisine_types?.join(", ")}</p>
-        <p>Max Distance: {userPrefSummary?.max_distance}</p>
-        <p>Open Now: {userPrefSummary?.open_now ? "Yes" : "No"}</p>
-        <p>
-          Accepts Large Parties:{" "}
-          {userPrefSummary?.accepts_large_parties ? "Yes" : "No"}
-        </p>
-        <p>Allergens:</p>
-        <Button variant="contained" color="primary" onClick={updatePrefs}>
-          Update Preferences
-        </Button>
-      </div>
-    )}
-    {isPrefsFormVisible && (
-      <UserPreferencesForm
-        initialValues={prefsForm}
-        onSubmit={submitPrefsUpdate}
-        onCancel={() => setIsPrefsFormVisible(false)}
-      />
-    )}
-  </div>
-);}
+      <h3>Preferences Summary</h3>
+      {!isPrefsFormVisible &&
+        userPrefSummary &&
+        Object.keys(userPrefSummary).length > 0 && (
+          <div>
+            {console.log(userPrefSummary)}
+            <p>Max Price Range: {userPrefSummary?.max_price_range}</p>
+            <p>Meat Preference: {userPrefSummary?.meat_preference}</p>
+            <p>
+              Religious Restrictions: {userPrefSummary?.religious_restrictions}
+            </p>
+            <p>
+              Cuisine Types:{" "}
+              {userPrefSummary?.cuisineTypes
+                ?.map((cuisineType) => cuisineType.type)
+                .join(", ")}
+            </p>
+            <p>
+              Allergens:{" "}
+              {userPrefSummary?.allergens
+                ?.map((allergen) => allergen.allergen)
+                .join(", ")}
+            </p>
+            <p>Open Now: {userPrefSummary?.open_now ? "Yes" : "No"}</p>
+            <p>
+              Accepts Large Parties:{" "}
+              {userPrefSummary?.accepts_large_parties ? "Yes" : "No"}
+            </p>
+            <Button variant="contained" color="primary" onClick={updatePrefs}>
+              Update Preferences
+            </Button>
+          </div>
+        )}
+      {isPrefsFormVisible && (
+        <UserPreferencesForm
+          initialValues={prefsForm}
+          onSubmit={() => submitPrefsUpdate()}
+          onCancel={() => setIsPrefsFormVisible(false)}
+          editMode={isPrefsFormVisible}
+        />
+      )}
+    </div>
+  );
+}
 
 // this allows us to use <App /> in index.js
 export default UserPage;

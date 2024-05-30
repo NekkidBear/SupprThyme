@@ -69,7 +69,7 @@ router.get("/:id", async (req, res) => {
     // Fetch user information with address details using a database query
     const { rows } = await pool.query(
       `
-      SELECT "user".id, "user".email, user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
+      SELECT "user".id, "user".username, "user".email, user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
       FROM "user"
       LEFT JOIN user_addresses ON "user".id = user_addresses.user_id
       WHERE "user".id = $1

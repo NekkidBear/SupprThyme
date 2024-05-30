@@ -1140,7 +1140,7 @@
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closes in 20 min",
+      "open_now_text": "Closed Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "neighborhood_info": [

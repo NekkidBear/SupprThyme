@@ -30,7 +30,9 @@ router.get("/:userId", async (req, res) => {
       LEFT JOIN religious_restrictions rr ON up.religious_restrictions = rr.id
       WHERE up.user_id = $1;
     `;
-    const userPreferencesResult = await client.query(userPreferencesQuery, [userId]);
+    const userPreferencesResult = await client.query(userPreferencesQuery, [
+      userId,
+    ]);
     const userPreferences = userPreferencesResult.rows[0];
 
     // Fetch user allergens
@@ -70,7 +72,7 @@ router.post("/:id", async (req, res) => {
       cuisine_types = [],
       max_distance = 0,
       open_now = true,
-      accepts_large_parties =true,
+      accepts_large_parties = true,
     } = req.body;
 
     console.log(
@@ -163,6 +165,8 @@ router.put("/:userId", async (req, res) => {
       accepts_large_parties = true,
     } = req.body;
 
+    console.log(req.body);
+    
     const userPreferencesSqlText = `
       UPDATE "user_preferences"
       SET
@@ -186,26 +190,31 @@ router.put("/:userId", async (req, res) => {
       accepts_large_parties,
       userId,
     ];
-    console.log(userPreferencesValues)
+    console.log(userPreferencesValues);
     await client.query(userPreferencesSqlText, userPreferencesValues);
 
     if (allergens && allergens.length > 0) {
       const deleteAllergensSqlText = `
-        DELETE FROM "user_allergens"
-        WHERE user_id = $1
-      `;
+    DELETE FROM "user_allergens"
+    WHERE user_id = $1
+  `;
 
       await client.query(deleteAllergensSqlText, [userId]);
 
       const allergensSqlText = `
-        INSERT INTO "user_allergens" (user_id, allergen_id)
-        VALUES ($1, $2)
-      `;
+    INSERT INTO "user_allergens" (user_id, allergen_id)
+    VALUES ($1, $2)
+  `;
 
-      const allergensValues = allergens.map((allergen_id) => [
-        userId,
-        allergen_id,
-      ]);
+      const allergensValues = allergens
+        .filter((allergen) => allergen && allergen.id !== null)
+        .map((allergen) => [userId, allergen.id]);
+
+      if (allergensValues.length !== allergens.length) {
+        console.error(
+          `Skipping null or invalid allergenId for userId ${userId}`
+        );
+      }
 
       const allergenQueries = allergensValues.map((values) =>
         client.query(allergensSqlText, values)

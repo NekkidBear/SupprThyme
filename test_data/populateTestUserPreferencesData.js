@@ -1,4 +1,3 @@
-
 const pool = require('../server/modules/pool.js');
 
 async function insertUserPreferences() {
@@ -6,6 +5,7 @@ async function insertUserPreferences() {
 
   try {
     await client.query('BEGIN');
+    console.log('Transaction started');
 
     // Insert user preferences
     const userPreferencesSqlText = `
@@ -25,6 +25,7 @@ async function insertUserPreferences() {
     ];
 
     await client.query(userPreferencesSqlText, userPreferencesValues);
+    console.log('User preferences inserted');
 
     // Insert user allergens
     const allergens = [
@@ -43,7 +44,10 @@ async function insertUserPreferences() {
       }
     }
 
+    console.log('User allergens inserted');
+
     await client.query('COMMIT');
+    console.log('Transaction committed');
 
     console.log('Successfully inserted user preferences and allergens');
   } catch (err) {
@@ -51,6 +55,8 @@ async function insertUserPreferences() {
     console.error('Error inserting user preferences and allergens:', err.stack);
   } finally {
     client.release();
-  }};
+  }
+};
 
+insertUserPreferences().catch(e => console.error(e.stack));
 module.exports = insertUserPreferences;

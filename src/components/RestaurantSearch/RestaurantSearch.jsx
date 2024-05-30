@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import './RestaurantSearch.css'
 
 const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const [loading, setLoading] = useState(true);
@@ -117,7 +118,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   }
 
   return (
-    <div>
+    <div classname="restaurant-search">
       <h2>Restaurant Results</h2>
       <ul>
         {restaurants.map((restaurant) => (

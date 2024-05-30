@@ -63,6 +63,57 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
+// GET IDs for given human-friendly values
+router.get("/ids", async (req, res) => {
+  const client = await pool.connect();
+  console.log ('req.query is:',req.query)
+
+  
+  try {
+    const {
+      max_price_range,
+      meat_preference,
+      religious_restrictions,
+      allergens,
+      cuisine_types,
+    } = req.query;
+
+    // Parse the allergens and cuisine_types to arrays of objects
+    const allergensArray = JSON.parse(allergens);
+    const cuisineTypesArray = JSON.parse(cuisine_types);
+
+    // Extract the IDs from the arrays
+    const allergenIds = allergensArray.map(a => a.id);
+    const cuisineTypeIds = cuisineTypesArray.map(ct => ct.id);
+
+    // Query the database for the other IDs
+    const priceRangeId = await getIdFromValue('price_ranges', 'range', max_price_range, client);
+    const meatPreferenceId = await getIdFromValue('meat_preferences', 'preference', meat_preference, client);
+    const religiousRestrictionsId = await getIdFromValue('religious_restrictions', 'restriction', religious_restrictions, client);
+
+    // Return the IDs in the response
+    res.json({
+      max_price_range: priceRangeId,
+      meat_preference: meatPreferenceId,
+      religious_restrictions: religiousRestrictionsId,
+      allergens: allergenIds,
+      cuisine_types: cuisineTypeIds,
+    });
+  } catch (error) {
+    console.error("Error fetching IDs:", error);
+    res.status(500).send("Error fetching IDs");
+  } finally {
+    client.release();
+  }
+});
+
+// Helper function to get ID from a single value
+async function getIdFromValue(table, column, value, client) {
+  const query = `SELECT id FROM ${table} WHERE ${column} = $1`;
+  const result = await client.query(query, [value]);
+  return result.rows[0]?.id || null;
+}
+
 /**
  * POST routes
  */

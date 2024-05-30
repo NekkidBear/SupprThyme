@@ -45,7 +45,7 @@ function UserPage() {
       .then((response) => {
         console.log("Address response:", response.data);
         setUserAddress(response.data);
-        setAcctInfoForm((prevState)=>({
+        setAcctInfoForm((prevState) => ({
           ...prevState,
           ...response.data,
         }));
@@ -116,7 +116,7 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <h3>Account Information</h3>
-      {!isAcctInfoFormVisible && Object.keys(userAddress).length>0 && (
+      {!isAcctInfoFormVisible && Object.keys(userAddress).length > 0 && (
         <>
           <p>Your ID is: {user.id}</p>
           <p>Email: {user.email}</p>
@@ -132,15 +132,14 @@ function UserPage() {
         </>
       )}
       {isAcctInfoFormVisible && (
-        
         <>
-        {console.log(acctInfoForm)}
-        <RegisterForm
-          initialValues={acctInfoForm}
-          onSubmit={submitAcctInfoUpdate}
-          onCancel={() => setIsAcctInfoFormVisible(false)}
-          isRegistration={false}
-        />
+          {console.log(acctInfoForm)}
+          <RegisterForm
+            initialValues={acctInfoForm}
+            onSubmit={submitAcctInfoUpdate}
+            onCancel={() => setIsAcctInfoFormVisible(false)}
+            isRegistration={false}
+          />
         </>
       )}
 
@@ -155,14 +154,23 @@ function UserPage() {
             <p>
               Religious Restrictions: {userPrefSummary?.religious_restrictions}
             </p>
-            <p>Cuisine Types: {userPrefSummary?.cuisine_types?.join(", ")}</p>
-            <p>Max Distance: {userPrefSummary?.max_distance}</p>
+            <p>
+              Cuisine Types:{" "}
+              {userPrefSummary?.cuisineTypes
+                ?.map((cuisineType) => cuisineType.type)
+                .join(", ")}
+            </p>
+            <p>
+              Allergens:{" "}
+              {userPrefSummary?.allergens
+                ?.map((allergen) => allergen.allergen)
+                .join(", ")}
+            </p>
             <p>Open Now: {userPrefSummary?.open_now ? "Yes" : "No"}</p>
             <p>
               Accepts Large Parties:{" "}
               {userPrefSummary?.accepts_large_parties ? "Yes" : "No"}
             </p>
-            <p>Allergens:</p>
             <Button variant="contained" color="primary" onClick={updatePrefs}>
               Update Preferences
             </Button>
@@ -171,9 +179,9 @@ function UserPage() {
       {isPrefsFormVisible && (
         <UserPreferencesForm
           initialValues={prefsForm}
-          onSubmit={()=>submitPrefsUpdate()}
+          onSubmit={() => submitPrefsUpdate()}
           onCancel={() => setIsPrefsFormVisible(false)}
-          editMode = {isPrefsFormVisible}
+          editMode={isPrefsFormVisible}
         />
       )}
     </div>

@@ -7,6 +7,6 @@
     margin: 0 auto; /* This centers the component horizontally */
     padding: 20px; /* Add some padding around the component */
     overflow-y: auto; /* Add a scrollbar if the content is taller than the viewport */
-    height: 100vh; /* Make the component the same height as the viewport */
+    height: 50vh; /* Make the component the same height as the viewport */
     background-color: #fff
 }

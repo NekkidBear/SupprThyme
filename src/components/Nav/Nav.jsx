@@ -12,7 +12,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   link: {
-    color: theme.palette.common.white,
+    '&':{
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,},
     marginRight: theme.spacing(2),
   },
   favicon: {

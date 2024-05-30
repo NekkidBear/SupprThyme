@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./RestaurantSearch.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import theme from "../theme";
 
 // Define styles for the component
@@ -18,7 +19,21 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     padding: theme.spacing(2),
     overflowY: "auto",
-    height: "100vh",
+  },
+  card: {
+    width: "200px", // Set a consistent width
+    height: "300px", // Set a consistent height
+    borderRadius: "15px", // Round the corners
+    overflow: "auto", // Add scroll if content overflows
+  },
+  cardContent: {
+    wordWrap: "break-word", // Make the text wrap if needed
+  },
+  restaurantName: {
+    backgroundColor: theme.palette.secondary.main,
+    borderRadius: "5px",
+    width: "100%",
+    textAlign: "center",
   },
 }));
 
@@ -133,8 +148,8 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
     fetchRestaurants();
   }, [searchParams, dispatch, group_id, user]);
 
-   // Render loading state
-   if (loading) {
+  // Render loading state
+  if (loading) {
     return <p>Loading...</p>;
   }
 
@@ -146,19 +161,33 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   // Render the list of restaurants
   return (
     <ThemeProvider theme={theme}>
-    <div className={classes.restaurantSearch}>
-      <h2>Restaurant Results</h2>
-      <ul>
-        {restaurants.map((restaurant) => (
-          <li key={restaurant.id}>
-            <h3>{restaurant.name}</h3>
-            <p>Rating: {restaurant.rating}</p>
-            <p>Price Level: {restaurant.price_level}</p>
-            <p>Location: {restaurant.location_string}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className={classes.restaurantSearch}>
+      <Typography variant="h2" align="center">Restaurant Results</Typography>
+        <Grid
+          container
+          direction="row"
+          justify="space-around"
+          alignItems="flex-end"
+          spacing={3}
+        >
+          {restaurants.map((restaurant) => (
+            <Grid item key={restaurant.id}>
+              <Card className={classes.card} elevation={5}>
+                <Typography variant="h5" className={classes.restaurantName}>
+                  {restaurant.name}
+                </Typography>
+                <CardContent>
+                  <Typography>Rating: {restaurant.rating}</Typography>
+                  <Typography>Price Level: {restaurant.price_level}</Typography>
+                  <Typography>
+                    Location: {restaurant.location_string}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </ThemeProvider>
   );
 };

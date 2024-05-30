@@ -1,13 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { Button } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
 import { geocodeLocation } from "../MapPlaceholder/mapUtils";
+import { makeStyles } from "@mui/styles";
 
-function UserHomePage() {
+// Define styles
+const useStyles = makeStyles((theme) => ({
+  map: {
+    maxWidth: "90%", // Limit the width of the map
+    margin: "0 auto", // Center the map
+  },
+  restaurantSearch: {
+    marginTop: theme.spacing(-2.5), // Reduce the gap between the map and the restaurant results
+  },
+}));
+
+// HomePage component
+const HomePage = ({ searchParams, group_id }) => {
+  // Initialize state variables and redux hooks
+  const classes = useStyles();
+
   const user = useSelector((store) => store.user);
   const [heading, setHeading] = useState("Find a Restaurant Near You");
   const [loading, setLoading] = useState(true);
@@ -42,17 +58,22 @@ function UserHomePage() {
             city: response.data.city,
             state: response.data.state,
           };
-          console.log('newAggregatePreferences:', newAggregatePreferences)
+          console.log("newAggregatePreferences:", newAggregatePreferences);
           setAggregatePreferences(newAggregatePreferences);
-          console.log('aggregatePreferences from HomePage:', aggregatePreferences)
+          console.log(
+            "aggregatePreferences from HomePage:",
+            aggregatePreferences
+          );
 
           //update the heading
-          setHeading(`Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`);
-  
+          setHeading(
+            `Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`
+          );
+
           // Geocode the location string
           const locationString = `${response.data.city}, ${response.data.state}`;
           const geocodedLocation = await geocodeLocation(locationString);
-  
+
           if (geocodedLocation) {
             // Set the center state with the geocoded location
             setCenter(geocodedLocation);
@@ -69,14 +90,14 @@ function UserHomePage() {
           setLoading(false);
         }
       };
-  
+
       fetchData();
     }
-    console.log('aggregatePreferences after fetch:', aggregatePreferences)
+    console.log("aggregatePreferences after fetch:", aggregatePreferences);
   }, [user.id, scriptLoaded]);
 
   useEffect(() => {
-    console.log('aggregatePreferences after update:', aggregatePreferences);
+    console.log("aggregatePreferences after update:", aggregatePreferences);
   }, [aggregatePreferences]);
 
   const handleClickCreateGroup = () => {
@@ -91,26 +112,44 @@ function UserHomePage() {
     return <p>Loading...</p>;
   }
   console.log(aggregatePreferences.city);
-  console.log(aggregatePreferences.state)
-  return (
-    <div>
-      <h2>{heading}</h2>
-      <RestaurantMap center={center} zoom={zoom} />
-      {!loading && aggregatePreferences.city &&(
-        <RestaurantSearch
-          searchParams={aggregatePreferences}
-        />
-      )}
-      <div>
-        <Button variant="contained" color="primary" onClick={handleClickCreateGroup}>
-          Create a group
-        </Button>
-        <Button variant="contained" color="secondary" onClick={handleClickViewGroups}>
-          View groups
-        </Button>
-      </div>
-    </div>
-  );
-}
+  console.log(aggregatePreferences.state);
 
-export default UserHomePage;
+  return (
+  <div>
+    <Typography variant="h2" align="center">{heading}</Typography>
+    <div className={classes.map}>
+      <RestaurantMap center={center} zoom={zoom} />
+    </div>
+    <Grid container spacing={3} alignItems="center">
+      <Grid item xs={11}>
+        {!loading && aggregatePreferences.city && (
+          <div className={classes.restaurantSearch}>
+            <RestaurantSearch searchParams={aggregatePreferences} />
+          </div>
+        )}
+      </Grid>
+      <Grid item xs={1}>
+        <Grid container justifyContent="flex-end" style={{ padding: '0 20px' }}>
+          <Stack spacing={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClickCreateGroup}
+            >
+              Create a group
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={handleClickViewGroups}
+            >
+              View groups
+            </Button>
+          </Stack>
+        </Grid>
+      </Grid>
+    </Grid>
+  </div>
+);
+}
+export default HomePage;

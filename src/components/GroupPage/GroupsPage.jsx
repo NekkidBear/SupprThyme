@@ -11,9 +11,28 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-// import GroupForm from '../CreateGroupForm/GroupForm';
+import { makeStyles } from "@mui/styles";
+
+// Define styles
+const useStyles = makeStyles((theme) => ({
+  table: {
+    minWidth: 650,
+  },
+  header: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  row: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}));
 
 export default function GroupsPage() {
+  const classes = useStyles();
   const [groups, setGroups] = useState([]);
   const history = useHistory();
 
@@ -61,60 +80,60 @@ export default function GroupsPage() {
   };
   return (
     <div>
-      <h1>My Groups</h1>
-      <h2>Create a group</h2>
-      <button onClick={handleCreateGroup}>Create a Group</button>
-      <h3>Existing Groups</h3>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Group Name</TableCell>
-              <TableCell>Group Members</TableCell>
-              <TableCell>Edit Group</TableCell>
-              <TableCell>Search with Group</TableCell>
-              <TableCell>Delete Group</TableCell>
+    <h1>My Groups</h1>
+    <h2>Create a group</h2>
+    <button onClick={handleCreateGroup}>Create a Group</button>
+    <h3>Existing Groups</h3>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="Existing Groups table">
+        <TableHead>
+          <TableRow className={classes.header}>
+            <TableCell>Group Name</TableCell>
+            <TableCell>Group Members</TableCell>
+            <TableCell>Edit Group</TableCell>
+            <TableCell>Search with Group</TableCell>
+            <TableCell>Delete Group</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {groups.map((group) => (
+            <TableRow key={group.id} className={classes.row}>
+              <TableCell>{group.group_name}</TableCell>
+              <TableCell>
+                {group.members.map((member) => member.username).join(", ")}
+              </TableCell>
+              <TableCell>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => editGroup(group.id)}
+                >
+                  Edit Group
+                </Button>
+              </TableCell>
+              <TableCell>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => handleSearchRestaurants(group.id)}
+                >
+                  Search for Restaurants
+                </Button>
+              </TableCell>
+              <TableCell>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => deleteGroup(group.id, group.group_name)}
+                >
+                  Delete Group
+                </Button>
+              </TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {groups.map((group) => (
-              <TableRow key={group.id}>
-                <TableCell>{group.group_name}</TableCell>
-                <TableCell>
-                  {group.members.map((member) => member.username).join(", ")}
-                </TableCell>
-                <TableCell>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={() => editGroup(group.id)}
-                  >
-                    Edit Group
-                  </Button>
-                </TableCell>
-                <TableCell>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={() => handleSearchRestaurants(group.id)}
-                  >
-                    Search for Restaurants
-                  </Button>
-                </TableCell>
-                <TableCell>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={() => deleteGroup(group.id, group.group_name)}
-                  >
-                    Delete Group
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
-  );
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </div>
+);
 }

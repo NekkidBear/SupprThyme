@@ -13,6 +13,7 @@
     "@googlemaps/js-api-loader": "^1.16.6",
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
+    "@mui/styles": "^5.15.19",
     "@react-google-maps/api": "^2.19.3",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",

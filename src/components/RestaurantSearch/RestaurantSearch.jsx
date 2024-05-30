@@ -1,13 +1,38 @@
+// Import necessary dependencies
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import './RestaurantSearch.css'
+import "./RestaurantSearch.css";
+import { ThemeProvider } from "@mui/material/styles";
+import { makeStyles } from "@mui/styles";
+import theme from "../theme";
+
+// Define styles for the component
+const useStyles = makeStyles((theme) => ({
+  restaurantSearch: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    maxWidth: "80%",
+    margin: "0 auto",
+    padding: theme.spacing(2),
+    overflowY: "auto",
+    height: "100vh",
+  },
+}));
+
+// RestaurantSearch component
 
 const RestaurantSearch = ({ user, searchParams, group_id }) => {
+  // Initialize state variables and redux hooks
+  const classes = useStyles();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurants);
+
+  // Fetch restaurants when component mounts or searchParams, dispatch, group_id, or user changes
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -90,11 +115,10 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         const params = new URLSearchParams({
           aggregatePreferences: JSON.stringify(aggregatePreferences),
         }).toString();
-        console.log('aggregate preferences:',aggregatePreferences)
-        console.log("params:", params)
-        console.log(`/api/restaurants/search?${params}`)
+        console.log("aggregate preferences:", aggregatePreferences);
+        console.log("params:", params);
+        console.log(`/api/restaurants/search?${params}`);
         response = await axios.get(`/api/restaurants/search?${params}`);
-
 
         // Dispatch the SET_RESTAURANTS action
         dispatch({ type: "SET_RESTAURANTS", payload: response.data });
@@ -109,16 +133,20 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
     fetchRestaurants();
   }, [searchParams, dispatch, group_id, user]);
 
-  if (loading) {
+   // Render loading state
+   if (loading) {
     return <p>Loading...</p>;
   }
 
+  // Render error state
   if (error) {
     return <p>{error}</p>;
   }
 
+  // Render the list of restaurants
   return (
-    <div classname="restaurant-search">
+    <ThemeProvider theme={theme}>
+    <div className={classes.restaurantSearch}>
       <h2>Restaurant Results</h2>
       <ul>
         {restaurants.map((restaurant) => (
@@ -131,6 +159,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         ))}
       </ul>
     </div>
+    </ThemeProvider>
   );
 };
 

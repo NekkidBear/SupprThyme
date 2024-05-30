@@ -1,3 +1,4 @@
+// Import necessary dependencies
 import React, { useEffect } from "react";
 import {
   HashRouter as Router,
@@ -5,14 +6,16 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
+import { ThemeProvider } from "@mui/material/styles";
 
+// Import custom theme
+import theme from "../theme.js";
+
+// Import components
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
@@ -22,123 +25,74 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import GroupsPage from "../GroupPage/GroupsPage";
-import SearchResults from '../GroupSearchResults/GroupSearchResults.jsx';
+import SearchResults from "../GroupSearchResults/GroupSearchResults.jsx";
 import GroupForm from "../CreateGroupForm/GroupForm.jsx";
 
+// Import styles
 import "./App.css";
 
+// Main App component
 function App() {
+  // Initialize redux hooks
   const dispatch = useDispatch();
-
   const user = useSelector((store) => store.user);
 
+  // Fetch user data when component mounts
   useEffect(() => {
     dispatch({ type: "FETCH_USER" });
   }, [dispatch]);
 
+  // Render the app
   return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          {/* Visiting localhost:5173 will redirect to localhost:5173/home */}
-          <Redirect exact from="/" to="/home" />
-
-          {/* Visiting localhost:5173/about will show the about page. */}
-          <Route
-            // shows AboutPage at all times (logged in or not)
-            exact
-            path="/about"
-          >
-            <AboutPage />
-          </Route>
-
-          {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:5173/user will show the UserPage if the user is logged in.
-            If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:5173/user */}
-          <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
-            exact
-            path="/user"
-          >
-            <UserPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/info"
-          >
-            <InfoPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute exact path="/preferences">
-            <PreferencesPage />
-          </ProtectedRoute>
-
-          <Route exact path="/login">
-            {user.id ? (
-              // If the user is already logged in,
-              // redirect to the /user page
-              <Redirect to="/user-home" />
-            ) : (
-              // Otherwise, show the login page
-              <LoginPage />
-            )}
-          </Route>
-
-          <Route exact path="/registration">
-            {user.id ? (
-              // If the user is already logged in,
-              // redirect them to the /user page
-              <Redirect to="/user" />
-            ) : (
-              // Otherwise, show the registration page
-              <RegisterPage />
-            )}
-          </Route>
-
-          <Route exact path="/home">
-            {user.id ? (
-              // If the user is already logged in,
-              // redirect them to the /user page
-              <Redirect to="/user-home" />
-            ) : (
-              // Otherwise, show the Landing page
-              <LandingPage />
-            )}
-          </Route>
-          <Route exact path="/user-home">
-            {user.id ? (
-              // If the user is already logged in,
-              // display the user-home page
-              <UserHomePage />
-            ) : (
-              // Otherwise, send them to the Landing page
-              <LandingPage />
-            )}
-          </Route>
-          <ProtectedRoute exact path="/search-results">
-            <SearchResults />
-          </ProtectedRoute>
-
-          <ProtectedRoute exact path="/groups">
-            <GroupsPage />
-          </ProtectedRoute>
-
-          <ProtectedRoute exact path="/groupForm">
-            <GroupForm />
-          </ProtectedRoute>
-
-          {/* If none of the other routes matched, we will show a 404. */}
-          <Route>
-            <h1>404</h1>
-          </Route>
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+    // Apply the theme to all child components
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            {/* Define routes */}
+            <Redirect exact from="/" to="/home" />
+            <Route exact path="/about">
+              <AboutPage />
+            </Route>
+            <ProtectedRoute exact path="/user">
+              <UserPage />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/info">
+              <InfoPage />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/preferences">
+              <PreferencesPage />
+            </ProtectedRoute>
+            <Route exact path="/login">
+              {user.id ? <Redirect to="/user-home" /> : <LoginPage />}
+            </Route>
+            <Route exact path="/registration">
+              {user.id ? <Redirect to="/user" /> : <RegisterPage />}
+            </Route>
+            <Route exact path="/home">
+              {user.id ? <Redirect to="/user-home" /> : <LandingPage />}
+            </Route>
+            <Route exact path="/user-home">
+              {user.id ? <UserHomePage /> : <LandingPage />}
+            </Route>
+            <ProtectedRoute exact path="/search-results">
+              <SearchResults />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/groups">
+              <GroupsPage />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/groupForm">
+              <GroupForm />
+            </ProtectedRoute>
+            <Route>
+              <h1>404</h1>
+            </Route>
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

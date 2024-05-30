@@ -1,11 +1,24 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import './Nav.css';
 import { useSelector } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
+import { AppBar, Toolbar, Typography, Button, Link } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+// Define styles
+const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+  link: {
+    color: theme.palette.common.white,
+    marginRight: theme.spacing(2),
+  },
+}));
 
 function Nav() {
+  const classes = useStyles();
   const user = useSelector((store) => store.user);
 
   //define custom titles
@@ -20,43 +33,55 @@ function Nav() {
   }, []);
 
   return (
-    <div className="nav">
-      <Link to="/home">
-        <animated.h2 className="nav-title">{spring.title}</animated.h2>
-      </Link>
-      <div>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" className={classes.title}>
+          <Link component={RouterLink} to="/home" className={classes.link}>
+            <animated.span>{spring.title}</animated.span>
+          </Link>
+        </Typography>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
+          <Button color="inherit">
+            <Link component={RouterLink} to="/login" className={classes.link}>
+              Login / Register
+            </Link>
+          </Button>
         )}
 
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="navLink" to="/home">
-              Home
-            </Link>
+            <Button color="inherit">
+              <Link component={RouterLink} to="/home" className={classes.link}>
+                Home
+              </Link>
+            </Button>
 
-            <Link className="navLink" to="/groups">
-              Groups
-            </Link>
+            <Button color="inherit">
+              <Link component={RouterLink} to="/groups" className={classes.link}>
+                Groups
+              </Link>
+            </Button>
 
-            <LogOutButton className="navLink" />
+            <LogOutButton className={classes.link} />
 
-            <Link className="navLink" to="/user">
-            My Profile
-            </Link>
+            <Button color="inherit">
+              <Link component={RouterLink} to="/user" className={classes.link}>
+                My Profile
+              </Link>
+            </Button>
           </>
         )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
-      </div>
-    </div>
+        <Button color="inherit">
+          <Link component={RouterLink} to="/about" className={classes.link}>
+            About
+          </Link>
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 }
 

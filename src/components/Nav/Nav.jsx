@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import { useSelector } from 'react-redux';
-import { useSpring, animated } from 'react-spring';
-import { AppBar, Toolbar, Typography, Button, Link } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import React, { useEffect, useState} from "react";
+import { Link as RouterLink } from "react-router-dom";
+import LogOutButton from "../LogOutButton/LogOutButton";
+import { useSelector } from "react-redux";
+import { useSpring, animated } from "react-spring";
+import { AppBar, Toolbar, Typography, Button, Link } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 // Define styles
 const useStyles = makeStyles((theme) => ({
@@ -15,21 +15,42 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
     marginRight: theme.spacing(2),
   },
+  favicon: {
+    marginLeft: theme.spacing(1),
+    height: "24px", // Adjust as needed
+  },
 }));
 
 function Nav() {
   const classes = useStyles();
   const user = useSelector((store) => store.user);
 
-  //define custom titles
-  const titles = ['Are you hungry?', "It's SupprThyme!"];
-  const[spring, api] = useSpring(() =>({ title: titles[0]}));
+  // Define titles and favicon
+  const titles = ["Are you hungry?", "It's SupprThyme!"];
+  const favicon = "/favicon.ico";
 
-  useEffect(() =>{
-    const interval = setInterval(()=>{
-      api.start({title: spring.title === titles[0] ? titles[1]: titles[0]});
+  // Set initial title
+  const [title, setTitle] = useState(titles[0]);
+
+  useEffect(() => {
+    // Change title every second
+    const interval = setInterval(() => {
+      setTitle((prevTitle) =>
+        prevTitle === titles[0] ? titles[1] : titles[0]
+      );
     }, 1000);
-    return () => clearInterval(interval);
+
+    // Fix title on "It's SupprThyme!" after 10 seconds
+    const timeout = setTimeout(() => {
+      clearInterval(interval);
+      setTitle(titles[1]);
+    }, 10000);
+
+    // Clear interval and timeout on component unmount
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -37,7 +58,10 @@ function Nav() {
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
           <Link component={RouterLink} to="/home" className={classes.link}>
-            <animated.span>{spring.title}</animated.span>
+            {title}
+            {title === "It's SupprThyme!" && (
+              <img src={favicon} alt="favicon" className={classes.favicon} />
+            )}{" "}
           </Link>
         </Typography>
         {/* If no user is logged in, show these links */}
@@ -60,7 +84,11 @@ function Nav() {
             </Button>
 
             <Button color="inherit">
-              <Link component={RouterLink} to="/groups" className={classes.link}>
+              <Link
+                component={RouterLink}
+                to="/groups"
+                className={classes.link}
+              >
                 Groups
               </Link>
             </Button>

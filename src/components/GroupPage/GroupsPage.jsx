@@ -19,15 +19,19 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 650,
   },
   header: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     color: theme.palette.common.white,
-    fontWeight: 'bold',
     textAlign: 'center',
   },
   row: {
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover,
     },
+  },
+  cell: {
+    borderLeft: '1px solid gray',
+    borderRight: '1px solid gray',
+    textAlign: 'center'
   },
 }));
 
@@ -88,21 +92,21 @@ export default function GroupsPage() {
       <Table className={classes.table} aria-label="Existing Groups table">
         <TableHead>
           <TableRow className={classes.header}>
-            <TableCell>Group Name</TableCell>
-            <TableCell>Group Members</TableCell>
-            <TableCell>Edit Group</TableCell>
-            <TableCell>Search with Group</TableCell>
-            <TableCell>Delete Group</TableCell>
+            <TableCell className={`${classes.header} ${classes.cell}`}>Group Name</TableCell>
+            <TableCell className={`${classes.header} ${classes.cell}`}>Group Members</TableCell>
+            <TableCell className={`${classes.header} ${classes.cell}`}>Edit Group</TableCell>
+            <TableCell className={`${classes.header} ${classes.cell}`}>Search with Group</TableCell>
+            <TableCell className={`${classes.header} ${classes.cell}`}>Delete Group</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {groups.map((group) => (
             <TableRow key={group.id} className={classes.row}>
-              <TableCell>{group.group_name}</TableCell>
-              <TableCell>
+              <TableCell className={classes.cell}>{group.group_name}</TableCell>
+              <TableCell className={classes.cell}>
                 {group.members.map((member) => member.username).join(", ")}
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.cell}>
                 <Button
                   variant="contained"
                   color="primary"
@@ -111,7 +115,7 @@ export default function GroupsPage() {
                   Edit Group
                 </Button>
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.cell}>
                 <Button
                   variant="contained"
                   color="secondary"

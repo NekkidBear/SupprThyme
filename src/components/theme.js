@@ -4,6 +4,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#689f38', // Green Shaded with Yellow
+      light: '#8bc34a',
     },
     secondary: {
       main: '#ef6c00', // Reddish-Orange
@@ -20,6 +21,13 @@ const theme = createTheme({
     success: {
       main: '#4caf50', // Green
     },
+    accent_orange: {
+      main: '#ff5722',
+      light: '#ffb74d',
+    },
+    accent_green: {
+      main: '#76ff03'
+    }
   },
 });
 

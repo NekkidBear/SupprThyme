@@ -55,7 +55,7 @@ router.get("/:userId", async (req, res) => {
 /**
  * POST routes
  */
-router.post("/", async (req, res) => {
+router.post("/:id", async (req, res) => {
   const client = await pool.connect();
   console.log(req.body);
   try {
@@ -186,7 +186,7 @@ router.put("/:userId", async (req, res) => {
       accepts_large_parties,
       userId,
     ];
-
+    console.log(userPreferencesValues)
     await client.query(userPreferencesSqlText, userPreferencesValues);
 
     if (allergens && allergens.length > 0) {

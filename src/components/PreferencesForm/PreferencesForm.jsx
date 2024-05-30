@@ -20,6 +20,7 @@ const UserPreferencesForm = ({
   initialValues = {},
   onSubmit = () => {},
   onCancel = () => {},
+  editMode = false,
 }) => {
   const [selectedAllergens, setSelectedAllergens] = useState(
     initialValues.selectedAllergens || []
@@ -60,6 +61,54 @@ const UserPreferencesForm = ({
       console.error("error fetching logged in user's ID", error);
     }
   };
+  //fetch user preferences
+  async function fetchUserPreferences(userId) {
+    try {
+      const response = await axios.get(`/api/user_preferences/${userId}`);
+
+      const {
+        max_price_range,
+        meat_preference,
+        religious_restrictions,
+        allergens,
+        cuisine_types,
+        max_distance,
+        open_now,
+        accepts_large_parties,
+      } = response.data;
+
+      setSelectedAllergens(allergens.map((allergen) => allergen.id) || []);
+      setMaxPriceRange(max_price_range?.id || "");
+      setMeatPreference(meat_preference?.id || "");
+      setReligiousRestrictions(religious_restrictions?.id || "");
+      setCuisineTypes(cuisine_types || []);
+      setMaxDistance(max_distance || "");
+      setOpenNow(open_now || true);
+      setAcceptsLargeParties(accepts_large_parties || true);
+    } catch (error) {
+      console.error("Error fetching user preferences:", error);
+    }
+  }
+
+  // Call the fetchUserPreferences function if the component is in edit mode
+  useEffect(() => {
+    const fetchPreferences = async () => {
+      const userId = await getUserID();
+      if (editMode) {
+        fetchUserPreferences(userId);
+      } else {
+        setSelectedAllergens(initialValues.selectedAllergens || []);
+        setMaxPriceRange(initialValues.max_price_range || "");
+        setMeatPreference(initialValues.meat_preference || "");
+        setReligiousRestrictions(initialValues.religious_restrictions || "");
+        setCuisineTypes(initialValues.cuisine_types || []);
+        setMaxDistance(initialValues.max_distance || "");
+        setOpenNow(initialValues.open_now || true);
+        setAcceptsLargeParties(initialValues.accepts_large_parties || true);
+      }
+    };
+    fetchPreferences();
+  }, [initialValues, editMode]);
 
   useEffect(() => {
     const fetchOptions = async () => {
@@ -90,34 +139,37 @@ const UserPreferencesForm = ({
 
     fetchOptions();
   }, []);
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  
+  const handleSubmit = async () => {
     const user_id = await getUserID();
-
+  
     const preferencesData = {
       user_id,
       max_price_range,
       meat_preference,
       religious_restrictions,
-      allergens: selectedAllergens,
+      allergens: selectedAllergens.map((allergen) => allergen.id),
       cuisine_types,
       max_distance,
       open_now,
       accepts_large_parties,
     };
-
+  
     try {
       const response = await axios.get(`/api/user_preferences/${user_id}`);
       if (response.data) {
         await axios.put(`/api/user_preferences/${user_id}`, preferencesData);
-      } else {
-        await axios.post("/api/user_preferences", preferencesData);
       }
-      onSubmit(preferencesData);
-      alert("Preferences saved successfully");
     } catch (error) {
-      console.error("Error saving preferences:", error);
+      if (error.response && error.response.status === 404) {
+        await axios.post("/api/user_preferences", preferencesData);
+      } else {
+        console.error("Error saving preferences:", error);
+      }
     }
+  
+    onSubmit(preferencesData);
+    alert("Preferences saved successfully");
   };
 
   return (
@@ -196,7 +248,7 @@ const UserPreferencesForm = ({
         >
           {cuisineOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
-              <Checkbox checked={cuisine_types.includes(option.type)} />
+              <Checkbox checked={cuisine_types.includes(option.id)} />
               <ListItemText primary={option.type} />
             </MenuItem>
           ))}

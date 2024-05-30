@@ -83,8 +83,7 @@ function UserPage() {
       );
   };
 
-  const submitPrefsUpdate = (event) => {
-    event.preventDefault();
+  const submitPrefsUpdate = () => {
     axios
       .put(`/api/user_preferences/${user.id}`, prefsForm)
       .then((response) => {
@@ -172,8 +171,9 @@ function UserPage() {
       {isPrefsFormVisible && (
         <UserPreferencesForm
           initialValues={prefsForm}
-          onSubmit={submitPrefsUpdate}
+          onSubmit={()=>submitPrefsUpdate()}
           onCancel={() => setIsPrefsFormVisible(false)}
+          editMode = {isPrefsFormVisible}
         />
       )}
     </div>

@@ -8,7 +8,7 @@
         "name": "Holy Land Bakery, Grocery and Deli",
         "latitude": "45.013634",
         "longitude": "-93.24711",
-        "num_reviews": "1492",
+        "num_reviews": "1507",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -55,13 +55,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.894311428070068",
+        "raw_ranking": "4.899738311767578",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "1",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#1 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#1 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -236,13 +236,13 @@
         ],
         "booking": {
           "provider": "Grubhub",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyEcuhgnmpA-xtzxtvWUApMKjW_ZrVRI0GI7BJuymRWfM&cs=1644c3a53bdfab7e01eed7a3463eaac3d"
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyEISadJgtHD8nSbPIf4wR1XNfwu0Bz8xxqw17E-qHEY0&cs=1229ccaff157900ab58ccccd94f6badd9"
         },
         "reserve_info": {
           "id": "828111",
           "provider": "Grubhub",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyEcuhgnmpA-xtzxtvWUApMKjW_ZrVRI0GI7BJuymRWfM&cs=1644c3a53bdfab7e01eed7a3463eaac3d",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyEISadJgtHD8nSbPIf4wR1XNfwu0Bz8xxqw17E-qHEY0&cs=1229ccaff157900ab58ccccd94f6badd9",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -269,7 +269,7 @@
         "name": "Wood + Paddle Eatery",
         "latitude": "44.97719",
         "longitude": "-93.27331",
-        "num_reviews": "531",
+        "num_reviews": "532",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -316,19 +316,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.835162162780762",
+        "raw_ranking": "4.835240364074707",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "2",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#2 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#2 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Closes in 24 min",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$10 - $45",
@@ -505,13 +505,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UxMAF_Zj9ZdhIZ3Ahx3bko&cs=153f52620d3fb2174d9d0b80ebf9ecf3f"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2XVYtQNMjDSlPtv0AR3zvQY&cs=14607453cb6e39d7c41d4eccd3fd11445"
         },
         "reserve_info": {
           "id": "444559",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UxMAF_Zj9ZdhIZ3Ahx3bko&cs=153f52620d3fb2174d9d0b80ebf9ecf3f",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2XVYtQNMjDSlPtv0AR3zvQY&cs=14607453cb6e39d7c41d4eccd3fd11445",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -581,11 +581,11 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.668263912200928",
+        "raw_ranking": "4.668309211730957",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "3",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
         "ranking": "#1 of 127 Quick Bites in Minneapolis",
         "distance": null,
@@ -796,19 +796,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.589504241943359",
+        "raw_ranking": "4.589466571807861",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "4",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#3 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#3 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Closes in 24 min",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$15",
@@ -1033,13 +1033,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.5186543464660645",
+        "raw_ranking": "4.518846035003662",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "5",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#4 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#4 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -1207,13 +1207,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8YF8Rw0XF_reycFJt5STHUMZmB7nbJVBD3pRXmU6lC8o&cs=10b987f27722fc81ec056a3f0ce215fc2"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8jAZg1Z8haWecxQj841jRG4pjA3the_4YU7XTl-o1kVM&cs=14bdd15c28c060d2a877d4b4a7322dd99"
         },
         "reserve_info": {
           "id": "444478",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8YF8Rw0XF_reycFJt5STHUMZmB7nbJVBD3pRXmU6lC8o&cs=10b987f27722fc81ec056a3f0ce215fc2",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8jAZg1Z8haWecxQj841jRG4pjA3the_4YU7XTl-o1kVM&cs=14bdd15c28c060d2a877d4b4a7322dd99",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -1283,19 +1283,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.494874000549316",
+        "raw_ranking": "4.494797706604004",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "6",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#5 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#5 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed today",
+        "open_now_text": "Closes in 24 min",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "neighborhood_info": [
@@ -1458,7 +1458,7 @@
         "name": "George & The Dragon",
         "latitude": "44.912212",
         "longitude": "-93.29034",
-        "num_reviews": "328",
+        "num_reviews": "329",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -1505,13 +1505,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.486635684967041",
+        "raw_ranking": "4.490582466125488",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "7",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#6 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#6 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -1671,13 +1671,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2cIgKNCm4SOdgf7KzwRH4_w&cs=1381102c4f2dc1504eb7cc20eeb3ceae1"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2RErT0XuLZ0rtgXsaa6qQ1w&cs=1e7720b467ca02fc8edae5993227c7e59"
         },
         "reserve_info": {
           "id": "3194663",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2cIgKNCm4SOdgf7KzwRH4_w&cs=1381102c4f2dc1504eb7cc20eeb3ceae1",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2RErT0XuLZ0rtgXsaa6qQ1w&cs=1e7720b467ca02fc8edae5993227c7e59",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -1700,7 +1700,7 @@
         "name": "Zelo",
         "latitude": "44.97505",
         "longitude": "-93.27362",
-        "num_reviews": "1338",
+        "num_reviews": "1339",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -1747,13 +1747,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.483835697174072",
+        "raw_ranking": "4.479406833648682",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "8",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#7 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#7 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -1925,13 +1925,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8iQIZklerin6ehSP2-FpiQ-WDCV2LgZzD-ntPu7CeKY0&cs=13e9f62ddbf006bcfa7dd7ca1e83f65ba"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ824DYI-Lt407gJ72-BnuYzKGmON_IsaY-HbL_iI8oRv0&cs=110eab815165ee452781674b57eb7ea83"
         },
         "reserve_info": {
           "id": "444497",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8iQIZklerin6ehSP2-FpiQ-WDCV2LgZzD-ntPu7CeKY0&cs=13e9f62ddbf006bcfa7dd7ca1e83f65ba",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ824DYI-Lt407gJ72-BnuYzKGmON_IsaY-HbL_iI8oRv0&cs=110eab815165ee452781674b57eb7ea83",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -1954,7 +1954,7 @@
         "name": "Tullibee",
         "latitude": "44.98474",
         "longitude": "-93.27244",
-        "num_reviews": "157",
+        "num_reviews": "158",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -2001,19 +2001,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.466553688049316",
+        "raw_ranking": "4.478982925415039",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "9",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#8 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#8 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Closes in 24 min",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$15 - $60",
@@ -2196,13 +2196,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8h44kMGSlotxEuUzPdyurmn1EbAPPfiKvhAQi3XJj0ic&cs=118dfb7e1492f53b7878d8e482818842e"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8N0EEOm_tJ-tGxm6VvxsZb00t4G6jhgULaiS4gIbPnvM&cs=1ebbb6eff896cddb09a61cb9473cafa23"
         },
         "reserve_info": {
           "id": "11962926",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8h44kMGSlotxEuUzPdyurmn1EbAPPfiKvhAQi3XJj0ic&cs=118dfb7e1492f53b7878d8e482818842e",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8N0EEOm_tJ-tGxm6VvxsZb00t4G6jhgULaiS4gIbPnvM&cs=1ebbb6eff896cddb09a61cb9473cafa23",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -2225,7 +2225,7 @@
         "name": "Spoon and Stable",
         "latitude": "44.98553",
         "longitude": "-93.26954",
-        "num_reviews": "703",
+        "num_reviews": "704",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -2272,13 +2272,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.461820125579834",
+        "raw_ranking": "4.464504718780518",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "10",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#9 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#9 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -2447,229 +2447,11 @@
         ]
       },
       {
-        "location_id": "1603596",
-        "name": "Bar La Grassa",
-        "latitude": "44.989254",
-        "longitude": "-93.27874",
-        "num_reviews": "778",
-        "timezone": "America/Chicago",
-        "location_string": "Minneapolis, Minnesota",
-        "photo": {
-          "images": {
-            "small": {
-              "width": "150",
-              "url": "https://media-cdn.tripadvisor.com/media/photo-l/02/31/17/5b/crab-ravioli-underwhelming.jpg",
-              "height": "150"
-            },
-            "thumbnail": {
-              "width": "50",
-              "url": "https://media-cdn.tripadvisor.com/media/photo-t/02/31/17/5b/crab-ravioli-underwhelming.jpg",
-              "height": "50"
-            },
-            "original": {
-              "width": "800",
-              "url": "https://media-cdn.tripadvisor.com/media/photo-o/02/31/17/5b/crab-ravioli-underwhelming.jpg",
-              "height": "600"
-            },
-            "large": {
-              "width": "550",
-              "url": "https://media-cdn.tripadvisor.com/media/photo-s/02/31/17/5b/crab-ravioli-underwhelming.jpg",
-              "height": "412"
-            },
-            "medium": {
-              "width": "250",
-              "url": "https://media-cdn.tripadvisor.com/media/photo-f/02/31/17/5b/crab-ravioli-underwhelming.jpg",
-              "height": "187"
-            }
-          },
-          "is_blessed": true,
-          "uploaded_date": "2011-11-13T14:27:05-0500",
-          "caption": "crab ravioli.  Underwhelming.",
-          "id": "36771675",
-          "helpful_votes": "3",
-          "published_date": "2011-11-18T21:05:54-0500",
-          "user": {
-            "user_id": null,
-            "member_id": "0",
-            "type": "user"
-          }
-        },
-        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/1603596",
-        "awards": [],
-        "doubleclick_zone": "na.us.mn.minneapolis",
-        "preferred_map_engine": "default",
-        "raw_ranking": "4.4523024559021",
-        "ranking_geo": "Minneapolis",
-        "ranking_geo_id": "43323",
-        "ranking_position": "11",
-        "ranking_denominator": "1097",
-        "ranking_category": "restaurant",
-        "ranking": "#10 of 1,402 Restaurants in Minneapolis",
-        "distance": null,
-        "distance_string": null,
-        "bearing": null,
-        "rating": "4.5",
-        "is_closed": false,
-        "open_now_text": "Closed Now",
-        "is_long_closed": false,
-        "price_level": "$$ - $$$",
-        "price": "$30",
-        "neighborhood_info": [
-          {
-            "location_id": "20483898",
-            "name": "Warehouse District"
-          }
-        ],
-        "description": "",
-        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43323-d1603596-Reviews-Bar_La_Grassa-Minneapolis_Minnesota.html",
-        "write_review": "https://www.tripadvisor.com/UserReview-g43323-d1603596-Bar_La_Grassa-Minneapolis_Minnesota.html",
-        "ancestors": [
-          {
-            "subcategory": [
-              {
-                "key": "city",
-                "name": "City"
-              }
-            ],
-            "name": "Minneapolis",
-            "abbrv": null,
-            "location_id": "43323"
-          },
-          {
-            "subcategory": [
-              {
-                "key": "state",
-                "name": "State"
-              }
-            ],
-            "name": "Minnesota",
-            "abbrv": "MN",
-            "location_id": "28944"
-          },
-          {
-            "subcategory": [
-              {
-                "key": "country",
-                "name": "Country"
-              }
-            ],
-            "name": "United States",
-            "abbrv": null,
-            "location_id": "191"
-          }
-        ],
-        "category": {
-          "key": "restaurant",
-          "name": "Restaurant"
-        },
-        "subcategory": [
-          {
-            "key": "sit_down",
-            "name": "Sit down"
-          }
-        ],
-        "parent_display_name": "Minneapolis",
-        "is_jfy_enabled": false,
-        "nearest_metro_station": [],
-        "phone": "+1 612-333-3837",
-        "website": "http://www.barlagrassa.com/BarLaGrassa.htm",
-        "address_obj": {
-          "street1": "800 Washington Ave N",
-          "street2": "",
-          "city": "Minneapolis",
-          "state": "MN",
-          "country": "United States",
-          "postalcode": "55401-1330"
-        },
-        "address": "800 Washington Ave N, Minneapolis, MN 55401-1330",
-        "hours": {
-          "week_ranges": [
-            [],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1320
-              }
-            ],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1320
-              }
-            ],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1320
-              }
-            ],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1320
-              }
-            ],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1380
-              }
-            ],
-            [
-              {
-                "open_time": 1020,
-                "close_time": 1380
-              }
-            ]
-          ],
-          "timezone": "America/Chicago"
-        },
-        "is_candidate_for_contact_info_suppression": false,
-        "cuisine": [
-          {
-            "key": "4617",
-            "name": "Italian"
-          },
-          {
-            "key": "10665",
-            "name": "Vegetarian Friendly"
-          },
-          {
-            "key": "10697",
-            "name": "Vegan Options"
-          },
-          {
-            "key": "10992",
-            "name": "Gluten Free Options"
-          }
-        ],
-        "dietary_restrictions": [
-          {
-            "key": "10665",
-            "name": "Vegetarian Friendly"
-          },
-          {
-            "key": "10697",
-            "name": "Vegan Options"
-          },
-          {
-            "key": "10992",
-            "name": "Gluten Free Options"
-          }
-        ],
-        "establishment_types": [
-          {
-            "key": "10591",
-            "name": "Restaurants"
-          }
-        ]
-      },
-      {
         "location_id": "6482530",
         "name": "Hen House Eatery",
         "latitude": "44.97506",
         "longitude": "-93.270645",
-        "num_reviews": "828",
+        "num_reviews": "829",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -2716,13 +2498,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.448095321655273",
+        "raw_ranking": "4.456201553344727",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
-        "ranking_position": "12",
-        "ranking_denominator": "1097",
+        "ranking_position": "11",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#11 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#10 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -2880,13 +2662,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2cdAiYTAx99bhe-LcAnw2eU&cs=198469b5ca056f2eff0f834d579b7bc1f"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2RugB6us-0nXEc-nQtKSbsk&cs=14fce7dcef336b141793c8e06cb860263"
         },
         "reserve_info": {
           "id": "6482530",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2cdAiYTAx99bhe-LcAnw2eU&cs=198469b5ca056f2eff0f834d579b7bc1f",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2RugB6us-0nXEc-nQtKSbsk&cs=14fce7dcef336b141793c8e06cb860263",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -2897,6 +2679,224 @@
           "disclaimer_text": null,
           "banner_text": null
         },
+        "establishment_types": [
+          {
+            "key": "10591",
+            "name": "Restaurants"
+          }
+        ]
+      },
+      {
+        "location_id": "1603596",
+        "name": "Bar La Grassa",
+        "latitude": "44.989254",
+        "longitude": "-93.27874",
+        "num_reviews": "778",
+        "timezone": "America/Chicago",
+        "location_string": "Minneapolis, Minnesota",
+        "photo": {
+          "images": {
+            "small": {
+              "width": "150",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-l/02/31/17/5b/crab-ravioli-underwhelming.jpg",
+              "height": "150"
+            },
+            "thumbnail": {
+              "width": "50",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-t/02/31/17/5b/crab-ravioli-underwhelming.jpg",
+              "height": "50"
+            },
+            "original": {
+              "width": "800",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-o/02/31/17/5b/crab-ravioli-underwhelming.jpg",
+              "height": "600"
+            },
+            "large": {
+              "width": "550",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-s/02/31/17/5b/crab-ravioli-underwhelming.jpg",
+              "height": "412"
+            },
+            "medium": {
+              "width": "250",
+              "url": "https://media-cdn.tripadvisor.com/media/photo-f/02/31/17/5b/crab-ravioli-underwhelming.jpg",
+              "height": "187"
+            }
+          },
+          "is_blessed": true,
+          "uploaded_date": "2011-11-13T14:27:05-0500",
+          "caption": "crab ravioli.  Underwhelming.",
+          "id": "36771675",
+          "helpful_votes": "3",
+          "published_date": "2011-11-18T21:05:54-0500",
+          "user": {
+            "user_id": null,
+            "member_id": "0",
+            "type": "user"
+          }
+        },
+        "api_detail_url": "https://api.tripadvisor.com/api/internal/1.14/location/1603596",
+        "awards": [],
+        "doubleclick_zone": "na.us.mn.minneapolis",
+        "preferred_map_engine": "default",
+        "raw_ranking": "4.455511569976807",
+        "ranking_geo": "Minneapolis",
+        "ranking_geo_id": "43323",
+        "ranking_position": "12",
+        "ranking_denominator": "1098",
+        "ranking_category": "restaurant",
+        "ranking": "#11 of 1,421 Restaurants in Minneapolis",
+        "distance": null,
+        "distance_string": null,
+        "bearing": null,
+        "rating": "4.5",
+        "is_closed": false,
+        "open_now_text": "Closes in 24 min",
+        "is_long_closed": false,
+        "price_level": "$$ - $$$",
+        "price": "$30",
+        "neighborhood_info": [
+          {
+            "location_id": "20483898",
+            "name": "Warehouse District"
+          }
+        ],
+        "description": "",
+        "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43323-d1603596-Reviews-Bar_La_Grassa-Minneapolis_Minnesota.html",
+        "write_review": "https://www.tripadvisor.com/UserReview-g43323-d1603596-Bar_La_Grassa-Minneapolis_Minnesota.html",
+        "ancestors": [
+          {
+            "subcategory": [
+              {
+                "key": "city",
+                "name": "City"
+              }
+            ],
+            "name": "Minneapolis",
+            "abbrv": null,
+            "location_id": "43323"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "state",
+                "name": "State"
+              }
+            ],
+            "name": "Minnesota",
+            "abbrv": "MN",
+            "location_id": "28944"
+          },
+          {
+            "subcategory": [
+              {
+                "key": "country",
+                "name": "Country"
+              }
+            ],
+            "name": "United States",
+            "abbrv": null,
+            "location_id": "191"
+          }
+        ],
+        "category": {
+          "key": "restaurant",
+          "name": "Restaurant"
+        },
+        "subcategory": [
+          {
+            "key": "sit_down",
+            "name": "Sit down"
+          }
+        ],
+        "parent_display_name": "Minneapolis",
+        "is_jfy_enabled": false,
+        "nearest_metro_station": [],
+        "phone": "+1 612-333-3837",
+        "website": "http://www.barlagrassa.com/BarLaGrassa.htm",
+        "address_obj": {
+          "street1": "800 Washington Ave N",
+          "street2": "",
+          "city": "Minneapolis",
+          "state": "MN",
+          "country": "United States",
+          "postalcode": "55401-1330"
+        },
+        "address": "800 Washington Ave N, Minneapolis, MN 55401-1330",
+        "hours": {
+          "week_ranges": [
+            [],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1320
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1380
+              }
+            ],
+            [
+              {
+                "open_time": 1020,
+                "close_time": 1380
+              }
+            ]
+          ],
+          "timezone": "America/Chicago"
+        },
+        "is_candidate_for_contact_info_suppression": false,
+        "cuisine": [
+          {
+            "key": "4617",
+            "name": "Italian"
+          },
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
+        "dietary_restrictions": [
+          {
+            "key": "10665",
+            "name": "Vegetarian Friendly"
+          },
+          {
+            "key": "10697",
+            "name": "Vegan Options"
+          },
+          {
+            "key": "10992",
+            "name": "Gluten Free Options"
+          }
+        ],
         "establishment_types": [
           {
             "key": "10591",
@@ -2956,13 +2956,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.444570064544678",
+        "raw_ranking": "4.444436073303223",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "13",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#12 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#12 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -3126,13 +3126,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8BVxqExJJuz7L0-3WBOt_pp2IJm3j4X2cvlRsrOWTpO4&cs=1518e95d878abb20f053bacd1bf9d86a4"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ87_e3cBLWiCnQ_imOT3XBanQZiWLVUn5dKtW7ysqi14w&cs=1c83cc6c75068b9b40459dd530e6c71a5"
         },
         "reserve_info": {
           "id": "444541",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8BVxqExJJuz7L0-3WBOt_pp2IJm3j4X2cvlRsrOWTpO4&cs=1518e95d878abb20f053bacd1bf9d86a4",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ87_e3cBLWiCnQ_imOT3XBanQZiWLVUn5dKtW7ysqi14w&cs=1c83cc6c75068b9b40459dd530e6c71a5",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -3202,19 +3202,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.418765068054199",
+        "raw_ranking": "4.418819427490234",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "14",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#13 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#13 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed today",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$50 - $100",
@@ -3368,7 +3368,7 @@
         "name": "Pizzeria Lola",
         "latitude": "44.90175",
         "longitude": "-93.31859",
-        "num_reviews": "996",
+        "num_reviews": "997",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -3415,13 +3415,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.404664993286133",
+        "raw_ranking": "4.407516002655029",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "15",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#14 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#14 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -3543,14 +3543,6 @@
         "is_candidate_for_contact_info_suppression": false,
         "cuisine": [
           {
-            "key": "4617",
-            "name": "Italian"
-          },
-          {
-            "key": "9908",
-            "name": "American"
-          },
-          {
             "key": "10641",
             "name": "Pizza"
           },
@@ -3640,19 +3632,19 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.402273178100586",
+        "raw_ranking": "4.40217924118042",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "16",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#15 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#15 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed today",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "description": "Surly’s Beer Hall and Beer Garden is officially re-opening. Here’s what’s what: We're starting with beer service and the Surly food truck. Guests will find 20 tap lines that include core brands like Furious and Grapefruit Supreme, beer hall-only styles such as Rose and specialty kegs of port barrel-aged stout and Crucial Cream Ale. The Surly food truck will make its triumphant return with classic can’t-miss sandwiches, including brisket and pulled pork. This is the first phase of reopening. Our full kitchen, Surly Pizza, and events center will follow in the coming months. The most up-to-date details will be shared on Instagram at SurlyBeerHall.",
@@ -3860,13 +3852,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.398459434509277",
+        "raw_ranking": "4.395605564117432",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "17",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#16 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#16 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -4078,13 +4070,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.389349937438965",
+        "raw_ranking": "4.374581336975098",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "18",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#17 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#17 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -4232,13 +4224,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8hfwv36bxczpE5nI-zqUCh1hjzy175Xroq-b5P7pd0eQ&cs=11fa680e8209baaffa1fe973d35ec7c0e"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8_szILjkVB8gOVSWKCYdzSkh8RVEPsvIQ_ftdnE3hcY0&cs=1ea8d02e6b1d75ef096560aaa5a90271f"
         },
         "reserve_info": {
           "id": "444498",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8hfwv36bxczpE5nI-zqUCh1hjzy175Xroq-b5P7pd0eQ&cs=11fa680e8209baaffa1fe973d35ec7c0e",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8_szILjkVB8gOVSWKCYdzSkh8RVEPsvIQ_ftdnE3hcY0&cs=1ea8d02e6b1d75ef096560aaa5a90271f",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -4308,13 +4300,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.365747928619385",
+        "raw_ranking": "4.3634114265441895",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "19",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#18 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#18 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -4470,7 +4462,7 @@
         "name": "Fogo de Chao Brazilian Steakhouse",
         "latitude": "44.97811",
         "longitude": "-93.27449",
-        "num_reviews": "1642",
+        "num_reviews": "1644",
         "timezone": "America/Chicago",
         "location_string": "Minneapolis, Minnesota",
         "photo": {
@@ -4517,13 +4509,13 @@
         "awards": [],
         "doubleclick_zone": "na.us.mn.minneapolis",
         "preferred_map_engine": "default",
-        "raw_ranking": "4.344553470611572",
+        "raw_ranking": "4.347551345825195",
         "ranking_geo": "Minneapolis",
         "ranking_geo_id": "43323",
         "ranking_position": "20",
-        "ranking_denominator": "1097",
+        "ranking_denominator": "1098",
         "ranking_category": "restaurant",
-        "ranking": "#19 of 1,402 Restaurants in Minneapolis",
+        "ranking": "#19 of 1,421 Restaurants in Minneapolis",
         "distance": null,
         "distance_string": null,
         "bearing": null,
@@ -4668,13 +4660,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ87tQbHMmUxFjPPjNrYbXryacMryVI8gPpAsArjx-rXak&cs=1acb750cfc4e61a3782fb1a33b762aebc"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8FsqOV_TyDo7W7DiZ_8GXjdyvU5e0jmuplk5_yhI2sXA&cs=17094f9f8bcc44f26d1744bd82b22d538"
         },
         "reserve_info": {
           "id": "652843",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296173921&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ87tQbHMmUxFjPPjNrYbXryacMryVI8gPpAsArjx-rXak&cs=1acb750cfc4e61a3782fb1a33b762aebc",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296948177&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8FsqOV_TyDo7W7DiZ_8GXjdyvU5e0jmuplk5_yhI2sXA&cs=17094f9f8bcc44f26d1744bd82b22d538",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -4698,23 +4690,23 @@
       "next": "https://api.tripadvisor.com/api/internal/1.14/location/43323/restaurants?base_geocodes_on=citymaps&currency=USD&is_restaurant_filters_v2=true&lang=en_US&limit=20&offset=20&restaurant_tagcategory_standalone=43323&supports_relevance=true",
       "skipped": "0",
       "results": "20",
-      "total_results": "1655"
+      "total_results": "1676"
     },
     "restaurant_availability_options": {
-      "day": "20",
+      "day": "29",
       "month": "5",
       "year": "2024",
-      "hour": "23",
+      "hour": "22",
       "minute": "0",
       "people": "2",
-      "datestring": "05/20/2024",
+      "datestring": "05/29/2024",
       "is_default": true,
       "is_set": false,
       "racable": false,
       "time_options": {
         "selected_option": {
-          "value": "23:00:00",
-          "display": "11:00 PM",
+          "value": "22:00:00",
+          "display": "10:00 PM",
           "selected": true
         },
         "options": [
@@ -4941,7 +4933,7 @@
           {
             "value": "22:00:00",
             "display": "10:00 PM",
-            "selected": null
+            "selected": true
           },
           {
             "value": "22:30:00",
@@ -4951,7 +4943,7 @@
           {
             "value": "23:00:00",
             "display": "11:00 PM",
-            "selected": true
+            "selected": null
           },
           {
             "value": "23:30:00",
@@ -5071,12 +5063,12 @@
       }
     },
     "open_hours_options": {
-      "closed_count": "882",
+      "closed_count": "610",
       "is_set": false,
       "low_coverage_primary_message": "Open hours aren't available for all places.",
       "timezone": "America/Chicago",
-      "unsure_count": "457",
-      "open_count": "316",
+      "unsure_count": "477",
+      "open_count": "589",
       "low_coverage_secondary_message": "Show all restaurants",
       "current_value": "now"
     }

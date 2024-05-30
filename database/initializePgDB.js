@@ -11,6 +11,7 @@ const checkIfDatabaseExists = async (dbName) => {
     await pool.query(`CREATE DATABASE ${dbName}`);
   }
 };
+
 const tablesArray = [
   // base tables
   path.join(__dirname, "user.sql"),
@@ -30,17 +31,18 @@ const tablesArray = [
   path.join(__dirname, "user_preferences.sql"),
 ];
 
-const addTables = async() => {
-    for (const queryPath of tablesArray){
-        try {
-            const querycontent = fs.readFileSync(queryPath, 'utf-8');
-            await pool.query(querycontent);
-            console.log(`Query Complete: ${queryPath}`)
-        }
-        catch (error) {
-            console.error(`Error executing query ${queryPath}:`, error);
-        }
+const addTables = async () => {
+  for (const queryPath of tablesArray) {
+    const tableName = path.basename(queryPath, '.sql');
+    try {
+      const queryContent = fs.readFileSync(queryPath, 'utf-8');
+      console.log(`Dropping table if exists: ${tableName}`);
+      await pool.query(queryContent);
+      console.log(`Created table: ${tableName}`);
+    } catch (error) {
+      console.error(`Error creating table ${tableName}:`, error);
     }
+  }
 };
 
 checkIfDatabaseExists("SupprThyme").catch((error)=>console.error('Error creating database:', error));

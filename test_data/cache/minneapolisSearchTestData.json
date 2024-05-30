@@ -67,7 +67,7 @@
         "bearing": null,
         "rating": "5.0",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$1 - $20",
@@ -236,13 +236,13 @@
         ],
         "booking": {
           "provider": "Grubhub",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbybrn5DH94pLRaBNd8KSMzvlSpkpXzeaWGtg5l2nH9nWY&cs=1cd2a136c700478293ad8cfe522e05093"
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyg_kE8zy7yvRKyDH8OU-8GlsrDc4t2v8dFaBwbgiypxI&cs=19c884e40a138bf91d78efbe33438360f"
         },
         "reserve_info": {
           "id": "828111",
           "provider": "Grubhub",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbybrn5DH94pLRaBNd8KSMzvlSpkpXzeaWGtg5l2nH9nWY&cs=1cd2a136c700478293ad8cfe522e05093",
+          "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181362556&geo=828111&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyg_kE8zy7yvRKyDH8OU-8GlsrDc4t2v8dFaBwbgiypxI&cs=19c884e40a138bf91d78efbe33438360f",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -328,7 +328,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "price": "$10 - $45",
@@ -505,13 +505,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2btwR8pKnWGQelnzFSUJnHE&cs=1f4c2b82b733479f9fb2f2fa12125a605"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2R-pQJkgNJF41LFX6jgcu_4&cs=18546fec8f5f3b50a33a142119312e955"
         },
         "reserve_info": {
           "id": "444559",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2btwR8pKnWGQelnzFSUJnHE&cs=1f4c2b82b733479f9fb2f2fa12125a605",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=186527452&geo=444559&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2R-pQJkgNJF41LFX6jgcu_4&cs=18546fec8f5f3b50a33a142119312e955",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -593,7 +593,7 @@
         "bearing": null,
         "rating": "5.0",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$",
         "price": "$1 - $20",
@@ -1207,13 +1207,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ807OUOUpiyqlhO2O3XYEPzQ3EAT_F0XI3ZPKz20jnVgU&cs=12034ea6d0036382362a240ac71072e32"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8FkAaUytGf_OCS_cmL3JZ-3XDUOTMz-plr_2tFPn4VCM&cs=131b545a2ed1faf96519860658a5cd76b"
         },
         "reserve_info": {
           "id": "444478",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ807OUOUpiyqlhO2O3XYEPzQ3EAT_F0XI3ZPKz20jnVgU&cs=12034ea6d0036382362a240ac71072e32",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232196648&geo=444478&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8FkAaUytGf_OCS_cmL3JZ-3XDUOTMz-plr_2tFPn4VCM&cs=131b545a2ed1faf96519860658a5cd76b",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -1671,13 +1671,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WWq-6vuVQp7XGEMr4BLPrw&cs=1f5dd2043bbfde1c6edb94055b4dc83de"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UC4C9MYDv6YnfYefL85erU&cs=16c80b3f0c3dfe4c2a507727e6e5b8d28"
         },
         "reserve_info": {
           "id": "3194663",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2WWq-6vuVQp7XGEMr4BLPrw&cs=1f5dd2043bbfde1c6edb94055b4dc83de",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183787139&geo=3194663&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UC4C9MYDv6YnfYefL85erU&cs=16c80b3f0c3dfe4c2a507727e6e5b8d28",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -1925,13 +1925,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ80dUF1gfUAXhGzHYnE5eSKaqY3CV_UDiotvTdsTjydmU&cs=14e9d9c12d5833fd844707b89c8fac7e0"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8WQe59MdFq9cCoZ82G6aC-UkAe4o_c6dAn9GXYEn7jVk&cs=12be24796800780538b8f663f1f94b523"
         },
         "reserve_info": {
           "id": "444497",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ80dUF1gfUAXhGzHYnE5eSKaqY3CV_UDiotvTdsTjydmU&cs=14e9d9c12d5833fd844707b89c8fac7e0",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=240602747&geo=444497&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8WQe59MdFq9cCoZ82G6aC-UkAe4o_c6dAn9GXYEn7jVk&cs=12be24796800780538b8f663f1f94b523",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -2013,7 +2013,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$15 - $60",
@@ -2196,13 +2196,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8a6eezdzz9CsWmjzLu9sooFThkJcQUAlF_cLcPluUswQ&cs=19de29b54710fdc84be4536f173b3ca49"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8w7ehSrNSnHxNbLYPrybh7fdcgv_plfHZQUdWHJuT0j0&cs=16ecdbe59208eecd2737bbf0d075ea180"
         },
         "reserve_info": {
           "id": "11962926",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8a6eezdzz9CsWmjzLu9sooFThkJcQUAlF_cLcPluUswQ&cs=19de29b54710fdc84be4536f173b3ca49",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232185005&geo=11962926&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8w7ehSrNSnHxNbLYPrybh7fdcgv_plfHZQUdWHJuT0j0&cs=16ecdbe59208eecd2737bbf0d075ea180",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -2284,7 +2284,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Open Now",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "neighborhood_info": [
@@ -2510,7 +2510,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$$ - $$$",
         "description": "",
@@ -2662,13 +2662,13 @@
         ],
         "booking": {
           "provider": "ChowNow",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UWsZDSY6M5YaDkvj1RTARc&cs=13fa150b1168b81b1d8ecbd89ed5a90e9"
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2aYDY4FBnDjeMe8MFaTbiU4&cs=17168b2008879b6f3106e1fab0122127a"
         },
         "reserve_info": {
           "id": "6482530",
           "provider": "ChowNow",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2UWsZDSY6M5YaDkvj1RTARc&cs=13fa150b1168b81b1d8ecbd89ed5a90e9",
+          "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=190554771&geo=6482530&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2aYDY4FBnDjeMe8MFaTbiU4&cs=17168b2008879b6f3106e1fab0122127a",
           "booking_partner_id": null,
           "racable": false,
           "api_bookable": false,
@@ -3126,13 +3126,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8LL-GamOOrR3gjLWa6B9lfyWsgCWYjvx0vZLRmBRckPE&cs=111c9f43400ad0a7142a96b57d8bf439a"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ84lRumVl2ayMiOLbeqwK-egyA2ttss6L05Lr6VIrlSQk&cs=158d9850c845165d3140d57e48b94a8c5"
         },
         "reserve_info": {
           "id": "444541",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8LL-GamOOrR3gjLWa6B9lfyWsgCWYjvx0vZLRmBRckPE&cs=111c9f43400ad0a7142a96b57d8bf439a",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232183477&geo=444541&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ84lRumVl2ayMiOLbeqwK-egyA2ttss6L05Lr6VIrlSQk&cs=158d9850c845165d3140d57e48b94a8c5",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -4082,7 +4082,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed Now",
+        "open_now_text": "Open Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$60 - $80",
@@ -4224,13 +4224,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8ez_zxQekVTUEoV97dT8IivrIMBzsGHQHrQu06OOvqXg&cs=163ead83b2e305dc2ddb04db2fec22c8d"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ89tLQuxF_fm6rc6CcSDnFXV989IzdUPeEhVtM3uzBUBs&cs=15a90acc84980e53c68b22ed411ed7baa"
         },
         "reserve_info": {
           "id": "444498",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8ez_zxQekVTUEoV97dT8IivrIMBzsGHQHrQu06OOvqXg&cs=163ead83b2e305dc2ddb04db2fec22c8d",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232184864&geo=444498&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ89tLQuxF_fm6rc6CcSDnFXV989IzdUPeEhVtM3uzBUBs&cs=15a90acc84980e53c68b22ed411ed7baa",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -4312,7 +4312,7 @@
         "bearing": null,
         "rating": "4.5",
         "is_closed": false,
-        "open_now_text": "Closed today",
+        "open_now_text": "Closed Now",
         "is_long_closed": false,
         "price_level": "$$$$",
         "price": "$18 - $75",
@@ -4660,13 +4660,13 @@
         ],
         "booking": {
           "provider": "OpenTable",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8nIOYIoBdHQi7qIwSulEzzxL9MEuJ9ZlPmVwpQnrBFa4&cs=100a4e9e9c8c2dc583e675558c32e8b3a"
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ802KCkwCUsBS_lOmQQHaO6iRbxRpjpuoDzsz8mAuX4IA&cs=152534b98e8e7be7d5ad3bd06972773f4"
         },
         "reserve_info": {
           "id": "652843",
           "provider": "OpenTable",
           "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296954284&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8nIOYIoBdHQi7qIwSulEzzxL9MEuJ9ZlPmVwpQnrBFa4&cs=100a4e9e9c8c2dc583e675558c32e8b3a",
+          "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232192751&geo=652843&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296989588&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ802KCkwCUsBS_lOmQQHaO6iRbxRpjpuoDzsz8mAuX4IA&cs=152534b98e8e7be7d5ad3bd06972773f4",
           "booking_partner_id": "1",
           "racable": false,
           "api_bookable": true,
@@ -4696,7 +4696,7 @@
       "day": "30",
       "month": "5",
       "year": "2024",
-      "hour": "0",
+      "hour": "19",
       "minute": "0",
       "people": "2",
       "datestring": "05/30/2024",
@@ -4705,15 +4705,15 @@
       "racable": false,
       "time_options": {
         "selected_option": {
-          "value": "00:00:00",
-          "display": "12:00 AM",
+          "value": "19:00:00",
+          "display": "7:00 PM",
           "selected": true
         },
         "options": [
           {
             "value": "00:00:00",
             "display": "12:00 AM",
-            "selected": true
+            "selected": null
           },
           {
             "value": "00:30:00",
@@ -4903,7 +4903,7 @@
           {
             "value": "19:00:00",
             "display": "7:00 PM",
-            "selected": null
+            "selected": true
           },
           {
             "value": "19:30:00",
@@ -5063,12 +5063,12 @@
       }
     },
     "open_hours_options": {
-      "closed_count": "947",
+      "closed_count": "773",
       "is_set": false,
       "low_coverage_primary_message": "Open hours aren't available for all places.",
       "timezone": "America/Chicago",
       "unsure_count": "477",
-      "open_count": "252",
+      "open_count": "426",
       "low_coverage_secondary_message": "Show all restaurants",
       "current_value": "now"
     }

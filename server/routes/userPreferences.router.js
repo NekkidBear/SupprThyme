@@ -148,8 +148,10 @@ router.post("/:id", async (req, res) => {
  */
 
 router.put("/:userId", async (req, res) => {
-  const userId = req.params.userId;
-  const client = await pool.connect();
+  const userId = parseInt(req.params.userId, 10);
+  if (isNaN(userId)) {
+    return res.status(400).send("Invalid user ID");
+  }  const client = await pool.connect();
 
   try {
     await client.query("BEGIN");
@@ -164,8 +166,10 @@ router.put("/:userId", async (req, res) => {
       open_now = true,
       accepts_large_parties = true,
     } = req.body;
-
-    console.log(req.body);
+    const max_distance_int = parseInt(max_distance, 10);
+    if (isNaN(max_distance_int)) {
+      return res.status(400).send("Invalid max distance");
+    }
     
     const userPreferencesSqlText = `
       UPDATE "user_preferences"
@@ -185,7 +189,7 @@ router.put("/:userId", async (req, res) => {
       meat_preference,
       religious_restrictions,
       cuisine_types,
-      max_distance,
+      max_distance_int,
       open_now,
       accepts_large_parties,
       userId,

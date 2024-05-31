@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
+import { useTheme } from '@mui/styles';
+import { makeStyles } from '@mui/material';
 
 function RegisterPage() {
   const history = useHistory();

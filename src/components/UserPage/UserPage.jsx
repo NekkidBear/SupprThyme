@@ -158,10 +158,10 @@ function UserPage() {
   return (
     <Container className={classes.container}>
       <Paper className={classes.paper}>
-        <Typography variant="h2" className={classes.text}>
+        <Typography variant="h2" component="h1" className={classes.text}>
           Welcome, {user.username}!
         </Typography>
-        <Typography variant="h3" className={classes.section_headings}>
+        <Typography variant="h3" component="h2"className={classes.section_headings}>
           Account Information
         </Typography>
         {!isAcctInfoFormVisible && Object.keys(userAddress).length > 0 && (
@@ -238,7 +238,7 @@ function UserPage() {
         )}
         <Box className={classes.section_box}>
           <div className={classes.preferencesSummary}>
-            <Typography variant="h3" className={classes.section_headings}>
+            <Typography variant="h3" component="h2" className={classes.section_headings}>
               Preferences Summary
             </Typography>
             {!isPrefsFormVisible &&

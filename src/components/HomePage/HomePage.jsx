@@ -141,7 +141,7 @@ console.log("show recommendations:", showRecommendations)
         <Grid item xs={11}>
           {!loading && aggregatePreferences.city && (
             <div className={classes.restaurantSearch}>
-              <RestaurantSearch searchParams={aggregatePreferences} />
+              <RestaurantSearch searchParams={aggregatePreferences} user={user} group_id={group_id}/>
             </div>
           )}
         </Grid>

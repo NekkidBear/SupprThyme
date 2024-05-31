@@ -3,13 +3,17 @@ const router = express.Router();
 const pool = require("../modules/pool.js");
 
 async function filterRestaurants(userPreferences, allRestaurants) {
-  return allRestaurants.filter(restaurant => {
+  return allRestaurants.filter((restaurant) => {
     const dietaryRestrictions = JSON.parse(restaurant.dietary_restrictions);
     const hours = JSON.parse(restaurant.hours);
     const reserveInfo = JSON.parse(restaurant.reserve_info);
 
     // Check if the restaurant meets the user's dietary restrictions
-    if (!userPreferences.dietaryRestrictions.every(restriction => dietaryRestrictions.includes(restriction))) {
+    if (
+      !userPreferences.dietaryRestrictions.every((restriction) =>
+        dietaryRestrictions.includes(restriction)
+      )
+    ) {
       return false;
     }
 
@@ -17,7 +21,11 @@ async function filterRestaurants(userPreferences, allRestaurants) {
     const currentTime = new Date();
     const currentDay = currentTime.getDay();
     const currentHour = currentTime.getHours();
-    if (!hours[currentDay] || currentHour < hours[currentDay].open || currentHour > hours[currentDay].close) {
+    if (
+      !hours[currentDay] ||
+      currentHour < hours[currentDay].open ||
+      currentHour > hours[currentDay].close
+    ) {
       return false;
     }
 
@@ -33,9 +41,17 @@ async function filterRestaurants(userPreferences, allRestaurants) {
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
+  // Check if userId is defined and is an integer
+  if (!userId || !Number.isInteger(Number(userId))) {
+    res.status(400).json({ error: "Invalid user ID" });
+    return;
+  }
 
   // Fetch the user's preferences
-  const preferencesRes = await pool.query("SELECT * FROM user_preferences WHERE user_id = $1", [userId]);
+  const preferencesRes = await pool.query(
+    "SELECT * FROM user_preferences WHERE user_id = $1",
+    [userId]
+  );
   const userPreferences = preferencesRes.rows[0];
 
   // Fetch all restaurants
@@ -43,7 +59,10 @@ router.get("/:userId", async (req, res) => {
   const allRestaurants = restaurantsRes.rows;
 
   // Filter the restaurants based on the user's preferences
-  const recommendedRestaurants = await filterRestaurants(userPreferences, allRestaurants);
+  const recommendedRestaurants = await filterRestaurants(
+    userPreferences,
+    allRestaurants
+  );
 
   res.json(recommendedRestaurants.slice(0, 5)); // Return the top 5 recommended restaurants
 });

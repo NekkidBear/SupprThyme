@@ -5,7 +5,6 @@ import { Button, Grid, Stack, Typography } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
-import RestaurantRecommendations from '../RestaurantRecommendations/RestaurantRecommendations'
 import { geocodeLocation } from "../MapPlaceholder/mapUtils";
 import { makeStyles } from "@mui/styles";
 import {useTheme} from "@mui/material/styles";
@@ -35,7 +34,7 @@ const HomePage = ({ searchParams, group_id }) => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  const [showRecommendations, setShowRecommendations] = useState(false); // Add this state
+  const [showRecommendations, setShowRecommendations] = useState(false);
 
 
   useEffect(() => {
@@ -119,9 +118,17 @@ const HomePage = ({ searchParams, group_id }) => {
   console.log(aggregatePreferences.city);
   console.log(aggregatePreferences.state);
 
-  const handleRecommendations = () => {
-    history.push("/recommendations");
-  };
+  const handleRecommendations = async () => {
+  try {
+    const response = await axios.get(`/api/user_preferences/${user.id}`);
+    setAggregatePreferences(response.data);
+    setShowRecommendations(true)
+  } catch (error) {
+    console.error('Failed to fetch user preferences:', error);
+  }
+};
+
+console.log("show recommendations:", showRecommendations)
   return (
     <div>
       <Typography variant="h2" align="center">
@@ -134,8 +141,7 @@ const HomePage = ({ searchParams, group_id }) => {
         <Grid item xs={11}>
           {!loading && aggregatePreferences.city && (
             <div className={classes.restaurantSearch}>
-            {showRecommendations ?
-              <RestaurantSearch searchParams={aggregatePreferences} />:}
+              <RestaurantSearch searchParams={aggregatePreferences} />
             </div>
           )}
         </Grid>
@@ -148,7 +154,7 @@ const HomePage = ({ searchParams, group_id }) => {
             <Stack spacing={2}>
               <Button
                 variant="contained"
-                style={{ backgroundColor: theme.palette.common.purple }}
+                color="secondary"
                 onClick={handleRecommendations}
               >
                 Recommend Restaurants

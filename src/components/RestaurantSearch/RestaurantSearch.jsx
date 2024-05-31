@@ -46,7 +46,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurants);
-
+  const showRecommendations = useSelector((store) => store.showRecommendations);
   // Fetch restaurants when component mounts or searchParams, dispatch, group_id, or user changes
 
   useEffect(() => {
@@ -55,13 +55,20 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         setLoading(true);
         let response;
         let aggregatePreferences = {};
-
-        if (group_id) {
+        if (showRecommendations) {
+          // Fetch recommendations for a single user
+          if(!user){
+            console.error("user is undefined");
+            setError("user is undefined. please log in");
+            return;
+          }
+          response = await axios.get(`/api/recommendations/${user}`);
+        } else if (group_id) {
           // Fetch the preferences of each user in the group
           const groupResponse = await axios.get(`/api/groups/${group_id}`);
           const users = groupResponse.data.users;
           const preferences = await Promise.all(
-            users.map((user) => axios.get(`/api/users/${user.id}/preferences`))
+            users.map((user) => axios.get(`/api/users/${user}/preferences`))
           );
 
           console.log(searchParams);
@@ -162,7 +169,9 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.restaurantSearch}>
-      <Typography variant="h2" align="center">Restaurant Results</Typography>
+        <Typography variant="h2" align="center">
+          Restaurant Results
+        </Typography>
         <Grid
           container
           direction="row"

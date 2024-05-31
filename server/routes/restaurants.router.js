@@ -85,7 +85,7 @@ router.get("/", async (req, res) => {
 
   if (!city || !state) {
     return res
-      .sendStatus(400)
+      .status(400)
       .json({ error: "City and state must be provided" });
   }
   try {
@@ -113,7 +113,7 @@ router.get("/search", async (req, res) => {
   try {
     let aggregatePreferences = JSON.parse(req.query.aggregatePreferences);
     if(!aggregatePreferences) {
-      return res.sendStatus(400).json({error: "aggregatePreferences is required" });
+      return res.Status(400).json({error: "aggregatePreferences is required" });
     }
 
     let { group_id, city, state } = aggregatePreferences;

@@ -27,7 +27,6 @@ import UserHomePage from "../HomePage/HomePage";
 import GroupsPage from "../GroupPage/GroupsPage";
 import SearchResults from "../GroupSearchResults/GroupSearchResults.jsx";
 import GroupForm from "../CreateGroupForm/GroupForm.jsx";
-import RestaurantRecommendations from "../RestaurantRecommendations/RestaurantRecommendations.jsx";
 
 // Import styles
 import "./App.css";
@@ -74,9 +73,6 @@ function App() {
             <Route exact path="/user-home">
               {user.id ? <UserHomePage /> : <LandingPage />}
             </Route>
-            <ProtectedRoute exact path ="/recommendations">
-              <RestaurantRecommendations />
-            </ProtectedRoute>
             <ProtectedRoute exact path="/search-results">
               <SearchResults />
             </ProtectedRoute>

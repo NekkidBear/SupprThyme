@@ -219,7 +219,7 @@ const [submitError, setSubmitError] = useState(null);
 // Function to handle form submission
 const handleSubmit = async () => {
   // Get the user ID
-  const user_id = await getUserID();
+  const user_id = user.id;
 
   // Map the user-friendly allergen values back to their corresponding IDs
   const allergens = selectedAllergens.map((allergen) => {

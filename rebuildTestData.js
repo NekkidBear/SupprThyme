@@ -30,6 +30,7 @@ async function rebuildTestData() {
     await runScript('test_data/populateTestUserPreferencesData.js'); //populate test user preferences
     await runScript('test_data/populateTestSearchData.js'); //populate test Restaurant Search data
     await runScript('test_data/parseSingleDetailRecord.js');//Populate test Restaurant Details data
+    await runScript('test_data/parse_cuisine_types.js'); //Populate cuisine types for selection.
     console.log('Successfully rebuilt test data');
   } catch (error) {
     console.error('Error rebuilding test data:', error);

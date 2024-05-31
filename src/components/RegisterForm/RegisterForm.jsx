@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 3px 6px #00000029",
     padding: theme.spacing(2),
     borderRadius: theme.spacing(1),
+    width: "80%",
+    maxWidth: "100%"
   },
   heading: {
     backgroundColor: theme.palette.secondary.main,
@@ -40,6 +42,13 @@ const useStyles = makeStyles((theme) => ({
   cancelButton: {
     flexGrow: 0.8,
   },
+  formContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "5px",
+    height: "80%",
+  }
 }));
 
 function RegisterForm({
@@ -79,8 +88,9 @@ function RegisterForm({
     });
   };
   return (
+    <Box className={classes.formContainer}>
     <form className={classes.form} onSubmit={registerUser}>
-      <Typography variant="h2" classname={classes.heading}>
+      <Typography variant="h2" className={classes.heading}>
         {isRegistration ? "Register User" : "User Information"}
       </Typography>
       {errors.registrationMessage && (
@@ -177,6 +187,7 @@ function RegisterForm({
         </Button>
       </Box>
     </form>
+    </Box>
   );
 }
 

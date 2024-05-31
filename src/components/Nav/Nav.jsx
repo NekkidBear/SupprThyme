@@ -105,11 +105,6 @@ function Nav() {
           </>
         )}
 
-        <Button color="inherit">
-          <Link component={RouterLink} to="/about" className={classes.link}>
-            About
-          </Link>
-        </Button>
       </Toolbar>
     </AppBar>
   );

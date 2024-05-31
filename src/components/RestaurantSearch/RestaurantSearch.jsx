@@ -47,6 +47,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurants);
   const showRecommendations = useSelector((store) => store.showRecommendations);
+  const user_id = user.id
   // Fetch restaurants when component mounts or searchParams, dispatch, group_id, or user changes
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
             setError("user is undefined. please log in");
             return;
           }
-          response = await axios.get(`/api/recommendations/${user}`);
+          response = await axios.get(`/api/recommendations/${user_id}`);
         } else if (group_id) {
           // Fetch the preferences of each user in the group
           const groupResponse = await axios.get(`/api/groups/${group_id}`);

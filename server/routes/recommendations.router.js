@@ -2,7 +2,15 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool.js");
 
-async function filterRestaurants(userPreferences, allRestaurants) {
+async function filterRestaurants(userId, allRestaurants) {
+  // Fetch the user's preferences
+  const preferencesRes = await pool.query(
+    "SELECT * FROM user_preferences WHERE user_id = $1",
+    [userId]
+  );
+  const userPreferences = preferencesRes.rows[0];
+
+  // Filter the restaurants
   return allRestaurants.filter((restaurant) => {
     const dietaryRestrictions = JSON.parse(restaurant.dietary_restrictions);
     const hours = JSON.parse(restaurant.hours);
@@ -10,8 +18,10 @@ async function filterRestaurants(userPreferences, allRestaurants) {
 
     // Check if the restaurant meets the user's dietary restrictions
     if (
+      userPreferences &&
+      userPreferences.dietaryRestrictions &&
       !userPreferences.dietaryRestrictions.every((restriction) =>
-        dietaryRestrictions.includes(restriction)
+        restaurant.dietaryRestrictions.includes(restriction)
       )
     ) {
       return false;

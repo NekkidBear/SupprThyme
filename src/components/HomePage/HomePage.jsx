@@ -35,6 +35,7 @@ const HomePage = ({ searchParams, group_id }) => {
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(false);
+  const user_id = user.id;
 
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const HomePage = ({ searchParams, group_id }) => {
       const fetchData = async () => {
         setLoading(true);
         try {
-          const response = await axios.get(`/api/user/${user.id}`);
+          const response = await axios.get(`/api/user/${user_id}`);
           const newAggregatePreferences = {
             city: response.data.city,
             state: response.data.state,

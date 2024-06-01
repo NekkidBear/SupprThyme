@@ -1,5 +1,24 @@
-import { put, call, takeLatest } from 'redux-saga/effects';
-import axios from 'axios';
+import { put, call, takeLatest, all } from "redux-saga/effects";
+import axios from "axios";
+import {
+  UPDATE_USER_PREFERENCES_REQUEST,
+  FETCH_USER_PREFERENCES_FAILURE,
+  FETCH_USER_PREFERENCES_SUCCESS,
+} from "../reducers/userPreferences.actions";
+
+function* updateUserPreferencesSaga(action) {
+  try {
+    const { user_id, preferences } = action.payload;
+    const response = yield call(
+      axios.put,
+      `/api/user_preferences/${user_id}`,
+      preferences
+    );
+    yield put({ type: FETCH_USER_PREFERENCES_SUCCESS, payload: response.data });
+  } catch (error) {
+    yield put({ type: FETCH_USER_PREFERENCES_FAILURE, payload: error.message });
+  }
+}
 
 function* fetchUserPreferences(action) {
   try {
@@ -15,13 +34,16 @@ function* fetchUserPreferences(action) {
       const userResponse = yield call(axios.get, `/api/users/${user_id}`);
       users = [userResponse.data];
     } else {
-      throw new Error('No group_id or user_id provided');
+      throw new Error("No group_id or user_id provided");
     }
 
     // Fetch each user's preferences and aggregate them
     let aggregatePreferences = {};
     for (let user of users) {
-      const userResponse = yield call(axios.get, `/api/users/${user.id}/preferences`);
+      const userResponse = yield call(
+        axios.get,
+        `/api/users/${user.id}/preferences`
+      );
       const userPreferences = userResponse.data.preferences;
 
       // Skip this user if they have not defined preferences
@@ -53,15 +75,27 @@ function* fetchUserPreferences(action) {
     }
 
     // Dispatch a success action with the aggregated preferences
-    yield put({ type: 'FETCH_USER_PREFERENCES_SUCCESS', payload: aggregatePreferences });
+    yield put({
+      type: "FETCH_USER_PREFERENCES_SUCCESS",
+      payload: aggregatePreferences,
+    });
   } catch (error) {
     // Dispatch a failure action with the error message
-    yield put({ type: 'FETCH_USER_PREFERENCES_FAILURE', payload: error.message });
+    yield put({
+      type: "FETCH_USER_PREFERENCES_FAILURE",
+      payload: error.message,
+    });
   }
 }
 
 function* watchFetchUserPreferences() {
-  yield takeLatest('FETCH_USER_PREFERENCES_REQUEST', fetchUserPreferences);
+  yield takeLatest("FETCH_USER_PREFERENCES_REQUEST", fetchUserPreferences);
 }
 
-export default watchFetchUserPreferences;
+function* watchUpdateUserPreferences() {
+  yield takeLatest(UPDATE_USER_PREFERENCES_REQUEST, updateUserPreferencesSaga);
+}
+
+export default function* rootSaga() {
+  yield all([watchFetchUserPreferences(), watchUpdateUserPreferences()]);
+}

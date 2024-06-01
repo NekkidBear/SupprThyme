@@ -9,6 +9,15 @@ import RegisterForm from "../RegisterForm/RegisterForm";
 import { makeStyles } from "@mui/styles";
 import { useTheme } from "@mui/material";
 
+import {
+  fetchUserProfile,
+  updateUserAddressRequest,
+  toggleAcctInfoForm,
+  togglePrefsForm,
+  fetchUserPreferencesRequest,
+  updateUserPreferencesRequest,
+} from "../../redux/reducers/user.actions.js";
+
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -54,45 +63,30 @@ function UserPage() {
   const classes = useStyles();
   const user = useSelector((store) => store.user);
   const history = useHistory();
-  const userPrefSummary = useSelector(
-    (store) => store.userPreferences.preferences
+  const userPrefSummary = useSelector((store) => store.userPreferences);
+  const isAcctInfoFormVisible = useSelector(
+    (store) => store.isAcctInfoFormVisible
   );
-  const [userAddress, setUserAddress] = useState([]);
-  const [isAcctInfoFormVisible, setIsAcctInfoFormVisible] = useState(false);
-  const [isPrefsFormVisible, setIsPrefsFormVisible] = useState(false);
+  const isPrefsFormVisible = useSelector((store) => store.isPrefsFormVisible);
   const [acctInfoForm, setAcctInfoForm] = useState({
-    username: user.username || "",
-    email: user.email || "",
+    username: user?.username || "",
+    email: user?.email || "",
   });
-  const isLoading = useSelector((store) => store.userPreferences.loading);
-  const error = useSelector((store) => store.userPreferences.error);
+  const [prefsForm, setPrefsForm] = useState({});
+  const userAddress = user?.address ||{};
+  // const [isLoading, setIsLoading] = useState(false);
+  // const error = useSelector((store) => store.userPreferences.error);
 
   const updatePrefs = () => {
-    setIsPrefsFormVisible(!isPrefsFormVisible);
+    dispatch(togglePrefsForm());
   };
 
   const updateAcctInfo = () => {
-    setIsAcctInfoFormVisible(!isAcctInfoFormVisible);
+    dispatch(toggleAcctInfoForm());
   };
 
   const getPrefInfo = () => {
-    dispatch({ type: "FETCH_USER_PREFERENCES_REQUEST", payload: user.id });
-  };
-
-  const getAddressInfo = async () => {
-    axios
-      .get(`/api/user/${user.id}`)
-      .then((response) => {
-        console.log("Address response:", response.data);
-        setUserAddress(response.data);
-        setAcctInfoForm((prevState) => ({
-          ...prevState,
-          ...response.data,
-        }));
-      })
-      .catch((error) => {
-        console.error("Error fetching Address Information:", error);
-      });
+    dispatch(fetchUserPreferencesRequest(user.id));
   };
 
   const handleAcctInfoChange = (event) => {
@@ -111,46 +105,31 @@ function UserPage() {
 
   const submitAcctInfoUpdate = (event) => {
     event.preventDefault();
-    axios
-      .put(`/api/user/${user.id}`, acctInfoForm)
-      .then((response) => {
-        console.log(response.data);
-        setUserAddress(response.data);
-        setIsAcctInfoFormVisible(false);
-      })
-      .catch((error) =>
-        console.error(`Error updating account information: ${error}`)
-      );
+    dispatch(updateUserAddressRequest(acctInfoForm));
   };
 
   const submitPrefsUpdate = () => {
-    axios
-      .put(`/api/user_preferences/${user.id}`, prefsForm)
-      .then((response) => {
-        console.log(response.data);
-        setUserPrefSummary(response.data);
-        setIsPrefsFormVisible(false);
-      })
-      .catch((error) => console.error(`Error updating preferences: ${error}`));
+    dispatch(updateUserPreferencesRequest(prefsForm));
   };
 
   //get user information
   useEffect(() => {
     if (user.id) {
       getPrefInfo();
-      getAddressInfo();
     }
   }, [user.id]);
 
   //set up the Account Info form
   useEffect(() => {
-    setAcctInfoForm({ ...userAddress });
-  }, [userAddress]);
+    if (userAddress) {
+      setAcctInfoForm({ ...userAddress });
+    }
+  }, [JSON.stringify(userAddress)]);
 
   //Set up the preferences form
   useEffect(() => {
     setPrefsForm({ ...userPrefSummary });
-  }, [userPrefSummary]);
+  }, [JSON.stringify(userPrefSummary)]);
 
   return (
     <Container className={classes.container}>
@@ -165,66 +144,67 @@ function UserPage() {
         >
           Account Information
         </Typography>
-        {!isAcctInfoFormVisible && Object.keys(userAddress).length > 0 && (
-          <Box className={classes.section_box}>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Your ID is:</strong>
-              </Typography>
-              <Typography>{user.id}</Typography>
+        {!isAcctInfoFormVisible &&
+          Object.keys(userAddress).length > 0 && (
+            <Box className={classes.section_box}>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Your ID is:</strong>
+                </Typography>
+                <Typography>{user.id}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Email: </strong>
+                </Typography>
+                <Typography>{user.email}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Street Address</strong>:
+                </Typography>
+                <Typography>{userAddress.street1}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Apt, Suite, Building Number, etc:</strong>
+                </Typography>
+                <Typography>{userAddress.street2}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>City: </strong>
+                </Typography>
+                <Typography>{userAddress.city}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>State: </strong>
+                </Typography>
+                <Typography>{userAddress.state}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Postal Code:</strong>
+                </Typography>
+                <Typography>{userAddress.zip}</Typography>
+              </Box>
+              <Box className={classes.box}>
+                <Typography>
+                  <strong>Country: </strong>
+                </Typography>
+                <Typography>{userAddress.country}</Typography>
+              </Box>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={updateAcctInfo}
+                className={classes.button}
+              >
+                Update Account Information
+              </Button>
             </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Email: </strong>
-              </Typography>
-              <Typography>{user.email}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Street Address</strong>:
-              </Typography>
-              <Typography>{userAddress.street1}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Apt, Suite, Building Number, etc:</strong>
-              </Typography>
-              <Typography>{userAddress.street2}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>City: </strong>
-              </Typography>
-              <Typography>{userAddress.city}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>State: </strong>
-              </Typography>
-              <Typography>{userAddress.state}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Postal Code:</strong>
-              </Typography>
-              <Typography>{userAddress.zip}</Typography>
-            </Box>
-            <Box className={classes.box}>
-              <Typography>
-                <strong>Country: </strong>
-              </Typography>
-              <Typography>{userAddress.country}</Typography>
-            </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={updateAcctInfo}
-              className={classes.button}
-            >
-              Update Account Information
-            </Button>
-          </Box>
-        )}
+          )}
 
         {isAcctInfoFormVisible && (
           <>
@@ -232,7 +212,7 @@ function UserPage() {
             <RegisterForm
               initialValues={acctInfoForm}
               onSubmit={submitAcctInfoUpdate}
-              onCancel={() => setIsAcctInfoFormVisible(false)}
+              onCancel={() => dispatch(togglePrefsForm())}
               isRegistration={false}
             />
           </>
@@ -321,7 +301,7 @@ function UserPage() {
             <UserPreferencesForm
               initialValues={prefsForm}
               onSubmit={() => submitPrefsUpdate()}
-              onCancel={() => setIsPrefsFormVisible(false)}
+              onCancel={() => dispatch(toggleAcctInfoForm())}
               editMode={isPrefsFormVisible}
             />
           )}

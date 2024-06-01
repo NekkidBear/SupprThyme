@@ -5,9 +5,8 @@ const {
 const encryptLib = require("../modules/encryption");
 const pool = require("../modules/pool");
 const userStrategy = require("../strategies/user.strategy");
-const GeocodingError = require('../constants/GeocodingError');
-const normalizeLocation = require('../modules/Geolocation.js')
-
+const GeocodingError = require("../constants/GeocodingError");
+const normalizeLocation = require("../modules/Geolocation.js");
 
 const router = express.Router();
 
@@ -27,7 +26,15 @@ router.get("/profile", rejectUnauthenticated, async (req, res) => {
     SELECT "user".id, "user".email, user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
     FROM "user"
     LEFT JOIN user_addresses ON "user".id = user_addresses.user_id
-    WHERE "user".id = $1
+    WHERE "user".id = $1SELECT "user".id, "user".email, 
+    ROW_TO_JSON(
+      (SELECT d FROM (
+        SELECT user_addresses.street1, user_addresses.street2, user_addresses.city, user_addresses.state, user_addresses.zip, user_addresses.country
+      ) d)
+    ) AS address
+  FROM "user"
+  LEFT JOIN user_addresses ON "user".id = user_addresses.user_id
+  WHERE "user".id = $1
   `,
     [userId]
   );
@@ -42,17 +49,18 @@ router.get("/profile", rejectUnauthenticated, async (req, res) => {
 });
 
 // Handles GET request with query parameter for searching users
-router.get('/search', (req, res) => {
+router.get("/search", (req, res) => {
   const searchTerm = req.query.search;
 
-  pool.query('SELECT * FROM "user" WHERE username ILIKE $1', [`%${searchTerm}%`])
-      .then((result) => {
-          res.send(result.rows);
-      })
-      .catch((error) => {
-          console.error('Error completing SELECT user query', error);
-          res.sendStatus(500);
-      });
+  pool
+    .query('SELECT * FROM "user" WHERE username ILIKE $1', [`%${searchTerm}%`])
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.error("Error completing SELECT user query", error);
+      res.sendStatus(500);
+    });
 });
 
 // GET route to retrieve user information with address details
@@ -60,7 +68,7 @@ router.get("/:id", async (req, res) => {
   const userId = parseInt(req.params.id);
 
   if (isNaN(userId)) {
-    return res.status(400).json({ error: 'User id must be an integer' });
+    return res.status(400).json({ error: "User id must be an integer" });
   }
 
   try {
@@ -91,22 +99,22 @@ router.get("/:id", async (req, res) => {
 });
 
 // endpoint to normalize user's location
-router.get('/normalizeLocation', async (req, res) => {
+router.get("/normalizeLocation", async (req, res) => {
   const { city, state } = req.query;
 
   if (!city || !state) {
-    return res.status(400).json({ error: 'City and state are required' });
+    return res.status(400).json({ error: "City and state are required" });
   }
-  
+
   try {
     const normalizedLocation = await normalizeLocation(city, state);
     res.json(normalizedLocation);
   } catch (error) {
-    console.error('Error normalizing location:', error);
+    console.error("Error normalizing location:", error);
     if (error instanceof GeocodingError) {
-      res.status(400).json({ error: 'Failed to geocode location' });
+      res.status(400).json({ error: "Failed to geocode location" });
     } else {
-      res.status(500).json({ error: 'Failed to normalize location' });
+      res.status(500).json({ error: "Failed to normalize location" });
     }
   }
 });
@@ -155,7 +163,7 @@ router.post("/register", async (req, res) => {
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
-router.post('/login', userStrategy.authenticate('local'), async (req, res) => {
+router.post("/login", userStrategy.authenticate("local"), async (req, res) => {
   try {
     const { latitude, longitude } = req.body;
 
@@ -167,8 +175,8 @@ router.post('/login', userStrategy.authenticate('local'), async (req, res) => {
 
     res.sendStatus(200);
   } catch (error) {
-    console.error('Error updating user geolocation:', error);
-    res.status(500).json({ message: 'Error updating user geolocation' });
+    console.error("Error updating user geolocation:", error);
+    res.status(500).json({ message: "Error updating user geolocation" });
   }
 });
 
@@ -181,6 +189,37 @@ router.post("/logout", (req, res, next) => {
     }
     res.sendStatus(200);
   });
+});
+
+// PUT route for updating a user's address
+// rejectUnauthenticated is middleware that we run on this route
+// this middleware will run our PUT if the user is authenticated
+// this middleware will send a 403 status code if the user is not authenticated
+router.put("/profile", rejectUnauthenticated, async (req, res) => {
+  // Get the user's ID from the request user object
+  const userId = req.user.id;
+
+  // Destructure the address details from the request body
+  const { street1, street2, city, state, zip, country } = req.body;
+
+  try {
+    // Update the user's address in the database
+    await pool.query(
+      `
+      UPDATE user_addresses
+      SET street1 = $1, street2 = $2, city = $3, state = $4, zip = $5, country = $6
+      WHERE user_id = $7
+    `,
+      [street1, street2, city, state, zip, country, userId]
+    );
+
+    // Send a 200 status code with a success message
+    res.status(200).json({ message: "User address updated successfully" });
+  } catch (error) {
+    // Log the error and send a 500 status code with an error message
+    console.error("Error updating user address:", error);
+    res.status(500).json({ message: "Error updating user address" });
+  }
 });
 
 module.exports = router;

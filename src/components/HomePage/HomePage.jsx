@@ -126,7 +126,7 @@ const HomePage = ({ searchParams, group_id }) => {
     }
 
     // Dispatch the FETCH_USER_PREFERENCES_REQUEST action
-    dispatch({ type: "FETCH_USER_PREFERENCES_REQUEST", payload: user_id });
+    dispatch({ type: "FETCH_USER_PREFERENCES_REQUEST", payload: {user_id: user_id} });
 
     // Only fetch data if scriptLoaded is true, preferences is not empty, and the component is not currently fetching data
     if (scriptLoaded && preferences && Object.keys(preferences).length > 0 && !isFetching) {

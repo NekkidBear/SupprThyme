@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Button, Grid, Stack, Typography } from "@mui/material";
@@ -7,7 +7,7 @@ import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
 import { geocodeLocation } from "../MapPlaceholder/mapUtils";
 import { makeStyles } from "@mui/styles";
-import {useTheme} from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 
 // Define styles
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,64 @@ const HomePage = ({ searchParams, group_id }) => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(false);
   const user_id = user.id;
+  const lastFetchedUserId = useRef();
+  const fetchDataRef = useRef({
+    lastFetchedUserId: null,
+    cleanup: () =>{} ,
+  });
 
+  const fetchUserPreferences = async (user_id, setAggregatePreferences) => {
+    try {
+      const response = await axios.get(`/api/user_preferences/${user_id}`);
+      setAggregatePreferences(response.data);
+    } catch (error) {
+      console.error("Failed to fetch user preferences:", error);
+    }
+  };
+
+const fetchData = async (
+  user_id,
+  scriptLoaded,
+  aggregatePreferences,
+  setAggregatePreferences
+) => {
+  let canceled = false;
+
+  if (scriptLoaded && aggregatePreferences && user_id) {
+    setLoading(true);
+    try {
+      //update the heading
+      setHeading(
+        `Find a restaurant near ${aggregatePreferences.city}, ${aggregatePreferences.state}`
+      );
+
+      // Geocode the location string
+      const locationString = `${aggregatePreferences.city}, ${aggregatePreferences.state}`;
+      const geocodedLocation = await geocodeLocation(locationString);
+
+      if (geocodedLocation) {
+        // Set the center state with the geocoded location
+        setCenter(geocodedLocation);
+      } else {
+        // If geocoding failed, set the center state with the latitude and longitude from the user data
+        setCenter({
+          lat: aggregatePreferences.latitude,
+          lng: aggregatePreferences.longitude,
+        });
+      }
+      setLoading(false);
+    } catch (error) {
+      if (!canceled) {
+        console.error("Error fetching user data:", error);
+        setLoading(false);
+      }
+    }
+  }
+
+  return () => {
+    canceled = true;
+  };
+};
 
   useEffect(() => {
     if (!window.google) {
@@ -53,54 +110,35 @@ const HomePage = ({ searchParams, group_id }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (scriptLoaded) {
-      const fetchData = async () => {
-        setLoading(true);
-        try {
-          const response = await axios.get(`/api/user/${user_id}`);
-          const newAggregatePreferences = {
-            city: response.data.city,
-            state: response.data.state,
-          };
-          console.log("newAggregatePreferences:", newAggregatePreferences);
-          setAggregatePreferences(newAggregatePreferences);
-          // console.log(
-          //   "aggregatePreferences from HomePage:",
-          //   aggregatePreferences
-          // );
+useEffect(() => {
+  // Clean up the previous effect
+  if (fetchDataRef.current.cleanup) {
+    fetchDataRef.current.cleanup();
+  }
 
-          //update the heading
-          setHeading(
-            `Find a restaurant near ${newAggregatePreferences.city}, ${newAggregatePreferences.state}`
-          );
+  // Set up the new effect
+  fetchData(
+    user_id,
+    scriptLoaded,
+    aggregatePreferences,
+    setAggregatePreferences
+  ).then((cleanupFunction) => {
+    fetchDataRef.current.cleanup = cleanupFunction;
+  });
 
-          // Geocode the location string
-          const locationString = `${response.data.city}, ${response.data.state}`;
-          const geocodedLocation = await geocodeLocation(locationString);
+  // Fetch user preferences
+  fetchUserPreferences(user_id, setAggregatePreferences);
 
-          if (geocodedLocation) {
-            // Set the center state with the geocoded location
-            setCenter(geocodedLocation);
-          } else {
-            // If geocoding failed, set the center state with the latitude and longitude from the user data
-            setCenter({
-              lat: response.data.latitude,
-              lng: response.data.longitude,
-            });
-          }
-          setLoading(false);
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-          setLoading(false);
-        }
-      };
+  // Update the last fetched user id
+  fetchDataRef.current.lastFetchedUserId = user_id;
 
-      fetchData();
+  return () => {
+    // Clean up the current effect when the component unmounts or when the dependencies change
+    if (fetchDataRef.current.cleanup) {
+      fetchDataRef.current.cleanup();
     }
-    console.log("aggregatePreferences after fetch:", aggregatePreferences);
-  }, [user.id, scriptLoaded]);
-
+  };
+}, [user_id, scriptLoaded, aggregatePreferences, setAggregatePreferences]);
   useEffect(() => {
     console.log("aggregatePreferences after update:", aggregatePreferences);
   }, [aggregatePreferences]);
@@ -116,20 +154,23 @@ const HomePage = ({ searchParams, group_id }) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  console.log(aggregatePreferences.city);
-  console.log(aggregatePreferences.state);
+  console.log("aggregatePreferences.city = ", aggregatePreferences.city);
+  console.log("aggregatePreferences.state = ", aggregatePreferences.state);
 
   const handleRecommendations = async () => {
-  try {
-    const response = await axios.get(`/api/user_preferences/${user.id}`);
-    setAggregatePreferences(response.data);
-    setShowRecommendations(true)
-  } catch (error) {
-    console.error('Failed to fetch user preferences:', error);
-  }
-};
+    console.log(
+      "handleRecommendations called with aggregatePreferences:",
+      aggregatePreferences
+    );
+    try {
+      setShowRecommendations(true);
+    } catch (error) {
+      console.error("Failed to fetch user preferences:", error);
+    }
+  };
 
-console.log("show recommendations:", showRecommendations)
+  
+  console.log("show recommendations:", showRecommendations);
   return (
     <div>
       <Typography variant="h2" align="center">
@@ -142,8 +183,15 @@ console.log("show recommendations:", showRecommendations)
         <Grid item xs={11}>
           {!loading && aggregatePreferences.city && (
             <div className={classes.restaurantSearch}>
-            {console.log('aggregatePreferences passed to component:',aggregatePreferences)}
-              <RestaurantSearch searchParams={aggregatePreferences} user={user} group_id={group_id}/>
+              {console.log(
+                "aggregatePreferences passed to component:",
+                aggregatePreferences
+              )}
+              <RestaurantSearch
+                searchParams={aggregatePreferences}
+                user={user}
+                group_id={group_id}
+              />
             </div>
           )}
         </Grid>

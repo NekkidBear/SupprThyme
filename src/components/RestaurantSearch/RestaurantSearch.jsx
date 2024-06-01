@@ -40,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
 // RestaurantSearch component
 
 const RestaurantSearch = ({ user, searchParams, group_id }) => {
+  console.log('RestaurantSearch called with searchParams:', searchParams, user, group_id);
+
   // Initialize state variables and redux hooks
   const classes = useStyles();
   const [loading, setLoading] = useState(true);

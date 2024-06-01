@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 
 const RestaurantMap = ({center, zoom}) => {
+  console.log('RestaurantMap called with center:', center, 'and zoom:', zoom);
+
   const restaurants = useSelector(state => state.restaurants);
   console.log('restaurants',restaurants);
   

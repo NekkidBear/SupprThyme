@@ -91,6 +91,8 @@ async function buildWhereClause(preferences, userLocationString) {
 //Get top restaurants
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
+  console.log('Received a GET request to /search with query:', req.query);
+
   try {
     console.log("req.query is: ", req.query);
     let userLocationString = "";

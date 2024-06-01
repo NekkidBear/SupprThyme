@@ -47,7 +47,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurants);
   const showRecommendations = useSelector((store) => store.showRecommendations);
-  const user_id = user.id
+  const user_id = user ? parseInt(user.id) : null;
   // Fetch restaurants when component mounts or searchParams, dispatch, group_id, or user changes
 
   useEffect(() => {
@@ -58,9 +58,9 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         let aggregatePreferences = {};
         if (showRecommendations) {
           // Fetch recommendations for a single user
-          if(!user){
-            console.error("user is undefined");
-            setError("user is undefined. please log in");
+          if (!user || !searchParams.city || !searchParams.state) {
+            console.error("user or location is undefined");
+            setError("Please Log in and set your location");
             return;
           }
           response = await axios.get(`/api/recommendations/${user_id}`);
@@ -69,7 +69,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
           const groupResponse = await axios.get(`/api/groups/${group_id}`);
           const users = groupResponse.data.users;
           const preferences = await Promise.all(
-            users.map((user) => axios.get(`/api/users/${user}/preferences`))
+            users.map((user) => axios.get(`api/user_preferences/user_id`))
           );
 
           console.log(searchParams);
@@ -135,9 +135,7 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         }
 
         // Fetch restaurants based on the aggregate preferences
-        const params = new URLSearchParams({
-          aggregatePreferences: JSON.stringify(aggregatePreferences),
-        }).toString();
+        const params = new URLSearchParams(aggregatePreferences);
         console.log("aggregate preferences:", aggregatePreferences);
         console.log("params:", params);
         console.log(`/api/restaurants/search?${params}`);
@@ -163,7 +161,9 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
 
   // Render error state
   if (error) {
-    return <p>{error}</p>;
+    return ( <div>
+      <Typography variant="h4" color="error">{error}</Typography>
+    </div>);
   }
 
   // Render the list of restaurants

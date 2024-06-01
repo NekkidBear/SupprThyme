@@ -51,26 +51,21 @@ async function filterRestaurants(userId, allRestaurants) {
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
+  // console.log("req.params.userId: ", req.params.userId);
+  // console.log("userId", userId);
   // Check if userId is defined and is an integer
   if (!userId || !Number.isInteger(Number(userId))) {
     res.status(400).json({ error: "Invalid user ID" });
     return;
   }
-
-  // Fetch the user's preferences
-  const preferencesRes = await pool.query(
-    "SELECT * FROM user_preferences WHERE user_id = $1",
-    [userId]
-  );
-  const userPreferences = preferencesRes.rows[0];
-
   // Fetch all restaurants
   const restaurantsRes = await pool.query("SELECT * FROM restaurants");
   const allRestaurants = restaurantsRes.rows;
 
+
   // Filter the restaurants based on the user's preferences
   const recommendedRestaurants = await filterRestaurants(
-    userPreferences,
+    userId,
     allRestaurants
   );
 

@@ -9,6 +9,17 @@ const googleMapsClient = require("@google/maps").createClient({
 const GeocodingError = require("../constants/GeocodingError.js");
 const normalizeLocation = require("../modules/Geolocation.js");
 
+function checkRequiredParams(params, res) {
+  const missingParams = params
+    .filter((param) => !param.value)
+    .map((param) => param.name);
+  if (missingParams.length > 0) {
+    return res
+      .status(400)
+      .json({ error: `${missingParams.join(", ")} must be provided` });
+  }
+}
+
 async function buildWhereClause(preferences, userLocationString) {
   console.log("buildWhereClause input: ", {
     preferences,
@@ -83,14 +94,20 @@ router.get("/", async (req, res) => {
   const { city, state } = req.query;
   const address = req.query.address;
 
-  if (!city || !state) {
-    return res
-      .status(400)
-      .json({ error: "City and state must be provided" });
+  if (
+    checkRequiredParams(
+      [
+        { name: "city", value: city },
+        { name: "state", value: state },
+      ],
+      res
+    )
+  ) {
+    return; // If city or state is missing, we return from the function here
   }
+
   try {
     //normalize the address
-
     const normalizedAddress = await normalizeLocation(city, state);
     const query = `
     SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
@@ -109,24 +126,34 @@ router.get("/", async (req, res) => {
 
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-  let userLocationString = ''
+  let userLocationString = "";
   try {
-    let aggregatePreferences = JSON.parse(req.query.aggregatePreferences);
-    if(!aggregatePreferences) {
-      return res.Status(400).json({error: "aggregatePreferences is required" });
-    }
+    // let aggregatePreferences = JSON.parse(req.query.aggregatePreferences);
+    if (
+      checkRequiredParams(
+        [{ name: "aggregatePreferences", value: aggregatePreferences }],
+        res
+      )
+    )
+      return;
 
     let { group_id, city, state } = aggregatePreferences;
-    
-    if (!city || !state) {
-      return res.sendStatus(400).json({ error: "City and state must be provided" });
-    }
+    if (
+      checkRequiredParams(
+        [
+          { name: "city", value: city },
+          { name: "state", value: state },
+        ],
+        res
+      )
+    )
+      return;
 
-    const normalizedAddress = await normalizeLocation( city, state);
+    const normalizedAddress = await normalizeLocation(city, state);
     userLocationString = `${normalizedAddress.city}, ${normalizedAddress.state}`;
     const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
     console.log("aggregate preferences: ", aggregatePreferences);
-    
+
     if (group_id) {
       const groupResponse = await pool.query(
         `SELECT * FROM groups WHERE id = $1`,
@@ -198,17 +225,8 @@ router.get("/search", async (req, res) => {
       }
     }
     console.log("parsed preferences:", parsedPreferences);
-    if (!city) {
-      return res
-        .status(400)
-        .json({ error: "City is required in aggregatePreferences" });
-    }
-
-    if (!state) {
-      return res
-        .status(400)
-        .json({ error: "State is required in aggregatePreferences" });
-    }
+    if (checkRequiredParams([{ name: "city", value: city }], res)) return;
+    if (checkRequiredParams([{ name: "state", value: state }], res)) return;
     console.log(`city: ${city}, state: ${state}`);
     const location = await normalizeLocation(city, state);
     userLocationString = `${location.city}, ${location.state}`;

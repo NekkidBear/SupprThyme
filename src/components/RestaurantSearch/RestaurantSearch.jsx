@@ -1,6 +1,5 @@
 // Import necessary dependencies
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./RestaurantSearch.css";
 import { ThemeProvider } from "@mui/material/styles";
@@ -40,120 +39,70 @@ const useStyles = makeStyles((theme) => ({
 // RestaurantSearch component
 
 const RestaurantSearch = ({ user, searchParams, group_id }) => {
-  console.log('RestaurantSearch called with searchParams:', searchParams, user, group_id);
+  console.log(
+    "RestaurantSearch called with searchParams:",
+    searchParams,
+    user,
+    group_id
+  );
 
   // Initialize state variables and redux hooks
   const classes = useStyles();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // Get restaurants, loading, and error state from the Redux store
+  const restaurants = useSelector((state) => state.restaurants.restaurants);
+  const loading = useSelector((state) => state.restaurants.loading);
+  const error = useSelector((state) => state.restaurants.error);
   const dispatch = useDispatch();
-  const restaurants = useSelector((state) => state.restaurants);
   const showRecommendations = useSelector((store) => store.showRecommendations);
   const user_id = user ? parseInt(user.id) : null;
   // Fetch restaurants when component mounts or searchParams, dispatch, group_id, or user changes
 
   useEffect(() => {
-    const fetchRestaurants = async () => {
-      try {
-        setLoading(true);
-        let response;
-        let aggregatePreferences = {};
-
-        // Case 1: User first logs in, render restaurants based on city and state
-        if (!user && searchParams.city && searchParams.state) {
-          aggregatePreferences = searchParams;
-        }
-        // Case 2: User clicks on 'recommend a restaurant', use user's preferences
-        else if (user && !group_id) {
-          const preferencesResponse = await axios.get(
-            `/api/user_preferences/${user_id}`
-          );
-          const userPreferences = preferencesResponse.data;
-          aggregatePreferences = {
-            max_price_range: userPreferences.max_price_range,
-            max_distance: userPreferences.max_distance,
-            meat_preference:
-              userPreferences.meat_preference === "Vegetarian" ||
-              userPreferences.meat_preference === "Vegan"
-                ? "Vegetarian/Vegan"
-                : userPreferences.meat_preference,
-            cuisine_types:( userPreferences.cuisine_types || []).join(','),
-            city: searchParams.city,
-            state: searchParams.state,
-          };
-        }
-        // Case 3: User triggers search from a group, aggregate preferences
-        else if (group_id) {
-          // Fetch the preferences of each user in the group
-          const groupResponse = await axios.get(`/api/groups/${group_id}`);
-          const users = groupResponse.data.users;
-          const preferences = await Promise.all(
-            users.map((user) =>
-              axios.get(`api/user_preferences/${user.user_id}`)
-            )
-          );
-
-          // Aggregate the preferences
-          aggregatePreferences = preferences.reduce(
-            (aggregate, current) => {
-              if (!current.data) {
-                // Skip this user if they have not defined preferences
-                return aggregate;
-              }
-
-              // For price range and max distance, find the maximum value that is less than or equal to the lowest maximum value
-              aggregate.max_price_range = Math.min(
-                aggregate.max_price_range || Infinity,
-                current.data.max_price_range
-              );
-              aggregate.max_distance = Math.min(
-                aggregate.max_distance || Infinity,
-                current.data.max_distance
-              );
-
-              // For meat preference, check if a restaurant offers vegetarian/vegan options if a user prefers it
-              if (
-                current.data.meat_preference === "Vegetarian" ||
-                current.data.meat_preference === "Vegan"
-              ) {
-                aggregate.meat_preference = "Vegetarian/Vegan";
-              }
-
-              // For cuisine types, add the user's preferred cuisine types to the aggregate
-              aggregate.cuisine_types = [
-                ...(aggregate.cuisine_types || []),
-                ...current.data.cuisine_types,
-              ];
-              aggregatePreferences.cuisine_types = aggregatePreferences.cuisine_types.join(',');
-              return aggregate;
-            },
-            { city: searchParams.city, state: searchParams.state }
-          );
-        } else {
-          console.error("Insufficient information to fetch restaurants");
-          setError("Insufficient information to fetch restaurants");
-          return;
-        }
-
-        // Fetch restaurants based on the aggregate preferences
-        const params = new URLSearchParams(aggregatePreferences);
-        response = await axios.get(
-          `/api/restaurants/search?${params.toString()}`
-        );
-
-        // Dispatch the fetched restaurants to the Redux store
-        dispatch({ type: "SET_RESTAURANTS", payload: response.data });
-
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching restaurants:", error);
-        setError("Error fetching restaurants. Please try again later.");
-        setLoading(false);
-      }
-    };
-
-    fetchRestaurants();
+    // Case 1: No group active, no recommendations requested
+    if (
+      !user &&
+      !showRecommendations &&
+      searchParams.city &&
+      searchParams.state
+    ) {
+      dispatch({
+        type: "FETCH_RESTAURANTS_REQUEST",
+        payload: searchParams,
+      });
+    }
+    // Case 2: User requested recommendations
+    else if (user && !group_id && showRecommendations) {
+      dispatch({
+        type: "FETCH_USER_PREFERENCES_REQUEST",
+        payload: { user_id: user.id },
+      });
+    }
+    // Case 3: Group is active
+    else if (group_id) {
+      dispatch({
+        type: "FETCH_USER_PREFERENCES_REQUEST",
+        payload: { group_id },
+      });
+    } else {
+      console.error("Insufficient information to fetch restaurants");
+      // Dispatch an action that sets an error message in your Redux state
+      dispatch({
+        type: "SET_ERROR",
+        payload: "Insufficient information to fetch restaurants",
+      });
+    }
   }, [searchParams, dispatch, group_id, user, showRecommendations]);
+
+  // Listen for changes to the user's preferences in your Redux state
+  const userPreferences = useSelector((state) => state.userPreferences);
+  useEffect(() => {
+    if (userPreferences) {
+      dispatch({
+        type: "FETCH_RESTAURANTS_REQUEST",
+        payload: userPreferences,
+      });
+    }
+  }, [dispatch, userPreferences]);
 
   // Render loading state
   if (loading) {

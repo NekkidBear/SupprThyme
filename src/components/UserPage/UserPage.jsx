@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LogOutButton from "../LogOutButton/LogOutButton";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button, Container, Paper, Typography, Box } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -45,15 +45,18 @@ const useStyles = makeStyles((theme) => ({
   section_headings: {
     backgroundColor: theme.palette.secondary.main,
     padding: "5px",
-  }
+  },
 }));
 
 function UserPage() {
+  const dispatch = useDispatch();
   const theme = useTheme();
   const classes = useStyles();
   const user = useSelector((store) => store.user);
   const history = useHistory();
-  const [userPrefSummary, setUserPrefSummary] = useState([]);
+  const userPrefSummary = useSelector(
+    (store) => store.userPreferences.preferences
+  );
   const [userAddress, setUserAddress] = useState([]);
   const [isAcctInfoFormVisible, setIsAcctInfoFormVisible] = useState(false);
   const [isPrefsFormVisible, setIsPrefsFormVisible] = useState(false);
@@ -61,7 +64,8 @@ function UserPage() {
     username: user.username || "",
     email: user.email || "",
   });
-  const [prefsForm, setPrefsForm] = useState({ ...userPrefSummary });
+  const isLoading = useSelector((store) => store.userPreferences.loading);
+  const error = useSelector((store) => store.userPreferences.error);
 
   const updatePrefs = () => {
     setIsPrefsFormVisible(!isPrefsFormVisible);
@@ -71,15 +75,8 @@ function UserPage() {
     setIsAcctInfoFormVisible(!isAcctInfoFormVisible);
   };
 
-  const getPrefInfo = async () => {
-    axios
-      .get(`/api/user_preferences/${user.id}`)
-      .then((response) => {
-        setUserPrefSummary(response.data);
-      })
-      .catch((error) => {
-        console.error("Error Fetching user preferences", error);
-      });
+  const getPrefInfo = () => {
+    dispatch({ type: "FETCH_USER_PREFERENCES_REQUEST", payload: user.id });
   };
 
   const getAddressInfo = async () => {
@@ -161,7 +158,11 @@ function UserPage() {
         <Typography variant="h2" component="h1" className={classes.text}>
           Welcome, {user.username}!
         </Typography>
-        <Typography variant="h3" component="h2"className={classes.section_headings}>
+        <Typography
+          variant="h3"
+          component="h2"
+          className={classes.section_headings}
+        >
           Account Information
         </Typography>
         {!isAcctInfoFormVisible && Object.keys(userAddress).length > 0 && (
@@ -238,7 +239,11 @@ function UserPage() {
         )}
         <Box className={classes.section_box}>
           <div className={classes.preferencesSummary}>
-            <Typography variant="h3" component="h2" className={classes.section_headings}>
+            <Typography
+              variant="h3"
+              component="h2"
+              className={classes.section_headings}
+            >
               Preferences Summary
             </Typography>
             {!isPrefsFormVisible &&

@@ -3,6 +3,8 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import restaurantsReducer from './restaurant.reducer'
 import showRecommendationsReducer from './showRecommendations.reducer';
+import userPrferencesReducer from './userPreferences.reducer'
+import userPreferencesReducer from './userPreferences.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +17,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   restaurants: restaurantsReducer,
   showRecommendations: showRecommendationsReducer, //recommended restaurants for a single user
+  userPrferencesReducer: userPreferencesReducer, //manages user preferences
 
 });
 

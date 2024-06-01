@@ -26,22 +26,29 @@ const HomePage = ({ searchParams, group_id }) => {
   const classes = useStyles();
   const theme = useTheme();
 
+  // Get the current user from the redux store
   const user = useSelector((store) => store.user);
+
+  // State variables
   const [heading, setHeading] = useState("Find a Restaurant Near You");
   const [loading, setLoading] = useState(true);
-  const history = useHistory();
   const [aggregatePreferences, setAggregatePreferences] = useState({});
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [showRecommendations, setShowRecommendations] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
+
+  // User id from the user object
   const user_id = user.id;
-  const lastFetchedUserId = useRef();
+
+  // Refs to store the last fetched user id and the cleanup function for the fetchData effect
   const fetchDataRef = useRef({
     lastFetchedUserId: null,
-    cleanup: () =>{} ,
+    cleanup: () => {},
   });
 
+  // Function to fetch user preferences from the server
   const fetchUserPreferences = async (user_id, setAggregatePreferences) => {
     try {
       const response = await axios.get(`/api/user_preferences/${user_id}`);
@@ -51,50 +58,60 @@ const HomePage = ({ searchParams, group_id }) => {
     }
   };
 
-const fetchData = async (
-  user_id,
-  scriptLoaded,
-  aggregatePreferences,
-  setAggregatePreferences
-) => {
-  let canceled = false;
+  // Function to fetch data based on user id, scriptLoaded state, and aggregatePreferences state
+  const fetchData = async (
+    user_id,
+    scriptLoaded,
+    aggregatePreferences,
+    setAggregatePreferences
+  ) => {
+    let canceled = false;
 
-  if (scriptLoaded && aggregatePreferences && user_id) {
-    setLoading(true);
-    try {
-      //update the heading
-      setHeading(
-        `Find a restaurant near ${aggregatePreferences.city}, ${aggregatePreferences.state}`
-      );
+    //check to make sure variables are truthy. If they aren't that means the script can't continue.
+    if (!scriptLoaded || !aggregatePreferences || !user_id){
+      return
+    }
 
-      // Geocode the location string
-      const locationString = `${aggregatePreferences.city}, ${aggregatePreferences.state}`;
-      const geocodedLocation = await geocodeLocation(locationString);
+    if (scriptLoaded && aggregatePreferences && user_id) {
+      setLoading(true); //checks to see if data has loaded
+      setIsFetching(true); //checks to see if fetch is in progress
+      try {
+        // Update the heading
+        setHeading(
+          `Find a restaurant near ${aggregatePreferences.city}, ${aggregatePreferences.state}`
+        );
 
-      if (geocodedLocation) {
-        // Set the center state with the geocoded location
-        setCenter(geocodedLocation);
-      } else {
-        // If geocoding failed, set the center state with the latitude and longitude from the user data
-        setCenter({
-          lat: aggregatePreferences.latitude,
-          lng: aggregatePreferences.longitude,
-        });
-      }
-      setLoading(false);
-    } catch (error) {
-      if (!canceled) {
-        console.error("Error fetching user data:", error);
+        // Geocode the location string
+        const locationString = `${aggregatePreferences.city}, ${aggregatePreferences.state}`;
+        const geocodedLocation = await geocodeLocation(locationString);
+
+        if (geocodedLocation) {
+          // Set the center state with the geocoded location
+          setCenter(geocodedLocation);
+        } else {
+          // If geocoding failed, set the center state with the latitude and longitude from the user data
+          setCenter({
+            lat: aggregatePreferences.latitude,
+            lng: aggregatePreferences.longitude,
+          });
+        }
         setLoading(false);
+      } catch (error) {
+        if (!canceled) {
+          console.error("Error fetching user data:", error);
+          setLoading(false);
+        }
+      } finally {
+        setIsFetching(false);
       }
     }
-  }
 
-  return () => {
-    canceled = true;
+    return () => {
+      canceled = true;
+    };
   };
-};
 
+  // Effect to load the Google Maps script
   useEffect(() => {
     if (!window.google) {
       const script = document.createElement("script");
@@ -110,39 +127,46 @@ const fetchData = async (
     }
   }, []);
 
-useEffect(() => {
-  // Clean up the previous effect
-  if (fetchDataRef.current.cleanup) {
-    fetchDataRef.current.cleanup();
-  }
-
-  // Set up the new effect
-  fetchData(
-    user_id,
-    scriptLoaded,
-    aggregatePreferences,
-    setAggregatePreferences
-  ).then((cleanupFunction) => {
-    fetchDataRef.current.cleanup = cleanupFunction;
-  });
-
-  // Fetch user preferences
-  fetchUserPreferences(user_id, setAggregatePreferences);
-
-  // Update the last fetched user id
-  fetchDataRef.current.lastFetchedUserId = user_id;
-
-  return () => {
-    // Clean up the current effect when the component unmounts or when the dependencies change
+  // Effect to fetch data and user preferences
+  useEffect(() => {
+    // Clean up the previous effect
     if (fetchDataRef.current.cleanup) {
       fetchDataRef.current.cleanup();
     }
-  };
-}, [user_id, scriptLoaded, aggregatePreferences, setAggregatePreferences]);
+
+    // Fetch user preferences
+    fetchUserPreferences(user_id, setAggregatePreferences);
+
+    // Only fetch data if scriptLoaded is true and aggregatePreferences is not empty
+    if (scriptLoaded && Object.keys(aggregatePreferences).length > 0 && !isFetching) {
+      // Set up the new effect
+      fetchData(
+        user_id,
+        scriptLoaded,
+        aggregatePreferences,
+        setAggregatePreferences
+      ).then((cleanupFunction) => {
+        fetchDataRef.current.cleanup = cleanupFunction;
+      });
+
+      // Update the last fetched user id
+      fetchDataRef.current.lastFetchedUserId = user_id;
+    }
+
+    return () => {
+      // Clean up the current effect when the component unmounts or when the dependencies change
+      if (fetchDataRef.current.cleanup) {
+        fetchDataRef.current.cleanup();
+      }
+    };
+  }, [user_id, scriptLoaded, aggregatePreferences, setAggregatePreferences, isFetching]);
+
+  // Effect to log the aggregatePreferences state when it changes
   useEffect(() => {
     console.log("aggregatePreferences after update:", aggregatePreferences);
   }, [aggregatePreferences]);
 
+  // Event handlers for the buttons
   const handleClickCreateGroup = () => {
     history.push("/groupForm");
   };
@@ -151,12 +175,16 @@ useEffect(() => {
     history.push("/groups");
   };
 
+  // Render loading text if the component is loading
   if (loading) {
     return <p>Loading...</p>;
   }
+
+  // Log the city and state from the aggregatePreferences state
   console.log("aggregatePreferences.city = ", aggregatePreferences.city);
   console.log("aggregatePreferences.state = ", aggregatePreferences.state);
 
+  // Event handler for the Recommend Restaurants button
   const handleRecommendations = async () => {
     console.log(
       "handleRecommendations called with aggregatePreferences:",
@@ -169,8 +197,11 @@ useEffect(() => {
     }
   };
 
-  
+  // Log the showRecommendations state
   console.log("show recommendations:", showRecommendations);
+
+  // Render the component
+
   return (
     <div>
       <Typography variant="h2" align="center">

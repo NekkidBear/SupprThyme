@@ -65,10 +65,10 @@ const HomePage = ({ searchParams, group_id }) => {
           };
           console.log("newAggregatePreferences:", newAggregatePreferences);
           setAggregatePreferences(newAggregatePreferences);
-          console.log(
-            "aggregatePreferences from HomePage:",
-            aggregatePreferences
-          );
+          // console.log(
+          //   "aggregatePreferences from HomePage:",
+          //   aggregatePreferences
+          // );
 
           //update the heading
           setHeading(
@@ -142,6 +142,7 @@ console.log("show recommendations:", showRecommendations)
         <Grid item xs={11}>
           {!loading && aggregatePreferences.city && (
             <div className={classes.restaurantSearch}>
+            {console.log('aggregatePreferences passed to component:',aggregatePreferences)}
               <RestaurantSearch searchParams={aggregatePreferences} user={user} group_id={group_id}/>
             </div>
           )}

@@ -89,58 +89,34 @@ async function buildWhereClause(preferences, userLocationString) {
  */
 
 //Get top restaurants
-router.get("/", async (req, res) => {
-  const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
-  const { city, state } = req.query;
-  const address = req.query.address;
-
-  if (
-    checkRequiredParams(
-      [
-        { name: "city", value: city },
-        { name: "state", value: state },
-      ],
-      res
-    )
-  ) {
-    return; // If city or state is missing, we return from the function here
-  }
-
-  try {
-    //normalize the address
-    const normalizedAddress = await normalizeLocation(city, state);
-    const query = `
-    SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
-    FROM restaurants
-    WHERE address ILIKE $1 -- case-insensitive pattern matching for address
-    ORDER BY rating ASC
-    LIMIT $2;
-    `;
-    const result = await pool.query(query, [`%${normalizedAddress}%`, limit]);
-    res.json(result.rows);
-  } catch (error) {
-    console.error("Error fetching top restaurants:", error);
-    res.status(500).json({ error: "Failed to fetch top restaurants" });
-  }
-});
-
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-  let userLocationString = "";
   try {
-    // let aggregatePreferences = JSON.parse(req.query.aggregatePreferences);
-    if (
-      checkRequiredParams(
-        [{ name: "aggregatePreferences", value: aggregatePreferences }],
-        res
-      )
-    )
-      return;
+    console.log("req.query is: ", req.query);
+    let userLocationString = "";
+    let aggregatePreferences = req.query; // Assign req.query to aggregatePreferences
 
-    let { group_id, city, state } = aggregatePreferences;
+    let {
+      max_price_range,
+      max_distance,
+      meat_preference,
+      cuisine_types,
+      city,
+      state,
+      group_id
+    } = aggregatePreferences;
+
+    if(cuisine_types===''){
+      cuisine_types=[];
+    }
+
     if (
       checkRequiredParams(
         [
+          { name: "max_price_range", value: max_price_range },
+          { name: "max_distance", value: max_distance },
+          { name: "meat_preference", value: meat_preference },
+          { name: "cuisine_types", value: cuisine_types },
           { name: "city", value: city },
           { name: "state", value: state },
         ],

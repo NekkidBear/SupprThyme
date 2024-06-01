@@ -56,23 +56,40 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
         setLoading(true);
         let response;
         let aggregatePreferences = {};
-        if (showRecommendations) {
-          // Fetch recommendations for a single user
-          if (!user || !searchParams.city || !searchParams.state) {
-            console.error("user or location is undefined");
-            setError("Please Log in and set your location");
-            return;
-          }
-          response = await axios.get(`/api/recommendations/${user_id}`);
-        } else if (group_id) {
+
+        // Case 1: User first logs in, render restaurants based on city and state
+        if (!user && searchParams.city && searchParams.state) {
+          aggregatePreferences = searchParams;
+        }
+        // Case 2: User clicks on 'recommend a restaurant', use user's preferences
+        else if (user && !group_id) {
+          const preferencesResponse = await axios.get(
+            `/api/user_preferences/${user_id}`
+          );
+          const userPreferences = preferencesResponse.data;
+          aggregatePreferences = {
+            max_price_range: userPreferences.max_price_range,
+            max_distance: userPreferences.max_distance,
+            meat_preference:
+              userPreferences.meat_preference === "Vegetarian" ||
+              userPreferences.meat_preference === "Vegan"
+                ? "Vegetarian/Vegan"
+                : userPreferences.meat_preference,
+            cuisine_types:( userPreferences.cuisine_types || []).join(','),
+            city: searchParams.city,
+            state: searchParams.state,
+          };
+        }
+        // Case 3: User triggers search from a group, aggregate preferences
+        else if (group_id) {
           // Fetch the preferences of each user in the group
           const groupResponse = await axios.get(`/api/groups/${group_id}`);
           const users = groupResponse.data.users;
           const preferences = await Promise.all(
-            users.map((user) => axios.get(`api/user_preferences/user_id`))
+            users.map((user) =>
+              axios.get(`api/user_preferences/${user.user_id}`)
+            )
           );
-
-          console.log(searchParams);
 
           // Aggregate the preferences
           aggregatePreferences = preferences.reduce(
@@ -100,59 +117,41 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
                 aggregate.meat_preference = "Vegetarian/Vegan";
               }
 
-              // For cuisine types, use distinct items
+              // For cuisine types, add the user's preferred cuisine types to the aggregate
               aggregate.cuisine_types = [
-                ...new Set([
-                  ...(aggregate.cuisine_types || []),
-                  ...current.data.cuisine_types,
-                ]),
+                ...(aggregate.cuisine_types || []),
+                ...current.data.cuisine_types,
               ];
-
-              // For open now, calculate based on their local time vs the days/hours listed in the database
-              aggregate.open_now = aggregate.open_now && current.data.open_now;
-
-              // For accepts large parties, default to true
-              aggregate.accepts_large_parties =
-                aggregate.accepts_large_parties &&
-                current.data.accepts_large_parties;
-
+              aggregatePreferences.cuisine_types = aggregatePreferences.cuisine_types.join(',');
               return aggregate;
             },
-            {} // Pass an empty object as the initial value
+            { city: searchParams.city, state: searchParams.state }
           );
         } else {
-          // Use the currently logged in user's location data
-          if (searchParams.city && searchParams.state) {
-            aggregatePreferences = searchParams;
-          } else {
-            // Handle the case where city and state are not provided
-            console.error("City and state must be provided in searchParams");
-            setError(
-              "City and state must be provided. Please update your location settings."
-            );
-            return; // Exit the function early to prevent further execution
-          }
+          console.error("Insufficient information to fetch restaurants");
+          setError("Insufficient information to fetch restaurants");
+          return;
         }
 
         // Fetch restaurants based on the aggregate preferences
         const params = new URLSearchParams(aggregatePreferences);
-        console.log("aggregate preferences:", aggregatePreferences);
-        console.log("params:", params);
-        console.log(`/api/restaurants/search?${params}`);
-        response = await axios.get(`/api/restaurants/search?${params}`);
+        response = await axios.get(
+          `/api/restaurants/search?${params.toString()}`
+        );
 
-        // Dispatch the SET_RESTAURANTS action
+        // Dispatch the fetched restaurants to the Redux store
         dispatch({ type: "SET_RESTAURANTS", payload: response.data });
+
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching restaurants:", error);
         setError("Error fetching restaurants. Please try again later.");
-      } finally {
         setLoading(false);
       }
     };
 
     fetchRestaurants();
-  }, [searchParams, dispatch, group_id, user]);
+  }, [searchParams, dispatch, group_id, user, showRecommendations]);
 
   // Render loading state
   if (loading) {
@@ -161,9 +160,13 @@ const RestaurantSearch = ({ user, searchParams, group_id }) => {
 
   // Render error state
   if (error) {
-    return ( <div>
-      <Typography variant="h4" color="error">{error}</Typography>
-    </div>);
+    return (
+      <div>
+        <Typography variant="h4" color="error">
+          {error}
+        </Typography>
+      </div>
+    );
   }
 
   // Render the list of restaurants

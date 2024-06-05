@@ -24,7 +24,7 @@ function runScript(scriptPath) {
 
 async function rebuildTestData() {
   try {
-    await runScript('test_data/test_data.js') //query 3rd party api for test data
+    // await runScript('test_data/test_data.js') //query 3rd party api for test data
     await runScript('database/initializePgDB.js'); //drop and recreate tables
     await runScript('test_data/populateTestUsers.js'); //populate test users
     await runScript('test_data/populateTestUserPreferencesData.js'); //populate test user preferences

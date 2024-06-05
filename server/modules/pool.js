@@ -4,7 +4,7 @@
 
  change `prime_app` to the name of your database, and you should be all set!
 */
-
+require('dotenv').config();
 const pg = require('pg');
 let pool;
 

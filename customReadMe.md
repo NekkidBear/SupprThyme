@@ -1,6 +1,6 @@
 # SupprThyme
 
-![Logo](/public/favicon.ico)
+![Logo](/favicon.ico)
 
 HTTP error 401 for prompt `slogan`
 

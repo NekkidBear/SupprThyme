@@ -20,6 +20,8 @@ if (process.env.DATABASE_URL) {
             rejectUnauthorized: false
         }
     });
+    console.log(`Connected to database with connection string: ${process.env.DATABASE_URL}`);
+
 }
 // When we're running this app on our own computer
 // we'll connect to the postgres database that is 
@@ -30,6 +32,8 @@ else {
         port: 5432,
         database: 'SupprThyme',   
     });
+    console.log('Connected to local database: SupprThyme');
+
 }
 
 module.exports = pool;

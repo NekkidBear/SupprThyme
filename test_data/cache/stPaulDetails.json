@@ -53,19 +53,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.460108757019043",
+      "raw_ranking": "4.462922096252441",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "1",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#1 of 919 places to eat in Saint Paul",
+      "ranking": "#1 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$8 - $60",
@@ -170,9 +170,9 @@
         "city": "Saint Paul",
         "state": "MN",
         "country": "United States",
-        "postalcode": "55102"
+        "postalcode": "55102-1430"
       },
-      "address": "350 N Market Street, Saint Paul, MN 55102",
+      "address": "350 N Market Street, Saint Paul, MN 55102-1430",
       "hours": {
         "week_ranges": [
           [
@@ -221,17 +221,13 @@
         "timezone": "America/Chicago"
       },
       "local_name": "The St. Paul Grill",
-      "local_address": "350 N Market Street, 55102",
+      "local_address": "350 N Market Street, 55102-1430",
       "local_lang_code": "en-US",
       "is_candidate_for_contact_info_suppression": false,
       "cuisine": [
         {
-          "key": "10640",
-          "name": "Bar"
-        },
-        {
-          "key": "9908",
-          "name": "American"
+          "key": "10345",
+          "name": "Steakhouse"
         },
         {
           "key": "10665",
@@ -261,7 +257,7 @@
         }
       ],
       "menu_web_url": "https://www.stpaulgrill.com/menu/dinner",
-      "establishment_category_ranking": "#1 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#1 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10599",
@@ -419,19 +415,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.4312424659729",
+      "raw_ranking": "4.4312849044799805",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "2",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#2 of 919 places to eat in Saint Paul",
+      "ranking": "#2 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "description": "",
@@ -599,13 +595,13 @@
       "dietary_restrictions": [],
       "booking": {
         "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988036&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2ScZsRoxVD1rzMRHQziJD54&cs=195b3945ef94a8fdcf47101d33ec44571"
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521812&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2fnj22yKVlCV3NXk4WsWYdQ&cs=13ac54a0f5c926ccab67605036f5a00de"
       },
       "reserve_info": {
         "id": "512809",
         "provider": "ChowNow",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988036&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2ScZsRoxVD1rzMRHQziJD54&cs=195b3945ef94a8fdcf47101d33ec44571",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=184364574&geo=512809&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521812&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2fnj22yKVlCV3NXk4WsWYdQ&cs=13ac54a0f5c926ccab67605036f5a00de",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -617,7 +613,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d512809-Casper_Runyon_s_Nook-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#2 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#2 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -747,13 +743,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.415173530578613",
+      "raw_ranking": "4.415206432342529",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "3",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#3 of 919 places to eat in Saint Paul",
+      "ranking": "#3 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -958,25 +954,6 @@
           "name": "Gluten Free Options"
         }
       ],
-      "booking": {
-        "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989752&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2VvKxZzOPHsc0Zc4hakfPXk&cs=174110b82e60783c60e3ba0b7ef3522f2"
-      },
-      "reserve_info": {
-        "id": "444474",
-        "provider": "ChowNow",
-        "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183789529&geo=444474&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296989752&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2VvKxZzOPHsc0Zc4hakfPXk&cs=174110b82e60783c60e3ba0b7ef3522f2",
-        "booking_partner_id": null,
-        "racable": false,
-        "api_bookable": false,
-        "timeslots": null,
-        "bestoffer": null,
-        "timeslot_offers": null,
-        "button_text": "Order Online",
-        "disclaimer_text": null,
-        "banner_text": null
-      },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d444474-Cafe_Latte-Saint_Paul_Minnesota.html",
       "establishment_category_ranking": "#1 of 26 Dessert in Saint Paul",
       "meal_types": [
@@ -1128,19 +1105,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.405330657958984",
+      "raw_ranking": "4.403324127197266",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "4",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#4 of 919 places to eat in Saint Paul",
+      "ranking": "#4 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "neighborhood_info": [
@@ -1236,7 +1213,7 @@
         }
       ],
       "phone": "+1 651-888-6148",
-      "website": "http://www.tongueincheek.biz",
+      "website": "http://tongueincheek.biz/index.html",
       "address_obj": {
         "street1": "989 Payne Ave",
         "street2": null,
@@ -1320,7 +1297,7 @@
         }
       ],
       "menu_web_url": "http://www.tongueincheek.biz/menu.html",
-      "establishment_category_ranking": "#3 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#3 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10597",
@@ -1498,19 +1475,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.371268272399902",
+      "raw_ranking": "4.371348857879639",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "5",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#5 of 919 places to eat in Saint Paul",
+      "ranking": "#5 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$1 - $20",
@@ -1717,13 +1694,13 @@
       ],
       "booking": {
         "provider": "ChowNow",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988057&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2QvxFN8yUS60OqV1npUEh7U&cs=1df07fb21f61a23938ac2e632146d3418"
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521834&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Zk7FwYl5x9td4QYUTx-uWs&cs=194ec9927477bce6d5fd5f1a793c5f6e2"
       },
       "reserve_info": {
         "id": "444520",
         "provider": "ChowNow",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/chownow_v2_05.11.2020.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988057&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2QvxFN8yUS60OqV1npUEh7U&cs=1df07fb21f61a23938ac2e632146d3418",
+        "url": "https://www.tripadvisor.com/Commerce?p=Delivery_ChowNow&src=183791235&geo=444520&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=38060&bucket=934910&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521834&managed=false&capped=false&gosox=6E4khh0HtNXAL0epq-JuBJi9Hu4KwZkBcTYaPAKPcvyzRzJ-mgpAaP0IUqC44bubNGi9I6nuBPmXmunT2F7Y2Zk7FwYl5x9td4QYUTx-uWs&cs=194ec9927477bce6d5fd5f1a793c5f6e2",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -1889,19 +1866,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.3547773361206055",
+      "raw_ranking": "4.354752063751221",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "6",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#6 of 919 places to eat in Saint Paul",
+      "ranking": "#6 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$40",
@@ -2100,7 +2077,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d446157-Moscow_on_the_Hill-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#4 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#4 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -2266,19 +2243,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.35094690322876",
+      "raw_ranking": "4.350998401641846",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "7",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#7 of 919 places to eat in Saint Paul",
+      "ranking": "#7 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Closed today",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$20 - $100",
@@ -2459,7 +2436,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d678362-Meritage-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#5 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#5 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10599",
@@ -2697,19 +2674,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.338886260986328",
+      "raw_ranking": "4.338874816894531",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "8",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#8 of 919 places to eat in Saint Paul",
+      "ranking": "#8 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "neighborhood_info": [
@@ -2902,7 +2879,7 @@
         }
       ],
       "menu_web_url": "https://redcowmn.com/menus/brunch/",
-      "establishment_category_ranking": "#6 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#6 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -3072,19 +3049,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.320187568664551",
+      "raw_ranking": "4.318521499633789",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "9",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#9 of 919 places to eat in Saint Paul",
+      "ranking": "#9 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Opens in 19 min",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$10 - $15",
@@ -3281,7 +3258,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d474791-Cecil_s_Delicatessen_Bakery-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#7 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#7 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10597",
@@ -3431,13 +3408,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.317873477935791",
+      "raw_ranking": "4.316073417663574",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "10",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#10 of 919 places to eat in Saint Paul",
+      "ranking": "#10 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -3619,7 +3596,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d2459111-Joan_s_in_the_Park-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#8 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#8 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10599",
@@ -3785,13 +3762,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.099733352661133",
+      "raw_ranking": "4.098352432250977",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "11",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#11 of 919 places to eat in Saint Paul",
+      "ranking": "#11 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -3951,10 +3928,6 @@
       "is_candidate_for_contact_info_suppression": false,
       "cuisine": [
         {
-          "key": "9908",
-          "name": "American"
-        },
-        {
           "key": "10345",
           "name": "Steakhouse"
         },
@@ -3970,7 +3943,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d444473-Mancini_s_Char_House-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#9 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#9 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -4088,13 +4061,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.0758185386657715",
+      "raw_ranking": "4.074432849884033",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "12",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#12 of 919 places to eat in Saint Paul",
+      "ranking": "#12 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -4194,14 +4167,14 @@
       "website": "http://www.downtownerwoodfire.com/",
       "email": "Moe@downtownerwoodfire.com",
       "address_obj": {
-        "street1": "253 7th Street West",
+        "street1": "253 7th St W",
         "street2": "",
         "city": "Saint Paul",
         "state": "MN",
         "country": "United States",
         "postalcode": "55102-2522"
       },
-      "address": "253 7th Street West, Saint Paul, MN 55102-2522",
+      "address": "253 7th St W, Saint Paul, MN 55102-2522",
       "hours": {
         "week_ranges": [
           [
@@ -4250,14 +4223,10 @@
         "timezone": "America/Chicago"
       },
       "local_name": "Downtowner Woodfire Grill",
-      "local_address": "253 7th Street West, 55102-2522",
+      "local_address": "253 7th St W, 55102-2522",
       "local_lang_code": "en-US",
       "is_candidate_for_contact_info_suppression": false,
       "cuisine": [
-        {
-          "key": "10648",
-          "name": "International"
-        },
         {
           "key": "10665",
           "name": "Vegetarian Friendly"
@@ -4287,13 +4256,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296989817&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8ipVVDF5PWX-7kkbO_hRkZksrh--zJ_7jaKwFhB4YcPA&cs=1d8dcdfaca7ffa75cf17a74e7b9370806"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=297521888&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8BB8fvgaB1pdcVWNbb9xRESmhNGRasC7mHwsTw7UyrAk&cs=141350d66b2337813961a803b1c33d7ab"
       },
       "reserve_info": {
         "id": "444565",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296989817&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8ipVVDF5PWX-7kkbO_hRkZksrh--zJ_7jaKwFhB4YcPA&cs=1d8dcdfaca7ffa75cf17a74e7b9370806",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232198661&geo=444565&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=297521888&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8BB8fvgaB1pdcVWNbb9xRESmhNGRasC7mHwsTw7UyrAk&cs=141350d66b2337813961a803b1c33d7ab",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -4304,7 +4273,7 @@
         "disclaimer_text": null,
         "banner_text": null
       },
-      "establishment_category_ranking": "#10 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#10 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10597",
@@ -4482,19 +4451,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "4.007065296173096",
+      "raw_ranking": "4.005646705627441",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "13",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#13 of 919 places to eat in Saint Paul",
+      "ranking": "#13 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "neighborhood_info": [
@@ -4690,13 +4659,13 @@
       ],
       "booking": {
         "provider": "Grubhub",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988112&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyICKUXuALyHMiZYlKT3oFICQLZYyS1Q5DQ7kfXvN3i7A&cs=17ea8dffa15adc2e07b78c0c1f91a5984"
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521895&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyk6HbBsnkFNmlxOCoehh0I4NnM5MtnS_Ub0_qCskbBYQ&cs=1a7d5ac92d6a042331d8f757c4051b698"
       },
       "reserve_info": {
         "id": "2011868",
         "provider": "Grubhub",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988112&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyICKUXuALyHMiZYlKT3oFICQLZYyS1Q5DQ7kfXvN3i7A&cs=17ea8dffa15adc2e07b78c0c1f91a5984",
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=256443630&geo=2011868&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521895&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyk6HbBsnkFNmlxOCoehh0I4NnM5MtnS_Ub0_qCskbBYQ&cs=1a7d5ac92d6a042331d8f757c4051b698",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -4708,7 +4677,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d2011868-Brasa_Rotisserie-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#11 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#11 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -4842,19 +4811,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.983464241027832",
+      "raw_ranking": "3.9821624755859375",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "14",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#14 of 919 places to eat in Saint Paul",
+      "ranking": "#14 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$10 - $24",
@@ -5033,13 +5002,13 @@
       ],
       "booking": {
         "provider": "Grubhub",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988120&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyFoZcxsmib47OkLbwdJVTCjDFtrY0309ppri0LrSQ0TM&cs=1a1637b2191887cd40067570fb1c9b6aa"
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521903&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby-8vYUdEfqqHLai8BbNZa_OxHAJM6xrZKoPshgPgHYDo&cs=12cbf7ed55bc15cd5ac335c8d1253697b"
       },
       "reserve_info": {
         "id": "446267",
         "provider": "Grubhub",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/grubhub_05.11.2022.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=296988120&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEbyFoZcxsmib47OkLbwdJVTCjDFtrY0309ppri0LrSQ0TM&cs=1a1637b2191887cd40067570fb1c9b6aa",
+        "url": "https://www.tripadvisor.com/Commerce?p=Grubhub&src=181270628&geo=446267&from=api&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=25768&bucket=852508&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=297521903&managed=false&capped=false&gosox=I-ADlg7wY8lqEq92hGOCPH9yxKao4fnJtoYdd5TLctoCVK2EaqcCi9rOMrUCyEby-8vYUdEfqqHLai8BbNZa_OxHAJM6xrZKoPshgPgHYDo&cs=12cbf7ed55bc15cd5ac335c8d1253697b",
         "booking_partner_id": null,
         "racable": false,
         "api_bookable": false,
@@ -5051,7 +5020,7 @@
         "banner_text": null
       },
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d446267-DeGidio_s_Restaurant_Bar-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#12 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#12 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10599",
@@ -5201,13 +5170,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.9482483863830566",
+      "raw_ranking": "3.947233200073242",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "15",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#15 of 919 places to eat in Saint Paul",
+      "ranking": "#15 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -5406,7 +5375,7 @@
           "name": "Gluten Free Options"
         }
       ],
-      "establishment_category_ranking": "#13 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#13 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10597",
@@ -5548,19 +5517,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.9055912494659424",
+      "raw_ranking": "3.9044766426086426",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "16",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#16 of 919 places to eat in Saint Paul",
+      "ranking": "#16 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.0",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$$$",
       "price": "$40 - $60",
@@ -5756,13 +5725,13 @@
       ],
       "booking": {
         "provider": "OpenTable",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296988133&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8g8H2lA9VACAARFgH-K79WECfJWH53ZRFdsdyjO61yQs&cs=1f5ed0ae6234908a6a4a5cf5e68d51fce"
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=297521916&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ82W-rZqz1zIbPNfI3ZvJAG9n2VpF98DrPEL6imqEN4WI&cs=1a179b2911809652e12afab1ccd3e3819"
       },
       "reserve_info": {
         "id": "444513",
         "provider": "OpenTable",
         "provider_img": "https://static.tacdn.com/img2/branding/hotels/OT_Logo_1000x232.png",
-        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=296988133&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ8g8H2lA9VACAARFgH-K79WECfJWH53ZRFdsdyjO61yQs&cs=1f5ed0ae6234908a6a4a5cf5e68d51fce",
+        "url": "https://www.tripadvisor.com/Commerce?p=OpenTable&src=232186595&geo=444513&from=api&area=reservation_button&slot=2&matchID=1&oos=0&cnt=1&silo=45582&bucket=979641&nrank=2&crank=2&clt=R&ttype=Restaurant&tm=297521916&managed=false&capped=false&gosox=9DMvibDTWdNaFeGYL8QTakyv1LBYZaGpeB4MEHn-hv2mZBN376EHVCGusTIRxmJ82W-rZqz1zIbPNfI3ZvJAG9n2VpF98DrPEL6imqEN4WI&cs=1a179b2911809652e12afab1ccd3e3819",
         "booking_partner_id": "1",
         "racable": false,
         "api_bookable": true,
@@ -5773,7 +5742,7 @@
         "disclaimer_text": null,
         "banner_text": null
       },
-      "establishment_category_ranking": "#14 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#14 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -5959,13 +5928,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.87463116645813",
+      "raw_ranking": "3.8733534812927246",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "17",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#17 of 919 places to eat in Saint Paul",
+      "ranking": "#17 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -6164,7 +6133,7 @@
         }
       ],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d623633-Shish_Mediterranean_Grill_Cafe-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#15 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#15 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -6175,12 +6144,12 @@
           "name": "Dinner"
         },
         {
-          "key": "10597",
-          "name": "Breakfast"
-        },
-        {
           "key": "10606",
           "name": "Brunch"
+        },
+        {
+          "key": "10597",
+          "name": "Breakfast"
         },
         {
           "key": "10704",
@@ -6318,13 +6287,13 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.8216211795806885",
+      "raw_ranking": "3.8202879428863525",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "18",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#18 of 919 places to eat in Saint Paul",
+      "ranking": "#18 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
@@ -6421,7 +6390,7 @@
         }
       ],
       "phone": "+1 651-644-8887",
-      "website": "http://www.neighborhoodcafemn.com/",
+      "website": "http://www.theneighborhoodcafemn.com",
       "email": "contact@theneighborhoodcafemn.com",
       "address_obj": {
         "street1": "1570 Selby Ave",
@@ -6509,7 +6478,7 @@
         }
       ],
       "menu_web_url": "http://theneighborhoodcafemn.com",
-      "establishment_category_ranking": "#16 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#16 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10597",
@@ -6643,19 +6612,19 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.7997257709503174",
+      "raw_ranking": "3.7986652851104736",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "19",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#19 of 919 places to eat in Saint Paul",
+      "ranking": "#19 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.0",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
       "price_level": "$$ - $$$",
       "price": "$12 - $30",
@@ -6752,7 +6721,7 @@
         }
       ],
       "phone": "+1 651-228-9030",
-      "website": "http://www.thetavernongrand.com",
+      "website": "http://www.tavernongrand.com",
       "address_obj": {
         "street1": "656 Grand Ave",
         "street2": "",
@@ -6825,7 +6794,7 @@
       ],
       "dietary_restrictions": [],
       "menu_web_url": "http://www.tripadvisor.com/MobileRestaurantMenu-g43501-d444718-Tavern_on_Grand-Saint_Paul_Minnesota.html",
-      "establishment_category_ranking": "#17 of 734 Restaurants in Saint Paul",
+      "establishment_category_ranking": "#17 of 777 Restaurants in Saint Paul",
       "meal_types": [
         {
           "key": "10598",
@@ -6881,47 +6850,47 @@
     "status": 200,
     "msg": null,
     "results": {
-      "location_id": "670097",
-      "name": "Punch Pizza Grand Ave",
-      "latitude": "44.94005",
-      "longitude": "-93.13264",
-      "num_reviews": "180",
+      "location_id": "3737017",
+      "name": "Colossal Cafe",
+      "latitude": "44.98262",
+      "longitude": "-93.19581",
+      "num_reviews": "163",
       "timezone": "America/Chicago",
       "location_string": "Saint Paul, Minnesota",
       "photo": {
         "images": {
           "small": {
             "width": "150",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-l/18/62/4e/0b/pizzaiolo-at-punch-grand.jpg",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-l/03/ce/72/7d/colossal-cafe.jpg",
             "height": "150"
           },
           "thumbnail": {
             "width": "50",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-t/18/62/4e/0b/pizzaiolo-at-punch-grand.jpg",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-t/03/ce/72/7d/colossal-cafe.jpg",
             "height": "50"
           },
           "original": {
-            "width": "824",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-o/18/62/4e/0b/pizzaiolo-at-punch-grand.jpg",
-            "height": "721"
+            "width": "2000",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-o/03/ce/72/7d/colossal-cafe.jpg",
+            "height": "1403"
           },
           "large": {
-            "width": "514",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-s/18/62/4e/0b/pizzaiolo-at-punch-grand.jpg",
-            "height": "450"
+            "width": "1024",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-w/03/ce/72/7d/colossal-cafe.jpg",
+            "height": "718"
           },
           "medium": {
-            "width": "234",
-            "url": "https://media-cdn.tripadvisor.com/media/photo-f/18/62/4e/0b/pizzaiolo-at-punch-grand.jpg",
-            "height": "205"
+            "width": "550",
+            "url": "https://media-cdn.tripadvisor.com/media/photo-s/03/ce/72/7d/colossal-cafe.jpg",
+            "height": "385"
           }
         },
         "is_blessed": true,
-        "uploaded_date": "2019-07-19T16:04:53-0400",
-        "caption": "Pizzaiolo at Punch Grand Ave",
-        "id": "409095691",
-        "helpful_votes": "1",
-        "published_date": "2019-07-19T16:04:53-0400",
+        "uploaded_date": "2013-04-24T13:33:30-0400",
+        "caption": "Pancake, syrup, milk and coffee",
+        "id": "63861373",
+        "helpful_votes": "0",
+        "published_date": "2013-04-24T13:33:30-0400",
         "user": {
           "user_id": null,
           "member_id": "0",
@@ -6931,31 +6900,30 @@
       "awards": [],
       "doubleclick_zone": "na.us.mn.saint_paul",
       "preferred_map_engine": "default",
-      "raw_ranking": "3.7614712715148926",
+      "raw_ranking": "3.760240077972412",
       "ranking_geo": "Saint Paul",
       "ranking_geo_id": "43501",
       "ranking_position": "20",
       "ranking_denominator": "584",
       "ranking_category": "restaurant",
-      "ranking": "#20 of 919 places to eat in Saint Paul",
+      "ranking": "#20 of 950 places to eat in Saint Paul",
       "distance": null,
       "distance_string": null,
       "bearing": null,
       "rating": "4.5",
       "is_closed": false,
-      "open_now_text": "Closed Now",
+      "open_now_text": "Open Now",
       "is_long_closed": false,
-      "price_level": "$",
-      "price": "$9 - $18",
+      "price_level": "$$ - $$$",
       "neighborhood_info": [
         {
-          "location_id": "21228885",
-          "name": "Summit Hill"
+          "location_id": "21228888",
+          "name": "St. Anthony"
         }
       ],
-      "description": "Pizza just like in Naples, Italy! Punch Pizza serves authentic Neapolitan pizzas cooked in 900 degree wood-burning ovens that take just 60 seconds to cook once they are fired. We use only the highest quality ingredients to make our pizza. Our tomato sauce is simply crushed tomatoes, our bufala mozzarella is flown in weekly from Italy, and our top-secret dough is made with only four ingredients. Punch has been recognized as a top pizzeria both locally and nationally since opening our doors in 1996. Punch is a quick-service restaurant; order in person or online for takeout or dine-in. Punch is a perfect destination for a business lunch or dinner with the whole family!",
-      "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d670097-Reviews-Punch_Pizza_Grand_Ave-Saint_Paul_Minnesota.html",
-      "write_review": "https://www.tripadvisor.com/UserReview-g43501-d670097-Punch_Pizza_Grand_Ave-Saint_Paul_Minnesota.html",
+      "description": "",
+      "web_url": "https://www.tripadvisor.com/Restaurant_Review-g43501-d3737017-Reviews-Colossal_Cafe-Saint_Paul_Minnesota.html",
+      "write_review": "https://www.tripadvisor.com/UserReview-g43501-d3737017-Colossal_Cafe-Saint_Paul_Minnesota.html",
       "ancestors": [
         {
           "subcategory": [
@@ -7006,125 +6974,105 @@
       "nearest_metro_station": [],
       "reviews": [
         {
-          "title": "Surprisingly great pizza!",
-          "rating": "4",
-          "published_date": "2024-05-03T09:54:12-04:00",
-          "published_platform": null,
-          "summary": "I found this pizza to be surprisingly good! I thought the quality would be cheap and the ingredients to be very few. I was so wrong. I loved the pizza! It was so tasty. I’d go back in a heartbeat!",
-          "author": "orlandofoodlover18",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d670097-r949349562-Punch_Pizza_Grand_Ave-Saint_Paul_Minnesota.html#review949349562",
-          "review_id": "949349562",
-          "machine_translated": false
-        },
-        {
-          "title": "Very loud dining room and mediocre pizza after 30 minute wait",
-          "rating": "2",
-          "published_date": "2024-01-15T21:46:55-05:00",
-          "published_platform": null,
-          "summary": "We have quite a different view from some other reviewers.  We brought two 11 year old grandhchildren here for pizza.  It was incredibly noisy.  The pizzas took almost 30 minutes to arrive.\nWhen...",
-          "author": "JoeNathan9249",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d670097-r934193970-Punch_Pizza_Grand_Ave-Saint_Paul_Minnesota.html#review934193970",
-          "review_id": "934193970",
-          "machine_translated": false
-        },
-        {
-          "title": "Great lunch spot",
+          "title": "Great Food and Service",
           "rating": "5",
-          "published_date": "2023-04-08T17:09:28-04:00",
+          "published_date": "2023-12-01T13:35:27-05:00",
           "published_platform": null,
-          "summary": "Always a great lunch spot. Pizzas are delicious and ready quickly. Staff is friendly and helpful. \nPatio not open yet due to the cold weather.",
-          "author": "slong44962",
-          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d670097-r885387653-Punch_Pizza_Grand_Ave-Saint_Paul_Minnesota.html#review885387653",
-          "review_id": "885387653",
+          "summary": "The food and service are wonderful. Most everything is made right there. We go once a week and have been doing so for many years.",
+          "author": "anigre",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d3737017-r928098688-Colossal_Cafe-Saint_Paul_Minnesota.html#review928098688",
+          "review_id": "928098688",
+          "machine_translated": false
+        },
+        {
+          "title": "The whole package",
+          "rating": "5",
+          "published_date": "2023-09-13T04:50:47-04:00",
+          "published_platform": null,
+          "summary": "This place has good music, a cute little interior, and overall a great vibe. I’m a vegetarian and had plenty to choose from. I was greeted by a friendly worker and when I ordered my food it came...",
+          "author": "I7388UUlydiah",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d3737017-r916360508-Colossal_Cafe-Saint_Paul_Minnesota.html#review916360508",
+          "review_id": "916360508",
+          "machine_translated": false
+        },
+        {
+          "title": "Poor effort",
+          "rating": "1",
+          "published_date": "2023-06-04T06:32:43-04:00",
+          "published_platform": null,
+          "summary": "Underdone soggy eggs, potatoes and bacon with a blob of cheese thrown on top. Figured takeout would be better than cooking myself, but next time I won’t be lazy and eat a pile of rubbery garbage",
+          "author": "erikmA3166EX",
+          "url": "http://www.tripadvisor.com/ShowUserReviews-g43501-d3737017-r893379784-Colossal_Cafe-Saint_Paul_Minnesota.html#review893379784",
+          "review_id": "893379784",
           "machine_translated": false
         }
       ],
-      "phone": "+1 651-602-6068",
-      "website": "http://punchpizza.com",
+      "phone": "+1 651-797-4027",
+      "website": "http://www.colossalcafe.com",
+      "email": "colossalcafe@gmail.com",
       "address_obj": {
-        "street1": "769 Grand Ave",
-        "street2": "",
+        "street1": "2315 Como Ave",
+        "street2": null,
         "city": "Saint Paul",
         "state": "MN",
         "country": "United States",
-        "postalcode": "55105-3307"
+        "postalcode": "55108-1723"
       },
-      "address": "769 Grand Ave, Saint Paul, MN 55105-3307",
+      "address": "2315 Como Ave, Saint Paul, MN 55108-1723",
       "hours": {
         "week_ranges": [
           [
             {
-              "open_time": 660,
-              "close_time": 1260
+              "open_time": 420,
+              "close_time": 840
+            }
+          ],
+          [],
+          [
+            {
+              "open_time": 420,
+              "close_time": 840
             }
           ],
           [
             {
-              "open_time": 660,
-              "close_time": 1260
+              "open_time": 420,
+              "close_time": 840
             }
           ],
           [
             {
-              "open_time": 660,
-              "close_time": 1260
+              "open_time": 420,
+              "close_time": 840
             }
           ],
           [
             {
-              "open_time": 660,
-              "close_time": 1260
+              "open_time": 420,
+              "close_time": 840
             }
           ],
           [
             {
-              "open_time": 660,
-              "close_time": 1260
-            }
-          ],
-          [
-            {
-              "open_time": 660,
-              "close_time": 1320
-            }
-          ],
-          [
-            {
-              "open_time": 660,
-              "close_time": 1320
+              "open_time": 420,
+              "close_time": 840
             }
           ]
         ],
         "timezone": "America/Chicago"
       },
-      "local_name": "Punch Pizza Grand Ave",
-      "local_address": "769 Grand Ave, 55105-3307",
+      "local_name": "Colossal Cafe",
+      "local_address": "2315 Como Ave, 55108-1723",
       "local_lang_code": "en-US",
       "is_candidate_for_contact_info_suppression": false,
       "cuisine": [
         {
-          "key": "10641",
-          "name": "Pizza"
+          "key": "9908",
+          "name": "American"
         },
         {
-          "key": "4617",
-          "name": "Italian"
-        },
-        {
-          "key": "10679",
-          "name": "Healthy"
-        },
-        {
-          "key": "20062",
-          "name": "Neapolitan"
-        },
-        {
-          "key": "20064",
-          "name": "Campania"
-        },
-        {
-          "key": "20076",
-          "name": "Southern-Italian"
+          "key": "10642",
+          "name": "Cafe"
         },
         {
           "key": "10665",
@@ -7133,6 +7081,10 @@
         {
           "key": "10697",
           "name": "Vegan Options"
+        },
+        {
+          "key": "10992",
+          "name": "Gluten Free Options"
         }
       ],
       "dietary_restrictions": [
@@ -7143,18 +7095,26 @@
         {
           "key": "10697",
           "name": "Vegan Options"
+        },
+        {
+          "key": "10992",
+          "name": "Gluten Free Options"
         }
       ],
-      "menu_web_url": "https://punchpizza.com/menus/grand-avenue/",
-      "establishment_category_ranking": "#18 of 734 Restaurants in Saint Paul",
+      "menu_web_url": "https://colossalcafe.com/menu/",
+      "establishment_category_ranking": "#18 of 777 Restaurants in Saint Paul",
       "meal_types": [
+        {
+          "key": "10597",
+          "name": "Breakfast"
+        },
         {
           "key": "10598",
           "name": "Lunch"
         },
         {
-          "key": "10599",
-          "name": "Dinner"
+          "key": "10606",
+          "name": "Brunch"
         }
       ],
       "establishment_types": [
@@ -7165,36 +7125,64 @@
       ],
       "dishes": [
         {
+          "key": "10907",
+          "name": "Burger"
+        },
+        {
+          "key": "10918",
+          "name": "Meatloaf"
+        },
+        {
+          "key": "10921",
+          "name": "Omelette"
+        },
+        {
+          "key": "10932",
+          "name": "Ribs"
+        },
+        {
           "key": "16554",
           "name": "Salad"
         },
         {
-          "key": "20315",
-          "name": "Prosciutto"
+          "key": "16555",
+          "name": "Pancakes"
         },
         {
-          "key": "20321",
-          "name": "Focaccia"
+          "key": "20026",
+          "name": "Biscuits and gravy"
         },
         {
-          "key": "21222",
-          "name": "Neapolitan pizza"
+          "key": "20165",
+          "name": "Breakfast Sandwich"
+        },
+        {
+          "key": "20173",
+          "name": "BLT"
+        },
+        {
+          "key": "20730",
+          "name": "Toasts"
         },
         {
           "key": "21275",
           "name": "Cakes"
+        },
+        {
+          "key": "21326",
+          "name": "Pork"
         }
       ],
       "sub_cuisine": [],
-      "photo_count": "76",
+      "photo_count": "67",
       "has_review_draft": false,
       "has_panoramic_photos": false,
       "rating_histogram": {
-        "count_1": "4",
-        "count_2": "3",
+        "count_1": "2",
+        "count_2": "7",
         "count_3": "13",
-        "count_4": "36",
-        "count_5": "124"
+        "count_4": "39",
+        "count_5": "102"
       }
     }
   }

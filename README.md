@@ -1,124 +1,712 @@
-# Prime Solo Project - Starting Repo
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" width="100" />
+</p>
+<p align="center">
+    <h1 align="center">SUPPRTHYME</h1>
+</p>
+<p align="center">
+    <em>HTTP error 404 for prompt `slogan`</em>
+</p>
+<p align="center">
+	<img src="https://img.shields.io/github/license/NekkidBear/SupprThyme?style=flat&color=0080ff" alt="license">
+	<img src="https://img.shields.io/github/last-commit/NekkidBear/SupprThyme?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/NekkidBear/SupprThyme?style=flat&color=0080ff" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/NekkidBear/SupprThyme?style=flat&color=0080ff" alt="repo-language-count">
+<p>
+<p align="center">
+		<em>Developed with the software and tools below.</em>
+</p>
+<p align="center">
+	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black" alt="JavaScript">
+	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=HTML5&logoColor=white" alt="HTML5">
+	<img src="https://img.shields.io/badge/YAML-CB171E.svg?style=flat&logo=YAML&logoColor=white" alt="YAML">
+	<img src="https://img.shields.io/badge/ReduxSaga-999999.svg?style=flat&logo=Redux-Saga&logoColor=white" alt="ReduxSaga">
+	<img src="https://img.shields.io/badge/Nodemon-76D04B.svg?style=flat&logo=Nodemon&logoColor=white" alt="Nodemon">
+	<img src="https://img.shields.io/badge/Redux-764ABC.svg?style=flat&logo=Redux&logoColor=white" alt="Redux">
+	<img src="https://img.shields.io/badge/Vitest-6E9F18.svg?style=flat&logo=Vitest&logoColor=white" alt="Vitest">
+	<img src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white" alt="Vite">
+	<br>
+	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black" alt="React">
+	<img src="https://img.shields.io/badge/Axios-5A29E4.svg?style=flat&logo=Axios&logoColor=white" alt="Axios">
+	<img src="https://img.shields.io/badge/SemVer-3F4551.svg?style=flat&logo=SemVer&logoColor=white" alt="SemVer">
+	<img src="https://img.shields.io/badge/Passport-34E27A.svg?style=flat&logo=Passport&logoColor=white" alt="Passport">
+	<img src="https://img.shields.io/badge/Lodash-3492FF.svg?style=flat&logo=Lodash&logoColor=white" alt="Lodash">
+	<img src="https://img.shields.io/badge/Konva-0D83CD.svg?style=flat&logo=Konva&logoColor=white" alt="Konva">
+	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
+	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
+</p>
+<hr>
 
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+## 🔗 Quick Links
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+> - [📍 Overview](#-overview)
+> - [📦 Features](#-features)
+> - [📂 Repository Structure](#-repository-structure)
+> - [🧩 Modules](#-modules)
+> - [🚀 Getting Started](#-getting-started)
+>   - [⚙️ Installation](#️-installation)
+>   - [🤖 Running SupprThyme](#-running-SupprThyme)
+>   - [🧪 Tests](#-tests)
+> - [🛠 Project Roadmap](#-project-roadmap)
+> - [🤝 Contributing](#-contributing)
+> - [📄 License](#-license)
+> - [👏 Acknowledgments](#-acknowledgments)
 
-## Use the Template for This Repository (Don't Clone)
+---
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account. Make the project `PUBLIC`!
+## 📍 Overview
 
-## Prerequisites
+HTTP error 404 for prompt `overview`
 
-Before you get started, make sure you have the following software installed on your computer:
+---
 
-- [Node.js](https://nodejs.org/en)
-- [PostgreSQL](https://www.postgresql.org)
-- [Nodemon](https://nodemon.io)
+## 📦 Features
 
-## Create Database and Table
+HTTP error 404 for prompt `features`
 
-Create a new database called `prime_app` and create a `user` table:
+---
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
+## 📂 Repository Structure
+
+```sh
+└── SupprThyme/
+    ├── .github
+    │   └── dependabot.yml
+    ├── License.txt
+    ├── PostmanPrimeSoloRoutesv2.json
+    ├── README.md
+    ├── SupprThymePresentation.docx
+    ├── SupprThymePresentation.rtf
+    ├── TODO.md
+    ├── customReadMe.md
+    ├── database
+    │   ├── details.sql
+    │   ├── group_members.sql
+    │   ├── groups.sql
+    │   ├── initializePgDB.js
+    │   ├── lookup_tables
+    │   │   ├── allergens_list.sql
+    │   │   ├── cuisine_types.sql
+    │   │   ├── meat_preferences.sql
+    │   │   ├── price_ranges.sql
+    │   │   └── religious_restrictions.sql
+    │   ├── restaurants.sql
+    │   ├── setup_database.sql
+    │   ├── user.sql
+    │   ├── user_allergens.sql
+    │   ├── user_cuisine_types.sql
+    │   ├── user_preferences.sql
+    │   └── votes.sql
+    ├── documentation
+    │   └── images
+    │       ├── vscode-debug-bar.png
+    │       └── vscode-toolbar.png
+    ├── index.html
+    ├── package.json
+    ├── process.js
+    ├── public
+    │   └── favicon.ico
+    ├── rebuildTestData.js
+    ├── server
+    │   ├── constants
+    │   │   ├── GeocodingError.js
+    │   │   └── warnings.js
+    │   ├── modules
+    │   │   ├── Geolocation.js
+    │   │   ├── authentication-middleware.js
+    │   │   ├── encryption.js
+    │   │   ├── pool.js
+    │   │   └── session-middleware.js
+    │   ├── routes
+    │   │   ├── groups.router.js
+    │   │   ├── preferences_form.router.js
+    │   │   ├── restaurants.router.js
+    │   │   ├── template.router.js
+    │   │   ├── testing.router.js
+    │   │   ├── user.router.js
+    │   │   └── userPreferences.router.js
+    │   ├── server.js
+    │   └── strategies
+    │       └── user.strategy.js
+    ├── src
+    │   ├── components
+    │   │   ├── AboutPage
+    │   │   │   └── AboutPage.jsx
+    │   │   ├── App
+    │   │   │   ├── App.css
+    │   │   │   └── App.jsx
+    │   │   ├── CreateGroupForm
+    │   │   │   ├── GroupForm.jsx
+    │   │   │   └── SelectedUsers.jsx
+    │   │   ├── Footer
+    │   │   │   ├── Footer.css
+    │   │   │   └── Footer.jsx
+    │   │   ├── GroupPage
+    │   │   │   └── GroupsPage.jsx
+    │   │   ├── GroupSearchResults
+    │   │   │   └── GroupSearchResults.jsx
+    │   │   ├── HomePage
+    │   │   │   ├── HomePage.css
+    │   │   │   └── HomePage.jsx
+    │   │   ├── InfoPage
+    │   │   │   └── InfoPage.jsx
+    │   │   ├── LandingPage
+    │   │   │   ├── LandingPage.css
+    │   │   │   └── LandingPage.jsx
+    │   │   ├── LogOutButton
+    │   │   │   └── LogOutButton.jsx
+    │   │   ├── LoginForm
+    │   │   │   └── LoginForm.jsx
+    │   │   ├── LoginPage
+    │   │   │   └── LoginPage.jsx
+    │   │   ├── MapPlaceholder
+    │   │   │   ├── RestaurantMap.css
+    │   │   │   ├── RestaurantMap.jsx
+    │   │   │   └── mapUtils.js
+    │   │   ├── Nav
+    │   │   │   ├── Nav.css
+    │   │   │   └── Nav.jsx
+    │   │   ├── PreferencesForm
+    │   │   │   ├── AllergenSelect.jsx
+    │   │   │   └── PreferencesForm.jsx
+    │   │   ├── PreferencesPage
+    │   │   │   ├── PreferencesPage.css
+    │   │   │   └── PreferencesPage.jsx
+    │   │   ├── ProtectedRoute
+    │   │   │   └── ProtectedRoute.jsx
+    │   │   ├── RegisterForm
+    │   │   │   └── RegisterForm.jsx
+    │   │   ├── RegisterPage
+    │   │   │   └── RegisterPage.jsx
+    │   │   ├── RestaurantSearch
+    │   │   │   ├── RestaurantSearch.css
+    │   │   │   └── RestaurantSearch.jsx
+    │   │   ├── TemplateClass
+    │   │   │   └── TemplateClass.jsx
+    │   │   ├── TemplateFunction
+    │   │   │   └── TemplateFunction.jsx
+    │   │   ├── UserPage
+    │   │   │   └── UserPage.jsx
+    │   │   └── theme.js
+    │   ├── hooks
+    │   │   └── useReduxStore.js
+    │   ├── index.jsx
+    │   └── redux
+    │       ├── reducers
+    │       │   ├── _root.reducer.js
+    │       │   ├── errors.reducer.js
+    │       │   ├── restaurant.reducer.js
+    │       │   └── user.reducer.js
+    │       ├── sagas
+    │       │   ├── _root.saga.js
+    │       │   ├── login.saga.js
+    │       │   ├── registration.saga.js
+    │       │   └── user.saga.js
+    │       └── store.js
+    ├── test_data
+    │   ├── TestUsers.sql
+    │   ├── cache
+    │   │   ├── minneapolisDetails.json
+    │   │   ├── minneapolisSearchTestData.json
+    │   │   ├── minneapolisTypeaheadTestData.json
+    │   │   ├── stPaulDetails.json
+    │   │   ├── stPaulSearchTestData.json
+    │   │   ├── stPaulTypeaheadTestData.json
+    │   │   └── testUsersInfo.csv
+    │   ├── parseSingleDetailRecord.js
+    │   ├── populateTestSearchData.js
+    │   ├── populateTestUserPreferencesData.js
+    │   ├── populateTestUsers.js
+    │   └── test_data.js
+    └── vite.config.js
 ```
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`.
+---
 
-## Development Setup Instructions
+## 🧩 Modules
 
-- Run `npm install`.
-    - Be sure to take stock of `package.json` to see which dependencies you'll need to add.
-- Create a `.env` file at the root of the project and paste this line into the file:
+<details closed><summary>.</summary>
 
-```plaintext
-SERVER_SESSION_SECRET=superDuperSecret
+| File                                                                                                                | Summary                                                   |
+| ---                                                                                                                 | ---                                                       |
+| [License.txt](https://github.com/NekkidBear/SupprThyme/blob/master/License.txt)                                     | HTTP error 404 for prompt `License.txt`                   |
+| [SupprThymePresentation.rtf](https://github.com/NekkidBear/SupprThyme/blob/master/SupprThymePresentation.rtf)       | HTTP error 404 for prompt `SupprThymePresentation.rtf`    |
+| [process.js](https://github.com/NekkidBear/SupprThyme/blob/master/process.js)                                       | HTTP error 404 for prompt `process.js`                    |
+| [index.html](https://github.com/NekkidBear/SupprThyme/blob/master/index.html)                                       | HTTP error 404 for prompt `index.html`                    |
+| [vite.config.js](https://github.com/NekkidBear/SupprThyme/blob/master/vite.config.js)                               | HTTP error 404 for prompt `vite.config.js`                |
+| [package.json](https://github.com/NekkidBear/SupprThyme/blob/master/package.json)                                   | HTTP error 404 for prompt `package.json`                  |
+| [rebuildTestData.js](https://github.com/NekkidBear/SupprThyme/blob/master/rebuildTestData.js)                       | HTTP error 404 for prompt `rebuildTestData.js`            |
+| [PostmanPrimeSoloRoutesv2.json](https://github.com/NekkidBear/SupprThyme/blob/master/PostmanPrimeSoloRoutesv2.json) | HTTP error 404 for prompt `PostmanPrimeSoloRoutesv2.json` |
+
+</details>
+
+<details closed><summary>server</summary>
+
+| File                                                                               | Summary                                      |
+| ---                                                                                | ---                                          |
+| [server.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/server.js) | HTTP error 404 for prompt `server/server.js` |
+
+</details>
+
+<details closed><summary>server.constants</summary>
+
+| File                                                                                                         | Summary                                                        |
+| ---                                                                                                          | ---                                                            |
+| [warnings.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/constants/warnings.js)             | HTTP error 404 for prompt `server/constants/warnings.js`       |
+| [GeocodingError.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/constants/GeocodingError.js) | HTTP error 404 for prompt `server/constants/GeocodingError.js` |
+
+</details>
+
+<details closed><summary>server.routes</summary>
+
+| File                                                                                                                        | Summary                                                              |
+| ---                                                                                                                         | ---                                                                  |
+| [userPreferences.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/userPreferences.router.js)   | HTTP error 404 for prompt `server/routes/userPreferences.router.js`  |
+| [testing.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/testing.router.js)                   | HTTP error 404 for prompt `server/routes/testing.router.js`          |
+| [template.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/template.router.js)                 | HTTP error 404 for prompt `server/routes/template.router.js`         |
+| [preferences_form.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/preferences_form.router.js) | HTTP error 404 for prompt `server/routes/preferences_form.router.js` |
+| [user.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/user.router.js)                         | HTTP error 404 for prompt `server/routes/user.router.js`             |
+| [groups.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/groups.router.js)                     | HTTP error 404 for prompt `server/routes/groups.router.js`           |
+| [restaurants.router.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/routes/restaurants.router.js)           | HTTP error 404 for prompt `server/routes/restaurants.router.js`      |
+
+</details>
+
+<details closed><summary>server.strategies</summary>
+
+| File                                                                                                        | Summary                                                        |
+| ---                                                                                                         | ---                                                            |
+| [user.strategy.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/strategies/user.strategy.js) | HTTP error 404 for prompt `server/strategies/user.strategy.js` |
+
+</details>
+
+<details closed><summary>server.modules</summary>
+
+| File                                                                                                                             | Summary                                                                 |
+| ---                                                                                                                              | ---                                                                     |
+| [authentication-middleware.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/modules/authentication-middleware.js) | HTTP error 404 for prompt `server/modules/authentication-middleware.js` |
+| [Geolocation.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/modules/Geolocation.js)                             | HTTP error 404 for prompt `server/modules/Geolocation.js`               |
+| [session-middleware.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/modules/session-middleware.js)               | HTTP error 404 for prompt `server/modules/session-middleware.js`        |
+| [encryption.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/modules/encryption.js)                               | HTTP error 404 for prompt `server/modules/encryption.js`                |
+| [pool.js](https://github.com/NekkidBear/SupprThyme/blob/master/server/modules/pool.js)                                           | HTTP error 404 for prompt `server/modules/pool.js`                      |
+
+</details>
+
+<details closed><summary>test_data</summary>
+
+| File                                                                                                                                    | Summary                                                                  |
+| ---                                                                                                                                     | ---                                                                      |
+| [TestUsers.sql](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/TestUsers.sql)                                           | HTTP error 404 for prompt `test_data/TestUsers.sql`                      |
+| [populateTestSearchData.js](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/populateTestSearchData.js)                   | HTTP error 404 for prompt `test_data/populateTestSearchData.js`          |
+| [test_data.js](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/test_data.js)                                             | HTTP error 404 for prompt `test_data/test_data.js`                       |
+| [parseSingleDetailRecord.js](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/parseSingleDetailRecord.js)                 | HTTP error 404 for prompt `test_data/parseSingleDetailRecord.js`         |
+| [populateTestUsers.js](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/populateTestUsers.js)                             | HTTP error 404 for prompt `test_data/populateTestUsers.js`               |
+| [populateTestUserPreferencesData.js](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/populateTestUserPreferencesData.js) | HTTP error 404 for prompt `test_data/populateTestUserPreferencesData.js` |
+
+</details>
+
+<details closed><summary>test_data.cache</summary>
+
+| File                                                                                                                                        | Summary                                                                       |
+| ---                                                                                                                                         | ---                                                                           |
+| [minneapolisTypeaheadTestData.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/minneapolisTypeaheadTestData.json) | HTTP error 404 for prompt `test_data/cache/minneapolisTypeaheadTestData.json` |
+| [minneapolisSearchTestData.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/minneapolisSearchTestData.json)       | HTTP error 404 for prompt `test_data/cache/minneapolisSearchTestData.json`    |
+| [stPaulSearchTestData.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/stPaulSearchTestData.json)                 | HTTP error 404 for prompt `test_data/cache/stPaulSearchTestData.json`         |
+| [stPaulDetails.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/stPaulDetails.json)                               | HTTP error 404 for prompt `test_data/cache/stPaulDetails.json`                |
+| [stPaulTypeaheadTestData.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/stPaulTypeaheadTestData.json)           | HTTP error 404 for prompt `test_data/cache/stPaulTypeaheadTestData.json`      |
+| [minneapolisDetails.json](https://github.com/NekkidBear/SupprThyme/blob/master/test_data/cache/minneapolisDetails.json)                     | HTTP error 404 for prompt `test_data/cache/minneapolisDetails.json`           |
+
+</details>
+
+<details closed><summary>database</summary>
+
+| File                                                                                                           | Summary                                                     |
+| ---                                                                                                            | ---                                                         |
+| [details.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/details.sql)                       | HTTP error 404 for prompt `database/details.sql`            |
+| [user.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/user.sql)                             | HTTP error 404 for prompt `database/user.sql`               |
+| [restaurants.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/restaurants.sql)               | HTTP error 404 for prompt `database/restaurants.sql`        |
+| [setup_database.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/setup_database.sql)         | HTTP error 404 for prompt `database/setup_database.sql`     |
+| [initializePgDB.js](https://github.com/NekkidBear/SupprThyme/blob/master/database/initializePgDB.js)           | HTTP error 404 for prompt `database/initializePgDB.js`      |
+| [votes.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/votes.sql)                           | HTTP error 404 for prompt `database/votes.sql`              |
+| [user_allergens.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/user_allergens.sql)         | HTTP error 404 for prompt `database/user_allergens.sql`     |
+| [user_cuisine_types.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/user_cuisine_types.sql) | HTTP error 404 for prompt `database/user_cuisine_types.sql` |
+| [group_members.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/group_members.sql)           | HTTP error 404 for prompt `database/group_members.sql`      |
+| [user_preferences.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/user_preferences.sql)     | HTTP error 404 for prompt `database/user_preferences.sql`   |
+| [groups.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/groups.sql)                         | HTTP error 404 for prompt `database/groups.sql`             |
+
+</details>
+
+<details closed><summary>database.lookup_tables</summary>
+
+| File                                                                                                                                 | Summary                                                                       |
+| ---                                                                                                                                  | ---                                                                           |
+| [religious_restrictions.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/lookup_tables/religious_restrictions.sql) | HTTP error 404 for prompt `database/lookup_tables/religious_restrictions.sql` |
+| [meat_preferences.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/lookup_tables/meat_preferences.sql)             | HTTP error 404 for prompt `database/lookup_tables/meat_preferences.sql`       |
+| [price_ranges.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/lookup_tables/price_ranges.sql)                     | HTTP error 404 for prompt `database/lookup_tables/price_ranges.sql`           |
+| [cuisine_types.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/lookup_tables/cuisine_types.sql)                   | HTTP error 404 for prompt `database/lookup_tables/cuisine_types.sql`          |
+| [allergens_list.sql](https://github.com/NekkidBear/SupprThyme/blob/master/database/lookup_tables/allergens_list.sql)                 | HTTP error 404 for prompt `database/lookup_tables/allergens_list.sql`         |
+
+</details>
+
+<details closed><summary>.github</summary>
+
+| File                                                                                          | Summary                                            |
+| ---                                                                                           | ---                                                |
+| [dependabot.yml](https://github.com/NekkidBear/SupprThyme/blob/master/.github/dependabot.yml) | HTTP error 404 for prompt `.github/dependabot.yml` |
+
+</details>
+
+<details closed><summary>src</summary>
+
+| File                                                                            | Summary                                   |
+| ---                                                                             | ---                                       |
+| [index.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/index.jsx) | HTTP error 404 for prompt `src/index.jsx` |
+
+</details>
+
+<details closed><summary>src.redux</summary>
+
+| File                                                                                | Summary                                        |
+| ---                                                                                 | ---                                            |
+| [store.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/store.js) | HTTP error 404 for prompt `src/redux/store.js` |
+
+</details>
+
+<details closed><summary>src.redux.reducers</summary>
+
+| File                                                                                                                   | Summary                                                              |
+| ---                                                                                                                    | ---                                                                  |
+| [restaurant.reducer.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/reducers/restaurant.reducer.js) | HTTP error 404 for prompt `src/redux/reducers/restaurant.reducer.js` |
+| [user.reducer.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/reducers/user.reducer.js)             | HTTP error 404 for prompt `src/redux/reducers/user.reducer.js`       |
+| [_root.reducer.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/reducers/_root.reducer.js)           | HTTP error 404 for prompt `src/redux/reducers/_root.reducer.js`      |
+| [errors.reducer.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/reducers/errors.reducer.js)         | HTTP error 404 for prompt `src/redux/reducers/errors.reducer.js`     |
+
+</details>
+
+<details closed><summary>src.redux.sagas</summary>
+
+| File                                                                                                              | Summary                                                          |
+| ---                                                                                                               | ---                                                              |
+| [registration.saga.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/sagas/registration.saga.js) | HTTP error 404 for prompt `src/redux/sagas/registration.saga.js` |
+| [login.saga.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/sagas/login.saga.js)               | HTTP error 404 for prompt `src/redux/sagas/login.saga.js`        |
+| [_root.saga.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/sagas/_root.saga.js)               | HTTP error 404 for prompt `src/redux/sagas/_root.saga.js`        |
+| [user.saga.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/redux/sagas/user.saga.js)                 | HTTP error 404 for prompt `src/redux/sagas/user.saga.js`         |
+
+</details>
+
+<details closed><summary>src.components</summary>
+
+| File                                                                                     | Summary                                             |
+| ---                                                                                      | ---                                                 |
+| [theme.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/theme.js) | HTTP error 404 for prompt `src/components/theme.js` |
+
+</details>
+
+<details closed><summary>src.components.GroupPage</summary>
+
+| File                                                                                                           | Summary                                                             |
+| ---                                                                                                            | ---                                                                 |
+| [GroupsPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/GroupPage/GroupsPage.jsx) | HTTP error 404 for prompt `src/components/GroupPage/GroupsPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.LoginForm</summary>
+
+| File                                                                                                         | Summary                                                            |
+| ---                                                                                                          | ---                                                                |
+| [LoginForm.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/LoginForm/LoginForm.jsx) | HTTP error 404 for prompt `src/components/LoginForm/LoginForm.jsx` |
+
+</details>
+
+<details closed><summary>src.components.HomePage</summary>
+
+| File                                                                                                      | Summary                                                          |
+| ---                                                                                                       | ---                                                              |
+| [HomePage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/HomePage/HomePage.jsx) | HTTP error 404 for prompt `src/components/HomePage/HomePage.jsx` |
+| [HomePage.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/HomePage/HomePage.css) | HTTP error 404 for prompt `src/components/HomePage/HomePage.css` |
+
+</details>
+
+<details closed><summary>src.components.InfoPage</summary>
+
+| File                                                                                                      | Summary                                                          |
+| ---                                                                                                       | ---                                                              |
+| [InfoPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/InfoPage/InfoPage.jsx) | HTTP error 404 for prompt `src/components/InfoPage/InfoPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.TemplateClass</summary>
+
+| File                                                                                                                     | Summary                                                                    |
+| ---                                                                                                                      | ---                                                                        |
+| [TemplateClass.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/TemplateClass/TemplateClass.jsx) | HTTP error 404 for prompt `src/components/TemplateClass/TemplateClass.jsx` |
+
+</details>
+
+<details closed><summary>src.components.LoginPage</summary>
+
+| File                                                                                                         | Summary                                                            |
+| ---                                                                                                          | ---                                                                |
+| [LoginPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/LoginPage/LoginPage.jsx) | HTTP error 404 for prompt `src/components/LoginPage/LoginPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.Nav</summary>
+
+| File                                                                                       | Summary                                                |
+| ---                                                                                        | ---                                                    |
+| [Nav.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/Nav/Nav.css) | HTTP error 404 for prompt `src/components/Nav/Nav.css` |
+| [Nav.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/Nav/Nav.jsx) | HTTP error 404 for prompt `src/components/Nav/Nav.jsx` |
+
+</details>
+
+<details closed><summary>src.components.LandingPage</summary>
+
+| File                                                                                                               | Summary                                                                |
+| ---                                                                                                                | ---                                                                    |
+| [LandingPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/LandingPage/LandingPage.jsx) | HTTP error 404 for prompt `src/components/LandingPage/LandingPage.jsx` |
+| [LandingPage.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/LandingPage/LandingPage.css) | HTTP error 404 for prompt `src/components/LandingPage/LandingPage.css` |
+
+</details>
+
+<details closed><summary>src.components.PreferencesForm</summary>
+
+| File                                                                                                                           | Summary                                                                        |
+| ---                                                                                                                            | ---                                                                            |
+| [PreferencesForm.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/PreferencesForm/PreferencesForm.jsx) | HTTP error 404 for prompt `src/components/PreferencesForm/PreferencesForm.jsx` |
+| [AllergenSelect.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/PreferencesForm/AllergenSelect.jsx)   | HTTP error 404 for prompt `src/components/PreferencesForm/AllergenSelect.jsx`  |
+
+</details>
+
+<details closed><summary>src.components.RestaurantSearch</summary>
+
+| File                                                                                                                              | Summary                                                                          |
+| ---                                                                                                                               | ---                                                                              |
+| [RestaurantSearch.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/RestaurantSearch/RestaurantSearch.css) | HTTP error 404 for prompt `src/components/RestaurantSearch/RestaurantSearch.css` |
+| [RestaurantSearch.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/RestaurantSearch/RestaurantSearch.jsx) | HTTP error 404 for prompt `src/components/RestaurantSearch/RestaurantSearch.jsx` |
+
+</details>
+
+<details closed><summary>src.components.UserPage</summary>
+
+| File                                                                                                      | Summary                                                          |
+| ---                                                                                                       | ---                                                              |
+| [UserPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/UserPage/UserPage.jsx) | HTTP error 404 for prompt `src/components/UserPage/UserPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.TemplateFunction</summary>
+
+| File                                                                                                                              | Summary                                                                          |
+| ---                                                                                                                               | ---                                                                              |
+| [TemplateFunction.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/TemplateFunction/TemplateFunction.jsx) | HTTP error 404 for prompt `src/components/TemplateFunction/TemplateFunction.jsx` |
+
+</details>
+
+<details closed><summary>src.components.MapPlaceholder</summary>
+
+| File                                                                                                                      | Summary                                                                     |
+| ---                                                                                                                       | ---                                                                         |
+| [RestaurantMap.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/MapPlaceholder/RestaurantMap.jsx) | HTTP error 404 for prompt `src/components/MapPlaceholder/RestaurantMap.jsx` |
+| [RestaurantMap.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/MapPlaceholder/RestaurantMap.css) | HTTP error 404 for prompt `src/components/MapPlaceholder/RestaurantMap.css` |
+| [mapUtils.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/MapPlaceholder/mapUtils.js)             | HTTP error 404 for prompt `src/components/MapPlaceholder/mapUtils.js`       |
+
+</details>
+
+<details closed><summary>src.components.GroupSearchResults</summary>
+
+| File                                                                                                                                    | Summary                                                                              |
+| ---                                                                                                                                     | ---                                                                                  |
+| [GroupSearchResults.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/GroupSearchResults/GroupSearchResults.jsx) | HTTP error 404 for prompt `src/components/GroupSearchResults/GroupSearchResults.jsx` |
+
+</details>
+
+<details closed><summary>src.components.CreateGroupForm</summary>
+
+| File                                                                                                                       | Summary                                                                      |
+| ---                                                                                                                        | ---                                                                          |
+| [GroupForm.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/CreateGroupForm/GroupForm.jsx)         | HTTP error 404 for prompt `src/components/CreateGroupForm/GroupForm.jsx`     |
+| [SelectedUsers.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/CreateGroupForm/SelectedUsers.jsx) | HTTP error 404 for prompt `src/components/CreateGroupForm/SelectedUsers.jsx` |
+
+</details>
+
+<details closed><summary>src.components.LogOutButton</summary>
+
+| File                                                                                                                  | Summary                                                                  |
+| ---                                                                                                                   | ---                                                                      |
+| [LogOutButton.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/LogOutButton/LogOutButton.jsx) | HTTP error 404 for prompt `src/components/LogOutButton/LogOutButton.jsx` |
+
+</details>
+
+<details closed><summary>src.components.RegisterPage</summary>
+
+| File                                                                                                                  | Summary                                                                  |
+| ---                                                                                                                   | ---                                                                      |
+| [RegisterPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/RegisterPage/RegisterPage.jsx) | HTTP error 404 for prompt `src/components/RegisterPage/RegisterPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.App</summary>
+
+| File                                                                                       | Summary                                                |
+| ---                                                                                        | ---                                                    |
+| [App.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/App/App.jsx) | HTTP error 404 for prompt `src/components/App/App.jsx` |
+| [App.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/App/App.css) | HTTP error 404 for prompt `src/components/App/App.css` |
+
+</details>
+
+<details closed><summary>src.components.ProtectedRoute</summary>
+
+| File                                                                                                                        | Summary                                                                      |
+| ---                                                                                                                         | ---                                                                          |
+| [ProtectedRoute.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/ProtectedRoute/ProtectedRoute.jsx) | HTTP error 404 for prompt `src/components/ProtectedRoute/ProtectedRoute.jsx` |
+
+</details>
+
+<details closed><summary>src.components.PreferencesPage</summary>
+
+| File                                                                                                                           | Summary                                                                        |
+| ---                                                                                                                            | ---                                                                            |
+| [PreferencesPage.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/PreferencesPage/PreferencesPage.css) | HTTP error 404 for prompt `src/components/PreferencesPage/PreferencesPage.css` |
+| [PreferencesPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/PreferencesPage/PreferencesPage.jsx) | HTTP error 404 for prompt `src/components/PreferencesPage/PreferencesPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.RegisterForm</summary>
+
+| File                                                                                                                  | Summary                                                                  |
+| ---                                                                                                                   | ---                                                                      |
+| [RegisterForm.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/RegisterForm/RegisterForm.jsx) | HTTP error 404 for prompt `src/components/RegisterForm/RegisterForm.jsx` |
+
+</details>
+
+<details closed><summary>src.components.AboutPage</summary>
+
+| File                                                                                                         | Summary                                                            |
+| ---                                                                                                          | ---                                                                |
+| [AboutPage.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/AboutPage/AboutPage.jsx) | HTTP error 404 for prompt `src/components/AboutPage/AboutPage.jsx` |
+
+</details>
+
+<details closed><summary>src.components.Footer</summary>
+
+| File                                                                                                | Summary                                                      |
+| ---                                                                                                 | ---                                                          |
+| [Footer.jsx](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/Footer/Footer.jsx) | HTTP error 404 for prompt `src/components/Footer/Footer.jsx` |
+| [Footer.css](https://github.com/NekkidBear/SupprThyme/blob/master/src/components/Footer/Footer.css) | HTTP error 404 for prompt `src/components/Footer/Footer.css` |
+
+</details>
+
+<details closed><summary>src.hooks</summary>
+
+| File                                                                                                | Summary                                                |
+| ---                                                                                                 | ---                                                    |
+| [useReduxStore.js](https://github.com/NekkidBear/SupprThyme/blob/master/src/hooks/useReduxStore.js) | HTTP error 404 for prompt `src/hooks/useReduxStore.js` |
+
+</details>
+
+---
+
+## 🚀 Getting Started
+
+***Requirements***
+
+Ensure you have the following dependencies installed on your system:
+
+* **JavaScript**: `version x.y.z`
+
+### ⚙️ Installation
+
+1. Clone the SupprThyme repository:
+
+```sh
+git clone https://github.com/NekkidBear/SupprThyme
 ```
 
-While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [Password Generator Plus](https://passwordsgenerator.net). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
+2. Change to the project directory:
 
-- Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
-- Run `npm run server` to start the server.
-- Run `npm run client` to start the client.
-- Navigate to `localhost:5173`.
+```sh
+cd SupprThyme
+```
 
-## Debugging
+3. Install the dependencies:
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
+```sh
+npm install
+```
 
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
+### 🤖 Running SupprThyme
 
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
+Use the following command to run SupprThyme:
 
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
+```sh
+node app.js
+```
 
-## Testing Routes with Postman
+### 🧪 Tests
 
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
+To execute tests, run:
 
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
+```sh
+npm test
+```
 
-1. Run `npm run server` to start the server.
-2. Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password.
-   2. `POST /api/user/login` will login a user, see body to change username/password.
-   3. `GET /api/user` will get user information, by default it's not very much.
+---
 
-After running the login route above, you can try any other route you've created that requires a logged in user!
+## 🛠 Project Roadmap
 
-## Production Build
+- [X] `► INSERT-TASK-1`
+- [ ] `► INSERT-TASK-2`
+- [ ] `► ...`
 
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
+---
 
-- Start postgres if not running already by using opening up the [Postgres.app](https://postgresapp.com), or if using [Homebrew](https://brew.sh) you can use the command `brew services start postgresql`.
-- Run `npm start`.
-- Navigate to `localhost:5173`.
+## 🤝 Contributing
 
-## Lay of the Land
+Contributions are welcome! Here are several ways you can contribute:
 
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
+- **[Submit Pull Requests](https://github.com/NekkidBear/SupprThyme/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+- **[Join the Discussions](https://github.com/NekkidBear/SupprThyme/discussions)**: Share your insights, provide feedback, or ask questions.
+- **[Report Issues](https://github.com/NekkidBear/SupprThyme/issues)**: Submit bugs found or log feature requests for Supprthyme.
 
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
+<details closed>
+    <summary>Contributing Guidelines</summary>
 
-Directory Structure:
+1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
+2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
+   ```sh
+   git clone https://github.com/NekkidBear/SupprThyme
+   ```
+3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
+   ```sh
+   git checkout -b new-feature-x
+   ```
+4. **Make Your Changes**: Develop and test your changes locally.
+5. **Commit Your Changes**: Commit with a clear message describing your updates.
+   ```sh
+   git commit -m 'Implemented new feature x.'
+   ```
+6. **Push to GitHub**: Push the changes to your forked repository.
+   ```sh
+   git push origin new-feature-x
+   ```
+7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
 
-- `src/` contains the React application.
-- `public/` contains static assets for the client-side.
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site.
-- `server/` contains the Express App.
+Once your PR is reviewed and approved, it will be merged into the main branch.
 
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
+</details>
 
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
+---
 
-## Deployment
+## 📄 License
 
-1. Create a new Heroku project.
-1. Link the Heroku project to the project GitHub Repo.
-1. Create an Heroku Postgres database.
-1. Connect to the Heroku Postgres database from Postico.
-1. Create the necessary tables.
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security.
-1. In the deploy section, select manual deploy.
+This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
 
-## Update Documentation
+---
 
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2.
+## 👏 Acknowledgments
+
+- List any resources, contributors, inspiration, etc. here.
+
+[**Return**](#-quick-links)
+
+---

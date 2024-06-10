@@ -33,6 +33,7 @@ router.get("/:userId", async (req, res) => {
       userId,
     ]);
     const userPreferences = userPreferencesResult.rows[0];
+    console.log('userPreferences: ', userPreferences)
 
     // Fetch user allergens
     const allergenQuery = `
@@ -53,6 +54,7 @@ router.get("/:userId", async (req, res) => {
     `;
     const cuisineResult = await client.query(cuisineQuery, [userId]);
     const cuisineTypes = cuisineResult.rows;
+    console.log('cuisine_types:', cuisineTypes)
 
     res.json({ ...userPreferences, allergens, cuisineTypes });
   } catch (error) {

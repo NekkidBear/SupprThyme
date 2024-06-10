@@ -9,6 +9,17 @@ const googleMapsClient = require("@google/maps").createClient({
 const GeocodingError = require("../constants/GeocodingError.js");
 const normalizeLocation = require("../modules/Geolocation.js");
 
+function checkRequiredParams(params, res) {
+  const missingParams = params
+    .filter((param) => !param.value)
+    .map((param) => param.name);
+  if (missingParams.length > 0) {
+    return res
+      .status(400)
+      .json({ error: `${missingParams.join(", ")} must be provided` });
+  }
+}
+
 async function buildWhereClause(preferences, userLocationString) {
   console.log("buildWhereClause input: ", {
     preferences,
@@ -78,55 +89,49 @@ async function buildWhereClause(preferences, userLocationString) {
  */
 
 //Get top restaurants
-router.get("/", async (req, res) => {
-  const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
-  const { city, state } = req.query;
-  const address = req.query.address;
-
-  if (!city || !state) {
-    return res
-      .sendStatus(400)
-      .json({ error: "City and state must be provided" });
-  }
-  try {
-    //normalize the address
-
-    const normalizedAddress = await normalizeLocation(city, state);
-    const query = `
-    SELECT DISTINCT id, name, rating, price_level, location_string, address, latitude, longitude
-    FROM restaurants
-    WHERE address ILIKE $1 -- case-insensitive pattern matching for address
-    ORDER BY rating ASC
-    LIMIT $2;
-    `;
-    const result = await pool.query(query, [`%${normalizedAddress}%`, limit]);
-    res.json(result.rows);
-  } catch (error) {
-    console.error("Error fetching top restaurants:", error);
-    res.status(500).json({ error: "Failed to fetch top restaurants" });
-  }
-});
-
 //Search for restaurants based on aggregate criteria
 router.get("/search", async (req, res) => {
-  let userLocationString = ''
+  console.log('Received a GET request to /search with query:', req.query);
+
   try {
-    let aggregatePreferences = JSON.parse(req.query.aggregatePreferences);
-    if(!aggregatePreferences) {
-      return res.sendStatus(400).json({error: "aggregatePreferences is required" });
+    console.log("req.query is: ", req.query);
+    let userLocationString = "";
+    let aggregatePreferences = req.query; // Assign req.query to aggregatePreferences
+
+    let {
+      max_price_range,
+      max_distance,
+      meat_preference,
+      cuisine_types,
+      city,
+      state,
+      group_id
+    } = aggregatePreferences;
+
+    if(cuisine_types===''){
+      cuisine_types=[];
     }
 
-    let { group_id, city, state } = aggregatePreferences;
-    
-    if (!city || !state) {
-      return res.sendStatus(400).json({ error: "City and state must be provided" });
-    }
+    if (
+      checkRequiredParams(
+        [
+          { name: "max_price_range", value: max_price_range },
+          { name: "max_distance", value: max_distance },
+          { name: "meat_preference", value: meat_preference },
+          { name: "cuisine_types", value: cuisine_types },
+          { name: "city", value: city },
+          { name: "state", value: state },
+        ],
+        res
+      )
+    )
+      return;
 
-    const normalizedAddress = await normalizeLocation( city, state);
+    const normalizedAddress = await normalizeLocation(city, state);
     userLocationString = `${normalizedAddress.city}, ${normalizedAddress.state}`;
     const limit = req.query.limit || 5; // Default limit is 5, or use the provided query param
     console.log("aggregate preferences: ", aggregatePreferences);
-    
+
     if (group_id) {
       const groupResponse = await pool.query(
         `SELECT * FROM groups WHERE id = $1`,
@@ -198,17 +203,8 @@ router.get("/search", async (req, res) => {
       }
     }
     console.log("parsed preferences:", parsedPreferences);
-    if (!city) {
-      return res
-        .status(400)
-        .json({ error: "City is required in aggregatePreferences" });
-    }
-
-    if (!state) {
-      return res
-        .status(400)
-        .json({ error: "State is required in aggregatePreferences" });
-    }
+    if (checkRequiredParams([{ name: "city", value: city }], res)) return;
+    if (checkRequiredParams([{ name: "state", value: state }], res)) return;
     console.log(`city: ${city}, state: ${state}`);
     const location = await normalizeLocation(city, state);
     userLocationString = `${location.city}, ${location.state}`;

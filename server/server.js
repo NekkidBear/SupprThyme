@@ -14,6 +14,7 @@ const formRouter = require('./routes/preferences_form.router'); // import the fo
 const userPrefsRouter = require('./routes/userPreferences.router'); //import the user preferences router
 const restaurantsRouter = require('./routes/restaurants.router'); //import the restaurants router
 const groupsRouter = require('./routes/groups.router.js'); //import the groups router
+const recommendationsRouter = require('./routes/recommendations.router.js')//import the recommendations router
 
 // Express Middleware
 app.use(express.json());
@@ -34,6 +35,7 @@ app.use('/api/form_data', formRouter);
 app.use('/api/user_preferences', userPrefsRouter);
 app.use('/api/restaurants', restaurantsRouter);
 app.use('/api/groups/', groupsRouter);
+app.use('/api/recommendations', recommendationsRouter);
 
 // Listen Server & Port
 app.listen(PORT, () => {

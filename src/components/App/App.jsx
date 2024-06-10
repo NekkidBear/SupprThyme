@@ -58,9 +58,6 @@ function App() {
             <ProtectedRoute exact path="/user">
               <UserPage />
             </ProtectedRoute>
-            <ProtectedRoute exact path="/info">
-              <InfoPage />
-            </ProtectedRoute>
             <ProtectedRoute exact path="/preferences">
               <PreferencesPage />
             </ProtectedRoute>

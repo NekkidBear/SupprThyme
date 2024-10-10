@@ -16,13 +16,9 @@ import theme from "../theme.js";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import AboutPage from "../AboutPage/AboutPage";
-import UserPage from "../UserPage/UserPage";
-import InfoPage from "../InfoPage/InfoPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
-import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import GroupsPage from "../GroupPage/GroupsPage";
 import GroupSearchResults from "../GroupSearchResults/GroupSearchResults.jsx";
@@ -30,6 +26,7 @@ import GroupForm from "../CreateGroupForm/GroupForm.jsx";
 import UserPreferencesForm from "../UserPreferencesForm/UserPreferencesForm";
 import VotingInterface from "../VotingInterface/VotingInterface";
 import RestaurantDetail from "../RestaurantDetail/RestaurantDetail";
+import UserPage from "../UserPage/UserPage";
 
 // Import styles
 import "./App.css";
@@ -55,41 +52,32 @@ function App() {
           <Switch>
             {/* Define routes */}
             <Redirect exact from="/" to="/home" />
-            <Route exact path="/about">
-              <AboutPage />
-            </Route>
-            <ProtectedRoute exact path="/user">
-              <UserPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/info">
-              <InfoPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/preferences">
-              <PreferencesPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/user-preferences">
-              <UserPreferencesForm />
-            </ProtectedRoute>
             <Route exact path="/login">
               {user.id ? <Redirect to="/user-home" /> : <LoginPage />}
             </Route>
             <Route exact path="/registration">
-              {user.id ? <Redirect to="/user" /> : <RegisterPage />}
+              {user.id ? <Redirect to="/user-home" /> : <RegisterPage />}
             </Route>
             <Route exact path="/home">
               {user.id ? <Redirect to="/user-home" /> : <LandingPage />}
             </Route>
-            <Route exact path="/user-home">
-              {user.id ? <UserHomePage /> : <LandingPage />}
-            </Route>
-            <ProtectedRoute exact path="/search-results/:groupId">
-              <GroupSearchResults />
+            <ProtectedRoute exact path="/user-home">
+              <UserHomePage />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/user">
+              <UserPage />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/user-preferences">
+              <UserPreferencesForm />
             </ProtectedRoute>
             <ProtectedRoute exact path="/groups">
               <GroupsPage />
             </ProtectedRoute>
-            <ProtectedRoute exact path="/groupForm">
+            <ProtectedRoute exact path="/group-form">
               <GroupForm />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/search-results/:groupId">
+              <GroupSearchResults />
             </ProtectedRoute>
             <ProtectedRoute exact path="/voting/:groupId">
               <VotingInterface />
@@ -98,7 +86,7 @@ function App() {
               <RestaurantDetail />
             </ProtectedRoute>
             <Route>
-              <h1>404</h1>
+              <h1>404 - Page Not Found</h1>
             </Route>
           </Switch>
           <Footer />

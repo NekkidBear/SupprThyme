@@ -1,6 +1,7 @@
 {
-  "name": "prime-solo-project",
+  "name": "supprthyme",
   "version": "1.0.0",
+  "description": "A collaborative dining decision-making app that helps groups choose restaurants based on preferences",
   "private": true,
   "engines": {
     "node": "18.x"
@@ -56,7 +57,9 @@
     "client": "vite",
     "server": "nodemon --watch server server/server.js",
     "build": "vite build",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@appnest/readme": "^1.1.20",

@@ -108,7 +108,7 @@ function Nav() {
         {user.id && (
           <>
             <Button style={{color: theme.palette.common.white}}>
-              <Link component={RouterLink} to="/home" className={classes.link} style={{color: theme.palette.common.white}}>
+              <Link component={RouterLink} to="/user-home" className={classes.link} style={{color: theme.palette.common.white}}>
                 Home
               </Link>
             </Button>
@@ -121,6 +121,17 @@ function Nav() {
                 style={{color: theme.palette.common.white}}
               >
                 Groups
+              </Link>
+            </Button>
+
+            <Button style={{color: theme.palette.common.white}}>
+              <Link
+                component={RouterLink}
+                to="/group-form"
+                className={classes.link}
+                style={{color: theme.palette.common.white}}
+              >
+                Create Group
               </Link>
             </Button>
 

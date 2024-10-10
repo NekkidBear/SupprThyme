@@ -25,8 +25,11 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import PreferencesPage from "../PreferencesPage/PreferencesPage";
 import UserHomePage from "../HomePage/HomePage";
 import GroupsPage from "../GroupPage/GroupsPage";
-import SearchResults from "../GroupSearchResults/GroupSearchResults.jsx";
+import GroupSearchResults from "../GroupSearchResults/GroupSearchResults.jsx";
 import GroupForm from "../CreateGroupForm/GroupForm.jsx";
+import UserPreferencesForm from "../UserPreferencesForm/UserPreferencesForm";
+import VotingInterface from "../VotingInterface/VotingInterface";
+import RestaurantDetail from "../RestaurantDetail/RestaurantDetail";
 
 // Import styles
 import "./App.css";
@@ -64,6 +67,9 @@ function App() {
             <ProtectedRoute exact path="/preferences">
               <PreferencesPage />
             </ProtectedRoute>
+            <ProtectedRoute exact path="/user-preferences">
+              <UserPreferencesForm />
+            </ProtectedRoute>
             <Route exact path="/login">
               {user.id ? <Redirect to="/user-home" /> : <LoginPage />}
             </Route>
@@ -76,14 +82,20 @@ function App() {
             <Route exact path="/user-home">
               {user.id ? <UserHomePage /> : <LandingPage />}
             </Route>
-            <ProtectedRoute exact path="/search-results">
-              <SearchResults />
+            <ProtectedRoute exact path="/search-results/:groupId">
+              <GroupSearchResults />
             </ProtectedRoute>
             <ProtectedRoute exact path="/groups">
               <GroupsPage />
             </ProtectedRoute>
             <ProtectedRoute exact path="/groupForm">
               <GroupForm />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/voting/:groupId">
+              <VotingInterface />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/restaurant/:restaurantId">
+              <RestaurantDetail />
             </ProtectedRoute>
             <Route>
               <h1>404</h1>

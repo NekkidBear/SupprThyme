@@ -59,6 +59,7 @@ describe('Nav', () => {
     expect(screen.getByText('Are you hungry?')).toBeInTheDocument();
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Groups')).toBeInTheDocument();
+    expect(screen.getByText('Create Group')).toBeInTheDocument();
     expect(screen.getByText('Preferences')).toBeInTheDocument();
     expect(screen.getByText('My Profile')).toBeInTheDocument();
     expect(screen.getByText('Logout')).toBeInTheDocument();
@@ -111,7 +112,7 @@ describe('Nav', () => {
     expect(screen.getByText("It's SupprThyme!")).toBeInTheDocument();
   });
 
-  test('links navigate to correct routes', () => {
+  test('links navigate to correct routes for authenticated user', () => {
     store = mockStore({
       user: { id: 1 },
     });
@@ -124,9 +125,26 @@ describe('Nav', () => {
       </Provider>
     );
 
-    expect(screen.getByText('Home').closest('a')).toHaveAttribute('href', '/home');
+    expect(screen.getByText('Home').closest('a')).toHaveAttribute('href', '/user-home');
     expect(screen.getByText('Groups').closest('a')).toHaveAttribute('href', '/groups');
+    expect(screen.getByText('Create Group').closest('a')).toHaveAttribute('href', '/group-form');
     expect(screen.getByText('Preferences').closest('a')).toHaveAttribute('href', '/user-preferences');
     expect(screen.getByText('My Profile').closest('a')).toHaveAttribute('href', '/user');
+  });
+
+  test('links navigate to correct routes for non-authenticated user', () => {
+    store = mockStore({
+      user: {},
+    });
+
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Nav />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    expect(screen.getByText('Login / Register').closest('a')).toHaveAttribute('href', '/login');
   });
 });

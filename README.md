@@ -40,11 +40,11 @@ CREATE TABLE "user" (
 2. Run `npm install` to install all dependencies.
 3. Create a `.env` file at the root of the project and add the following:
 
-```plaintext
-SERVER_SESSION_SECRET=yourSecretHere
-```
+   ```plaintext
+   SERVER_SESSION_SECRET=yourSecretHere
+   ```
 
-Replace `yourSecretHere` with a long random string to keep your application secure.
+   Replace `yourSecretHere` with a long random string to keep your application secure.
 
 4. Start your PostgreSQL database.
 5. Run `npm run server` to start the server.
@@ -100,8 +100,8 @@ If you'd like to contribute to SupprThyme, please fork the repository and use a 
 
 ## Links
 
-- Project homepage: https://github.com/yourusername/supprthyme
-- Issue tracker: https://github.com/yourusername/supprthyme/issues
+- Project homepage: [https://github.com/yourusername/supprthyme](https://github.com/yourusername/supprthyme)
+- Issue tracker: [https://github.com/yourusername/supprthyme/issues](https://github.com/yourusername/supprthyme/issues)
 
 ## Licensing
 

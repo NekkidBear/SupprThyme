@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   Button,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default function GroupsPage() {
   const classes = useStyles();
   const [groups, setGroups] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch the groups owned by the logged-in user when the component mounts
@@ -53,12 +53,12 @@ export default function GroupsPage() {
 
   const handleCreateGroup = () => {
     // Navigate to the GroupForm component
-    history.push("/groupForm");
+    navigate("/groupForm");
   };
 
   const handleSearchRestaurants = (groupId) => {
     // Navigate to the search results screen with the group ID
-    history.push(`/searchResults/${groupId}`);
+    navigate(`/searchResults/${groupId}`);
   };
 
   const editGroup = (groupId) => {
@@ -67,10 +67,7 @@ export default function GroupsPage() {
     const groupToEdit = groups.find((group) => group.id === groupId);
 
     // Navigate to the GroupForm component and pass the group data
-    history.push({
-      pathname: "/groupForm",
-      state: { group: groupToEdit },
-    });
+    navigate("/groupForm", { state: { group: groupToEdit } });
   };
 
   const deleteGroup = async (groupId, group_name) => {

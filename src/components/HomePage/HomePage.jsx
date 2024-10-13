@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Button, Grid, Stack, Typography } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
 import { geocodeLocation } from "../MapPlaceholder/mapUtils";
@@ -27,7 +27,7 @@ const HomePage = ({ searchParams, group_id }) => {
   const user = useSelector((store) => store.user);
   const [heading, setHeading] = useState("Find a Restaurant Near You");
   const [loading, setLoading] = useState(true);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [aggregatePreferences, setAggregatePreferences] = useState({});
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(10);
@@ -101,11 +101,11 @@ const HomePage = ({ searchParams, group_id }) => {
   }, [aggregatePreferences]);
 
   const handleClickCreateGroup = () => {
-    history.push("/groupForm");
+    navigate("/groupForm");
   };
 
   const handleClickViewGroups = () => {
-    history.push("/groups");
+    navigate("/groups");
   };
 
   if (loading) {

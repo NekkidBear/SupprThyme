@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import { useSelector } from "react-redux";
 import { Button, Container, Paper, Typography, Box } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import UserPreferencesForm from "../PreferencesForm/PreferencesForm";
 import RegisterForm from "../RegisterForm/RegisterForm";
@@ -52,7 +52,7 @@ function UserPage() {
   const theme = useTheme();
   const classes = useStyles();
   const user = useSelector((store) => store.user);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [userPrefSummary, setUserPrefSummary] = useState([]);
   const [userAddress, setUserAddress] = useState([]);
   const [isAcctInfoFormVisible, setIsAcctInfoFormVisible] = useState(false);

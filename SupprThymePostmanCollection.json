@@ -1,0 +1,190 @@
+{
+    "info": {
+        "_postman_id": "5e3e8d98-813d-5d2a-a79a-39cd12328d63",
+        "name": "SupprThyme API Routes",
+        "description": "API routes for SupprThyme application, including user authentication, group management, and restaurant voting.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "User Authentication",
+            "item": [
+                {
+                    "name": "Register User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\":\"new-user\",\n    \"password\":\"1234\"\n}"
+                        },
+                        "url": "http://localhost:5001/api/user/register",
+                        "description": "Register a new user"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login User",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\":\"new-user\",\n    \"password\":\"1234\"\n}"
+                        },
+                        "url": "http://localhost:5001/api/user/login",
+                        "description": "Login an existing user"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get User Info",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/user/",
+                        "description": "Get information about the logged-in user"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User Preferences",
+            "item": [
+                {
+                    "name": "Get User Preferences",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/user_preferences/{{userId}}",
+                        "description": "Get user preferences"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update User Preferences",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"cuisineTypes\": [\"Italian\", \"Japanese\"],\n    \"dietaryRestrictions\": [\"Vegetarian\"],\n    \"priceRange\": \"$$\"\n}"
+                        },
+                        "url": "http://localhost:5001/api/user_preferences/{{userId}}",
+                        "description": "Update user preferences"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Groups",
+            "item": [
+                {
+                    "name": "Get User Groups",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/groups",
+                        "description": "Get groups for the logged-in user"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Group",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"groupName\": \"Lunch Buddies\",\n    \"members\": [1, 2, 3]\n}"
+                        },
+                        "url": "http://localhost:5001/api/groups",
+                        "description": "Create a new group"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Restaurants",
+            "item": [
+                {
+                    "name": "Search Restaurants",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/restaurants/search?groupId={{groupId}}",
+                        "description": "Search for restaurants based on group preferences"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Restaurant Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/restaurants/{{restaurantId}}",
+                        "description": "Get details for a specific restaurant"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Voting",
+            "item": [
+                {
+                    "name": "Get Votes",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": "http://localhost:5001/api/votes/{{groupId}}",
+                        "description": "Get votes for a specific group"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Submit Vote",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"groupId\": {{groupId}},\n    \"restaurantId\": {{restaurantId}}\n}"
+                        },
+                        "url": "http://localhost:5001/api/votes",
+                        "description": "Submit a vote for a restaurant"
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}

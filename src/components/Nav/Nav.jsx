@@ -108,7 +108,7 @@ function Nav() {
         {user.id && (
           <>
             <Button style={{color: theme.palette.common.white}}>
-              <Link component={RouterLink} to="/home" className={classes.link} style={{color: theme.palette.common.white}}>
+              <Link component={RouterLink} to="/user-home" className={classes.link} style={{color: theme.palette.common.white}}>
                 Home
               </Link>
             </Button>
@@ -124,13 +124,35 @@ function Nav() {
               </Link>
             </Button>
 
-            <LogOutButton className={`${classes.link} ${classes.logoutButton}`} />
+            <Button style={{color: theme.palette.common.white}}>
+              <Link
+                component={RouterLink}
+                to="/group-form"
+                className={classes.link}
+                style={{color: theme.palette.common.white}}
+              >
+                Create Group
+              </Link>
+            </Button>
+
+            <Button style={{color: theme.palette.common.white}}>
+              <Link
+                component={RouterLink}
+                to="/user-preferences"
+                className={classes.link}
+                style={{color: theme.palette.common.white}}
+              >
+                Preferences
+              </Link>
+            </Button>
 
             <Button style={{color: theme.palette.common.white}}>
               <Link component={RouterLink} to="/user" className={classes.link} style={{color: theme.palette.common.white}}>
                 My Profile
               </Link>
             </Button>
+
+            <LogOutButton className={`${classes.link} ${classes.logoutButton}`} />
           </>
         )}
 

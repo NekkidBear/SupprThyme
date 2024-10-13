@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "daily"
     commit-message:
       # Prefix all commit messages
       prefix: "[Dependabot] npm"
@@ -13,10 +13,15 @@ updates:
       - "npm"
       - "dependencies"
       - "update"
-    allow:
-      # Allow specific libraries to be updated
-      # By default, it would check everything, even in the lock
-      - "react*"
-      - "redux*"
-      - 
-    
+    ignore:
+      # Ignore major updates for these dependencies
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "redux"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "express"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "webpack"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "babel"
+        update-types: ["version-update:semver-major"]

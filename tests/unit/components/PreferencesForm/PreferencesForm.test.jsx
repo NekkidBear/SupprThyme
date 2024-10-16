@@ -1,4 +1,5 @@
 // tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
+// tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -12,6 +13,7 @@ describe('UserPreferencesForm', () => {
 
   beforeEach(() => {
     store = mockStore({
+      preferences: {},
       preferences: {},
     });
     store.dispatch = vi.fn();

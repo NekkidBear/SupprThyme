@@ -1,4 +1,5 @@
 // tests/unit/components/LoginForm/LoginForm.test.jsx
+// tests/unit/components/LoginForm/LoginForm.test.jsx
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
@@ -14,6 +15,8 @@ describe('LoginForm', () => {
     store = mockStore({
       user: { id: null },
       errors: { loginMessage: '' },
+      user: { id: null },
+      errors: { loginMessage: '' },
     });
     store.dispatch = vi.fn();
   });
@@ -25,8 +28,12 @@ describe('LoginForm', () => {
       </Provider>
     );
 
+
     expect(screen.getByLabelText(/username/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+  });
+
+  // Add more tests as needed
   });
 
   // Add more tests as needed

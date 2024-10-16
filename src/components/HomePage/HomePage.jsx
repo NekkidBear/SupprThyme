@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Grid, Stack, Typography, Container } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import RestaurantSearch from "../RestaurantSearch/RestaurantSearch";
 import RestaurantMap from "../MapPlaceholder/RestaurantMap";
 import { makeStyles } from "@mui/styles";
@@ -26,7 +26,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const [heading, setHeading] = useState("Find a Restaurant Near You");
-  const history = useHistory();
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   useEffect(() => {
@@ -45,11 +45,11 @@ const HomePage = () => {
   };
 
   const handleClickCreateGroup = () => {
-    history.push("/groupForm");
+    navigate("/groupForm");
   };
 
   const handleClickViewGroups = () => {
-    history.push("/groups");
+    navigate("/groups");
   };
 
   return (

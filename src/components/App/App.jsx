@@ -2,9 +2,9 @@
 import React, { useEffect } from "react";
 import {
   HashRouter as Router,
-  Redirect,
+  Navigate,
   Route,
-  Switch,
+  Routes,
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeProvider } from "@mui/material/styles";
@@ -49,46 +49,76 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <Switch>
+          <Routes>
             {/* Define routes */}
-            <Redirect exact from="/" to="/home" />
-            <Route exact path="/about">
-              <AboutPage />
-            </Route>
-            <ProtectedRoute exact path="/user">
-              <UserPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/info">
-              <InfoPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/preferences">
-              <PreferencesPage />
-            </ProtectedRoute>
-            <Route exact path="/login">
-              {user.id ? <Redirect to="/user-home" /> : <LoginPage />}
-            </Route>
-            <Route exact path="/registration">
-              {user.id ? <Redirect to="/user" /> : <RegisterPage />}
-            </Route>
-            <Route exact path="/home">
-              {user.id ? <Redirect to="/user-home" /> : <LandingPage />}
-            </Route>
-            <Route exact path="/user-home">
-              {user.id ? <UserHomePage /> : <LandingPage />}
-            </Route>
-            <ProtectedRoute exact path="/search-results">
-              <SearchResults />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/groups">
-              <GroupsPage />
-            </ProtectedRoute>
-            <ProtectedRoute exact path="/groupForm">
-              <GroupForm />
-            </ProtectedRoute>
-            <Route>
-              <h1>404</h1>
-            </Route>
-          </Switch>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route
+              path="/user"
+              element={
+                <ProtectedRoute>
+                  <UserPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/info"
+              element={
+                <ProtectedRoute>
+                  <InfoPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/preferences"
+              element={
+                <ProtectedRoute>
+                  <PreferencesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={user.id ? <Navigate to="/user-home" replace /> : <LoginPage />}
+            />
+            <Route
+              path="/registration"
+              element={user.id ? <Navigate to="/user" replace /> : <RegisterPage />}
+            />
+            <Route
+              path="/home"
+              element={user.id ? <Navigate to="/user-home" replace /> : <LandingPage />}
+            />
+            <Route
+              path="/user-home"
+              element={user.id ? <UserHomePage /> : <Navigate to="/home" replace />}
+            />
+            <Route
+              path="/search-results"
+              element={
+                <ProtectedRoute>
+                  <SearchResults />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/groups"
+              element={
+                <ProtectedRoute>
+                  <GroupsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/groupForm"
+              element={
+                <ProtectedRoute>
+                  <GroupForm />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<h1>404</h1>} />
+          </Routes>
           <Footer />
         </div>
       </Router>

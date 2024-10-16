@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import { useSelector } from "react-redux";
 import { Button, Container, Paper, Typography, Box } from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import UserPreferencesForm from "../PreferencesForm/PreferencesForm";
 import RegisterForm from "../RegisterForm/RegisterForm";
@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
     backgroundColor: "#f5f5f5", // change this to your preferred color
-    padding: theme.spacing(2),
     margin: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
   },
@@ -52,7 +51,7 @@ function UserPage() {
   const theme = useTheme();
   const classes = useStyles();
   const user = useSelector((store) => store.user);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [userPrefSummary, setUserPrefSummary] = useState([]);
   const [userAddress, setUserAddress] = useState([]);
   const [isAcctInfoFormVisible, setIsAcctInfoFormVisible] = useState(false);

@@ -2,10 +2,6 @@ const express = require("express");
 const pool = require("../modules/pool");
 const { build } = require("vite");
 const router = express.Router();
-const googleMapsClient = require("@google/maps").createClient({
-  key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-  Promise: Promise,
-});
 const GeocodingError = require("../constants/GeocodingError.js");
 const normalizeLocation = require("../modules/Geolocation.js");
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, Typography, Paper, Container, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import "./LandingPage.css";
@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
 
 function LandingPage() {
   const [heading, setHeading] = useState("It's SupprThyme!!!");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const classes = useStyles();
 
   const onLogin = (event) => {
-    history.push("/login");
+    navigate("/login");
   };
 
   return (

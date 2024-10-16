@@ -1,8 +1,9 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
   test: {
+    globals: true,
     environment: 'jsdom', // Correct environment for React testing
     setupFiles: ['./tests/setup.js'], // Setup file for global mocks and configurations
     include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'], // Include pattern for test files
@@ -13,7 +14,6 @@ export default defineConfig({
         'tests/setup.js', // Exclude setup file from coverage
       ],
     },
-    globals: true, // Enable global variables
     watch: true, // Enable watch mode for development
     resolve: {
       alias: {

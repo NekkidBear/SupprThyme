@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 import axios from 'axios';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
@@ -9,6 +10,8 @@ import PreferencesForm from '../../../../src/components/PreferencesForm/Preferen
 
 const mockStore = configureStore([]);
 let store;
+
+vi.mock('axios');
 
 beforeEach(() => {
   store = mockStore({
@@ -71,6 +74,10 @@ beforeEach(() => {
   });
 });
 
+afterEach(() => {
+  vi.resetAllMocks();
+});
+
 test('renders price range options correctly', async () => {
   render(
     <Provider store={store}>
@@ -78,15 +85,18 @@ test('renders price range options correctly', async () => {
     </Provider>
   );
 
-  // Wait for the dropdown to be populated
-  await waitFor(() => expect(screen.getByLabelText('Max Price Range')).toBeInTheDocument());
+  await waitFor(() => {
+    expect(screen.getByTestId('max-price-range-select')).toBeInTheDocument();
+  });
 
-  const dropdown = screen.getByLabelText('Max Price Range');
+  const dropdown = screen.getByTestId('max-price-range-select');
   expect(dropdown).toBeInTheDocument();
 
-  // Check if the dropdown contains the correct options
+  await waitFor(() => {
+    expect(screen.getAllByRole('option').length).toBe(4);
+  });
+
   const options = screen.getAllByRole('option');
-  expect(options).toHaveLength(4);
   expect(options[0]).toHaveTextContent('$');
   expect(options[1]).toHaveTextContent('$$');
   expect(options[2]).toHaveTextContent('$$$');
@@ -100,15 +110,18 @@ test('renders meat preference options correctly', async () => {
     </Provider>
   );
 
-  // Wait for the dropdown to be populated
-  await waitFor(() => expect(screen.getByLabelText('Meat Preference')).toBeInTheDocument());
+  await waitFor(() => {
+    expect(screen.getByTestId('meat-preference-select')).toBeInTheDocument();
+  });
 
-  const dropdown = screen.getByLabelText('Meat Preference');
+  const dropdown = screen.getByTestId('meat-preference-select');
   expect(dropdown).toBeInTheDocument();
 
-  // Check if the dropdown contains the correct options
+  await waitFor(() => {
+    expect(screen.getAllByRole('option').length).toBe(2);
+  });
+
   const options = screen.getAllByRole('option');
-  expect(options).toHaveLength(2);
   expect(options[0]).toHaveTextContent('Vegetarian');
   expect(options[1]).toHaveTextContent('Omnivore');
 });
@@ -120,15 +133,18 @@ test('renders religious restrictions options correctly', async () => {
     </Provider>
   );
 
-  // Wait for the dropdown to be populated
-  await waitFor(() => expect(screen.getByLabelText('Religious Restrictions')).toBeInTheDocument());
+  await waitFor(() => {
+    expect(screen.getByTestId('religious-restrictions-select')).toBeInTheDocument();
+  });
 
-  const dropdown = screen.getByLabelText('Religious Restrictions');
+  const dropdown = screen.getByTestId('religious-restrictions-select');
   expect(dropdown).toBeInTheDocument();
 
-  // Check if the dropdown contains the correct options
+  await waitFor(() => {
+    expect(screen.getAllByRole('option').length).toBe(2);
+  });
+
   const options = screen.getAllByRole('option');
-  expect(options).toHaveLength(2);
   expect(options[0]).toHaveTextContent('None');
   expect(options[1]).toHaveTextContent('Halal');
 });
@@ -141,41 +157,41 @@ test('allows setting and updating user preferences', async () => {
     </Provider>
   );
 
-  // Wait for the form to be fully rendered
   await waitFor(() => {
-    expect(screen.getByLabelText('Max Price Range')).toBeInTheDocument();
+    expect(screen.getByTestId('max-price-range-select')).toBeInTheDocument();
+    expect(screen.getByTestId('meat-preference-select')).toBeInTheDocument();
+    expect(screen.getByTestId('religious-restrictions-select')).toBeInTheDocument();
+    expect(screen.getByTestId('allergens-select')).toBeInTheDocument();
+    expect(screen.getByTestId('cuisine-types-select')).toBeInTheDocument();
   });
 
-  // Open the Max Price Range dropdown
-  const maxPriceRangeSelect = screen.getByLabelText('Max Price Range');
+  const maxPriceRangeSelect = screen.getByTestId('max-price-range-select');
   await user.click(maxPriceRangeSelect);
 
-  // Wait for the options to be visible
   await waitFor(() => {
     expect(screen.getByText('$$$$')).toBeInTheDocument();
   });
 
-  // Select options and fill in fields
-  await user.selectOptions(maxPriceRangeSelect, '4'); // Select by value (ID)
-  await user.selectOptions(screen.getByLabelText('Meat Preference'), '1');
-  await user.selectOptions(screen.getByLabelText('Religious Restrictions'), '1');
+  await user.selectOptions(maxPriceRangeSelect, '4');
+  await user.selectOptions(screen.getByTestId('meat-preference-select'), '1');
+  await user.selectOptions(screen.getByTestId('religious-restrictions-select'), '1');
 
   // Select allergens
-  await user.click(screen.getByLabelText('Allergens'));
+  await user.click(screen.getByTestId('allergens-select'));
   await user.click(screen.getByText('Peanuts'));
   await user.click(screen.getByText('Dairy'));
   await user.click(document.body); // Close the allergen dropdown
 
   // Select cuisine types
-  await user.click(screen.getByLabelText('Cuisine Types'));
+  await user.click(screen.getByTestId('cuisine-types-select'));
   await user.click(screen.getByText('Italian'));
   await user.click(document.body); // Close the cuisine types dropdown
 
-  await user.type(screen.getByLabelText('Max Distance'), '10');
-  await user.click(screen.getByLabelText('Open Now'));
+  await user.type(screen.getByTestId('max-distance-input'), '10');
+  await user.click(screen.getByTestId('open-now-checkbox'));
 
   // Submit the form
-  await user.click(screen.getByText('Save Preferences'));
+  await user.click(screen.getByTestId('save-preferences-button'));
 
   // Check if the dispatch function was called with the correct arguments
   await waitFor(() => {

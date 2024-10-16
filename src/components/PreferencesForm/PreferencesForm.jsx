@@ -170,16 +170,17 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="preferences-form">
       <FormControl fullWidth margin="normal">
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
         <Select
           labelId="max-price-range-label"
           value={max_price_range}
           onChange={handleMaxPriceRangeChange}
+          data-testid="max-price-range-select"
         >
           {priceRangeOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
+            <MenuItem key={option.id} value={option.id} data-testid={`price-range-option-${option.id}`}>
               {option.range}
             </MenuItem>
           ))}
@@ -192,9 +193,10 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
           labelId="meat-preference-label"
           value={meat_preference}
           onChange={handleMeatPreferenceChange}
+          data-testid="meat-preference-select"
         >
           {meatPreferenceOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
+            <MenuItem key={option.id} value={option.id} data-testid={`meat-preference-option-${option.id}`}>
               {option.preference}
             </MenuItem>
           ))}
@@ -207,9 +209,10 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
           labelId="religious-restrictions-label"
           value={religious_restrictions}
           onChange={handleReligiousRestrictionsChange}
+          data-testid="religious-restrictions-select"
         >
           {religiousRestrictionOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
+            <MenuItem key={option.id} value={option.id} data-testid={`religious-restrictions-option-${option.id}`}>
               {option.restriction}
             </MenuItem>
           ))}
@@ -238,9 +241,10 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
               })
               .join(", ")
           }
+          data-testid="cuisine-types-select"
         >
           {cuisineOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
+            <MenuItem key={option.id} value={option.id} data-testid={`cuisine-types-option-${option.id}`}>
               <Checkbox checked={cuisine_types.includes(option.id)} />
               <ListItemText primary={option.type} />
             </MenuItem>
@@ -255,6 +259,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         type="number"
         value={max_distance}
         onChange={handleMaxDistanceChange}
+        data-testid="max-distance-input"
       />
 
       <FormGroup>
@@ -263,6 +268,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
             <Switch
               checked={open_now}
               onChange={handleOpenNowChange}
+              data-testid="open-now-checkbox"
             />
           }
           label="Open Now"
@@ -272,16 +278,17 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
             <Switch
               checked={accepts_large_parties}
               onChange={handleAcceptsLargePartiesChange}
+              data-testid="accepts-large-parties-checkbox"
             />
           }
           label="Accepts Large Parties"
         />
       </FormGroup>
 
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary" data-testid="save-preferences-button">
         Save Preferences
       </Button>
-      <Button type="button" variant="contained" color="secondary" onClick={handleCancel}>
+      <Button type="button" variant="contained" color="secondary" onClick={handleCancel} data-testid="cancel-button">
         Cancel
       </Button>
     </form>

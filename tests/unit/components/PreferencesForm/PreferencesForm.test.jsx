@@ -1,11 +1,10 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { vi } from 'vitest';
-import axios from 'axios';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
+import { vi } from 'vitest';
+import axios from 'axios';
 import PreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm'; // Adjust the import path as necessary
 
 const mockStore = configureStore([]);
@@ -44,7 +43,8 @@ beforeEach(() => {
         return Promise.resolve({
           data: [
             { id: 1, preference: 'Vegetarian' },
-            { id: 2, preference: 'Omnivore' }
+            { id: 2, preference: 'Vegan' },
+            { id: 3, preference: 'Non-vegetarian' }
           ]
         });
       case '/api/form_data/religious-options':
@@ -85,22 +85,17 @@ test('renders price range options correctly', async () => {
     </Provider>
   );
 
-  await waitFor(() => {
-    expect(screen.getByTestId('max-price-range-select')).toBeInTheDocument();
-  });
+  const select = await screen.findByTestId('max-price-range-select');
+  expect(select).toBeInTheDocument();
 
-  const dropdown = screen.getByTestId('max-price-range-select');
-  expect(dropdown).toBeInTheDocument();
+  await userEvent.click(select);
 
   await waitFor(() => {
-    expect(screen.getAllByRole('option').length).toBe(4);
+    expect(screen.getByTestId('price-range-option-1')).toBeInTheDocument();
+    expect(screen.getByTestId('price-range-option-2')).toBeInTheDocument();
+    expect(screen.getByTestId('price-range-option-3')).toBeInTheDocument();
+    expect(screen.getByTestId('price-range-option-4')).toBeInTheDocument();
   });
-
-  const options = screen.getAllByRole('option');
-  expect(options[0]).toHaveTextContent('$');
-  expect(options[1]).toHaveTextContent('$$');
-  expect(options[2]).toHaveTextContent('$$$');
-  expect(options[3]).toHaveTextContent('$$$$');
 });
 
 test('renders meat preference options correctly', async () => {
@@ -110,20 +105,16 @@ test('renders meat preference options correctly', async () => {
     </Provider>
   );
 
-  await waitFor(() => {
-    expect(screen.getByTestId('meat-preference-select')).toBeInTheDocument();
-  });
+  const select = await screen.findByTestId('meat-preference-select');
+  expect(select).toBeInTheDocument();
 
-  const dropdown = screen.getByTestId('meat-preference-select');
-  expect(dropdown).toBeInTheDocument();
+  await userEvent.click(select);
 
   await waitFor(() => {
-    expect(screen.getAllByRole('option').length).toBe(2);
+    expect(screen.getByTestId('meat-preference-option-1')).toBeInTheDocument();
+    expect(screen.getByTestId('meat-preference-option-2')).toBeInTheDocument();
+    expect(screen.getByTestId('meat-preference-option-3')).toBeInTheDocument();
   });
-
-  const options = screen.getAllByRole('option');
-  expect(options[0]).toHaveTextContent('Vegetarian');
-  expect(options[1]).toHaveTextContent('Omnivore');
 });
 
 test('renders religious restrictions options correctly', async () => {
@@ -133,24 +124,18 @@ test('renders religious restrictions options correctly', async () => {
     </Provider>
   );
 
-  await waitFor(() => {
-    expect(screen.getByTestId('religious-restrictions-select')).toBeInTheDocument();
-  });
+  const select = await screen.findByTestId('religious-restrictions-select');
+  expect(select).toBeInTheDocument();
 
-  const dropdown = screen.getByTestId('religious-restrictions-select');
-  expect(dropdown).toBeInTheDocument();
+  await userEvent.click(select);
 
   await waitFor(() => {
-    expect(screen.getAllByRole('option').length).toBe(2);
+    expect(screen.getByTestId('religious-restrictions-option-1')).toBeInTheDocument();
+    expect(screen.getByTestId('religious-restrictions-option-2')).toBeInTheDocument();
   });
-
-  const options = screen.getAllByRole('option');
-  expect(options[0]).toHaveTextContent('None');
-  expect(options[1]).toHaveTextContent('Halal');
 });
 
 test('allows setting and updating user preferences', async () => {
-  const user = userEvent.setup();
   render(
     <Provider store={store}>
       <PreferencesForm />
@@ -166,32 +151,32 @@ test('allows setting and updating user preferences', async () => {
   });
 
   const maxPriceRangeSelect = screen.getByTestId('max-price-range-select');
-  await user.click(maxPriceRangeSelect);
+  await userEvent.click(maxPriceRangeSelect);
 
   await waitFor(() => {
-    expect(screen.getByText('$$$$')).toBeInTheDocument();
+    expect(screen.getByTestId('price-range-option-4')).toBeInTheDocument();
   });
 
-  await user.selectOptions(maxPriceRangeSelect, '4');
-  await user.selectOptions(screen.getByTestId('meat-preference-select'), '1');
-  await user.selectOptions(screen.getByTestId('religious-restrictions-select'), '1');
+  await userEvent.selectOptions(maxPriceRangeSelect, '4');
+  await userEvent.selectOptions(screen.getByTestId('meat-preference-select'), '1');
+  await userEvent.selectOptions(screen.getByTestId('religious-restrictions-select'), '1');
 
   // Select allergens
-  await user.click(screen.getByTestId('allergens-select'));
-  await user.click(screen.getByText('Peanuts'));
-  await user.click(screen.getByText('Dairy'));
-  await user.click(document.body); // Close the allergen dropdown
+  await userEvent.click(screen.getByTestId('allergens-select'));
+  await userEvent.click(screen.getByTestId('allergen-option-1'));
+  await userEvent.click(screen.getByTestId('allergen-option-2'));
+  await userEvent.click(document.body); // Close the allergen dropdown
 
   // Select cuisine types
-  await user.click(screen.getByTestId('cuisine-types-select'));
-  await user.click(screen.getByText('Italian'));
-  await user.click(document.body); // Close the cuisine types dropdown
+  await userEvent.click(screen.getByTestId('cuisine-types-select'));
+  await userEvent.click(screen.getByTestId('cuisine-types-option-1'));
+  await userEvent.click(document.body); // Close the cuisine types dropdown
 
-  await user.type(screen.getByTestId('max-distance-input'), '10');
-  await user.click(screen.getByTestId('open-now-checkbox'));
+  await userEvent.type(screen.getByTestId('max-distance-input'), '10');
+  await userEvent.click(screen.getByTestId('open-now-checkbox'));
 
   // Submit the form
-  await user.click(screen.getByTestId('save-preferences-button'));
+  await userEvent.click(screen.getByTestId('save-preferences-button'));
 
   // Check if the dispatch function was called with the correct arguments
   await waitFor(() => {

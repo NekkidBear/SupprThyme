@@ -1,22 +1,23 @@
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
   test: {
-    environment: 'jsdom',
-    setupFiles: ['./tests/setup.js'],
-    include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    globals: true,
+    environment: 'jsdom', // Correct environment for React testing
+    setupFiles: ['./tests/setup.js'], // Setup file for global mocks and configurations
+    include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'], // Include pattern for test files
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html'], // Coverage reporters
       exclude: [
         'node_modules/',
-        'tests/setup.js',
+        'tests/setup.js', // Exclude setup file from coverage
       ],
     },
-    globals: true,
+    watch: true, // Enable watch mode for development
     resolve: {
       alias: {
-        lodash: path.resolve(__dirname, 'node_modules/lodash'),
+        lodash: path.resolve(__dirname, 'node_modules/lodash'), // Alias for lodash
       },
     },
   },

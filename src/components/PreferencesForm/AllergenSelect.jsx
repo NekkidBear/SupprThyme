@@ -43,6 +43,7 @@ const AllergenSelect = ({ selectedAllergens, setSelectedAllergens, allergenOptio
         value={selectedAllergens}
         onChange={handleAllergenChange}
         input={<OutlinedInput label="Allergens" />}
+        data-testid="allergens-select"
         renderValue={(selected) => 
           selected
             .map((allergenId) => fetchedAllergenOptions.find((a) => a.id === allergenId)?.allergen)

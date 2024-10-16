@@ -7,10 +7,26 @@ import isEqual from 'lodash/isEqual.js';
 global.isEqualWith = isEqualWith;
 global.isEqual = isEqual;
 
-// Add any other global setup here, such as mocking global objects or setting up test database connections
-
 // Mock fetch API
 global.fetch = vi.fn();
+
+// Mock localStorage
+const localStorageMock = (() => {
+  let store = {};
+  return {
+    getItem: (key) => store[key] || null,
+    setItem: (key, value) => {
+      store[key] = value.toString();
+    },
+    removeItem: (key) => {
+      delete store[key];
+    },
+    clear: () => {
+      store = {};
+    },
+  };
+})();
+Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
 // Setup mock for window.matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -26,3 +42,5 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: vi.fn(),
   })),
 });
+
+// Mock other global objects or APIs as needed

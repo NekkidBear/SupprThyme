@@ -1,10 +1,10 @@
-// tests/unit/components/UserPreferencesForm.test.jsx
+// tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import UserPreferencesForm from '../../../src/components/UserPreferencesForm/UserPreferencesForm';
+import UserPreferencesForm from '../../../src/components/UserPreferencesForm/UserPreferencesForm'; // Corrected path
 
 const mockStore = configureStore([]);
 
@@ -13,9 +13,19 @@ describe('UserPreferencesForm', () => {
 
   beforeEach(() => {
     store = mockStore({
-      user: { id: 1 },
+      preferences: {},
     });
     store.dispatch = vi.fn();
+  });
+
+  test('renders preferences form', () => {
+    render(
+      <Provider store={store}>
+        <UserPreferencesForm />
+      </Provider>
+    );
+
+    expect(screen.getByLabelText(/max price range/i)).toBeInTheDocument();
   });
 
   test('renders user preferences form', async () => {

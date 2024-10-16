@@ -1,10 +1,9 @@
 // tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
-// tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm'; // Corrected path
+import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm'; // Ensure this path is correct
 
 const mockStore = configureStore([]);
 
@@ -13,8 +12,7 @@ describe('UserPreferencesForm', () => {
 
   beforeEach(() => {
     store = mockStore({
-      preferences: {},
-      preferences: {},
+      preferences: {}, // Mock preferences data
     });
     store.dispatch = vi.fn();
   });

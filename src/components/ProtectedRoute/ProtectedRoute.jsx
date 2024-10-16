@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import LoginPage from '../LoginPage/LoginPage';
-import {useSelector} from 'react-redux';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -13,30 +12,12 @@ import {useSelector} from 'react-redux';
 // by checking req.isAuthenticated for authentication
 // and by checking req.user for authorization
 
-function ProtectedRoute({ component, children, ...props }) {
+function ProtectedRoute() {
   const user = useSelector((store) => store.user);
 
-  // Component may be passed in as a "component" prop,
-  // or as a child component.
-  const ProtectedComponent = component || (() => children);
-
-  // We return a Route component that gets added to our list of routes
-  return (
-    <Route
-      // all props like 'exact' and 'path' that were passed in
-      // are now passed along to the 'Route' Component
-      {...props}
-    >
-      {user.id ?
-        // If the user is logged in, show the protected component
-        <ProtectedComponent />
-        :
-        // Otherwise, redirect to the Loginpage
-        <LoginPage />
-      }
-    </Route>
-
-  );
+  // We return an Outlet that will render the child components if the user is logged in
+  // Otherwise, we redirect to the login page
+  return user.id ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

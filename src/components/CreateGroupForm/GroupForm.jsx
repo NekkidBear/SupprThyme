@@ -1,6 +1,6 @@
 // Import necessary dependencies
 import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import SelectedUsers from "./SelectedUsers";
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 // Main component for group form
 export default function GroupForm() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const classes = useStyles();
   const location = useLocation();
   const group = location.state?.group; // Get group from location state
@@ -92,7 +92,7 @@ export default function GroupForm() {
           members: selectedMembers.map((member) => member.id),
         });
         // Redirect to groups page
-        history.push("/groups");
+        navigate("/groups");
       } catch (error) {
         console.error(`Error updating group with ID ${group.id}`, error);
       }
@@ -102,7 +102,7 @@ export default function GroupForm() {
         await createGroup(groupName, selectedMembers);
         setGroupName("");
         setSelectedMembers([]);
-        history.push("/groups");
+        navigate("/groups");
       } catch (error) {
         console.error("Error creating group:", error);
       }

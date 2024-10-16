@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
-import isEqualWith from 'lodash/isEqualWith';
-import isEqual from 'lodash/isEqual';
+import isEqualWith from 'lodash/isEqualWith.js';
+import isEqual from 'lodash/isEqual.js';
 
 // Make lodash functions available globally
 global.isEqualWith = isEqualWith;
@@ -19,8 +19,8 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
+    addListener: vi.fn(), // Deprecated
+    removeListener: vi.fn(), // Deprecated
     addEventListener: vi.fn(),
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),

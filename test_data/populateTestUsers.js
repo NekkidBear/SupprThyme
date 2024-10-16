@@ -32,4 +32,5 @@ async function insertTestData() {
   }
 }
 
-insertTestData();
+insertTestData().catch((e) => console.error(e.stack));
+module.exports = insertTestData;

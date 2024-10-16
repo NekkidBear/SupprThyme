@@ -3,165 +3,67 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-// Ensure the cache directory exists
 const cacheDir = path.join(__dirname, 'cache');
 if (!fs.existsSync(cacheDir)) {
   fs.mkdirSync(cacheDir);
 }
 
-// Function to fetch and write typeahead data for a specific city
-async function fetchAndWriteTypeaheadData(city, outputFile) {
-  const typeaheadEncodedParams = new URLSearchParams();
-  typeaheadEncodedParams.set('q', city);
-  typeaheadEncodedParams.set('language', 'en_US');
+async function fetchNearbySearchResults(city, state) {
+  const apiKey = process.env.GEOCODING_API_KEY;
+  const location = `${city},${state}`;
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=1500&type=restaurant&key=${apiKey}`;
 
-  const typeaheadOptions = {
-    method: 'POST',
-    url: 'https://restaurants222.p.rapidapi.com/typeahead',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-      'X-RapidAPI-Host': 'restaurants222.p.rapidapi.com',
-    },
-    data: typeaheadEncodedParams,
-  };
-
-  await delay(3000); // Add delay before making the request
   try {
-    const typeaheadResponse = await axios.request(typeaheadOptions);
-    const jsonData = JSON.stringify(typeaheadResponse.data, null, 2);
-    fs.writeFileSync(path.join(cacheDir, outputFile), jsonData);
-    console.log(`Data written to ${outputFile}`);
+    const response = await axios.get(url);
+    return response.data.results;
   } catch (error) {
-    console.error(error);
+    console.error(`Error fetching nearby search results for ${city}, ${state}:`, error);
+    return [];
   }
 }
 
-// Function to get location ID from a specific file
-async function getLocationId(inputFile, cityName) {
+async function fetchPlaceDetails(placeId) {
+  const apiKey = process.env.GEOCODING_API_KEY;
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${apiKey}`;
+
   try {
-    const data = fs.readFileSync(path.join(cacheDir, inputFile), 'utf8');
-    const json = JSON.parse(data);
-    const locationId = json.results.data.find(
-      (result) => result.result_object.name.includes(cityName)
-    ).result_object.location_id;
-    return locationId;
+    const response = await axios.get(url);
+    return response.data.result;
   } catch (error) {
-    console.error(`Error reading location ID from ${inputFile}:`, error);
-  }
-}
-
-// Function to fetch and write search data for a specific location ID
-async function fetchAndWriteSearchData(locationId, outputFile) {
-  const searchEncodedParams = new URLSearchParams();
-  searchEncodedParams.set('location_id', locationId);
-  searchEncodedParams.set('language', 'en_US');
-  searchEncodedParams.set('currency', 'USD');
-  searchEncodedParams.set('offset', '0');
-
-  const searchOptions = {
-    method: 'POST',
-    url: 'https://restaurants222.p.rapidapi.com/search',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-      'X-RapidAPI-Host': 'restaurants222.p.rapidapi.com',
-    },
-    data: searchEncodedParams,
-  };
-
-  await delay(3000); // Add delay before making the request
-  try {
-    const searchResponse = await axios.request(searchOptions);
-    const jsonData = JSON.stringify(searchResponse.data, null, 2);
-    fs.writeFileSync(path.join(cacheDir, outputFile), jsonData);
-    console.log(`Data written to ${outputFile}`);
-
-    // Process search results and fetch details for each restaurant
-    await processSearchResults(searchResponse.data.results.data, outputFile.replace('SearchTestData', 'Details'));
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Function to process search results and fetch details for each restaurant
-async function processSearchResults(restaurants, outputFile) {
-  let details = [];
-  if (Array.isArray(restaurants)) {
-    for (const restaurant of restaurants) {
-      const locationId = restaurant.location_id;
-      const detail = await fetchRestaurantDetails(locationId);
-      if (detail) {
-        details.push(detail);
-        console.log('retrieved details for ', detail.results.name)
-      }
-      await delay(3000); // Delay of 1 second between requests
-    }
-  } else {
-    console.error('Search results data is not an array');
-  }
-
-  // Write the collected details to a JSON file
-  fs.writeFileSync(path.join(cacheDir, outputFile), JSON.stringify(details, null, 2));
-  console.log(`Restaurant details written to ${outputFile}`);
-}
-
-// Function to fetch details for a specific restaurant
-async function fetchRestaurantDetails(locationId) {
-  const detailEncodedParams = new URLSearchParams();
-  detailEncodedParams.set('location_id', locationId);
-  detailEncodedParams.set('language', 'en_US');
-  detailEncodedParams.set('currency', 'USD');
-
-  const detailOptions = {
-    method: 'POST',
-    url: 'https://restaurants222.p.rapidapi.com/detail',
-    headers: {
-      'content-type': 'application/x-www-form-urlencoded',
-      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-      'X-RapidAPI-Host': 'restaurants222.p.rapidapi.com',
-    },
-    data: detailEncodedParams,
-  };
-
-  await delay(3000); // Add delay before making the request
-  try {
-    const detailResponse = await axios.request(detailOptions);
-    return detailResponse.data;
-  } catch (error) {
-    console.error(`Error fetching details for location ID ${locationId}:`, error);
+    console.error(`Error fetching place details for place ID ${placeId}:`, error);
     return null;
   }
 }
 
-// Main function to automate API calls for multiple cities
-const main = async () => {
-  try {
-    // Fetch and write typeahead data for Minneapolis
-    await fetchAndWriteTypeaheadData('Minneapolis, Minnesota', 'minneapolisTypeaheadTestData.json');
+async function generateAndSaveTestData() {
+  const cities = [
+    { name: 'Minneapolis', state: 'Minnesota' },
+    { name: 'St. Paul', state: 'Minnesota' }
+  ];
 
-    // Fetch and write typeahead data for St. Paul
-    await fetchAndWriteTypeaheadData('St. Paul, Minnesota', 'stPaulTypeaheadTestData.json');
+  for (const city of cities) {
+    // Fetch and save nearby search results
+    const nearbySearchResults = await fetchNearbySearchResults(city.name, city.state);
+    fs.writeFileSync(
+      path.join(cacheDir, `${city.name.toLowerCase()}SearchTestData.json`),
+      JSON.stringify({ results: nearbySearchResults }, null, 2)
+    );
+    console.log(`Nearby search data written for ${city.name}`);
 
-    // Get location IDs for both cities
-    const minneapolisLocationId = await getLocationId('minneapolisTypeaheadTestData.json', 'Minneapolis');
-    const stPaulLocationId = await getLocationId('stPaulTypeaheadTestData.json', 'Saint Paul');
-
-    if (minneapolisLocationId) {
-      // Fetch and write search data for Minneapolis
-      await fetchAndWriteSearchData(minneapolisLocationId, 'minneapolisSearchTestData.json');
+    // Fetch and save place details for each result
+    const placeDetails = [];
+    for (const result of nearbySearchResults) {
+      const details = await fetchPlaceDetails(result.place_id);
+      if (details) {
+        placeDetails.push(details);
+      }
     }
-
-    if (stPaulLocationId) {
-      // Fetch and write search data for St. Paul
-      await fetchAndWriteSearchData(stPaulLocationId, 'stPaulSearchTestData.json');
-    }
-  } catch (error) {
-    console.error('Error in main function:', error);
+    fs.writeFileSync(
+      path.join(cacheDir, `${city.name.toLowerCase()}Details.json`),
+      JSON.stringify(placeDetails, null, 2)
+    );
+    console.log(`Place details data written for ${city.name}`);
   }
-};
+}
 
-// Run the main function
-main();
+generateAndSaveTestData().catch(console.error);

@@ -1,10 +1,14 @@
 // tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm';
+import axios from 'axios';
+import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
+
+vi.mock('axios');
 
 const mockStore = configureStore([]);
 
@@ -18,17 +22,16 @@ describe('UserPreferencesForm', () => {
     store.dispatch = vi.fn();
 
     // Mock API calls
-    global.fetch = vi.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve({
-          priceRanges: [{ id: 1, range: '$' }, { id: 2, range: '$$' }],
-          meatPreferences: [{ id: 1, preference: 'Vegetarian' }, { id: 2, preference: 'Omnivore' }],
-          religiousRestrictions: [{ id: 1, restriction: 'None' }, { id: 2, restriction: 'Halal' }],
-          allergens: [{ id: 1, allergen: 'Peanuts' }, { id: 2, allergen: 'Dairy' }],
-          cuisineTypes: [{ id: 1, type: 'Italian' }, { id: 2, type: 'Chinese' }],
-        }),
-      })
-    );
+    axios.get.mockImplementation((url) => {
+      const mockData = {
+        '/api/form_data/price-ranges': { data: [{ id: 1, range: '$' }, { id: 2, range: '$$' }] },
+        '/api/form_data/meat-preferences': { data: [{ id: 1, preference: 'Vegetarian' }, { id: 2, preference: 'Omnivore' }] },
+        '/api/form_data/religious-restrictions': { data: [{ id: 1, restriction: 'None' }, { id: 2, restriction: 'Halal' }] },
+        '/api/form_data/allergen-options': { data: [{ id: 1, allergen: 'Peanuts' }, { id: 2, allergen: 'Dairy' }] },
+        '/api/form_data/cuisine-options': { data: [{ id: 1, type: 'Italian' }, { id: 2, type: 'Chinese' }] },
+      };
+      return Promise.resolve(mockData[url]);
+    });
   });
 
   test('renders preferences form', async () => {
@@ -58,13 +61,13 @@ describe('UserPreferencesForm', () => {
     );
 
     await waitFor(() => {
-      fireEvent.change(screen.getByLabelText('Max Price Range'), { target: { value: '2' } });
-      fireEvent.change(screen.getByLabelText('Meat Preference'), { target: { value: '1' } });
-      fireEvent.change(screen.getByLabelText('Max Distance'), { target: { value: '10' } });
-      fireEvent.click(screen.getByLabelText('Open Now'));
+      userEvent.selectOptions(screen.getByLabelText('Max Price Range'), '2');
+      userEvent.selectOptions(screen.getByLabelText('Meat Preference'), '1');
+      userEvent.type(screen.getByLabelText('Max Distance'), '10');
+      userEvent.click(screen.getByLabelText('Open Now'));
     });
 
-    fireEvent.click(screen.getByText('Save Preferences'));
+    userEvent.click(screen.getByText('Save Preferences'));
 
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
@@ -78,6 +81,4 @@ describe('UserPreferencesForm', () => {
       }));
     });
   });
-
-  // Add more tests as needed
 });

@@ -37,7 +37,7 @@ describe('User Flow', () => {
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
         type: 'LOGIN',
-        payload: expect.any(Object),
+        payload: { username: 'testuser', password: 'testpass' },
       }));
     });
 
@@ -51,7 +51,7 @@ describe('User Flow', () => {
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
         type: 'CREATE_GROUP',
-        payload: expect.any(Object),
+        payload: { groupName: 'Test Group' },
       }));
     });
 
@@ -68,7 +68,12 @@ describe('User Flow', () => {
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
         type: 'SET_USER_PREFERENCES',
-        payload: expect.any(Object),
+        payload: {
+          maxPriceRange: '2',
+          meatPreference: 'vegetarian',
+          maxDistance: '10',
+          openNow: true,
+        },
       }));
     });
   });
@@ -90,7 +95,7 @@ describe('User Flow', () => {
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
         type: 'LOGIN',
-        payload: expect.any(Object),
+        payload: { username: 'wronguser', password: 'wrongpass' },
       }));
     });
 
@@ -152,7 +157,7 @@ describe('User Flow', () => {
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
         type: 'UPDATE_PROFILE',
-        payload: expect.any(Object),
+        payload: { email: 'newemail@example.com' },
       }));
     });
 

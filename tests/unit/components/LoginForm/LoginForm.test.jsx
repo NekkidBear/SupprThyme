@@ -3,7 +3,8 @@ import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import LoginForm from '../../src/components/LoginForm/LoginForm';
+import LoginForm from '../../../../src/components/LoginForm/LoginForm';
+import { vi } from 'vitest';
 
 const mockStore = configureStore([]);
 
@@ -14,7 +15,7 @@ describe('LoginForm', () => {
     store = mockStore({
       errors: { loginMessage: '' },
     });
-    store.dispatch = jest.fn();
+    store.dispatch = vi.fn();
   });
 
   test('renders login form', () => {

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import GroupForm from '../../../../src/components/CreateGroupForm/GroupForm'; // Corrected path
+import { vi } from 'vitest';
 
 const mockStore = configureStore([]);
 

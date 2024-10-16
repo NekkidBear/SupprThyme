@@ -3,7 +3,8 @@ import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import UserPreferencesForm from '../../src/components/PreferencesForm/PreferencesForm';
+import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm';
+import { vi } from 'vitest';
 
 const mockStore = configureStore([]);
 
@@ -14,10 +15,10 @@ describe('UserPreferencesForm', () => {
     store = mockStore({
       user: { id: 1 },
     });
-    store.dispatch = jest.fn();
+    store.dispatch = vi.fn();
 
     // Mock API calls
-    global.fetch = jest.fn(() =>
+    global.fetch = vi.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({
           priceRanges: [{ id: 1, range: '$' }, { id: 2, range: '$$' }],

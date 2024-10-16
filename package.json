@@ -63,6 +63,7 @@
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@vitejs/plugin-react": "^4.3.2",
+    "istanbul-reports": "^3.1.7",
     "jsdom": "^25.0.1",
     "nodemon": "^3.1.7",
     "redux-mock-store": "^1.5.4",

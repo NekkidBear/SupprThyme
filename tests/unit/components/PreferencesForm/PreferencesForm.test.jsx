@@ -1,9 +1,9 @@
 // tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm'; // Ensure this path is correct
+import UserPreferencesForm from '../../src/components/PreferencesForm/PreferencesForm';
 
 const mockStore = configureStore([]);
 
@@ -12,33 +12,65 @@ describe('UserPreferencesForm', () => {
 
   beforeEach(() => {
     store = mockStore({
-      user: { id: 1 }, // Mock user data
-      preferences: {}, // Mock preferences data
+      user: { id: 1 },
     });
-    store.dispatch = vi.fn();
+    store.dispatch = jest.fn();
+
+    // Mock API calls
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({
+          priceRanges: [{ id: 1, range: '$' }, { id: 2, range: '$$' }],
+          meatPreferences: [{ id: 1, preference: 'Vegetarian' }, { id: 2, preference: 'Omnivore' }],
+          religiousRestrictions: [{ id: 1, restriction: 'None' }, { id: 2, restriction: 'Halal' }],
+          allergens: [{ id: 1, allergen: 'Peanuts' }, { id: 2, allergen: 'Dairy' }],
+          cuisineTypes: [{ id: 1, type: 'Italian' }, { id: 2, type: 'Chinese' }],
+        }),
+      })
+    );
   });
 
-  test('renders preferences form', () => {
+  test('renders preferences form', async () => {
     render(
       <Provider store={store}>
         <UserPreferencesForm />
       </Provider>
     );
 
-    expect(screen.getByLabelText(/max price range/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByLabelText(/max price range/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/meat preference/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/religious restrictions/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/allergens/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/cuisine types/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/max distance/i)).toBeInTheDocument();
+      expect(screen.getByText(/open now/i)).toBeInTheDocument();
+      expect(screen.getByText(/accepts large parties/i)).toBeInTheDocument();
+    });
   });
 
-  test('allows user to set preferences', async () => {
+  test('allows setting and updating user preferences', async () => {
     render(
       <Provider store={store}>
         <UserPreferencesForm />
       </Provider>
     );
 
-    fireEvent.change(screen.getByLabelText(/max price range/i), { target: { value: '2' } });
-    fireEvent.change(screen.getByLabelText(/meat preference/i), { target: { value: 'vegetarian' } });
-    fireEvent.change(screen.getByLabelText(/max distance/i), { target: { value: '10' } });
-    fireEvent.click(screen.getByLabelText(/open now/i));
+    const maxPriceRangeInput = screen.getByLabelText(/max price range/i);
+    const meatPreferenceInput = screen.getByLabelText(/meat preference/i);
+    const maxDistanceInput = screen.getByLabelText(/max distance/i);
+    const openNowCheckbox = screen.getByText(/open now/i);
+
+    console.log(maxPriceRangeInput);
+    console.log(meatPreferenceInput);
+    console.log(maxDistanceInput);
+    console.log(openNowCheckbox);
+
+    // Ensure the elements are input elements
+    fireEvent.change(maxPriceRangeInput, { target: { value: '2' } });
+    fireEvent.change(meatPreferenceInput, { target: { value: 'vegetarian' } });
+    fireEvent.change(maxDistanceInput, { target: { value: '10' } });
+    fireEvent.click(openNowCheckbox);
     fireEvent.click(screen.getByText(/save preferences/i));
 
     await waitFor(() => {

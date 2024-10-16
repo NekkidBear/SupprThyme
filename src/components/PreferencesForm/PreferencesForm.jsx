@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   FormControl,
   InputLabel,
@@ -14,28 +15,18 @@ import {
   ListItemText,
 } from "@mui/material";
 import axios from "axios";
-import AllergenSelect from "./AllergenSelect"; // Import the AllergenSelect component
+import AllergenSelect from "./AllergenSelect";
 import { find } from "lodash";
-import { useSelector } from "react-redux";
 
 // Define the UserPreferencesForm component. It takes four props:
 // - initialValues: an object containing the initial values for the form fields
 // - onSubmit: a function to be called when the form is submitted
 // - onCancel: a function to be called when the form is cancelled
 // - editMode: a boolean indicating whether the form is in edit mode
-const UserPreferencesForm = ({
-  initialValues = {},
-  onSubmit = () => {},
-  onCancel = () => {},
-  editMode = false,
-}) => {
-  // Create state variables for each of the form fields. Initialize them with
-  // the corresponding values from initialValues if they exist, or with default
-  // values if they don't.
-
-  // retrieve the user Id
-  const user = useSelector(store=>store.user)
-  const user_id = user.id
+const UserPreferencesForm = ({ initialValues = {}, onSubmit = () => {}, onCancel = () => {}, editMode = false }) => {
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.user);
+  const user_id = user.id;
 
   // selectedAllergens is an array of the user's selected allergens
   const [selectedAllergens, setSelectedAllergens] = useState(
@@ -84,199 +75,186 @@ const UserPreferencesForm = ({
   const [religiousRestrictionOptions, setReligiousRestrictionsOptions] =
     useState([]);
 
-// Define an asynchronous function to fetch the user's preferences
-async function fetchUserPreferences(user_id) {
-  // Set loading to true while the data is being fetched
-  setLoading(true);
+  // Define an asynchronous function to fetch the user's preferences
+  async function fetchUserPreferences(user_id) {
+    // Set loading to true while the data is being fetched
+    setLoading(true);
 
-  // Initialize error to null at the start of the fetch
-  setError(null);
+    // Initialize error to null at the start of the fetch
+    setError(null);
 
-  try {
-    // Send a GET request to the /api/userPreferences/{user_id} endpoint
-    const response = await fetch(`/api/userPreferences/${user_id}`);
+    try {
+      // Send a GET request to the /api/userPreferences/{user_id} endpoint
+      const response = await fetch(`/api/userPreferences/${user_id}`);
 
-    // Convert the response data to JSON
-    const userPreferences = await response.json();
+      // Convert the response data to JSON
+      const userPreferences = await response.json();
 
-    // Map the human-readable values back to their corresponding numeric values
-    const maxPriceRange = priceRangeMapping[userPreferences.max_price_range];
-    const maxDistance = distanceMapping[userPreferences.max_distance];
+      // Map the human-readable values back to their corresponding numeric values
+      const maxPriceRange = priceRangeMapping[userPreferences.max_price_range];
+      const maxDistance = distanceMapping[userPreferences.max_distance];
 
-    // Map the allergens and cuisine types to extract the allergen and type properties
-    const allergens = userPreferences.allergens.map((a) => a.allergen);
-    const cuisineTypes = userPreferences.cuisineTypes.map((c) => c.type);
+      // Map the allergens and cuisine types to extract the allergen and type properties
+      const allergens = userPreferences.allergens.map((a) => a.allergen);
+      const cuisineTypes = userPreferences.cuisineTypes.map((c) => c.type);
 
-    // Set the state variables with the fetched and mapped data
-    setSelectedAllergens(allergens || []);
-    setMaxPriceRange(maxPriceRange || "");
-    setMeatPreference(userPreferences.meat_preference || "");
-    setReligiousRestrictions(userPreferences.religious_restrictions || "");
-    setCuisineTypes(cuisineTypes || []);
-    setMaxDistance(maxDistance || "");
-    setOpenNow(userPreferences.open_now || true);
-    setAcceptsLargeParties(userPreferences.accepts_large_parties || true);
-  } catch (error) {
-    // Log any errors that occur during the fetch and set the error state variable
-    console.error("Error fetching user preferences:", error);
-    setError("Error fetching user preferences. Please try again later.");
-  } finally {
-    // Set loading to false after the data has been fetched
-    setLoading(false);
+      // Set the state variables with the fetched and mapped data
+      setSelectedAllergens(allergens || []);
+      setMaxPriceRange(maxPriceRange || "");
+      setMeatPreference(userPreferences.meat_preference || "");
+      setReligiousRestrictions(userPreferences.religious_restrictions || "");
+      setCuisineTypes(cuisineTypes || []);
+      setMaxDistance(maxDistance || "");
+      setOpenNow(userPreferences.open_now || true);
+      setAcceptsLargeParties(userPreferences.accepts_large_parties || true);
+    } catch (error) {
+      // Log any errors that occur during the fetch and set the error state variable
+      console.error("Error fetching user preferences:", error);
+      setError("Error fetching user preferences. Please try again later.");
+    } finally {
+      // Set loading to false after the data has been fetched
+      setLoading(false);
+    }
   }
-}
 
   // Call the fetchUserPreferences function if the component is in edit mode
 
- // This useEffect hook is responsible for fetching user preferences when the component is in edit mode
-useEffect(() => {
-  // Define an asynchronous function to fetch the user's preferences
-  const fetchPreferences = async () => {
-    // If the component is in edit mode
-    if (editMode && user_id) {
+  // This useEffect hook is responsible for fetching user preferences when the component is in edit mode
+  useEffect(() => {
+    // Define an asynchronous function to fetch the user's preferences
+    const fetchPreferences = async () => {
+      // If the component is in edit mode
+      if (editMode && user_id) {
+        try {
+          // Fetch the user's preferences by sending a GET request to the /api/user_preferences/{user_id} endpoint
+          const { data: userPreferences } = await axios.get(`/api/user_preferences/${user_id}`);
+
+          console.log('max_price_range:', userPreferences.max_price_range);
+          console.log('meat_preference:', userPreferences.meat_preference);
+          console.log('religious_restrictions:', userPreferences.religious_restrictions);
+          console.log('allergens:', userPreferences.allergens);
+          console.log('cuisine_types:', userPreferences.cuisine_types);
+
+          // Fetch the IDs for the user-friendly values by sending a GET request to the /api/user_preferences/ids endpoint
+          // Pass the user-friendly values as query parameters
+          const { data: ids } = await axios.get('/api/user_preferences/ids', {
+            params: {
+              max_price_range: userPreferences.max_price_range,
+              meat_preference: userPreferences.meat_preference,
+              religious_restrictions: userPreferences.religious_restrictions,
+              allergens: JSON.stringify(userPreferences.allergens),
+              cuisine_types: JSON.stringify(userPreferences.cuisine_types),
+            },
+          });
+
+          // Set the state with the fetched IDs and other user preferences
+          setMaxPriceRange(ids.max_price_range);
+          setMeatPreference(ids.meat_preference);
+          setReligiousRestrictions(ids.religious_restrictions);
+          setSelectedAllergens(ids.allergens);
+          setCuisineTypes(ids.cuisine_types);
+          setOpenNow(userPreferences.open_now || true);
+          setAcceptsLargeParties(userPreferences.accepts_large_parties || true);
+        } catch (error) {
+          // If there's an error during the fetching process, log it to the console
+          console.error("Error fetching preferences:", error);
+        }
+      }
+    };
+
+    // Call the fetchPreferences function
+    fetchPreferences();
+  }, [editMode, user_id]); // The dependencies of the useEffect hook are editMode and user_id
+
+  // This useEffect hook is responsible for fetching form data options when the component mounts
+  useEffect(() => {
+    // Define an asynchronous function to fetch the form data options
+    const fetchOptions = async () => {
       try {
-        // Fetch the user's preferences by sending a GET request to the /api/user_preferences/{user_id} endpoint
-        const { data: userPreferences } = await axios.get(`/api/user_preferences/${user_id}`);
+        // Fetch the form data options by sending GET requests to the respective endpoints
+        // Use Promise.all to send all requests concurrently
+        const [
+          priceRanges,
+          meatPreferences,
+          religiousOptions,
+          allergenOpts,
+          cuisineOpts,
+        ] = await Promise.all([
+          axios.get("/api/form_data/price-ranges"),
+          axios.get("/api/form_data/meat-preferences"),
+          axios.get("/api/form_data/religious-options"),
+          axios.get("/api/form_data/allergen-options"),
+          axios.get("/api/form_data/cuisine-options"),
+        ]);
 
-        console.log('max_price_range:', userPreferences.max_price_range);
-        console.log('meat_preference:', userPreferences.meat_preference);
-        console.log('religious_restrictions:', userPreferences.religious_restrictions)
-        console.log('allergens: ',userPreferences.allergens)
-        console.log('cuisine_types: ', userPreferences.cuisine_types)
-
-
-        // Fetch the IDs for the user-friendly values by sending a GET request to the /api/user_preferences/ids endpoint
-        // Pass the user-friendly values as query parameters
-        const { data: ids } = await axios.get('/api/user_preferences/ids', {
-          params: {
-            max_price_range: userPreferences.max_price_range,
-            meat_preference: userPreferences.meat_preference,
-            religious_restrictions: userPreferences.religious_restrictions,
-            allergens: JSON.stringify(userPreferences.allergens),
-            cuisine_types: JSON.stringify(userPreferences.cuisine_types),
-          },
-        });
-
-        // Set the state with the fetched IDs and other user preferences
-        setMaxPriceRange(ids.max_price_range);
-        setMeatPreference(ids.meat_preference);
-        setReligiousRestrictions(ids.religious_restrictions);
-        setSelectedAllergens(ids.allergens);
-        setCuisineTypes(ids.cuisine_types);
-        setOpenNow(userPreferences.open_now || true);
-        setAcceptsLargeParties(userPreferences.accepts_large_parties || true);
+        // Set the state with the fetched form data options
+        setPriceRangeOptions(priceRanges.data);
+        setMeatPreferenceOptions(meatPreferences.data);
+        setReligiousRestrictionsOptions(religiousOptions.data);
+        setAllergenOptions(allergenOpts.data);
+        setCuisineOptions(cuisineOpts.data);
       } catch (error) {
         // If there's an error during the fetching process, log it to the console
-        console.error("Error fetching preferences:", error);
+        console.error("Error fetching options:", error);
       }
-    }
-  };
+    };
 
-  // Call the fetchPreferences function
-  fetchPreferences();
-}, [editMode, user_id]); // The dependencies of the useEffect hook are editMode and user_id
-
-// This useEffect hook is responsible for fetching form data options when the component mounts
-useEffect(() => {
-  // Define an asynchronous function to fetch the form data options
-  const fetchOptions = async () => {
-    try {
-      // Fetch the form data options by sending GET requests to the respective endpoints
-      // Use Promise.all to send all requests concurrently
-      const [
-        priceRanges,
-        meatPreferences,
-        religiousOptions,
-        allergenOpts,
-        cuisineOpts,
-      ] = await Promise.all([
-        axios.get("/api/form_data/price-ranges"),
-        axios.get("/api/form_data/meat-preferences"),
-        axios.get("/api/form_data/religious-options"),
-        axios.get("/api/form_data/allergen-options"),
-        axios.get("/api/form_data/cuisine-options"),
-      ]);
-
-      // Set the state with the fetched form data options
-      setPriceRangeOptions(priceRanges.data);
-      setMeatPreferenceOptions(meatPreferences.data);
-      setReligiousRestrictionsOptions(religiousOptions.data);
-      setAllergenOptions(allergenOpts.data);
-      setCuisineOptions(cuisineOpts.data);
-    } catch (error) {
-      // If there's an error during the fetching process, log it to the console
-      console.error("Error fetching options:", error);
-    }
-  };
-
-  // Call the fetchOptions function
-  fetchOptions();
-}, []); // The dependencies of the useEffect hook are empty, so it will only run once when the component mounts
+    // Call the fetchOptions function
+    fetchOptions();
+  }, []); // The dependencies of the useEffect hook are empty, so it will only run once when the component mounts
 
   // State for storing any submit errors
-const [submitError, setSubmitError] = useState(null);
+  const [submitError, setSubmitError] = useState(null);
 
-// Function to handle form submission
-const handleSubmit = async () => {
-  // Get the user ID
-  const user_id = user.id;
+  // Function to handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  // Map the user-friendly allergen values back to their corresponding IDs
-  const allergens = selectedAllergens.map((allergen) => {
-    // Find the allergen in the allergenOptions array
-    const foundAllergen = find(allergenOptions, { allergen: allergen });
+    const allergens = selectedAllergens.map((allergen) => {
+      const foundAllergen = find(allergenOptions, { allergen: allergen });
+      if (!foundAllergen) {
+        setSubmitError(`No match found for allergen: ${allergen}`);
+        return null;
+      }
+      return foundAllergen.id;
+    });
 
-    // If the allergen is not found, set an error and return null
-    if (!foundAllergen) {
-      setSubmitError(`No match found for allergen: ${allergen}`);
-      return null;
+    const cuisineTypes = cuisine_types.map((cuisineType) => {
+      const foundCuisineType = find(cuisineOptions, { type: cuisineType });
+      if (!foundCuisineType) {
+        setSubmitError(`No match found for cuisine type: ${cuisineType}`);
+        return null;
+      }
+      return foundCuisineType.id;
+    });
+
+    if (submitError) {
+      return;
     }
 
-    // Return the ID of the found allergen
-    return foundAllergen.id;
-  });
+    const preferencesData = {
+      user_id,
+      max_price_range,
+      meat_preference,
+      religious_restrictions,
+      allergens,
+      cuisine_types: cuisineTypes,
+      max_distance,
+      open_now,
+      accepts_large_parties,
+    };
 
-  // Map the user-friendly cuisine type values back to their corresponding IDs
-  const cuisineTypes = cuisine_types.map((cuisineType) => {
-    // Find the cuisine type in the cuisineOptions array
-    const foundCuisineType = find(cuisineOptions, { type: cuisineType });
+    dispatch({
+      type: 'UPDATE_PREFERENCES',
+      payload: preferencesData,
+    });
 
-    // If the cuisine type is not found, set an error and return null
-    if (!foundCuisineType) {
-      setSubmitError(`No match found for cuisine type: ${cuisineType}`);
-      return null;
+    if (onSubmit) {
+      onSubmit(preferencesData);
     }
-
-    // Return the ID of the found cuisine type
-    return foundCuisineType.id;
-  });
-
-  // If there's a submit error, don't submit the form
-  if (submitError) {
-    return;
-  }
-
-  // Prepare the data to be submitted
-  const preferencesData = {
-    user_id,
-    max_price_range,
-    meat_preference,
-    religious_restrictions,
-    allergens,
-    cuisine_types: cuisineTypes,
-    max_distance,
-    open_now,
-    accepts_large_parties,
   };
 
-  // Submit the form and show an alert when the submission is successful
-  onSubmit(preferencesData).then((response) => {
-    alert("Preferences saved successfully");
-  });
-};
-
-//this is the jsx code for rendering the form
-  return ( 
+  return (
     <form onSubmit={handleSubmit}>
       <FormControl fullWidth margin="normal">
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
@@ -309,9 +287,7 @@ const handleSubmit = async () => {
       </FormControl>
 
       <FormControl fullWidth margin="normal">
-        <InputLabel id="religious-restrictions-label">
-          Religious Restrictions
-        </InputLabel>
+        <InputLabel id="religious-restrictions-label">Religious Restrictions</InputLabel>
         <Select
           labelId="religious-restrictions-label"
           value={religious_restrictions}

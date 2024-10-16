@@ -1,6 +1,6 @@
 // tests/unit/components/PreferencesForm/PreferencesForm.test.jsx
 import React from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import UserPreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm';
@@ -39,50 +39,42 @@ describe('UserPreferencesForm', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/max price range/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/meat preference/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/religious restrictions/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/allergens/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/cuisine types/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/max distance/i)).toBeInTheDocument();
-      expect(screen.getByText(/open now/i)).toBeInTheDocument();
-      expect(screen.getByText(/accepts large parties/i)).toBeInTheDocument();
+      expect(screen.getByLabelText('Max Price Range')).toBeInTheDocument();
+      expect(screen.getByLabelText('Meat Preference')).toBeInTheDocument();
+      expect(screen.getByLabelText('Religious Restrictions')).toBeInTheDocument();
+      expect(screen.getByLabelText('Allergens')).toBeInTheDocument();
+      expect(screen.getByLabelText('Cuisine Types')).toBeInTheDocument();
+      expect(screen.getByLabelText('Max Distance')).toBeInTheDocument();
+      expect(screen.getByText('Open Now')).toBeInTheDocument();
+      expect(screen.getByText('Accepts Large Parties')).toBeInTheDocument();
     });
   });
 
   test('allows setting and updating user preferences', async () => {
     render(
       <Provider store={store}>
-        <UserPreferencesForm />
+        <UserPreferencesForm onSubmit={vi.fn()} />
       </Provider>
     );
 
-    const maxPriceRangeInput = screen.getByLabelText(/max price range/i);
-    const meatPreferenceInput = screen.getByLabelText(/meat preference/i);
-    const maxDistanceInput = screen.getByLabelText(/max distance/i);
-    const openNowCheckbox = screen.getByText(/open now/i);
+    await waitFor(() => {
+      fireEvent.change(screen.getByLabelText('Max Price Range'), { target: { value: '2' } });
+      fireEvent.change(screen.getByLabelText('Meat Preference'), { target: { value: '1' } });
+      fireEvent.change(screen.getByLabelText('Max Distance'), { target: { value: '10' } });
+      fireEvent.click(screen.getByLabelText('Open Now'));
+    });
 
-    console.log(maxPriceRangeInput);
-    console.log(meatPreferenceInput);
-    console.log(maxDistanceInput);
-    console.log(openNowCheckbox);
-
-    // Ensure the elements are input elements
-    fireEvent.change(maxPriceRangeInput, { target: { value: '2' } });
-    fireEvent.change(meatPreferenceInput, { target: { value: 'vegetarian' } });
-    fireEvent.change(maxDistanceInput, { target: { value: '10' } });
-    fireEvent.click(openNowCheckbox);
-    fireEvent.click(screen.getByText(/save preferences/i));
+    fireEvent.click(screen.getByText('Save Preferences'));
 
     await waitFor(() => {
       expect(store.dispatch).toHaveBeenCalledWith(expect.objectContaining({
-        type: 'SET_USER_PREFERENCES',
-        payload: {
-          maxPriceRange: '2',
-          meatPreference: 'vegetarian',
-          maxDistance: '10',
-          openNow: true,
-        },
+        type: 'UPDATE_PREFERENCES',
+        payload: expect.objectContaining({
+          max_price_range: '2',
+          meat_preference: '1',
+          max_distance: '10',
+          open_now: true,
+        })
       }));
     });
   });

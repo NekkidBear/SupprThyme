@@ -1,0 +1,83 @@
+# Ignore build directories
+build/
+dist/
+
+# Ignore node modules
+node_modules/
+
+# Ignore logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore coverage directories
+coverage/
+.nyc_output
+
+# Ignore dependency directories
+bower_components/
+jspm_packages/
+
+# Ignore Typescript v1 declaration files
+typings/
+
+# Ignore optional npm cache directory
+.npm
+
+# Ignore optional eslint cache
+.eslintcache
+
+# Ignore optional REPL history
+.node_repl_history
+
+# Ignore output of 'npm pack'
+*.tgz
+
+# Ignore Yarn Integrity file
+.yarn-integrity
+
+# Ignore dotenv environment variables file
+.env
+
+# Ignore package-lock as it complicates merging
+package-lock.json
+
+# Ignore IDE and editor configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.bak
+*.backup
+
+# Ignore coverage reports
+coverage/
+lcov-report/
+
+# Ignore build artifacts
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore environment configuration files
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore test_data/cache
+test_data/cache

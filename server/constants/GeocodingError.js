@@ -5,4 +5,4 @@ class GeocodingError extends Error {
   }
 }
 
-module.exports = GeocodingError;
+export default GeocodingError;

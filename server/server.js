@@ -1,19 +1,18 @@
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+import sessionMiddleware from './modules/session-middleware.js';
+import passport from './strategies/user.strategy.js';
+import userRouter from './routes/user.router.js';
+import testingRouter from './routes/testing.router.js';
+import formRouter from './routes/preferences_form.router.js';
+import userPrefsRouter from './routes/userPreferences.router.js';
+import restaurantsRouter from './routes/restaurants.router.js';
+import groupsRouter from './routes/groups.router.js';
+
+dotenv.config();
+
 const app = express();
-require('dotenv').config();
 const PORT = process.env.PORT || 5001;
-
-// Middleware Includes
-const sessionMiddleware = require('./modules/session-middleware');
-const passport = require('./strategies/user.strategy');
-
-// Route Includes
-const userRouter = require('./routes/user.router'); // import the user router
-const testingRouter = require('./routes/testing.router'); // import the testing router
-const formRouter = require('./routes/preferences_form.router'); // import the form router
-const userPrefsRouter = require('./routes/userPreferences.router'); //import the user preferences router
-const restaurantsRouter = require('./routes/restaurants.router'); //import the restaurants router
-const groupsRouter = require('./routes/groups.router.js'); //import the groups router
 
 // Express Middleware
 app.use(express.json());
@@ -29,7 +28,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/user', userRouter);
-app.use('/api/test', testingRouter); //add the /test endpoint
+app.use('/api/test', testingRouter);
 app.use('/api/form_data', formRouter);
 app.use('/api/user_preferences', userPrefsRouter);
 app.use('/api/restaurants', restaurantsRouter);
@@ -39,3 +38,5 @@ app.use('/api/groups/', groupsRouter);
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
+
+export default app;

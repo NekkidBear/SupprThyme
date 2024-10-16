@@ -1,24 +1,21 @@
-const express = require("express");
-const {
-  rejectUnauthenticated,
-} = require("../modules/authentication-middleware");
-const encryptLib = require("../modules/encryption");
-const pool = require("../modules/pool");
-const userStrategy = require("../strategies/user.strategy");
-const GeocodingError = require('../constants/GeocodingError');
-const normalizeLocation = require('../modules/Geolocation.js')
-
+import express from 'express';
+import { rejectUnauthenticated } from '../modules/authentication-middleware.js';
+import encryptLib from '../modules/encryption.js';
+import pool from '../modules/pool.js';
+import userStrategy from '../strategies/user.strategy.js';
+import GeocodingError from '../constants/GeocodingError.js';
+import normalizeLocation from '../modules/Geolocation.js';
 
 const router = express.Router();
 
 // Handles Ajax request for user information if user is authenticated
-router.get("/", rejectUnauthenticated, (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
   res.send(req.user);
 });
 
 // Handles Ajax request for user profile if user is authenticated
-router.get("/profile", rejectUnauthenticated, async (req, res) => {
+router.get('/profile', rejectUnauthenticated, async (req, res) => {
   const userId = req.user.id;
 
   // Fetch user information with address details using a database query
@@ -35,7 +32,7 @@ router.get("/profile", rejectUnauthenticated, async (req, res) => {
   const user = rows[0];
 
   if (!user) {
-    return res.status(404).json({ message: "User not found" });
+    return res.status(404).json({ message: 'User not found' });
   }
 
   res.status(200).json(user);
@@ -46,17 +43,17 @@ router.get('/search', (req, res) => {
   const searchTerm = req.query.search;
 
   pool.query('SELECT * FROM "user" WHERE username ILIKE $1', [`%${searchTerm}%`])
-      .then((result) => {
-          res.send(result.rows);
-      })
-      .catch((error) => {
-          console.error('Error completing SELECT user query', error);
-          res.sendStatus(500);
-      });
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.error('Error completing SELECT user query', error);
+      res.sendStatus(500);
+    });
 });
 
 // GET route to retrieve user information with address details
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   const userId = parseInt(req.params.id);
 
   if (isNaN(userId)) {
@@ -64,8 +61,6 @@ router.get("/:id", async (req, res) => {
   }
 
   try {
-    const userId = req.params.id;
-
     // Fetch user information with address details using a database query
     const { rows } = await pool.query(
       `
@@ -80,13 +75,13 @@ router.get("/:id", async (req, res) => {
     const user = rows[0];
 
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: 'User not found' });
     }
 
     res.status(200).json(user);
   } catch (error) {
-    console.error("Error fetching user information:", error);
-    res.status(500).json({ message: "Error fetching user information" });
+    console.error('Error fetching user information:', error);
+    res.status(500).json({ message: 'Error fetching user information' });
   }
 });
 
@@ -112,7 +107,7 @@ router.get('/normalizeLocation', async (req, res) => {
 });
 
 // POST route to handle user registration and address storage
-router.post("/register", async (req, res) => {
+router.post('/register', async (req, res) => {
   try {
     const { username, password, email, address } = req.body;
 
@@ -145,12 +140,13 @@ router.post("/register", async (req, res) => {
       ]
     );
 
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    console.error("Error registering user:", error);
-    res.status(500).json({ message: "Error registering user" });
+    console.error('Error registering user:', error);
+    res.status(500).json({ message: 'Error registering user' });
   }
 });
+
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
@@ -173,7 +169,7 @@ router.post('/login', userStrategy.authenticate('local'), async (req, res) => {
 });
 
 // clear all server session information about this user
-router.post("/logout", (req, res, next) => {
+router.post('/logout', (req, res, next) => {
   // Use passport's built-in method to log out the user
   req.logout((err) => {
     if (err) {
@@ -183,4 +179,4 @@ router.post("/logout", (req, res, next) => {
   });
 });
 
-module.exports = router;
+export default router;

@@ -14,6 +14,7 @@ export default defineConfig({
       ],
     },
     globals: true,
+    watch: true,
     resolve: {
       alias: {
         lodash: path.resolve(__dirname, 'node_modules/lodash'),

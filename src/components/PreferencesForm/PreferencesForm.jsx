@@ -16,21 +16,32 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import AllergenSelect from "./AllergenSelect";
-import { find } from "lodash";
+import {
+  resetPreferencesForm,
+  setMaxPriceRange,
+  setMeatPreference,
+  setReligiousRestrictions,
+  setAllergens,
+  setCuisineTypes,
+  setMaxDistance,
+  setOpenNow,
+  setAcceptsLargeParties,
+} from '../../redux/actions/PreferencesForm.actions.js'; // Import the action creators
 
-const UserPreferencesForm = ({ onSubmit }) => {
+const UserPreferencesForm = ({ onSubmit, onCancel }) => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const preferences = useSelector((store) => store.preferences);
 
   // State variables
-  const [selectedAllergens, setSelectedAllergens] = useState([]);
-  const [max_price_range, setMaxPriceRange] = useState("");
-  const [meat_preference, setMeatPreference] = useState("");
-  const [religious_restrictions, setReligiousRestrictions] = useState("");
-  const [cuisine_types, setCuisineTypes] = useState([]);
-  const [max_distance, setMaxDistance] = useState("");
-  const [open_now, setOpenNow] = useState(true);
-  const [accepts_large_parties, setAcceptsLargeParties] = useState(true);
+  const [selectedAllergens, setSelectedAllergens] = useState(preferences.allergens);
+  const [max_price_range, setMaxPriceRangeState] = useState(preferences.max_price_range);
+  const [meat_preference, setMeatPreferenceState] = useState(preferences.meat_preference);
+  const [religious_restrictions, setReligiousRestrictionsState] = useState(preferences.religious_restrictions);
+  const [cuisine_types, setCuisineTypesState] = useState(preferences.cuisine_types);
+  const [max_distance, setMaxDistanceState] = useState(preferences.max_distance);
+  const [open_now, setOpenNowState] = useState(preferences.open_now);
+  const [accepts_large_parties, setAcceptsLargePartiesState] = useState(preferences.accepts_large_parties);
 
   const [allergenOptions, setAllergenOptions] = useState([]);
   const [cuisineOptions, setCuisineOptions] = useState([]);
@@ -92,6 +103,72 @@ const UserPreferencesForm = ({ onSubmit }) => {
     }
   };
 
+  const handleCancel = () => {
+    // Reset the form to its initial state or perform any other action
+    setSelectedAllergens([]);
+    setMaxPriceRangeState("");
+    setMeatPreferenceState("");
+    setReligiousRestrictionsState("");
+    setCuisineTypesState([]);
+    setMaxDistanceState("");
+    setOpenNowState(true);
+    setAcceptsLargePartiesState(true);
+
+    // Dispatch the reset action
+    dispatch(resetPreferencesForm());
+
+    if (onCancel) {
+      onCancel();
+    }
+  };
+
+  const handleMaxPriceRangeChange = (e) => {
+    const value = e.target.value;
+    setMaxPriceRangeState(value);
+    dispatch(setMaxPriceRange(value));
+  };
+
+  const handleMeatPreferenceChange = (e) => {
+    const value = e.target.value;
+    setMeatPreferenceState(value);
+    dispatch(setMeatPreference(value));
+  };
+
+  const handleReligiousRestrictionsChange = (e) => {
+    const value = e.target.value;
+    setReligiousRestrictionsState(value);
+    dispatch(setReligiousRestrictions(value));
+  };
+
+  const handleAllergensChange = (selected) => {
+    setSelectedAllergens(selected);
+    dispatch(setAllergens(selected));
+  };
+
+  const handleCuisineTypesChange = (e) => {
+    const value = e.target.value;
+    setCuisineTypesState(value);
+    dispatch(setCuisineTypes(value));
+  };
+
+  const handleMaxDistanceChange = (e) => {
+    const value = e.target.value;
+    setMaxDistanceState(value);
+    dispatch(setMaxDistance(value));
+  };
+
+  const handleOpenNowChange = (e) => {
+    const value = e.target.checked;
+    setOpenNowState(value);
+    dispatch(setOpenNow(value));
+  };
+
+  const handleAcceptsLargePartiesChange = (e) => {
+    const value = e.target.checked;
+    setAcceptsLargePartiesState(value);
+    dispatch(setAcceptsLargeParties(value));
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <FormControl fullWidth margin="normal">
@@ -99,7 +176,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
         <Select
           labelId="max-price-range-label"
           value={max_price_range}
-          onChange={(e) => setMaxPriceRange(e.target.value)}
+          onChange={handleMaxPriceRangeChange}
         >
           {priceRangeOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
@@ -114,7 +191,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
         <Select
           labelId="meat-preference-label"
           value={meat_preference}
-          onChange={(e) => setMeatPreference(e.target.value)}
+          onChange={handleMeatPreferenceChange}
         >
           {meatPreferenceOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
@@ -129,7 +206,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
         <Select
           labelId="religious-restrictions-label"
           value={religious_restrictions}
-          onChange={(e) => setReligiousRestrictions(e.target.value)}
+          onChange={handleReligiousRestrictionsChange}
         >
           {religiousRestrictionOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
@@ -141,7 +218,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
 
       <AllergenSelect
         selectedAllergens={selectedAllergens}
-        setSelectedAllergens={setSelectedAllergens}
+        setSelectedAllergens={handleAllergensChange}
         allergenOptions={allergenOptions}
       />
 
@@ -151,7 +228,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
           labelId="cuisine-types-label"
           multiple
           value={cuisine_types}
-          onChange={(e) => setCuisineTypes(e.target.value)}
+          onChange={handleCuisineTypesChange}
           input={<OutlinedInput label="Cuisine Types" />}
           renderValue={(selected) =>
             selected
@@ -177,7 +254,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
         label="Max Distance"
         type="number"
         value={max_distance}
-        onChange={(e) => setMaxDistance(e.target.value)}
+        onChange={handleMaxDistanceChange}
       />
 
       <FormGroup>
@@ -185,7 +262,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
           control={
             <Switch
               checked={open_now}
-              onChange={(e) => setOpenNow(e.target.checked)}
+              onChange={handleOpenNowChange}
             />
           }
           label="Open Now"
@@ -194,7 +271,7 @@ const UserPreferencesForm = ({ onSubmit }) => {
           control={
             <Switch
               checked={accepts_large_parties}
-              onChange={(e) => setAcceptsLargeParties(e.target.checked)}
+              onChange={handleAcceptsLargePartiesChange}
             />
           }
           label="Accepts Large Parties"
@@ -203,6 +280,9 @@ const UserPreferencesForm = ({ onSubmit }) => {
 
       <Button type="submit" variant="contained" color="primary">
         Save Preferences
+      </Button>
+      <Button type="button" variant="contained" color="secondary" onClick={handleCancel}>
+        Cancel
       </Button>
     </form>
   );

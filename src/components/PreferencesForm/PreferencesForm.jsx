@@ -122,66 +122,18 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
     }
   };
 
-  const handleMaxPriceRangeChange = (e) => {
-    const value = e.target.value;
-    setMaxPriceRangeState(value);
-    dispatch(setMaxPriceRange(value));
-  };
-
-  const handleMeatPreferenceChange = (e) => {
-    const value = e.target.value;
-    setMeatPreferenceState(value);
-    dispatch(setMeatPreference(value));
-  };
-
-  const handleReligiousRestrictionsChange = (e) => {
-    const value = e.target.value;
-    setReligiousRestrictionsState(value);
-    dispatch(setReligiousRestrictions(value));
-  };
-
-  const handleAllergensChange = (selected) => {
-    setSelectedAllergens(selected);
-    dispatch(setAllergens(selected));
-  };
-
-  const handleCuisineTypesChange = (e) => {
-    const value = e.target.value;
-    setCuisineTypesState(value);
-    dispatch(setCuisineTypes(value));
-  };
-
-  const handleMaxDistanceChange = (e) => {
-    const value = e.target.value;
-    setMaxDistanceState(value);
-    dispatch(setMaxDistance(value));
-  };
-
-  const handleOpenNowChange = (e) => {
-    const value = e.target.checked;
-    setOpenNowState(value);
-    dispatch(setOpenNow(value));
-  };
-
-  const handleAcceptsLargePartiesChange = (e) => {
-    const value = e.target.checked;
-    setAcceptsLargePartiesState(value);
-    dispatch(setAcceptsLargeParties(value));
-  };
-
   return (
     <form onSubmit={handleSubmit} data-testid="preferences-form">
-      {error && <div data-testid="error-message">{error}</div>}
       <FormControl fullWidth margin="normal">
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
         <Select
           labelId="max-price-range-label"
           value={max_price_range}
-          onChange={handleMaxPriceRangeChange}
+          onChange={(e) => setMaxPriceRangeState(e.target.value)}
           data-testid="max-price-range-select"
         >
           {priceRangeOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id} data-testid={`price-range-option-${option.id}`}>
+            <MenuItem key={option.id} value={option.id}>
               {option.range}
             </MenuItem>
           ))}
@@ -193,11 +145,11 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <Select
           labelId="meat-preference-label"
           value={meat_preference}
-          onChange={handleMeatPreferenceChange}
+          onChange={(e) => setMeatPreferenceState(e.target.value)}
           data-testid="meat-preference-select"
         >
           {meatPreferenceOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id} data-testid={`meat-preference-option-${option.id}`}>
+            <MenuItem key={option.id} value={option.id}>
               {option.preference}
             </MenuItem>
           ))}
@@ -209,57 +161,23 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <Select
           labelId="religious-restrictions-label"
           value={religious_restrictions}
-          onChange={handleReligiousRestrictionsChange}
+          onChange={(e) => setReligiousRestrictionsState(e.target.value)}
           data-testid="religious-restrictions-select"
         >
           {religiousRestrictionOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id} data-testid={`religious-restrictions-option-${option.id}`}>
+            <MenuItem key={option.id} value={option.id}>
               {option.restriction}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
 
-      <AllergenSelect
-        selectedAllergens={selectedAllergens}
-        setSelectedAllergens={handleAllergensChange}
-        allergenOptions={allergenOptions}
-      />
-
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
-        <Select
-          labelId="cuisine-types-label"
-          multiple
-          value={cuisine_types}
-          onChange={handleCuisineTypesChange}
-          input={<OutlinedInput label="Cuisine Types" />}
-          renderValue={(selected) =>
-            selected
-              .map((id) => {
-                const selectedCuisine = cuisineOptions.find((option) => option.id === id);
-                return selectedCuisine ? selectedCuisine.type : "";
-              })
-              .join(", ")
-          }
-          data-testid="cuisine-types-select"
-        >
-          {cuisineOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id} data-testid={`cuisine-types-option-${option.id}`}>
-              <Checkbox checked={cuisine_types.includes(option.id)} />
-              <ListItemText primary={option.type} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
       <TextField
+        label="Max Distance"
+        value={max_distance}
+        onChange={(e) => setMaxDistanceState(e.target.value)}
         fullWidth
         margin="normal"
-        label="Max Distance"
-        type="number"
-        value={max_distance}
-        onChange={handleMaxDistanceChange}
         data-testid="max-distance-input"
       />
 
@@ -268,8 +186,8 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
           control={
             <Switch
               checked={open_now}
-              onChange={handleOpenNowChange}
-              data-testid="open-now-checkbox"
+              onChange={(e) => setOpenNowState(e.target.checked)}
+              data-testid="open-now-switch"
             />
           }
           label="Open Now"
@@ -278,8 +196,8 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
           control={
             <Switch
               checked={accepts_large_parties}
-              onChange={handleAcceptsLargePartiesChange}
-              data-testid="accepts-large-parties-checkbox"
+              onChange={(e) => setAcceptsLargePartiesState(e.target.checked)}
+              data-testid="accepts-large-parties-switch"
             />
           }
           label="Accepts Large Parties"
@@ -292,6 +210,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
       <Button type="button" variant="contained" color="secondary" onClick={handleCancel} data-testid="cancel-button">
         Cancel
       </Button>
+      {error && <div data-testid="error-message">{error}</div>}
     </form>
   );
 };

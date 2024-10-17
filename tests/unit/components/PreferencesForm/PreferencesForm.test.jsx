@@ -6,16 +6,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { vi, describe, beforeEach, test, expect } from 'vitest';
 import axios from 'axios';
 import PreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm';
+import preferencesReducer from '../../../../src/redux/reducers/preferencesReducer';
 
-// Mock axios
 vi.mock('axios');
 
-// Create a mock store
 const createMockStore = (initialState) => {
   return configureStore({
     reducer: {
-      user: (state = initialState.user) => state,
-      preferences: (state = initialState.preferences) => state,
+      preferences: preferencesReducer,
     },
     preloadedState: initialState,
   });
@@ -26,7 +24,6 @@ describe('PreferencesForm', () => {
 
   beforeEach(() => {
     store = createMockStore({
-      user: { id: 1 },
       preferences: {
         max_price_range: '',
         meat_preference: '',
@@ -84,13 +81,13 @@ describe('PreferencesForm', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/Max Price Range/i)).toBeDefined();
-      expect(screen.getByLabelText(/Meat Preference/i)).toBeDefined();
-      expect(screen.getByLabelText(/Religious Restrictions/i)).toBeDefined();
-      expect(screen.getByLabelText(/Cuisine Types/i)).toBeDefined();
-      expect(screen.getByLabelText(/Max Distance/i)).toBeDefined();
-      expect(screen.getByLabelText(/Open Now/i)).toBeDefined();
-      expect(screen.getByLabelText(/Accepts Large Parties/i)).toBeDefined();
+      expect(screen.getByLabelText(/Max Price Range/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Meat Preference/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Religious Restrictions/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Cuisine Types/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Max Distance/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Open Now/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/Accepts Large Parties/i)).toBeInTheDocument();
     });
   });
 
@@ -101,14 +98,14 @@ describe('PreferencesForm', () => {
       </Provider>
     );
 
-    const select = await screen.findByLabelText(/Max Price Range/i);
+    const select = await screen.findByTestId('max-price-range-select');
     await userEvent.click(select);
 
     await waitFor(() => {
-      expect(screen.getByText('$')).toBeDefined();
-      expect(screen.getByText('$$')).toBeDefined();
-      expect(screen.getByText('$$$')).toBeDefined();
-      expect(screen.getByText('$$$$')).toBeDefined();
+      expect(screen.getByText('$')).toBeInTheDocument();
+      expect(screen.getByText('$$')).toBeInTheDocument();
+      expect(screen.getByText('$$$')).toBeInTheDocument();
+      expect(screen.getByText('$$$$')).toBeInTheDocument();
     });
   });
 
@@ -119,13 +116,13 @@ describe('PreferencesForm', () => {
       </Provider>
     );
 
-    const select = await screen.findByLabelText(/Meat Preference/i);
+    const select = await screen.findByTestId('meat-preference-select');
     await userEvent.click(select);
 
     await waitFor(() => {
-      expect(screen.getByText('Vegetarian')).toBeDefined();
-      expect(screen.getByText('Vegan')).toBeDefined();
-      expect(screen.getByText('Non-vegetarian')).toBeDefined();
+      expect(screen.getByText('Vegetarian')).toBeInTheDocument();
+      expect(screen.getByText('Vegan')).toBeInTheDocument();
+      expect(screen.getByText('Non-vegetarian')).toBeInTheDocument();
     });
   });
 
@@ -136,13 +133,13 @@ describe('PreferencesForm', () => {
       </Provider>
     );
 
-    const select = await screen.findByLabelText(/Religious Restrictions/i);
+    const select = await screen.findByTestId('religious-restrictions-select');
     await userEvent.click(select);
 
     await waitFor(() => {
-      expect(screen.getByText('Kosher')).toBeDefined();
-      expect(screen.getByText('Halal')).toBeDefined();
-      expect(screen.getByText('None')).toBeDefined();
+      expect(screen.getByText('Kosher')).toBeInTheDocument();
+      expect(screen.getByText('Halal')).toBeInTheDocument();
+      expect(screen.getByText('None')).toBeInTheDocument();
     });
   });
 
@@ -154,15 +151,15 @@ describe('PreferencesForm', () => {
     );
 
     // Open dropdowns and select options
-    const priceRangeSelect = await screen.findByLabelText(/Max Price Range/i);
+    const priceRangeSelect = await screen.findByTestId('max-price-range-select');
     await userEvent.click(priceRangeSelect);
     await userEvent.click(screen.getByText('$$$$'));
 
-    const meatPreferenceSelect = await screen.findByLabelText(/Meat Preference/i);
+    const meatPreferenceSelect = await screen.findByTestId('meat-preference-select');
     await userEvent.click(meatPreferenceSelect);
     await userEvent.click(screen.getByText('Vegetarian'));
 
-    const religiousRestrictionsSelect = await screen.findByLabelText(/Religious Restrictions/i);
+    const religiousRestrictionsSelect = await screen.findByTestId('religious-restrictions-select');
     await userEvent.click(religiousRestrictionsSelect);
     await userEvent.click(screen.getByText('None'));
     
@@ -200,7 +197,7 @@ describe('PreferencesForm', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(/Error fetching options/i)).toBeDefined();
+      expect(screen.getByTestId('error-message')).toHaveTextContent(/Error fetching options/i);
     });
   });
 });

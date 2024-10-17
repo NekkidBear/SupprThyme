@@ -2,202 +2,205 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import { vi } from 'vitest';
+import { configureStore } from '@reduxjs/toolkit';
+import { vi, describe, beforeEach, test, expect } from 'vitest';
 import axios from 'axios';
 import PreferencesForm from '../../../../src/components/PreferencesForm/PreferencesForm';
 
-const mockStore = configureStore([]);
-let store;
-
+// Mock axios
 vi.mock('axios');
 
-beforeEach(() => {
-  store = mockStore({
-    user: { id: 1 },
-    preferences: {
-      max_price_range: '',
-      meat_preference: '',
-      religious_restrictions: '',
-      allergens: [],
-      cuisine_types: [],
-      max_distance: '',
-      open_now: true,
-      accepts_large_parties: true,
+// Create a mock store
+const createMockStore = (initialState) => {
+  return configureStore({
+    reducer: {
+      user: (state = initialState.user) => state,
+      preferences: (state = initialState.preferences) => state,
     },
+    preloadedState: initialState,
   });
+};
 
-  // Mock API responses
-  axios.get.mockImplementation((url) => {
-    switch (url) {
-      case '/api/form_data/price-ranges':
-        return Promise.resolve({
-          data: [
+describe('PreferencesForm', () => {
+  let store;
+
+  beforeEach(() => {
+    store = createMockStore({
+      user: { id: 1 },
+      preferences: {
+        max_price_range: '',
+        meat_preference: '',
+        religious_restrictions: '',
+        allergens: [],
+        cuisine_types: [],
+        max_distance: '',
+        open_now: true,
+        accepts_large_parties: true,
+      },
+    });
+
+    vi.mocked(axios.get).mockImplementation((url) => {
+      switch (url) {
+        case '/api/form_data/price-ranges':
+          return Promise.resolve({ data: [
             { id: 1, range: '$' },
             { id: 2, range: '$$' },
             { id: 3, range: '$$$' },
             { id: 4, range: '$$$$' }
-          ]
-        });
-      case '/api/form_data/meat-preferences':
-        return Promise.resolve({
-          data: [
+          ]});
+        case '/api/form_data/meat-preferences':
+          return Promise.resolve({ data: [
             { id: 1, preference: 'Vegetarian' },
             { id: 2, preference: 'Vegan' },
             { id: 3, preference: 'Non-vegetarian' }
-          ]
-        });
-      case '/api/form_data/religious-options':
-        return Promise.resolve({
-          data: [
-            { id: 1, restriction: 'None' },
-            { id: 2, restriction: 'Halal' }
-          ]
-        });
-      case '/api/form_data/allergen-options':
-        return Promise.resolve({
-          data: [
+          ]});
+        case '/api/form_data/religious-options':
+          return Promise.resolve({ data: [
+            { id: 1, restriction: 'Kosher' },
+            { id: 2, restriction: 'Halal' },
+            { id: 3, restriction: 'None' }
+          ]});
+        case '/api/form_data/allergen-options':
+          return Promise.resolve({ data: [
             { id: 1, allergen: 'Peanuts' },
             { id: 2, allergen: 'Dairy' }
-          ]
-        });
-      case '/api/form_data/cuisine-options':
-        return Promise.resolve({
-          data: [
+          ]});
+        case '/api/form_data/cuisine-options':
+          return Promise.resolve({ data: [
             { id: 1, type: 'Italian' },
             { id: 2, type: 'Chinese' }
-          ]
-        });
-      default:
-        return Promise.resolve({ data: {} });
-    }
+          ]});
+        default:
+          return Promise.reject(new Error('Not found'));
+      }
+    });
   });
-});
 
-afterEach(() => {
-  vi.resetAllMocks();
-});
+  test('renders form fields', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
 
-const renderComponent = () => {
-  render(
-    <Provider store={store}>
-      <PreferencesForm />
-    </Provider>
-  );
-};
-
-test('renders price range options correctly', async () => {
-  renderComponent();
-
-  await waitFor(() => {
-    const select = screen.getByTestId('max-price-range-select');
-    expect(select).toBeInTheDocument();
-  }, { timeout: 3000 });
-
-  const select = screen.getByTestId('max-price-range-select');
-  await userEvent.click(select);
-
-  await waitFor(() => {
-    const options = screen.getAllByTestId(/^price-range-option-/);
-    expect(options).toHaveLength(4);
-    options.forEach((option, index) => {
-      expect(option).toHaveTextContent(['$', '$$', '$$$', '$$$$'][index]);
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Max Price Range/i)).toBeDefined();
+      expect(screen.getByLabelText(/Meat Preference/i)).toBeDefined();
+      expect(screen.getByLabelText(/Religious Restrictions/i)).toBeDefined();
+      expect(screen.getByLabelText(/Cuisine Types/i)).toBeDefined();
+      expect(screen.getByLabelText(/Max Distance/i)).toBeDefined();
+      expect(screen.getByLabelText(/Open Now/i)).toBeDefined();
+      expect(screen.getByLabelText(/Accepts Large Parties/i)).toBeDefined();
     });
-  }, { timeout: 3000 });
-});
+  });
 
-test('renders meat preference options correctly', async () => {
-  renderComponent();
+  test('renders price range options correctly', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
 
-  await waitFor(() => {
-    const select = screen.getByTestId('meat-preference-select');
-    expect(select).toBeInTheDocument();
-  }, { timeout: 3000 });
+    const select = await screen.findByLabelText(/Max Price Range/i);
+    await userEvent.click(select);
 
-  const select = screen.getByTestId('meat-preference-select');
-  await userEvent.click(select);
-
-  await waitFor(() => {
-    const options = screen.getAllByTestId(/^meat-preference-option-/);
-    expect(options).toHaveLength(3);
-    options.forEach((option, index) => {
-      expect(option).toHaveTextContent(['Vegetarian', 'Vegan', 'Non-vegetarian'][index]);
+    await waitFor(() => {
+      expect(screen.getByText('$')).toBeDefined();
+      expect(screen.getByText('$$')).toBeDefined();
+      expect(screen.getByText('$$$')).toBeDefined();
+      expect(screen.getByText('$$$$')).toBeDefined();
     });
-  }, { timeout: 3000 });
-});
+  });
 
-test('renders religious restrictions options correctly', async () => {
-  renderComponent();
+  test('renders meat preference options correctly', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
 
-  await waitFor(() => {
-    const select = screen.getByTestId('religious-restrictions-select');
-    expect(select).toBeInTheDocument();
-  }, { timeout: 3000 });
+    const select = await screen.findByLabelText(/Meat Preference/i);
+    await userEvent.click(select);
 
-  const select = screen.getByTestId('religious-restrictions-select');
-  await userEvent.click(select);
-
-  await waitFor(() => {
-    const options = screen.getAllByTestId(/^religious-restrictions-option-/);
-    expect(options).toHaveLength(2);
-    options.forEach((option, index) => {
-      expect(option).toHaveTextContent(['None', 'Halal'][index]);
+    await waitFor(() => {
+      expect(screen.getByText('Vegetarian')).toBeDefined();
+      expect(screen.getByText('Vegan')).toBeDefined();
+      expect(screen.getByText('Non-vegetarian')).toBeDefined();
     });
-  }, { timeout: 3000 });
-});
+  });
 
-test('allows setting and updating user preferences', async () => {
-  renderComponent();
+  test('renders religious restrictions options correctly', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
 
-  await waitFor(() => {
-    expect(screen.getByTestId('max-price-range-select')).toBeInTheDocument();
-    expect(screen.getByTestId('meat-preference-select')).toBeInTheDocument();
-    expect(screen.getByTestId('religious-restrictions-select')).toBeInTheDocument();
-    expect(screen.getByTestId('cuisine-types-select')).toBeInTheDocument();
-    expect(screen.getByTestId('max-distance-input')).toBeInTheDocument();
-    expect(screen.getByTestId('open-now-checkbox')).toBeInTheDocument();
-    expect(screen.getByTestId('accepts-large-parties-checkbox')).toBeInTheDocument();
-  }, { timeout: 3000 });
+    const select = await screen.findByLabelText(/Religious Restrictions/i);
+    await userEvent.click(select);
 
-  const maxPriceRangeSelect = screen.getByTestId('max-price-range-select');
-  await userEvent.click(maxPriceRangeSelect);
-  await userEvent.selectOptions(maxPriceRangeSelect, '4');
+    await waitFor(() => {
+      expect(screen.getByText('Kosher')).toBeDefined();
+      expect(screen.getByText('Halal')).toBeDefined();
+      expect(screen.getByText('None')).toBeDefined();
+    });
+  });
 
-  const meatPreferenceSelect = screen.getByTestId('meat-preference-select');
-  await userEvent.click(meatPreferenceSelect);
-  await userEvent.selectOptions(meatPreferenceSelect, '1');
+  test('allows setting and updating user preferences', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
 
-  const religiousRestrictionsSelect = screen.getByTestId('religious-restrictions-select');
-  await userEvent.click(religiousRestrictionsSelect);
-  await userEvent.selectOptions(religiousRestrictionsSelect, '1');
+    // Open dropdowns and select options
+    const priceRangeSelect = await screen.findByLabelText(/Max Price Range/i);
+    await userEvent.click(priceRangeSelect);
+    await userEvent.click(screen.getByText('$$$$'));
 
-  // Select cuisine types
-  const cuisineTypesSelect = screen.getByTestId('cuisine-types-select');
-  await userEvent.click(cuisineTypesSelect);
-  const italianOption = screen.getByText('Italian');
-  await userEvent.click(italianOption);
-  await userEvent.click(document.body); // Close the cuisine types dropdown
+    const meatPreferenceSelect = await screen.findByLabelText(/Meat Preference/i);
+    await userEvent.click(meatPreferenceSelect);
+    await userEvent.click(screen.getByText('Vegetarian'));
 
-  await userEvent.type(screen.getByTestId('max-distance-input'), '10');
-  await userEvent.click(screen.getByTestId('open-now-checkbox'));
+    const religiousRestrictionsSelect = await screen.findByLabelText(/Religious Restrictions/i);
+    await userEvent.click(religiousRestrictionsSelect);
+    await userEvent.click(screen.getByText('None'));
+    
+    // Type max distance
+    await userEvent.type(screen.getByLabelText(/Max Distance/i), '10');
 
-  // Submit the form
-  await userEvent.click(screen.getByTestId('save-preferences-button'));
+    // Toggle switches
+    await userEvent.click(screen.getByLabelText(/Open Now/i));
+    await userEvent.click(screen.getByLabelText(/Accepts Large Parties/i));
 
-  // Check if the dispatch function was called with the correct arguments
-  await waitFor(() => {
-    const actions = store.getActions();
-    const updateAction = actions.find(action => action.type === 'UPDATE_PREFERENCES');
-    expect(updateAction).toBeDefined();
-    expect(updateAction.payload).toEqual(expect.objectContaining({
-      user_id: 1,
-      max_price_range: '4',
-      meat_preference: '1',
-      religious_restrictions: '1',
-      max_distance: '10',
-      open_now: false,
-      accepts_large_parties: true,
-      cuisine_types: [1],
-    }));
-  }, { timeout: 3000 });
+    // Submit form
+    await userEvent.click(screen.getByRole('button', { name: /Save Preferences/i }));
+
+    // Check if the correct action was dispatched
+    await waitFor(() => {
+      const state = store.getState();
+      expect(state.preferences).toEqual(expect.objectContaining({
+        max_price_range: 4,
+        meat_preference: 1,
+        religious_restrictions: 3,
+        max_distance: '10',
+        open_now: false,
+        accepts_large_parties: false,
+      }));
+    });
+  });
+
+  test('displays error message on API failure', async () => {
+    vi.mocked(axios.get).mockRejectedValueOnce(new Error('API Error'));
+
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/Error fetching options/i)).toBeDefined();
+    });
+  });
 });

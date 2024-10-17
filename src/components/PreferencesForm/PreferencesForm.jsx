@@ -26,7 +26,8 @@ import {
   setMaxDistance,
   setOpenNow,
   setAcceptsLargeParties,
-} from '../../redux/actions/PreferencesForm.actions.js'; // Import the action creators
+  updatePreferences,
+} from '../../redux/actions/PreferencesForm.actions.js';
 
 const UserPreferencesForm = ({ onSubmit, onCancel }) => {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
   const [priceRangeOptions, setPriceRangeOptions] = useState([]);
   const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([]);
   const [religiousRestrictionOptions, setReligiousRestrictionsOptions] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchOptions = async () => {
@@ -73,6 +75,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         setCuisineOptions(cuisineOpts.data);
       } catch (error) {
         console.error("Error fetching options:", error);
+        setError("Error fetching options. Please try again later.");
       }
     };
 
@@ -93,10 +96,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
       accepts_large_parties,
     };
 
-    dispatch({
-      type: 'UPDATE_PREFERENCES',
-      payload: preferencesData,
-    });
+    dispatch(updatePreferences(preferencesData));
 
     if (onSubmit) {
       onSubmit(preferencesData);
@@ -171,6 +171,7 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
 
   return (
     <form onSubmit={handleSubmit} data-testid="preferences-form">
+      {error && <div data-testid="error-message">{error}</div>}
       <FormControl fullWidth margin="normal">
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
         <Select

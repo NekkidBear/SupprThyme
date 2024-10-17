@@ -8,6 +8,7 @@ export const SET_CUISINE_TYPES = 'SET_CUISINE_TYPES';
 export const SET_MAX_DISTANCE = 'SET_MAX_DISTANCE';
 export const SET_OPEN_NOW = 'SET_OPEN_NOW';
 export const SET_ACCEPTS_LARGE_PARTIES = 'SET_ACCEPTS_LARGE_PARTIES';
+export const UPDATE_PREFERENCES = 'UPDATE_PREFERENCES';
 
 // Action creators
 export const resetPreferencesForm = () => ({
@@ -52,4 +53,9 @@ export const setOpenNow = (openNow) => ({
 export const setAcceptsLargeParties = (acceptsLargeParties) => ({
   type: SET_ACCEPTS_LARGE_PARTIES,
   payload: acceptsLargeParties,
+});
+
+export const updatePreferences = (preferences) => ({
+  type: UPDATE_PREFERENCES,
+  payload: preferences,
 });

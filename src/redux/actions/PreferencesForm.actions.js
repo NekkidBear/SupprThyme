@@ -10,6 +10,13 @@ export const SET_OPEN_NOW = 'SET_OPEN_NOW';
 export const SET_ACCEPTS_LARGE_PARTIES = 'SET_ACCEPTS_LARGE_PARTIES';
 export const UPDATE_PREFERENCES = 'UPDATE_PREFERENCES';
 
+// Fetch Options Actions
+export const FETCH_PRICE_RANGES = 'FETCH_PRICE_RANGES';
+export const FETCH_MEAT_PREFERENCES = 'FETCH_MEAT_PREFERENCES';
+export const FETCH_RELIGIOUS_RESTRICTIONS = 'FETCH_RELIGIOUS_RESTRICTIONS';
+export const FETCH_ALLERGEN_OPTIONS = 'FETCH_ALLERGEN_OPTIONS';
+export const FETCH_CUISINE_OPTIONS = 'FETCH_CUISINE_OPTIONS';
+
 // Action creators
 export const resetPreferencesForm = () => ({
   type: RESET_PREFERENCES_FORM,
@@ -59,3 +66,71 @@ export const updatePreferences = (preferences) => ({
   type: UPDATE_PREFERENCES,
   payload: preferences,
 });
+
+// Fetch Options Action Creators
+import axios from 'axios';
+
+export const fetchPriceRanges = () => async (dispatch) => {
+  try {
+    const response = await axios.get('/api/form_data/price-ranges');
+    dispatch({
+      type: FETCH_PRICE_RANGES,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.error('Error fetching price ranges:', error);
+    // Handle error appropriately (e.g., dispatch an error action)
+  }
+};
+
+export const fetchMeatPreferences = () => async (dispatch) => {
+  try {
+    const response = await axios.get('/api/form_data/meat-preferences');
+    dispatch({
+      type: FETCH_MEAT_PREFERENCES,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.error('Error fetching meat preferences:', error);
+    // Handle error appropriately (e.g., dispatch an error action)
+  }
+};
+
+export const fetchReligiousRestrictions = () => async (dispatch) => {
+  try {
+    const response = await axios.get('/api/form_data/religious-options');
+    dispatch({
+      type: FETCH_RELIGIOUS_RESTRICTIONS,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.error('Error fetching religious restrictions:', error);
+    // Handle error appropriately (e.g., dispatch an error action)
+  }
+};
+
+export const fetchAllergenOptions = () => async (dispatch) => {
+  try {
+    const response = await axios.get('/api/form_data/allergen-options');
+    dispatch({
+      type: FETCH_ALLERGEN_OPTIONS,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.error('Error fetching allergen options:', error);
+    // Handle error appropriately (e.g., dispatch an error action)
+  }
+};
+
+export const fetchCuisineOptions = () => async (dispatch) => {
+  try {
+    const response = await axios.get('/api/form_data/cuisine-options');
+    dispatch({
+      type: FETCH_CUISINE_OPTIONS,
+      payload: response.data,
+    });
+  } catch (error) {
+    console.error('Error fetching cuisine options:', error);
+    // Handle error appropriately (e.g., dispatch an error action)
+  }
+};

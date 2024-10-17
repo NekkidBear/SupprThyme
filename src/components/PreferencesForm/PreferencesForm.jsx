@@ -14,7 +14,6 @@ import {
   Checkbox,
   ListItemText,
 } from "@mui/material";
-import axios from "axios";
 import AllergenSelect from "./AllergenSelect";
 import {
   resetPreferencesForm,
@@ -27,6 +26,11 @@ import {
   setOpenNow,
   setAcceptsLargeParties,
   updatePreferences,
+  fetchPriceRanges,
+  fetchMeatPreferences,
+  fetchReligiousRestrictions,
+  fetchAllergenOptions,
+  fetchCuisineOptions,
 } from '../../redux/actions/PreferencesForm.actions.js';
 
 const UserPreferencesForm = ({ onSubmit, onCancel }) => {
@@ -36,87 +40,56 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
 
   // State variables
   const [selectedAllergens, setSelectedAllergens] = useState(preferences.allergens);
-  const [max_price_range, setMaxPriceRangeState] = useState(preferences.max_price_range);
-  const [meat_preference, setMeatPreferenceState] = useState(preferences.meat_preference);
-  const [religious_restrictions, setReligiousRestrictionsState] = useState(preferences.religious_restrictions);
-  const [cuisine_types, setCuisineTypesState] = useState(preferences.cuisine_types);
-  const [max_distance, setMaxDistanceState] = useState(preferences.max_distance);
-  const [open_now, setOpenNowState] = useState(preferences.open_now);
-  const [accepts_large_parties, setAcceptsLargePartiesState] = useState(preferences.accepts_large_parties);
+  const [maxPriceRange, setMaxPriceRange] = useState(preferences.max_price_range);
+  const [meatPreference, setMeatPreference] = useState(preferences.meat_preference);
+  const [religiousRestrictions, setReligiousRestrictions] = useState(preferences.religious_restrictions);
+  const [cuisineTypes, setCuisineTypes] = useState(preferences.cuisine_types);
+  const [maxDistance, setMaxDistance] = useState(preferences.max_distance);
+  const [openNow, setOpenNow] = useState(preferences.open_now);
+  const [acceptsLargeParties, setAcceptsLargeParties] = useState(preferences.accepts_large_parties);
 
-  const [allergenOptions, setAllergenOptions] = useState([]);
-  const [cuisineOptions, setCuisineOptions] = useState([]);
-  const [priceRangeOptions, setPriceRangeOptions] = useState([]);
-  const [meatPreferenceOptions, setMeatPreferenceOptions] = useState([]);
-  const [religiousRestrictionOptions, setReligiousRestrictionsOptions] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchOptions = async () => {
-      try {
-        const [
-          priceRanges,
-          meatPreferences,
-          religiousOptions,
-          allergenOpts,
-          cuisineOpts,
-        ] = await Promise.all([
-          axios.get("/api/form_data/price-ranges"),
-          axios.get("/api/form_data/meat-preferences"),
-          axios.get("/api/form_data/religious-options"),
-          axios.get("/api/form_data/allergen-options"),
-          axios.get("/api/form_data/cuisine-options"),
-        ]);
+    // Fetch options when the component mounts
+    dispatch(fetchPriceRanges());
+    dispatch(fetchMeatPreferences());
+    dispatch(fetchReligiousRestrictions());
+    dispatch(fetchAllergenOptions());
+    dispatch(fetchCuisineOptions());
+  }, [dispatch]);
 
-        setPriceRangeOptions(priceRanges.data);
-        setMeatPreferenceOptions(meatPreferences.data);
-        setReligiousRestrictionsOptions(religiousOptions.data);
-        setAllergenOptions(allergenOpts.data);
-        setCuisineOptions(cuisineOpts.data);
-      } catch (error) {
-        console.error("Error fetching options:", error);
-        setError("Error fetching options. Please try again later.");
-      }
-    };
-
-    fetchOptions();
-  }, []);
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const preferencesData = {
       user_id: user.id,
-      max_price_range,
-      meat_preference,
-      religious_restrictions,
+      max_price_range: maxPriceRange,
+      meat_preference: meatPreference,
+      religious_restrictions: religiousRestrictions,
       allergens: selectedAllergens,
-      cuisine_types,
-      max_distance,
-      open_now,
-      accepts_large_parties,
+      cuisine_types: cuisineTypes,
+      max_distance: maxDistance,
+      open_now: openNow,
+      accepts_large_parties: acceptsLargeParties,
     };
 
-    dispatch(updatePreferences(preferencesData));
-
-    if (onSubmit) {
-      onSubmit(preferencesData);
+    try {
+      await dispatch(updatePreferences(preferencesData));
+      // If the submission is successful, call the onSubmit callback
+      if (onSubmit) {
+        onSubmit(preferencesData);
+      }
+    } catch (error) {
+      // Handle error, e.g., display an error message
+      setError('Failed to update preferences. Please try again later.');
     }
   };
 
   const handleCancel = () => {
-    // Reset the form to its initial state or perform any other action
-    setSelectedAllergens([]);
-    setMaxPriceRangeState("");
-    setMeatPreferenceState("");
-    setReligiousRestrictionsState("");
-    setCuisineTypesState([]);
-    setMaxDistanceState("");
-    setOpenNowState(true);
-    setAcceptsLargePartiesState(true);
-
-    // Dispatch the reset action
+    // Reset the form to its initial state
     dispatch(resetPreferencesForm());
 
+    // If the cancellation is successful, call the onCancel callback
     if (onCancel) {
       onCancel();
     }
@@ -128,11 +101,11 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
         <Select
           labelId="max-price-range-label"
-          value={max_price_range}
-          onChange={(e) => setMaxPriceRangeState(e.target.value)}
+          value={maxPriceRange}
+          onChange={(e) => dispatch(setMaxPriceRange(e.target.value))}
           data-testid="max-price-range-select"
         >
-          {priceRangeOptions.map((option) => (
+          {preferences.priceRangeOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.range}
             </MenuItem>
@@ -144,11 +117,11 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <InputLabel id="meat-preference-label">Meat Preference</InputLabel>
         <Select
           labelId="meat-preference-label"
-          value={meat_preference}
-          onChange={(e) => setMeatPreferenceState(e.target.value)}
+          value={meatPreference}
+          onChange={(e) => dispatch(setMeatPreference(e.target.value))}
           data-testid="meat-preference-select"
         >
-          {meatPreferenceOptions.map((option) => (
+          {preferences.meatPreferenceOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.preference}
             </MenuItem>
@@ -160,11 +133,11 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <InputLabel id="religious-restrictions-label">Religious Restrictions</InputLabel>
         <Select
           labelId="religious-restrictions-label"
-          value={religious_restrictions}
-          onChange={(e) => setReligiousRestrictionsState(e.target.value)}
+          value={religiousRestrictions}
+          onChange={(e) => dispatch(setReligiousRestrictions(e.target.value))}
           data-testid="religious-restrictions-select"
         >
-          {religiousRestrictionOptions.map((option) => (
+          {preferences.religiousRestrictionOptions.map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.restriction}
             </MenuItem>
@@ -172,10 +145,43 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         </Select>
       </FormControl>
 
+      <AllergenSelect
+        selectedAllergens={selectedAllergens}
+        setSelectedAllergens={(allergens) => dispatch(setAllergens(allergens))}
+        allergenOptions={preferences.allergenOptions}
+      />
+
+      {/* Cuisine type select (similar to AllergenSelect) */}
+      <FormControl fullWidth margin="normal">
+        <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
+        <Select
+          labelId="cuisine-types-label"
+          multiple
+          value={cuisineTypes}
+          onChange={(e) => dispatch(setCuisineTypes(e.target.value))}
+          input={<OutlinedInput label="Cuisine Types" />}
+          data-testid="cuisine-types-select"
+          renderValue={(selected) =>
+            selected
+              .map((cuisineTypeId) =>
+                preferences.cuisineOptions.find((c) => c.id === cuisineTypeId)?.type
+              )
+              .join(', ')
+          }
+        >
+          {preferences.cuisineOptions.map((cuisine) => (
+            <MenuItem key={cuisine.id} value={cuisine.id}>
+              <Checkbox checked={cuisineTypes.includes(cuisine.id)} />
+              <ListItemText primary={cuisine.type} />
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
       <TextField
         label="Max Distance"
-        value={max_distance}
-        onChange={(e) => setMaxDistanceState(e.target.value)}
+        value={maxDistance}
+        onChange={(e) => dispatch(setMaxDistance(e.target.value))}
         fullWidth
         margin="normal"
         data-testid="max-distance-input"
@@ -185,8 +191,8 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <FormControlLabel
           control={
             <Switch
-              checked={open_now}
-              onChange={(e) => setOpenNowState(e.target.checked)}
+              checked={openNow}
+              onChange={(e) => dispatch(setOpenNow(e.target.checked))}
               data-testid="open-now-switch"
             />
           }
@@ -195,8 +201,8 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
         <FormControlLabel
           control={
             <Switch
-              checked={accepts_large_parties}
-              onChange={(e) => setAcceptsLargePartiesState(e.target.checked)}
+              checked={acceptsLargeParties}
+              onChange={(e) => dispatch(setAcceptsLargeParties(e.target.checked))}
               data-testid="accepts-large-parties-switch"
             />
           }

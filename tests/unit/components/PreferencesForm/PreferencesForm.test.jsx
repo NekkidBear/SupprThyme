@@ -163,7 +163,7 @@ describe('PreferencesForm', () => {
     await userEvent.click(screen.getByLabelText(/Accepts Large Parties/i));
 
     // Submit form
-    await userEvent.click(screen.getByRole('button', { name: /Save Preferences/i }));
+    await userEvent.click(screen.getByTestId('save-preferences-button'));
 
     // Check if the correct action was dispatched
     await waitFor(() => {
@@ -180,7 +180,13 @@ describe('PreferencesForm', () => {
   });
 
   test('handles errors correctly', async () => {
-    axios.get.mockRejectedValueOnce(new Error('Error fetching options'));
+    // Mock the dispatch function to simulate an error
+    const mockDispatch = vi.fn(() => {
+      throw new Error('Error fetching options');
+    });
+
+    const useDispatchSpy = vi.spyOn(require('react-redux'), 'useDispatch');
+    useDispatchSpy.mockReturnValue(mockDispatch);
 
     render(
       <Provider store={store}>
@@ -189,7 +195,87 @@ describe('PreferencesForm', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText('Error fetching options. Please try again later.')).toBeInTheDocument();
+      expect(screen.getByTestId('error-message')).toHaveTextContent('Failed to update preferences. Please try again later.');
+    });
+
+    useDispatchSpy.mockRestore();
+  });
+
+  test('shows validation error when required fields are not filled', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
+
+    // Submit form without filling required fields
+    await userEvent.click(screen.getByTestId('save-preferences-button'));
+
+    await waitFor(() => {
+      expect(screen.getByTestId('error-message')).toHaveTextContent('Please fill in all required fields.');
+    });
+  });
+
+  test('cancel button opens confirmation dialog', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
+
+    await userEvent.click(screen.getByTestId('cancel-button'));
+
+    await waitFor(() => {
+      expect(screen.getByText('Cancel Changes?')).toBeInTheDocument();
+      expect(screen.getByText('Are you sure you want to cancel? All unsaved changes will be lost.')).toBeInTheDocument();
+    });
+  });
+
+  test('AllergenSelect integration', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
+
+    const allergenSelect = await screen.findByLabelText(/Allergens/i);
+    await userEvent.click(allergenSelect);
+
+    await waitFor(() => {
+      expect(screen.getByText('Peanuts')).toBeInTheDocument();
+      expect(screen.getByText('Shellfish')).toBeInTheDocument();
+    });
+
+    await userEvent.click(screen.getByText('Peanuts'));
+
+    await waitFor(() => {
+      const state = store.getState();
+      expect(state.preferences.allergens).toContain('Peanuts');
+    });
+  });
+
+  test('cuisine types multi-select functionality', async () => {
+    render(
+      <Provider store={store}>
+        <PreferencesForm />
+      </Provider>
+    );
+
+    const cuisineTypesSelect = await screen.findByLabelText(/Cuisine Types/i);
+    await userEvent.click(cuisineTypesSelect);
+
+    await waitFor(() => {
+      expect(screen.getByText('Italian')).toBeInTheDocument();
+      expect(screen.getByText('Chinese')).toBeInTheDocument();
+    });
+
+    await userEvent.click(screen.getByText('Italian'));
+    await userEvent.click(screen.getByText('Chinese'));
+
+    await waitFor(() => {
+      const state = store.getState();
+      expect(state.preferences.cuisine_types).toContain('Italian');
+      expect(state.preferences.cuisine_types).toContain('Chinese');
     });
   });
 });

@@ -13,6 +13,13 @@ import {
   OutlinedInput,
   Checkbox,
   ListItemText,
+  Typography,
+  Grid,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 import AllergenSelect from "./AllergenSelect";
 import {
@@ -31,27 +38,17 @@ import {
   fetchReligiousRestrictions,
   fetchAllergenOptions,
   fetchCuisineOptions,
-} from '../../redux/actions/PreferencesForm.actions.js';
+} from "../../redux/actions/PreferencesForm.actions.js";
 
 const UserPreferencesForm = ({ onSubmit, onCancel }) => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const preferences = useSelector((store) => store.preferences);
 
-  // State variables
-  const [selectedAllergens, setSelectedAllergens] = useState(preferences.allergens);
-  const [maxPriceRange, setMaxPriceRange] = useState(preferences.max_price_range);
-  const [meatPreference, setMeatPreference] = useState(preferences.meat_preference);
-  const [religiousRestrictions, setReligiousRestrictions] = useState(preferences.religious_restrictions);
-  const [cuisineTypes, setCuisineTypes] = useState(preferences.cuisine_types);
-  const [maxDistance, setMaxDistance] = useState(preferences.max_distance);
-  const [openNow, setOpenNow] = useState(preferences.open_now);
-  const [acceptsLargeParties, setAcceptsLargeParties] = useState(preferences.accepts_large_parties);
-
   const [error, setError] = useState(null);
+  const [openCancelDialog, setOpenCancelDialog] = useState(false);
 
   useEffect(() => {
-    // Fetch options when the component mounts
     dispatch(fetchPriceRanges());
     dispatch(fetchMeatPreferences());
     dispatch(fetchReligiousRestrictions());
@@ -61,35 +58,31 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const preferencesData = {
-      user_id: user.id,
-      max_price_range: maxPriceRange,
-      meat_preference: meatPreference,
-      religious_restrictions: religiousRestrictions,
-      allergens: selectedAllergens,
-      cuisine_types: cuisineTypes,
-      max_distance: maxDistance,
-      open_now: openNow,
-      accepts_large_parties: acceptsLargeParties,
-    };
+    setError(null);
+    
+    // Basic form validation
+    if (!preferences.max_price_range || !preferences.meat_preference || preferences.allergens.length === 0) {
+      setError("Please fill in all required fields.");
+      return;
+    }
 
     try {
-      await dispatch(updatePreferences(preferencesData));
-      // If the submission is successful, call the onSubmit callback
+      await dispatch(updatePreferences(preferences));
       if (onSubmit) {
-        onSubmit(preferencesData);
+        onSubmit(preferences);
       }
     } catch (error) {
-      // Handle error, e.g., display an error message
-      setError('Failed to update preferences. Please try again later.');
+      setError("Failed to update preferences. Please try again later.");
     }
   };
 
   const handleCancel = () => {
-    // Reset the form to its initial state
-    dispatch(resetPreferencesForm());
+    setOpenCancelDialog(true);
+  };
 
-    // If the cancellation is successful, call the onCancel callback
+  const confirmCancel = () => {
+    dispatch(resetPreferencesForm());
+    setOpenCancelDialog(false);
     if (onCancel) {
       onCancel();
     }
@@ -97,126 +90,170 @@ const UserPreferencesForm = ({ onSubmit, onCancel }) => {
 
   return (
     <form onSubmit={handleSubmit} data-testid="preferences-form">
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="max-price-range-label">Max Price Range</InputLabel>
-        <Select
-          labelId="max-price-range-label"
-          value={maxPriceRange}
-          onChange={(e) => dispatch(setMaxPriceRange(e.target.value))}
-          data-testid="max-price-range-select"
-        >
-          {preferences.priceRangeOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {option.range}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="meat-preference-label">Meat Preference</InputLabel>
-        <Select
-          labelId="meat-preference-label"
-          value={meatPreference}
-          onChange={(e) => dispatch(setMeatPreference(e.target.value))}
-          data-testid="meat-preference-select"
-        >
-          {preferences.meatPreferenceOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {option.preference}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="religious-restrictions-label">Religious Restrictions</InputLabel>
-        <Select
-          labelId="religious-restrictions-label"
-          value={religiousRestrictions}
-          onChange={(e) => dispatch(setReligiousRestrictions(e.target.value))}
-          data-testid="religious-restrictions-select"
-        >
-          {preferences.religiousRestrictionOptions.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {option.restriction}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <AllergenSelect
-        selectedAllergens={selectedAllergens}
-        setSelectedAllergens={(allergens) => dispatch(setAllergens(allergens))}
-        allergenOptions={preferences.allergenOptions}
-      />
-
-      {/* Cuisine type select (similar to AllergenSelect) */}
-      <FormControl fullWidth margin="normal">
-        <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
-        <Select
-          labelId="cuisine-types-label"
-          multiple
-          value={cuisineTypes}
-          onChange={(e) => dispatch(setCuisineTypes(e.target.value))}
-          input={<OutlinedInput label="Cuisine Types" />}
-          data-testid="cuisine-types-select"
-          renderValue={(selected) =>
-            selected
-              .map((cuisineTypeId) =>
-                preferences.cuisineOptions.find((c) => c.id === cuisineTypeId)?.type
-              )
-              .join(', ')
-          }
-        >
-          {preferences.cuisineOptions.map((cuisine) => (
-            <MenuItem key={cuisine.id} value={cuisine.id}>
-              <Checkbox checked={cuisineTypes.includes(cuisine.id)} />
-              <ListItemText primary={cuisine.type} />
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-
-      <TextField
-        label="Max Distance"
-        value={maxDistance}
-        onChange={(e) => dispatch(setMaxDistance(e.target.value))}
-        fullWidth
-        margin="normal"
-        data-testid="max-distance-input"
-      />
-
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={openNow}
-              onChange={(e) => dispatch(setOpenNow(e.target.checked))}
-              data-testid="open-now-switch"
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="max-price-range-label">Max Price Range *</InputLabel>
+            <Select
+              labelId="max-price-range-label"
+              value={preferences.max_price_range}
+              onChange={(e) => dispatch(setMaxPriceRange(e.target.value))}
+              data-testid="max-price-range-select"
+              required
+            >
+              {preferences.priceRangeOptions.map((option) => (
+                <MenuItem key={option.id} value={option.id}>
+                  {option.range}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="meat-preference-label">Meat Preference *</InputLabel>
+            <Select
+              labelId="meat-preference-label"
+              value={preferences.meat_preference}
+              onChange={(e) => dispatch(setMeatPreference(e.target.value))}
+              data-testid="meat-preference-select"
+              required
+            >
+              {preferences.meatPreferenceOptions.map((option) => (
+                <MenuItem key={option.id} value={option.id}>
+                  {option.preference}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="religious-restrictions-label">Religious Restrictions</InputLabel>
+            <Select
+              labelId="religious-restrictions-label"
+              value={preferences.religious_restrictions}
+              onChange={(e) => dispatch(setReligiousRestrictions(e.target.value))}
+              data-testid="religious-restrictions-select"
+            >
+              {preferences.religiousRestrictionOptions.map((option) => (
+                <MenuItem key={option.id} value={option.id}>
+                  {option.restriction}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12}>
+          <AllergenSelect
+            allergens={preferences.allergens}
+            allergenOptions={preferences.allergenOptions}
+            onChange={(selected) => dispatch(setAllergens(selected))}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="cuisine-types-label">Cuisine Types</InputLabel>
+            <Select
+              labelId="cuisine-types-label"
+              multiple
+              value={preferences.cuisine_types}
+              onChange={(e) => dispatch(setCuisineTypes(e.target.value))}
+              input={<OutlinedInput label="Cuisine Types" />}
+              renderValue={(selected) => selected.join(", ")}
+              data-testid="cuisine-types-select"
+            >
+              {preferences.cuisineOptions.map((option) => (
+                <MenuItem key={option.id} value={option.type}>
+                  <Checkbox checked={preferences.cuisine_types.indexOf(option.type) > -1} />
+                  <ListItemText primary={option.type} />
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            fullWidth
+            label="Max Distance (miles)"
+            type="number"
+            value={preferences.max_distance}
+            onChange={(e) => dispatch(setMaxDistance(e.target.value))}
+            data-testid="max-distance-input"
+          />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={preferences.open_now}
+                  onChange={(e) => dispatch(setOpenNow(e.target.checked))}
+                  data-testid="open-now-switch"
+                />
+              }
+              label="Open Now"
             />
-          }
-          label="Open Now"
-        />
-        <FormControlLabel
-          control={
-            <Switch
-              checked={acceptsLargeParties}
-              onChange={(e) => dispatch(setAcceptsLargeParties(e.target.checked))}
-              data-testid="accepts-large-parties-switch"
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={preferences.accepts_large_parties}
+                  onChange={(e) => dispatch(setAcceptsLargeParties(e.target.checked))}
+                  data-testid="accepts-large-parties-switch"
+                />
+              }
+              label="Accepts Large Parties"
             />
-          }
-          label="Accepts Large Parties"
-        />
-      </FormGroup>
+          </FormGroup>
+        </Grid>
+      </Grid>
 
-      <Button type="submit" variant="contained" color="primary" data-testid="save-preferences-button">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        data-testid="save-preferences-button"
+        sx={{ mt: 2, mr: 1 }}
+      >
         Save Preferences
       </Button>
-      <Button type="button" variant="contained" color="secondary" onClick={handleCancel} data-testid="cancel-button">
+      <Button
+        type="button"
+        variant="contained"
+        color="secondary"
+        onClick={handleCancel}
+        data-testid="cancel-button"
+        sx={{ mt: 2 }}
+      >
         Cancel
       </Button>
-      {error && <div data-testid="error-message">{error}</div>}
+      {error && (
+        <Typography color="error" data-testid="error-message" sx={{ mt: 2 }}>
+          {error}
+        </Typography>
+      )}
+
+      <Dialog
+        open={openCancelDialog}
+        onClose={() => setOpenCancelDialog(false)}
+        aria-labelledby="cancel-dialog-title"
+        aria-describedby="cancel-dialog-description"
+      >
+        <DialogTitle id="cancel-dialog-title">{"Cancel Changes?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="cancel-dialog-description">
+            Are you sure you want to cancel? All unsaved changes will be lost.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenCancelDialog(false)} color="primary">
+            No, Keep Editing
+          </Button>
+          <Button onClick={confirmCancel} color="primary" autoFocus>
+            Yes, Cancel Changes
+          </Button>
+        </DialogActions>
+      </Dialog>
     </form>
   );
 };

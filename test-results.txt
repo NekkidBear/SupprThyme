@@ -1,379 +1,71 @@
 
 > supprthyme@2.0.0 test
-> vitest run
+> vitest run preferencesForm.test.js
 
 
  RUN  v2.1.3 /Users/jasonking-lowe/Documents/Gymnarctos Studios/SupprThyme
 
- ❯ tests/unit/components/CreateGroupForm/GroupForm.test.jsx  (4 tests | 4 failed) 50ms
-   × GroupForm > renders group form
-     → Cannot read properties of undefined (reading 'primary')
-   × GroupForm > allows adding and removing group members
-     → Cannot read properties of undefined (reading 'primary')
-   × GroupForm > dispatches CREATE_GROUP action on form submission
-     → Cannot read properties of undefined (reading 'primary')
-   × GroupForm > displays error message when group creation fails
-     → Cannot read properties of undefined (reading 'primary')
- ❯ tests/unit/components/LoginForm/LoginForm.test.jsx  (3 tests | 1 failed) 1256ms
-   × LoginForm > dispatches LOGIN action on form submission
-     → expected "spy" to be called with arguments: [ ObjectContaining{…} ]
-
-Received: 
-
-  1st spy call:
-
-  Array [
--   ObjectContaining {
-+   Object {
-      "payload": Object {
-+       "latitude": null,
-+       "longitude": null,
-        "password": "testpass",
-        "username": "testuser",
-      },
-      "type": "LOGIN",
-    },
-  ]
-
-
-Number of calls: 1
-
+ ❯ tests/unit/components/PreferencesForm/PreferencesForm.test.jsx  (9 tests | 4 failed) 2693ms
+   × PreferencesForm > allows setting and updating user preferences
+     → Value "4" not found in options
 
 Ignored nodes: comments, script, style
-[36m<html>[39m
-  [36m<head />[39m
-  [36m<body>[39m
-    [36m<div>[39m
-      [36m<form[39m
-        [33mclass[39m=[32m"formPanel"[39m
+[36m<div[39m
+  [33mclass[39m=[32m"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"[39m
+  [33mdata-testid[39m=[32m"max-price-range-select"[39m
+  [33mrequired[39m=[32m""[39m
+[36m>[39m
+  [36m<div[39m
+    [33maria-controls[39m=[32m":rs:"[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"listbox"[39m
+    [33maria-labelledby[39m=[32m"max-price-range-label"[39m
+    [33mclass[39m=[32m"MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-w76bbz-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"[39m
+    [33mrole[39m=[32m"combobox"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"notranslate"[39m
+    [36m>[39m
+      [0m​[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<input[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33maria-invalid[39m=[32m"false"[39m
+    [33mclass[39m=[32m"MuiSelect-nativeInput css-j0riat-MuiSelect-nativeInput"[39m
+    [33mrequired[39m=[32m""[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+  [36m<svg[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-lohd6h-MuiSvgIcon-root-MuiSelect-icon"[39m
+    [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
+    [33mfocusable[39m=[32m"false"[39m
+    [33mviewBox[39m=[32m"0 0 24 24"[39m
+  [36m>[39m
+    [36m<path[39m
+      [33md[39m=[32m"M7 10l5 5 5-5z"[39m
+    [36m/>[39m
+  [36m</svg>[39m
+  [36m<fieldset[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"[39m
+  [36m>[39m
+    [36m<legend[39m
+      [33mclass[39m=[32m"css-w4cd9x"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"notranslate"[39m
       [36m>[39m
-        [36m<h2>[39m
-          [0mLogin[0m
-        [36m</h2>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"MuiFormControl-root MuiTextField-root css-1xp5r68-MuiFormControl-root-MuiTextField-root"[39m
-        [36m>[39m
-          [36m<label[39m
-            [33mclass[39m=[32m"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-113d811-MuiFormLabel-root-MuiInputLabel-root"[39m
-            [33mdata-shrink[39m=[32m"true"[39m
-            [33mfor[39m=[32m":r2:"[39m
-            [33mid[39m=[32m":r2:-label"[39m
-          [36m>[39m
-            [0mUsername[0m
-            [36m<span[39m
-              [33maria-hidden[39m=[32m"true"[39m
-              [33mclass[39m=[32m"MuiFormLabel-asterisk MuiInputLabel-asterisk css-1ljffdk-MuiFormLabel-asterisk"[39m
-            [36m>[39m
-              [0m [0m
-              [0m*[0m
-            [36m</span>[39m
-          [36m</label>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root"[39m
-          [36m>[39m
-            [36m<input[39m
-              [33maria-invalid[39m=[32m"false"[39m
-              [33mclass[39m=[32m"MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"[39m
-              [33mid[39m=[32m":r2:"[39m
-              [33mrequired[39m=[32m""[39m
-              [33mtype[39m=[32m"text"[39m
-              [33mvalue[39m=[32m"testuser"[39m
-            [36m/>[39m
-            [36m<fieldset[39m
-              [33maria-hidden[39m=[32m"true"[39m
-              [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"[39m
-            [36m>[39m
-              [36m<legend[39m
-                [33mclass[39m=[32m"css-w1u3ce"[39m
-              [36m>[39m
-                [36m<span>[39m
-                  [0mUsername[0m
-                  [0m [0m
-                  [0m*[0m
-                [36m</span>[39m
-              [36m</legend>[39m
-            [36m</fieldset>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"MuiFormControl-root MuiTextField-root css-1xp5r68-MuiFormControl-root-MuiTextField-root"[39m
-        [36m>[39m
-          [36m<label[39m
-            [33mclass[39m=[32m"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-113d811-MuiFormLabel-root-MuiInputLabel-root"[39m
-            [33mdata-shrink[39m=[32m"true"[39m
-            [33mfor[39m=[32m":r3:"[39m
-            [33mid[39m=[32m":r3:-label"[39m
-          [36m>[39m
-            [0mPassword[0m
-            [36m<span[39m
-              [33maria-hidden[39m=[32m"true"[39m
-              [33mclass[39m=[32m"MuiFormLabel-asterisk MuiInputLabel-asterisk css-1ljffdk-MuiFormLabel-asterisk"[39m
-            [36m>[39m
-              [0m [0m
-              [0m*[0m
-            [36m</span>[39m
-          [36m</label>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root"[39m
-          [36m>[39m
-            [36m<input[39m
-              [33maria-invalid[39m=[32m"false"[39m
-              [33mclass[39m=[32m"MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"[39m
-              [33mid[39m=[32m":r3:"[39m
-              [33mrequired[39m=[32m""[39m
-              [33mtype[39m=[32m"password"[39m
-              [33mvalue[39m=[32m"testpass"[39m
-            [36m/>[39m
-            [36m<fieldset[39m
-              [33maria-hidden[39m=[32m"true"[39m
-              [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1ll44ll-MuiOutlinedInput-notchedOutline"[39m
-            [36m>[39m
-              [36m<legend[39m
-                [33mclass[39m=[32m"css-w1u3ce"[39m
-              [36m>[39m
-                [36m<span>[39m
-                  [0mPassword[0m
-                  [0m [0m
-                  [0m*[0m
-                [36m</span>[39m
-              [36m</legend>[39m
-            [36m</fieldset>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-        [36m<button[39m
-          [33mclass[39m=[32m"MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1abvrni-MuiButtonBase-root-MuiButton-root"[39m
-          [33mtabindex[39m=[32m"0"[39m
-          [33mtype[39m=[32m"submit"[39m
-        [36m>[39m
-          [0mLog In[0m
-        [36m</button>[39m
-      [36m</form>[39m
-    [36m</div>[39m
-  [36m</body>[39m
-[36m</html>[39m...
- ❯ tests/integration/UserFlow.test.jsx  (2 tests | 2 failed) 1371ms
-   × User Flow > user can login, create a group, and set preferences
-     → Unable to find role="button" and name `/log in/i`
-
-Ignored nodes: comments, script, style
-[36m<body>[39m
-  [36m<div>[39m
-    [36m<div>[39m
-      [36m<header[39m
-        [33mclass[39m=[32m"MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-867ssu-MuiPaper-root-MuiAppBar-root"[39m
-        [33mstyle[39m=[32m"--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"[39m
-      [36m>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1ygil4i-MuiToolbar-root"[39m
-        [36m>[39m
-          [36m<h6[39m
-            [33mclass[39m=[32m"MuiTypography-root MuiTypography-h6 makeStyles-title-2 css-1miy0lu-MuiTypography-root"[39m
-            [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-          [36m>[39m
-            [36m<a[39m
-              [33mclass[39m=[32m"MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways makeStyles-link-3 css-1it7rtv-MuiTypography-root-MuiLink-root"[39m
-              [33mhref[39m=[32m"#/home"[39m
-              [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-            [36m>[39m
-              [0mIt's SupprThyme![0m
-              [36m<img[39m
-                [33malt[39m=[32m"favicon"[39m
-                [33mclass[39m=[32m"makeStyles-favicon-4"[39m
-                [33msrc[39m=[32m"/favicon.ico"[39m
-              [36m/>[39m
-            [36m</a>[39m
-          [36m</h6>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1vy886y-MuiButtonBase-root-MuiButton-root"[39m
-            [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-            [33mtabindex[39m=[32m"0"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [36m<a[39m
-              [33mclass[39m=[32m"MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways makeStyles-link-3 css-1it7rtv-MuiTypography-root-MuiLink-root"[39m
-              [33mhref[39m=[32m"#/login"[39m
-              [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-            [36m>[39m
-              [0mLogin / Register[0m
-            [36m</a>[39m
-          [36m</button>[39m
-        [36m</div>[39m
-      [36m</header>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"MuiContainer-root MuiContainer-maxWidthLg css-5c1adp-MuiContainer-root"[39m
-      [36m>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7 css-1a4ufwv-MuiGrid-root"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 makeStyles-landing_text-6 css-11rmntc-MuiPaper-root"[39m
-              [33mstyle[39m=[32m"--Paper-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);"[39m
-            [36m>[39m
-              [36m<h1[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-h2 makeStyles-heading-8 css-o2za6n-MuiTypography-root"[39m
-              [36m>[39m
-                [0mIt's SupprThyme!!![0m
-              [36m</h1>[39m
-              [36m<h2[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-h3 css-13msox4-MuiTypography-root"[39m
-              [36m>[39m
-                [0mNo More Hangry Meltdowns![0m
-              [36m</h2>[39m
-              [36m<br />[39m
-              [36m<p[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-              [36m>[39m
-                [0mAre you tired of the endless debates and indecision when it comes to choosing a place to eat with your friends, family, or colleagues? Say goodbye to the hassle and hello to SupprThyme - the mobile web application that revolutionizes the way you dine out![0m
-              [36m</p>[39m
-              [36m<p[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-              [36m>[39m
-                [0mSupprThyme transforms the often-frustrating experience of reaching a consensus on a dining destination into an enjoyable and gamified culinary adventure. We all have different tastes, budgets, and dietary needs, right? With SupprThyme, you create a profile with your preferences like cuisine types, price range, and any dietary restrictions.[0m
-              [36m</p>[39m
-              [36m<h2[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-h3 css-13msox4-MuiTypography-root"[39m
-              [36m>[39m
-                [0mHow does it work?[0m
-              [36m</h2>[39m
-              [36m<p[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-              [36m>[39m
-                [0mIt's simple! Someone creates a group and invites the others. Our innovative app then combines everyone in the group's preferences and searches our extensive restaurant database to suggest local dining options that meet your criteria.[0m
-              [36m</p>[39m
-              [36m<p[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-              [36m>[39m
-                [0mWith SupprThyme, decision-making becomes a fun and interactive experience. Users can vote on the restaurant suggestions, engaging in a collaborative process that eventually leads to a unanimous choice.[0m
-              [36m</p>[39m
-              [36m<p[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-              [36m>[39m
-                [0mJoin us on this gastronomic journey and let SupprThyme take the stress out of choosing where to eat. Say goodbye to indecision and hello to delightful dining experiences with SupprThyme![0m
-              [36m</p>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-5 css-urj5pv-MuiGrid-root"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 css-11rmntc-MuiPaper-root"[39m
-              [33mstyle[39m=[32m"--Paper-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0...
-
-Ignored nodes: comments, script, style
-[36m<html>[39m
-  [36m<head />[39m
-  [36m<body>[39m
-    [36m<div>[39m
-      [36m<div>[39m
-        [36m<header[39m
-          [33mclass[39m=[32m"MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-867ssu-MuiPaper-root-MuiAppBar-root"[39m
-          [33mstyle[39m=[32m"--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1ygil4i-MuiToolbar-root"[39m
-          [36m>[39m
-            [36m<h6[39m
-              [33mclass[39m=[32m"MuiTypography-root MuiTypography-h6 makeStyles-title-2 css-1miy0lu-MuiTypography-root"[39m
-              [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways makeStyles-link-3 css-1it7rtv-MuiTypography-root-MuiLink-root"[39m
-                [33mhref[39m=[32m"#/home"[39m
-                [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-              [36m>[39m
-                [0mIt's SupprThyme![0m
-                [36m<img[39m
-                  [33malt[39m=[32m"favicon"[39m
-                  [33mclass[39m=[32m"makeStyles-favicon-4"[39m
-                  [33msrc[39m=[32m"/favicon.ico"[39m
-                [36m/>[39m
-              [36m</a>[39m
-            [36m</h6>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1vy886y-MuiButtonBase-root-MuiButton-root"[39m
-              [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-              [33mtabindex[39m=[32m"0"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mclass[39m=[32m"MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways makeStyles-link-3 css-1it7rtv-MuiTypography-root-MuiLink-root"[39m
-                [33mhref[39m=[32m"#/login"[39m
-                [33mstyle[39m=[32m"color: rgb(255, 255, 255);"[39m
-              [36m>[39m
-                [0mLogin / Register[0m
-              [36m</a>[39m
-            [36m</button>[39m
-          [36m</div>[39m
-        [36m</header>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"MuiContainer-root MuiContainer-maxWidthLg css-5c1adp-MuiContainer-root"[39m
-        [36m>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7 css-1a4ufwv-MuiGrid-root"[39m
-            [36m>[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 makeStyles-landing_text-6 css-11rmntc-MuiPaper-root"[39m
-                [33mstyle[39m=[32m"--Paper-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);"[39m
-              [36m>[39m
-                [36m<h1[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-h2 makeStyles-heading-8 css-o2za6n-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mIt's SupprThyme!!![0m
-                [36m</h1>[39m
-                [36m<h2[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-h3 css-13msox4-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mNo More Hangry Meltdowns![0m
-                [36m</h2>[39m
-                [36m<br />[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mAre you tired of the endless debates and indecision when it comes to choosing a place to eat with your friends, family, or colleagues? Say goodbye to the hassle and hello to SupprThyme - the mobile web application that revolutionizes the way you dine out![0m
-                [36m</p>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mSupprThyme transforms the often-frustrating experience of reaching a consensus on a dining destination into an enjoyable and gamified culinary adventure. We all have different tastes, budgets, and dietary needs, right? With SupprThyme, you create a profile with your preferences like cuisine types, price range, and any dietary restrictions.[0m
-                [36m</p>[39m
-                [36m<h2[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-h3 css-13msox4-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mHow does it work?[0m
-                [36m</h2>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mIt's simple! Someone creates a group and invites the others. Our innovative app then combines everyone in the group's preferences and searches our extensive restaurant database to suggest local dining options that meet your criteria.[0m
-                [36m</p>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mWith SupprThyme, decision-making becomes a fun and interactive experience. Users can vote on the restaurant suggestions, engaging in a collaborative process that eventually leads to a unanimous choice.[0m
-                [36m</p>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"MuiTypography-root MuiTypography-body1 css-rizt0-MuiTypography-root"[39m
-                [36m>[39m
-                  [0mJoin us on this gastronomic journey and let SupprThyme take the stress out of choosing where to eat. Say goodbye to indecision and hello to delightful dining experiences with SupprThyme![0m
-                [36m</p>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-5 css-urj5pv-MuiGrid-root"[39m
-            [36m>[39m
-              [36m<div[39m
-     ...
-   × User Flow > user can navigate to profile page and update information
-     → Cannot read properties of undefined (reading 'map')
- ❯ tests/unit/components/PreferencesForm/PreferencesForm.test.jsx  (10 tests | 3 failed) 3405ms
+        [0m​[0m
+      [36m</span>[39m
+    [36m</legend>[39m
+  [36m</fieldset>[39m
+[36m</div>[39m
    × PreferencesForm > handles errors correctly
-     → Cannot redefine property: useDispatch
+     → Error updating preferences
    × PreferencesForm > shows validation error when required fields are not filled
      → Unable to find an element by: [data-testid="error-message"]
 
@@ -407,7 +99,7 @@ Ignored nodes: comments, script, style
               [33mrequired[39m=[32m""[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-controls[39m=[32m":r13:"[39m
+                [33maria-controls[39m=[32m":r1a:"[39m
                 [33maria-expanded[39m=[32m"false"[39m
                 [33maria-haspopup[39m=[32m"listbox"[39m
                 [33maria-labelledby[39m=[32m"max-price-range-label"[39m
@@ -476,7 +168,7 @@ Ignored nodes: comments, script, style
               [33mrequired[39m=[32m""[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-controls[39m=[32m":r14:"[39m
+                [33maria-controls[39m=[32m":r1b:"[39m
                 [33maria-expanded[39m=[32m"false"[39m
                 [33maria-haspopup[39m=[32m"listbox"[39m
                 [33maria-labelledby[39m=[32m"meat-preference-label"[39m
@@ -535,7 +227,7 @@ Ignored nodes: comments, script, style
                 [33mrequired[39m=[32m""[39m
               [36m>[39m
                 [36m<div[39m
-                  [33maria-controls[39m=[32m":r13:"[39m
+                  [33maria-controls[39m=[32m":r1a:"[39m
                   [33maria-expanded[39m=[32m"false"[39m
                   [33maria-haspopup[39m=[32m"listbox"[39m
                   [33maria-labelledby[39m=[32m"max-price-range-label"[39m
@@ -604,7 +296,7 @@ Ignored nodes: comments, script, style
                 [33mrequired[39m=[32m""[39m
               [36m>[39m
                 [36m<div[39m
-                  [33maria-controls[39m=[32m":r14:"[39m
+                  [33maria-controls[39m=[32m":r1b:"[39m
                   [33maria-expanded[39m=[32m"false"[39m
                   [33maria-haspopup[39m=[32m"listbox"[39m
                   [33maria-labelledby[39m=[32m"meat-preference-label"[39m
@@ -661,7 +353,7 @@ Ignored nodes: comments, script, style
               [33mrequired[39m=[32m""[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-controls[39m=[32m":r1h:"[39m
+                [33maria-controls[39m=[32m":r1o:"[39m
                 [33maria-expanded[39m=[32m"false"[39m
                 [33maria-haspopup[39m=[32m"listbox"[39m
                 [33maria-labelledby[39m=[32m"max-price-range-label"[39m
@@ -730,7 +422,7 @@ Ignored nodes: comments, script, style
               [33mrequired[39m=[32m""[39m
             [36m>[39m
               [36m<div[39m
-                [33maria-controls[39m=[32m":r1i:"[39m
+                [33maria-controls[39m=[32m":r1p:"[39m
                 [33maria-expanded[39m=[32m"false"[39m
                 [33maria-haspopup[39m=[32m"listbox"[39m
                 [33maria-labelledby[39m=[32m"meat-preference-label"[39m
@@ -790,7 +482,7 @@ Ignored nodes: comments, script, style
                 [33mrequired[39m=[32m""[39m
               [36m>[39m
                 [36m<div[39m
-                  [33maria-controls[39m=[32m":r1h:"[39m
+                  [33maria-controls[39m=[32m":r1o:"[39m
                   [33maria-expanded[39m=[32m"false"[39m
                   [33maria-haspopup[39m=[32m"listbox"[39m
                   [33maria-labelledby[39m=[32m"max-price-range-label"[39m
@@ -859,7 +551,7 @@ Ignored nodes: comments, script, style
                 [33mrequired[39m=[32m""[39m
               [36m>[39m
                 [36m<div[39m
-                  [33maria-controls[39m=[32m":r1i:"[39m
+                  [33maria-controls[39m=[32m":r1p:"[39m
                   [33maria-expanded[39m=[32m"false"[39m
                   [33maria-haspopup[39m=[32m"listbox"[39m
                   [33maria-labelledby[39m=[32m"meat-preference-label"[39m
@@ -880,14 +572,8 @@ Ignored nodes: comments, script, style
                   [33mrequired[39m=[32m""[39m
                ...
 
-⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
-
-Vitest caught 1 unhandled error during the test run.
-This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
- Test Files  4 failed (4)
-      Tests  10 failed | 9 passed (19)
-     Errors  1 error
-   Start at  16:55:06
-   Duration  5.84s (transform 433ms, setup 690ms, collect 5.76s, tests 6.08s, environment 2.12s, prepare 338ms)
+ Test Files  1 failed (1)
+      Tests  4 failed | 5 passed (9)
+   Start at  18:55:15
+   Duration  5.21s (transform 240ms, setup 375ms, collect 1.30s, tests 2.69s, environment 437ms, prepare 88ms)
 
